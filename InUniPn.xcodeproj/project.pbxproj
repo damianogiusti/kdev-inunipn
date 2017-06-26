@@ -13,10 +13,18 @@
 		49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
 		558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB81F00ECF400930655 /* ViewController.swift */; };
+		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
+		558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */; };
+		558C9AC11F00EFB800930655 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC01F00EFB800930655 /* AuthService.swift */; };
+		558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC21F00F02F00930655 /* FacebookService.swift */; };
+		558C9AC51F00F22D00930655 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC41F00F22D00930655 /* BaseService.swift */; };
+		558C9ADB1F00FA5B00930655 /* placeholder in Resources */ = {isa = PBXBuildFile; fileRef = 558C9AD61F00FA5B00930655 /* placeholder */; };
 		65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C3C1F00EA8D002F87A5 /* Main.storyboard */; };
 		65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */; };
 		65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C421F00EA8D002F87A5 /* Assets.xcassets */; };
 		65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C441F00EA8D002F87A5 /* LaunchScreen.storyboard */; };
+		65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C4F1F00EF87002F87A5 /* BasePresenter.swift */; };
+		8916FFC2C9DE068B116FCFCA /* Pods_InUniPn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +34,22 @@
 		49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderButton.swift; path = Designables/RoundedBorderButton.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558C9AB81F00ECF400930655 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
+		558C9AC01F00EFB800930655 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		558C9AC21F00F02F00930655 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
+		558C9AC41F00F22D00930655 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		558C9AD61F00FA5B00930655 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
 		65E66C351F00EA8D002F87A5 /* InUniPn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InUniPn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E66C3D1F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E66C401F00EA8D002F87A5 /* InUniPn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InUniPn.xcdatamodel; sourceTree = "<group>"; };
 		65E66C421F00EA8D002F87A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E66C451F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65E66C471F00EA8D002F87A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65E66C4F1F00EF87002F87A5 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		91DA38B91E70341F2C6FB085 /* Pods-InUniPn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.release.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.release.xcconfig"; sourceTree = "<group>"; };
+		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +57,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8916FFC2C9DE068B116FCFCA /* Pods_InUniPn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E0188A1AEF7A4D3C6BE18A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */,
+				91DA38B91E70341F2C6FB085 /* Pods-InUniPn.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		49EC6A401F00EF1D0071EE12 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +112,10 @@
 		558C9AB41F00ECF400930655 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				558C9AC61F00FA0C00930655 /* Lessons */,
+				558C9AC81F00FA0C00930655 /* News */,
+				558C9ABB1F00EDFA00930655 /* Auth */,
+				558C9AC41F00F22D00930655 /* BaseService.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -92,6 +124,12 @@
 			isa = PBXGroup;
 			children = (
 				49EC6A401F00EF1D0071EE12 /* Login */,
+				558C9ACC1F00FA5B00930655 /* Lessons */,
+				558C9ACF1F00FA5B00930655 /* News */,
+				558C9AD11F00FA5B00930655 /* Profile */,
+				558C9AD31F00FA5B00930655 /* Registration */,
+				558C9AD51F00FA5B00930655 /* Transports */,
+				65E66C4E1F00EF67002F87A5 /* MVP */,
 				558C9AB71F00ECF400930655 /* Main */,
 				558C9AB61F00ECF400930655 /* AppDelegate.swift */,
 			);
@@ -106,11 +144,81 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		558C9ABB1F00EDFA00930655 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */,
+				558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */,
+				558C9AC01F00EFB800930655 /* AuthService.swift */,
+				558C9AC21F00F02F00930655 /* FacebookService.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		558C9AC61F00FA0C00930655 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
+		558C9AC81F00FA0C00930655 /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		558C9ACC1F00FA5B00930655 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
+		558C9ACE1F00FA5B00930655 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		558C9ACF1F00FA5B00930655 /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		558C9AD11F00FA5B00930655 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		558C9AD31F00FA5B00930655 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		558C9AD51F00FA5B00930655 /* Transports */ = {
+			isa = PBXGroup;
+			children = (
+				558C9AD61F00FA5B00930655 /* placeholder */,
+			);
+			path = Transports;
+			sourceTree = "<group>";
+		};
 		65E66C2C1F00EA8D002F87A5 = {
 			isa = PBXGroup;
 			children = (
 				65E66C371F00EA8D002F87A5 /* InUniPn */,
 				65E66C361F00EA8D002F87A5 /* Products */,
+				4E0188A1AEF7A4D3C6BE18A3 /* Pods */,
+				EE2AD8C6D0020FBE7FCF9E7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +243,22 @@
 			path = InUniPn;
 			sourceTree = "<group>";
 		};
+		65E66C4E1F00EF67002F87A5 /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				65E66C4F1F00EF87002F87A5 /* BasePresenter.swift */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		EE2AD8C6D0020FBE7FCF9E7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +266,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65E66C4A1F00EA8D002F87A5 /* Build configuration list for PBXNativeTarget "InUniPn" */;
 			buildPhases = (
+				75F727C2B8A242BB9C97E162 /* [CP] Check Pods Manifest.lock */,
 				65E66C311F00EA8D002F87A5 /* Sources */,
 				65E66C321F00EA8D002F87A5 /* Frameworks */,
 				65E66C331F00EA8D002F87A5 /* Resources */,
+				9BBA618FAED9327F9B7602EB /* [CP] Embed Pods Frameworks */,
+				98E364E588071FED916A149A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,11 +324,60 @@
 				65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */,
 				49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */,
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
+				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75F727C2B8A242BB9C97E162 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		98E364E588071FED916A149A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BBA618FAED9327F9B7602EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		65E66C311F00EA8D002F87A5 /* Sources */ = {
@@ -211,7 +387,13 @@
 				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
 				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
+				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
 				558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */,
+				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
+				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
+				558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */,
+				558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */,
+				558C9AC11F00EFB800930655 /* AuthService.swift in Sources */,
 				558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
 			);
@@ -334,6 +516,7 @@
 		};
 		65E66C4B1F00EA8D002F87A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InUniPn/Info.plist;
@@ -346,6 +529,7 @@
 		};
 		65E66C4C1F00EA8D002F87A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91DA38B91E70341F2C6FB085 /* Pods-InUniPn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InUniPn/Info.plist;
