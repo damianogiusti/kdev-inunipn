@@ -11,12 +11,11 @@ import Foundation
 class LessonsRepoImpl: LessonsRepository {
 
     private let token: String
-    private let memoryDatasource: LessonsInMemoryDatasource
+    private let memoryDatasource = LessonsInMemoryDatasource.sharedInstance
     private let restDatasource: LessonsRestDatasource
 
     required init(withToken token: String) {
         self.token = token
-        self.memoryDatasource = LessonsInMemoryDatasource()
         self.restDatasource = LessonsRestDatasource(withToken: token)
     }
 
@@ -24,8 +23,10 @@ class LessonsRepoImpl: LessonsRepository {
         if !memoryDatasource.isExpired() {
             return memoryDatasource.lesson(byId: id)
         } else {
+            memoryDatasource.deleteAll()
+            memoryDatasource.saveAll(lessons: restDatasource.all())
             memoryDatasource.renew()
-            fatalError("not implemented")
+            return memoryDatasource.lesson(byId: id)
         }
     }
 
@@ -33,17 +34,15 @@ class LessonsRepoImpl: LessonsRepository {
         if !memoryDatasource.isExpired() {
             return memoryDatasource.all()
         } else {
+            let lessons = restDatasource.all()
+            memoryDatasource.deleteAll()
+            memoryDatasource.saveAll(lessons: lessons)
             memoryDatasource.renew()
-            fatalError("not implemented")
+            return lessons
         }
     }
 
     func save(lesson: Lesson) -> Bool {
-        if memoryDatasource.isExpired() {
-            // renew and fetch data
-            memoryDatasource.renew()
-        }
-
         if memoryDatasource.save(lesson: lesson) /* && others */ {
             return true
         } else {

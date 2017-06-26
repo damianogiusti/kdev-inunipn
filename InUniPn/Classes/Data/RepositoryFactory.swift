@@ -21,5 +21,4 @@ class RepositoryFactory {
     static func lessonsRepository(withToken token: String) -> LessonsRepository {
         return LessonsRepoImpl(withToken: token)
     }
-
 }
