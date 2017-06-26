@@ -11,7 +11,7 @@ import UIKit
 protocol AuthenticationProtocol: class {
 
     func loginUser(usingSocial: Bool, withName name: String, andPassword password: String,
-                   onSuccess: @escaping SuccessBlock<Any>, onError: @escaping ErrorBlock)
+                   onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock)
 
     func registerUser(withName name: String, andPassword password: String,
                    onSuccess: @escaping SuccessBlock<Any>, onError: @escaping ErrorBlock)

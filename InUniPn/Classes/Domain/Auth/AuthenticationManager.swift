@@ -9,10 +9,12 @@
 import Foundation
 
 enum AuthErrors: Error {
-    case badCredentials, socialLoginError
+    case badCredentials, socialLoginError, errorSavingUser
 }
 
 final class AuthenticationManager: AuthenticationProtocol {
+
+    private let usersRepository: UsersRepository = RepositoryFactory.usersRepository
 
     private lazy var authService: AuthService = {
         return AuthService()
@@ -23,7 +25,7 @@ final class AuthenticationManager: AuthenticationProtocol {
     }()
 
     func loginUser(usingSocial: Bool = false, withName name: String, andPassword password: String,
-                   onSuccess: @escaping SuccessBlock<Any>, onError: @escaping ErrorBlock) {
+                   onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock) {
 
         if (usingSocial) {
             facebookService.loginUser(withName: name, andPassword: password, onSuccess: { (response) in
@@ -33,8 +35,23 @@ final class AuthenticationManager: AuthenticationProtocol {
             })
 
         } else {
-            authService.loginUser(withName: name, andPassword: password, onSuccess: { (response) in
-                // todo: create user from json
+            authService.loginUser(withName: name, andPassword: password, onSuccess: { [weak self] (response) in
+
+                // create user after successful login
+
+                let user = User(withId: response.id)
+                user.accessToken = response.token
+                user.email = name
+                user.password = password
+
+                // store user
+
+                if let success = self?.usersRepository.save(user: user), success {
+                    onSuccess(user)
+                } else {
+                    onError(AuthErrors.errorSavingUser)
+                }
+
             }, onError: { (error) in
                 onError(AuthErrors.badCredentials)
             })
