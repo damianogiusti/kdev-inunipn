@@ -10,21 +10,32 @@ import Alamofire
 import SwiftyJSON
 
 enum AuthPaths: String {
-    case login = "apiunipn.parol.in/V1/user/signup"
+    case
+    registration = "apiunipn.parol.in/V1/user/signup",
+    login = "apiunipn.parol.in/V1/user/login"
 }
 
 class AuthService: BaseService {
 
+    func loginUser(withName name: String, andPassword password: String,
+                   onSuccess: @escaping (AuthResponse) -> Void, onError: @escaping (Error) -> Void) {
 
+        let parameters: Alamofire.Parameters? = [
+            "email": name,
+            "password": password
+        ]
 
-    func loginUser(withName name: String, andPassword password: String, onSuccess: @escaping (Any) -> Void, onError: @escaping (Error) -> Void) {
-
-        Alamofire.request(AuthPaths.login.rawValue).responseJSON { (response) in
-            if let error = response.error {
-                onError(error)
-            } else if let data = response.data {
-                onSuccess(JSON(data: data))
-            }
+        Alamofire.request(AuthPaths.login.rawValue,
+                          method: .post,
+                          parameters: parameters,
+                          encoding: URLEncoding.default)
+            .validate()
+            .responseJSON { (response) in
+                if let error = response.error {
+                    onError(error)
+                } else if let data = response.data {
+                    onSuccess(AuthResponse(fromJson: JSON(data: data)))
+                }
         }
 
     }

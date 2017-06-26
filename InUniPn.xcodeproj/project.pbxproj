@@ -30,6 +30,7 @@
 		654F01181F010D7C0002D171 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01161F010D7C0002D171 /* LoginView.swift */; };
 		654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01191F010EC20002D171 /* RegistrationPresenter.swift */; };
 		654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F011B1F010EE60002D171 /* RegistrationView.swift */; };
+		558C9ADD1F00FE7F00930655 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ADC1F00FE7F00930655 /* AuthResponse.swift */; };
 		65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C3C1F00EA8D002F87A5 /* Main.storyboard */; };
 		65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */; };
 		65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C421F00EA8D002F87A5 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		654F01161F010D7C0002D171 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Login/LoginView.swift; sourceTree = "<group>"; };
 		654F01191F010EC20002D171 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		654F011B1F010EE60002D171 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		558C9ADC1F00FE7F00930655 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		65E66C351F00EA8D002F87A5 /* InUniPn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InUniPn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E66C3D1F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E66C401F00EA8D002F87A5 /* InUniPn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InUniPn.xcdatamodel; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */,
 				558C9AC01F00EFB800930655 /* AuthService.swift */,
 				558C9AC21F00F02F00930655 /* FacebookService.swift */,
+				558C9ADC1F00FE7F00930655 /* AuthResponse.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
 				558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */,
+				558C9ADD1F00FE7F00930655 /* AuthResponse.swift in Sources */,
 				558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */,
 				558C9AC11F00EFB800930655 /* AuthService.swift in Sources */,
 				558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */,
