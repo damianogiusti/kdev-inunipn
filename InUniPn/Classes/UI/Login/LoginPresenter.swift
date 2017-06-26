@@ -48,7 +48,8 @@ class LoginPresenter: BasePresenter {
     }
 
 
-    func setUniversity(withUniveristyName name : String){
+
+    func setUniversity(withName name : String){
         if(name.isEmpty){
             loginView?.askUniversity(withError: "Compila il campo")
         }
