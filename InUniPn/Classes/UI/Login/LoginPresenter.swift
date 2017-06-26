@@ -12,7 +12,13 @@ class LoginPresenter: BasePresenter {
     
     //MARK: - variables
     
+    //MARK: - services
+    
     private var authManager : AuthenticationManager = AuthenticationManager()
+    
+    private let userService : UserService = UserService()
+    
+    //MARK: - view
     
     private var loginView : LoginView? 
     
@@ -40,7 +46,7 @@ class LoginPresenter: BasePresenter {
     }
     
     func loginUserWithFacebook(withToken token: String) {
-       //  authManager.socialLogin(withToken: token, onSuccess: onSocialLoginSuccess, onError: onLoginError)
+         authManager.socialLogin(withToken: token, onSuccess: onSocialLoginSuccess, onError: onLoginError)
     }
     
     func registerUser() {
