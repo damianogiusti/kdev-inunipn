@@ -28,13 +28,13 @@ class RegistrationPresenter: BasePresenter {
                       andEmail email: String, 
                       andPassword password: String,
                       andConfirmationPassword confirmationPassword: String,
-                      andUniveristy university: String) {
+                      andUniversity university: String) {
         
         if(credentialsAreValid(withName: name, 
                                andEmail: email,
                                andPassword: password, 
                                andConfirmationPassword: confirmationPassword,
-                               andUniveristy: university)){
+                               andUniversity: university)){
             
             authManager.registerUser(withName: name, 
                                      andPassword: password, 
@@ -68,7 +68,7 @@ class RegistrationPresenter: BasePresenter {
                                      andEmail email: String, 
                                      andPassword password: String,
                                      andConfirmationPassword confirmationPassword: String,
-                                     andUniveristy university: String) -> Bool{
+                                     andUniversity university: String) -> Bool{
         
         return !(name.isEmpty || password.isEmpty || confirmationPassword.isEmpty || university.isEmpty)
     }

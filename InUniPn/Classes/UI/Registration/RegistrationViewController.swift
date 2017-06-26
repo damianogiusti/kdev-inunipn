@@ -14,10 +14,13 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private lazy var former: Former = Former(tableView: self.tableView)
     
+    private let registrationPresenter = RegistrationPresenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
 
+        registrationPresenter.create(withView: self)
         setupForm()
         // Do any additional setup after loading the view.
     }
@@ -71,10 +74,31 @@ class RegistrationViewController: UIViewController {
     // MARK: Navigation
     
     @IBAction func didPressBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        registrationPresenter.returnToLogin()
     }
     
     @IBAction func didConfirmRegistration(_ sender: Any) {
-        // delegate data to the presenter
+        registrationPresenter.registerUser(withName: "", andEmail: "", andPassword: "", andConfirmationPassword: "", andUniversity: "")
     }
+    
+}
+
+extension RegistrationViewController : RegistrationView {
+    
+    func navigateToHome() {
+        // go to home
+    }
+    
+    func navigateToLogin() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func showError(withError error : String) {
+        displayError(withMessage: error)
+    }
+    
+    func showMessage(withMessage message : String) {
+        displayAlert(withMessage: message)
+    }
+
 }

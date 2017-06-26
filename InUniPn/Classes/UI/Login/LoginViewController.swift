@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginPresenter.create(view: self)
+        loginPresenter.create(withView: self)
         
         setupInputs()
     }
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func didPressFacebook(_ sender: Any) {
-        loginPresenter.loginUserWithFacebook(withName: "", andPassword: "")
+        loginPresenter.loginUserWithFacebook(withToken: "")
     }
 
     @IBAction func didPressRegistration(_ sender: Any) {
@@ -68,5 +68,9 @@ extension LoginViewController : LoginView {
     
     func showMessage(withMessage message: String) {
         displayAlert(withMessage: message)
+    }
+    
+    func askUniversity(withError: String?) {
+        
     }
 }
