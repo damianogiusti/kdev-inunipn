@@ -12,6 +12,16 @@ import CoreData
 typealias SuccessBlock<T> = (T) -> Void
 typealias ErrorBlock = (Error) -> Void
 
+let backgroundQueue = DispatchQueue.global(qos: .utility)
+
+func runInBackground(operations: @escaping () -> Void) {
+    backgroundQueue.async(execute: operations)
+}
+
+func runOnUiThread(operations: @escaping () -> Void) {
+    DispatchQueue.main.async(execute: operations)
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
