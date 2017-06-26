@@ -14,5 +14,9 @@ protocol UsersRepository: class {
 
     func save(user: User) -> Bool
 
+    func saveAll(users: [User]) -> Bool
+
     func delete(byId id: String) -> Bool
+
+    func all() -> [User]
 }

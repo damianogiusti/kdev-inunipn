@@ -21,9 +21,20 @@ class UsersInMemoryRepo: UsersRepository {
         return true
     }
 
+    func saveAll(users: [User]) -> Bool {
+        for user in users {
+            dataset[user.userId] = user
+        }
+        return true
+    }
+
     func delete(byId id: String) -> Bool {
         dataset[id] = nil
         return true
+    }
+
+    func all() -> [User] {
+        return dataset.values.filter({ _ in true })
     }
 
 }
