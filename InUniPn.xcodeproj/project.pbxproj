@@ -15,6 +15,9 @@
 		558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC21F00F02F00930655 /* FacebookService.swift */; };
 		558C9AC51F00F22D00930655 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC41F00F22D00930655 /* BaseService.swift */; };
 		558C9ADB1F00FA5B00930655 /* placeholder in Resources */ = {isa = PBXBuildFile; fileRef = 558C9AD61F00FA5B00930655 /* placeholder */; };
+		654F010A1F00FBF70002D171 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01091F00FBF70002D171 /* LoginPresenter.swift */; };
+		654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F010B1F00FF1C0002D171 /* BaseView.swift */; };
+		654F010E1F00FF3A0002D171 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F010D1F00FF3A0002D171 /* LoginView.swift */; };
 		65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C3C1F00EA8D002F87A5 /* Main.storyboard */; };
 		65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */; };
 		65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C421F00EA8D002F87A5 /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 		558C9AC21F00F02F00930655 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
 		558C9AC41F00F22D00930655 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		558C9AD61F00FA5B00930655 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
+		654F01091F00FBF70002D171 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		654F010B1F00FF1C0002D171 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		654F010D1F00FF3A0002D171 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		65E66C351F00EA8D002F87A5 /* InUniPn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InUniPn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E66C3D1F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E66C401F00EA8D002F87A5 /* InUniPn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InUniPn.xcdatamodel; sourceTree = "<group>"; };
@@ -152,6 +158,8 @@
 		558C9ACE1F00FA5B00930655 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				654F01091F00FBF70002D171 /* LoginPresenter.swift */,
+				654F010D1F00FF3A0002D171 /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				65E66C4F1F00EF87002F87A5 /* BasePresenter.swift */,
+				654F010B1F00FF1C0002D171 /* BaseView.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -316,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		98E364E588071FED916A149A /* [CP] Copy Pods Resources */ = {
@@ -360,10 +369,13 @@
 				558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */,
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
+				654F010A1F00FBF70002D171 /* LoginPresenter.swift in Sources */,
 				558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */,
+				654F010E1F00FF3A0002D171 /* LoginView.swift in Sources */,
 				558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */,
 				558C9AC11F00EFB800930655 /* AuthService.swift in Sources */,
 				558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */,
+				654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  BasePresenter.swift
+//  LoginView.swift
 //  InUniPn
 //
 //  Created by Andrea Minato on 26/06/17.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class BasePresenter {
-
+protocol LoginView: BaseView {
     
+    func navigateToRegistration()
+    
+    func navigateToHome()
 }
