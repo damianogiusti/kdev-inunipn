@@ -11,6 +11,7 @@ import Foundation
 class LessonsRepoImpl: LessonsRepository {
 
     private let token: String
+
     private let memoryDatasource = LessonsInMemoryDatasource.sharedInstance
     private let restDatasource: LessonsRestDatasource
 
@@ -53,5 +54,4 @@ class LessonsRepoImpl: LessonsRepository {
     func delete(byId id: String) -> Bool {
         return false
     }
-
 }

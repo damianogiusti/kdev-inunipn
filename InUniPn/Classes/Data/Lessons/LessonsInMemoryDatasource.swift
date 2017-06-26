@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class LessonsInMemoryDatasource {
 
     public static let sharedInstance = LessonsInMemoryDatasource()
@@ -17,7 +18,6 @@ class LessonsInMemoryDatasource {
     private static let expirationTime: TimeInterval = 5 * 60 // 5 mins
 
     var expirationDate = Date()
-
 
     func lesson(byId id: String) -> Lesson? {
         return dataset[id]
@@ -58,6 +58,7 @@ class LessonsInMemoryDatasource {
         dataset = [:]
         return true
     }
+
 
     func isExpired() -> Bool {
         return expirationDate < Date()
