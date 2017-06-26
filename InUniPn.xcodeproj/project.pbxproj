@@ -14,6 +14,7 @@
 		558C9AC11F00EFB800930655 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC01F00EFB800930655 /* AuthService.swift */; };
 		558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC21F00F02F00930655 /* FacebookService.swift */; };
 		558C9AC51F00F22D00930655 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC41F00F22D00930655 /* BaseService.swift */; };
+		558C9ADB1F00FA5B00930655 /* placeholder in Resources */ = {isa = PBXBuildFile; fileRef = 558C9AD61F00FA5B00930655 /* placeholder */; };
 		65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C3C1F00EA8D002F87A5 /* Main.storyboard */; };
 		65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */; };
 		65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C421F00EA8D002F87A5 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		558C9AC01F00EFB800930655 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		558C9AC21F00F02F00930655 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
 		558C9AC41F00F22D00930655 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		558C9AD61F00FA5B00930655 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
 		65E66C351F00EA8D002F87A5 /* InUniPn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InUniPn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E66C3D1F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E66C401F00EA8D002F87A5 /* InUniPn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InUniPn.xcdatamodel; sourceTree = "<group>"; };
@@ -83,6 +85,8 @@
 		558C9AB41F00ECF400930655 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				558C9AC61F00FA0C00930655 /* Lessons */,
+				558C9AC81F00FA0C00930655 /* News */,
 				558C9ABB1F00EDFA00930655 /* Auth */,
 				558C9AC41F00F22D00930655 /* BaseService.swift */,
 			);
@@ -92,8 +96,13 @@
 		558C9AB51F00ECF400930655 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				558C9ACC1F00FA5B00930655 /* Lessons */,
+				558C9ACE1F00FA5B00930655 /* Login */,
+				558C9ACF1F00FA5B00930655 /* News */,
+				558C9AD11F00FA5B00930655 /* Profile */,
+				558C9AD31F00FA5B00930655 /* Registration */,
+				558C9AD51F00FA5B00930655 /* Transports */,
 				65E66C4E1F00EF67002F87A5 /* MVP */,
-				65E66C4D1F00EE49002F87A5 /* Login */,
 				558C9AB71F00ECF400930655 /* Main */,
 				558C9AB61F00ECF400930655 /* AppDelegate.swift */,
 			);
@@ -117,6 +126,63 @@
 				558C9AC21F00F02F00930655 /* FacebookService.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		558C9AC61F00FA0C00930655 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
+		558C9AC81F00FA0C00930655 /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		558C9ACC1F00FA5B00930655 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
+		558C9ACE1F00FA5B00930655 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		558C9ACF1F00FA5B00930655 /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		558C9AD11F00FA5B00930655 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		558C9AD31F00FA5B00930655 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		558C9AD51F00FA5B00930655 /* Transports */ = {
+			isa = PBXGroup;
+			children = (
+				558C9AD61F00FA5B00930655 /* placeholder */,
+			);
+			path = Transports;
 			sourceTree = "<group>";
 		};
 		65E66C2C1F00EA8D002F87A5 = {
@@ -148,13 +214,6 @@
 				65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */,
 			);
 			path = InUniPn;
-			sourceTree = "<group>";
-		};
-		65E66C4D1F00EE49002F87A5 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		65E66C4E1F00EF67002F87A5 /* MVP */ = {
@@ -237,6 +296,7 @@
 			files = (
 				65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */,
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
+				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
