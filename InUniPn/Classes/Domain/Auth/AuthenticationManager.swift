@@ -9,7 +9,7 @@
 import Foundation
 
 enum AuthErrors: Error {
-    case badCredentials
+    case badCredentials, socialLoginError
 }
 
 final class AuthenticationManager: AuthenticationProtocol {
@@ -26,6 +26,11 @@ final class AuthenticationManager: AuthenticationProtocol {
                    onSuccess: @escaping SuccessBlock<Any>, onError: @escaping ErrorBlock) {
 
         if (usingSocial) {
+            facebookService.loginUser(withName: name, andPassword: password, onSuccess: { (response) in
+                // todo: create user from json
+            }, onError: { (error) in
+                onError(AuthErrors.socialLoginError)
+            })
 
         } else {
             authService.loginUser(withName: name, andPassword: password, onSuccess: { (response) in
