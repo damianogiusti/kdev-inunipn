@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */; };
+		49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */; };
+		49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EC6A451F00F2090071EE12 /* Login.storyboard */; };
+		49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
 		558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB81F00ECF400930655 /* ViewController.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderTextField.swift; path = Designables/RoundedBorderTextField.swift; sourceTree = "<group>"; };
+		49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
+		49EC6A451F00F2090071EE12 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Login/Login.storyboard; sourceTree = "<group>"; };
+		49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderButton.swift; path = Designables/RoundedBorderButton.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558C9AB81F00ECF400930655 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -68,6 +76,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49EC6A401F00EF1D0071EE12 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */,
+				49EC6A451F00F2090071EE12 /* Login.storyboard */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		49EC6A491F00F7130071EE12 /* Designables */ = {
+			isa = PBXGroup;
+			children = (
+				49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */,
+				493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */,
+			);
+			name = Designables;
+			sourceTree = "<group>";
+		};
 		4E0188A1AEF7A4D3C6BE18A3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +106,7 @@
 		558C9AB21F00ECF400930655 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				49EC6A491F00F7130071EE12 /* Designables */,
 				558C9AB31F00ECF400930655 /* Data */,
 				558C9AB41F00ECF400930655 /* Domain */,
 				558C9AB51F00ECF400930655 /* UI */,
@@ -113,8 +140,8 @@
 		558C9AB51F00ECF400930655 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				49EC6A401F00EF1D0071EE12 /* Login */,
 				558C9ACC1F00FA5B00930655 /* Lessons */,
-				558C9ACE1F00FA5B00930655 /* Login */,
 				558C9ACF1F00FA5B00930655 /* News */,
 				558C9AD11F00FA5B00930655 /* Profile */,
 				558C9AD31F00FA5B00930655 /* Registration */,
@@ -164,13 +191,6 @@
 			children = (
 			);
 			path = Lessons;
-			sourceTree = "<group>";
-		};
-		558C9ACE1F00FA5B00930655 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		558C9ACF1F00FA5B00930655 /* News */ = {
@@ -345,7 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */,
-				558C9AF41F01040A00930655 /* placeholder in Resources */,
+				49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */,
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
 				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
 				558C9AF21F01040A00930655 /* placeholder in Resources */,
@@ -368,7 +388,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		98E364E588071FED916A149A /* [CP] Copy Pods Resources */ = {
@@ -408,6 +428,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
+				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
+				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
 				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
 				558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */,
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
