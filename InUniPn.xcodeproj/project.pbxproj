@@ -39,6 +39,7 @@
 		65914E0F1F013B2800FD1EB0 /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E0E1F013B2800FD1EB0 /* NewsRepository.swift */; };
 		65914E111F013B5400FD1EB0 /* NewsInMemoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E101F013B5400FD1EB0 /* NewsInMemoryRepo.swift */; };
 		65914E131F01423000FD1EB0 /* NewsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E121F01423000FD1EB0 /* NewsRepositoryImpl.swift */; };
+		65914E161F015DC400FD1EB0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65914E151F015DC400FD1EB0 /* Localizable.strings */; };
 		65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C3C1F00EA8D002F87A5 /* Main.storyboard */; };
 		65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */; };
 		65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C421F00EA8D002F87A5 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		65914E0E1F013B2800FD1EB0 /* NewsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
 		65914E101F013B5400FD1EB0 /* NewsInMemoryRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInMemoryRepo.swift; sourceTree = "<group>"; };
 		65914E121F01423000FD1EB0 /* NewsRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRepositoryImpl.swift; sourceTree = "<group>"; };
+		65914E151F015DC400FD1EB0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		65E66C351F00EA8D002F87A5 /* InUniPn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InUniPn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E66C3D1F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E66C401F00EA8D002F87A5 /* InUniPn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InUniPn.xcdatamodel; sourceTree = "<group>"; };
@@ -306,6 +308,14 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		65914E141F015D9B00FD1EB0 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				65914E151F015DC400FD1EB0 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		65E66C2C1F00EA8D002F87A5 = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +337,7 @@
 		65E66C371F00EA8D002F87A5 /* InUniPn */ = {
 			isa = PBXGroup;
 			children = (
+				65914E141F015D9B00FD1EB0 /* Localization */,
 				558C9AB21F00ECF400930655 /* Classes */,
 				65E66C3C1F00EA8D002F87A5 /* Main.storyboard */,
 				65E66C421F00EA8D002F87A5 /* Assets.xcassets */,
@@ -421,6 +432,7 @@
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
 				499027521F01140700D941A7 /* Registration.storyboard in Resources */,
 				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
+				65914E161F015DC400FD1EB0 /* Localizable.strings in Resources */,
 				558C9AF21F01040A00930655 /* placeholder in Resources */,
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
 			);
