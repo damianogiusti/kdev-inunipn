@@ -64,15 +64,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E0188A1AEF7A4D3C6BE18A3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */,
-				91DA38B91E70341F2C6FB085 /* Pods-InUniPn.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		49EC6A401F00EF1D0071EE12 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +80,15 @@
 				493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */,
 			);
 			name = Designables;
+			sourceTree = "<group>";
+		};
+		4E0188A1AEF7A4D3C6BE18A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */,
+				91DA38B91E70341F2C6FB085 /* Pods-InUniPn.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		558C9AB21F00ECF400930655 /* Classes */ = {
@@ -174,13 +174,6 @@
 			children = (
 			);
 			path = Lessons;
-			sourceTree = "<group>";
-		};
-		558C9ACE1F00FA5B00930655 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		558C9ACF1F00FA5B00930655 /* News */ = {
@@ -344,7 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		98E364E588071FED916A149A /* [CP] Copy Pods Resources */ = {

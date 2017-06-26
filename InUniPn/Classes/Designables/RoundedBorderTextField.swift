@@ -10,12 +10,8 @@ import Foundation
 import UIKit
 
 @IBDesignable class RoundedBorderTextField: UITextField {
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        updateCornerRadius()
-        updateBorder()
-    }
+    
+    private var padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     
     @IBInspectable var rounded: Bool = false {
         didSet {
@@ -27,6 +23,24 @@ import UIKit
         didSet {
             updateBorder()
         }
+    }
+    
+    @IBInspectable var horizontalPadding: CGFloat = 10 {
+        didSet {
+            updatePadding()
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        updateCornerRadius()
+        updateBorder()
+        updatePadding()
+    }
+    
+    func updatePadding() {
+        padding = UIEdgeInsets(top: 0, left: horizontalPadding, bottom: 0, right: horizontalPadding)
     }
     
     func updateCornerRadius() {
@@ -41,5 +55,17 @@ import UIKit
             layer.borderWidth = 0
             layer.borderColor = UIColor.clear.cgColor
         }
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
     }
 }

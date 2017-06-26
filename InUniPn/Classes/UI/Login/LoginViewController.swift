@@ -13,27 +13,32 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var str = NSAttributedString(string: "esempio@unipn.it", attributes: [NSForegroundColorAttributeName:UIColor.gray])
-        inputEmail.attributedPlaceholder = str
-        
-        str = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName:UIColor.gray])
-        inputEmail.attributedPlaceholder = str
-        // Do any additional setup after loading the view.
+        setupInputs()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // Colors placeholder strings with semi-transparent white
+    private func setupInputs() {
+        var tempStr = NSAttributedString(string: "esempio@unipn.it", attributes: [NSForegroundColorAttributeName:UIColor.white.withAlphaComponent(0.6)])
+        inputEmail.attributedPlaceholder = tempStr
+        
+        tempStr = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName:UIColor.white.withAlphaComponent(0.6)])
+        inputPassword.attributedPlaceholder = tempStr
     }
     
     @IBAction func didPressLogin(_ sender: Any) {
+        let email = inputEmail.text
+        let password = inputPassword.text
+        // tell the presenter the login was clicked
     }
 
     @IBAction func didPressFacebook(_ sender: Any) {
+        // tell the login presenter the facebook button was clicked
     }
 
+    @IBAction func didPressRegistration(_ sender: Any) {
+        // tell the registration presenter the register button was clicked
+    }
 }
