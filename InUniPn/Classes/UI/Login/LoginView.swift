@@ -13,4 +13,6 @@ protocol LoginView: BaseView {
     func navigateToRegistration()
     
     func navigateToHome()
+    
+    func askUniversity(withError : String?)
 }

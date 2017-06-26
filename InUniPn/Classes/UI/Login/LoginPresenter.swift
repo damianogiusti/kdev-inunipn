@@ -40,15 +40,27 @@ class LoginPresenter: BasePresenter {
     }
     
     func loginUserWithFacebook(withToken token: String) {
-        // authManager.socialLogin(withToken: token, onSuccess: onLoginSuccess, onError: onLoginError)
+        // authManager.socialLogin(withToken: token, onSuccess: onSocialLoginSuccess, onError: onLoginError)
     }
     
     func registerUser() {
         loginView?.navigateToRegistration()
     }
     
+    func setUniversity(withUniveristyName name : String){
+        if(name.isEmpty){
+            loginView?.askUniversity(withError: "Compila il campo")
+        }
+        else{
+           //user_addUniversity 
+        }
+    }
     
     //MARK: - private methods
+    
+    private func onSocialLoginSuccess(_ : Any){
+        loginView?.askUniversity(withError: nil)
+    }
     
     private func onLoginSuccess(_ : Any){
         loginView?.navigateToHome()
