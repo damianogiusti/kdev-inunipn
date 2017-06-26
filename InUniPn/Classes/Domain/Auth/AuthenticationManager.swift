@@ -27,36 +27,46 @@ final class AuthenticationManager: AuthenticationProtocol {
     func loginUser(usingSocial: Bool = false, withName name: String, andPassword password: String,
                    onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock) {
 
-        if (usingSocial) {
-            facebookService.loginUser(withName: name, andPassword: password, onSuccess: { (response) in
-                // todo: create user from json
-            }, onError: { (error) in
-                onError(AuthErrors.socialLoginError)
-            })
+        runInBackground { [weak self] in
 
-        } else {
-            authService.loginUser(withName: name, andPassword: password, onSuccess: { [weak self] (response) in
+            if (usingSocial) {
+                self?.facebookService.loginUser(withName: name, andPassword: password, onSuccess: { (response) in
+                    // todo: create user from json
+                }, onError: { (error) in
+                    runOnUiThread {
+                        onError(AuthErrors.socialLoginError)
+                    }
+                })
 
-                // create user after successful login
+            } else {
+                self?.authService.loginUser(withName: name, andPassword: password, onSuccess: { [weak self] (response) in
 
-                let user = User(withId: response.id)
-                user.accessToken = response.token
-                user.email = name
-                user.password = password
+                    // create user after successful login
 
-                // store user
+                    let user = User(withId: response.id)
+                    user.accessToken = response.token
+                    user.email = name
+                    user.password = password
 
-                if let success = self?.usersRepository.save(user: user), success {
-                    onSuccess(user)
-                } else {
-                    onError(AuthErrors.errorSavingUser)
-                }
+                    // store user
 
-            }, onError: { (error) in
-                onError(AuthErrors.badCredentials)
-            })
+                    if let success = self?.usersRepository.save(user: user), success {
+                        runOnUiThread {
+                            onSuccess(user)
+                        }
+                    } else {
+                        runOnUiThread {
+                            onError(AuthErrors.errorSavingUser)
+                        }
+                    }
+
+                    }, onError: { (error) in
+                        runOnUiThread {
+                            onError(AuthErrors.badCredentials)
+                        }
+                })
+            }
         }
-        
     }
 
     func registerUser(withName name: String, andPassword password: String, onSuccess: @escaping (Any) -> Void, onError: @escaping (Error) -> Void) {
