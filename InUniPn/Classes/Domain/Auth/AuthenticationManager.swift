@@ -21,13 +21,7 @@ final class AuthenticationManager: AuthenticationProtocol {
     func loginUser(usingSocial: Bool = false, withName name: String, andPassword password: String,
                    onSuccess: @escaping SuccessBlock<Any>, onError: @escaping ErrorBlock) {
 
-        if (usingSocial) {
-            authService.loginUser(withName: name, andPassword: password,
-                                  onSuccess: onSuccess, onError: onError)
-        } else {
-            facebookService.loginUser(withName: name, andPassword: password,
-                                      onSuccess: onSuccess, onError: onError)
-        }
+        
     }
 
     func registerUser(withName name: String, andPassword password: String, onSuccess: @escaping (Any) -> Void, onError: @escaping (Error) -> Void) {
