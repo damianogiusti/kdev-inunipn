@@ -21,6 +21,9 @@
 		65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C441F00EA8D002F87A5 /* LaunchScreen.storyboard */; };
 		65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C4F1F00EF87002F87A5 /* BasePresenter.swift */; };
 		8916FFC2C9DE068B116FCFCA /* Pods_InUniPn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */; };
+		B60214481F014750009E4EE5 /* ProfileSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60214471F014750009E4EE5 /* ProfileSettings.storyboard */; };
+		B64086731F01084500799398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B640866E1F01084500799398 /* Main.storyboard */; };
+		B64086781F011AD400799398 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64086771F011AD400799398 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		65E66C471F00EA8D002F87A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E66C4F1F00EF87002F87A5 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		91DA38B91E70341F2C6FB085 /* Pods-InUniPn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.release.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.release.xcconfig"; sourceTree = "<group>"; };
+		B60214471F014750009E4EE5 /* ProfileSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileSettings.storyboard; path = InUniPn/Classes/UI/NewsDetail/ProfileSettings.storyboard; sourceTree = SOURCE_ROOT; };
+		B640866E1F01084500799398 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B64086771F011AD400799398 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +102,7 @@
 		558C9AB51F00ECF400930655 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B64085CA1F01022F00799398 /* NewsDetail */,
 				558C9ACC1F00FA5B00930655 /* Lessons */,
 				558C9ACE1F00FA5B00930655 /* Login */,
 				558C9ACF1F00FA5B00930655 /* News */,
@@ -166,6 +173,7 @@
 		558C9AD11F00FA5B00930655 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B60214471F014750009E4EE5 /* ProfileSettings.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -222,6 +230,15 @@
 				65E66C4F1F00EF87002F87A5 /* BasePresenter.swift */,
 			);
 			path = MVP;
+			sourceTree = "<group>";
+		};
+		B64085CA1F01022F00799398 /* NewsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B640866E1F01084500799398 /* Main.storyboard */,
+				B64086771F011AD400799398 /* DetailViewController.swift */,
+			);
+			path = NewsDetail;
 			sourceTree = "<group>";
 		};
 		EE2AD8C6D0020FBE7FCF9E7A /* Frameworks */ = {
@@ -297,6 +314,8 @@
 				65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */,
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
 				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
+				B60214481F014750009E4EE5 /* ProfileSettings.storyboard in Resources */,
+				B64086731F01084500799398 /* Main.storyboard in Resources */,
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +382,7 @@
 				558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */,
 				558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */,
 				558C9AC11F00EFB800930655 /* AuthService.swift in Sources */,
+				B64086781F011AD400799398 /* DetailViewController.swift in Sources */,
 				558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
 			);
