@@ -12,9 +12,13 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
+
+    private let loginPresenter = LoginPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginPresenter.create(withView: self)
         
         setupInputs()
     }
@@ -29,16 +33,44 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didPressLogin(_ sender: Any) {
-        let email = inputEmail.text
-        let password = inputPassword.text
-        // tell the presenter the login was clicked
+        let email = inputEmail.text ?? ""
+        let password = inputPassword.text ?? ""
+        
+        loginPresenter.loginUser(withName: email, andPassword: password)
     }
 
     @IBAction func didPressFacebook(_ sender: Any) {
-        // tell the login presenter the facebook button was clicked
+        loginPresenter.loginUserWithFacebook(withToken: "")
     }
 
     @IBAction func didPressRegistration(_ sender: Any) {
-        // tell the registration presenter the register button was clicked
+        loginPresenter.registerUser()
+    }
+}
+
+extension LoginViewController : LoginView {
+    
+    func navigateToRegistration() {
+        let modalViewController = UIStoryboard(name: "Registration", bundle: nil).instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+
+        //let modalViewController = RegistrationViewController()
+        modalViewController.modalPresentationStyle = .overCurrentContext
+        present(modalViewController, animated: true, completion: nil)
+    }
+    
+    func navigateToHome() {
+        
+    }
+    
+    func showError(withError error: String) {
+        displayError(withMessage: error)
+    }
+    
+    func showMessage(withMessage message: String) {
+        displayAlert(withMessage: message)
+    }
+    
+    func askUniversity(withError: String?) {
+        
     }
 }

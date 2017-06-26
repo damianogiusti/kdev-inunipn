@@ -9,6 +9,7 @@ target 'InUniPn' do
   pod 'Alamofire'
   pod 'Alamofire-Synchronous'
   pod 'SwiftyJSON'
+  pod 'Former'
 
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'

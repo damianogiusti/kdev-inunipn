@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Registration View Controller-->
+        <scene sceneID="so1-As-EKD">
+            <objects>
+                <viewController storyboardIdentifier="RegistrationViewController" modalPresentationStyle="overCurrentContext" id="uQ0-xF-aIH" customClass="RegistrationViewController" customModule="InUniPn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Em0-H4-WhA"/>
+                        <viewControllerLayoutGuide type="bottom" id="skT-xT-6Qa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HpV-xi-ZK4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVq-7i-BvR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Registrazione" id="hRf-5J-z4T">
+                                        <barButtonItem key="leftBarButtonItem" title="Indietro" id="Ut2-dS-7lS">
+                                            <color key="tintColor" red="0.67843137254901964" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="didPressBack:" destination="uQ0-xF-aIH" id="bVz-Vy-IIu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Registrati" id="2G8-cg-7GP">
+                                            <color key="tintColor" red="0.67843137254901964" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="didConfirmRegistration:" destination="uQ0-xF-aIH" id="Y6W-96-ti0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="VeU-qV-JCK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="skT-xT-6Qa" firstAttribute="top" secondItem="VeU-qV-JCK" secondAttribute="bottom" id="11f-PO-2nR"/>
+                            <constraint firstAttribute="trailing" secondItem="VeU-qV-JCK" secondAttribute="trailing" id="5n9-Cr-aL8"/>
+                            <constraint firstItem="HVq-7i-BvR" firstAttribute="top" secondItem="HpV-xi-ZK4" secondAttribute="top" constant="20" id="Jt5-ev-RiI"/>
+                            <constraint firstItem="VeU-qV-JCK" firstAttribute="top" secondItem="HVq-7i-BvR" secondAttribute="bottom" id="SoU-QM-E2M"/>
+                            <constraint firstItem="VeU-qV-JCK" firstAttribute="leading" secondItem="HpV-xi-ZK4" secondAttribute="leading" id="enJ-yP-uwd"/>
+                            <constraint firstItem="HVq-7i-BvR" firstAttribute="leading" secondItem="HpV-xi-ZK4" secondAttribute="leading" id="lSs-G1-iB9"/>
+                            <constraint firstAttribute="trailing" secondItem="HVq-7i-BvR" secondAttribute="trailing" id="sFN-iC-DXb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="VeU-qV-JCK" id="04C-LW-1mO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4d-lw-q0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-498.39999999999998" y="-335.08245877061472"/>
+        </scene>
+    </scenes>
+</document>
