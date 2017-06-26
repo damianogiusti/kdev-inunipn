@@ -11,5 +11,7 @@ import Foundation
 class RepositoryFactory {
 
     static let usersRepository: UsersRepository = UsersInMemoryRepo()
-
+    
+    static let newsepositoruy: NewsRepository = NewsInMemoryRepo()
+    
 }
