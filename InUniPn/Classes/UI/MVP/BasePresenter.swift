@@ -10,4 +10,16 @@ import UIKit
 
 class BasePresenter: NSObject {
 
+    func create() {
+    }
+    
+    func pause() {
+    }
+    
+    func destroy() {
+    }
+    
+    func resume() {
+    }
+    
 }
