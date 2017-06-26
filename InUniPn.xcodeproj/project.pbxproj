@@ -27,6 +27,8 @@
 		654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F010B1F00FF1C0002D171 /* BaseView.swift */; };
 		654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01151F010D7C0002D171 /* LoginPresenter.swift */; };
 		654F01181F010D7C0002D171 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01161F010D7C0002D171 /* LoginView.swift */; };
+		654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01191F010EC20002D171 /* RegistrationPresenter.swift */; };
+		654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F011B1F010EE60002D171 /* RegistrationView.swift */; };
 		65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C3C1F00EA8D002F87A5 /* Main.storyboard */; };
 		65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */; };
 		65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C421F00EA8D002F87A5 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		654F010B1F00FF1C0002D171 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		654F01151F010D7C0002D171 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Login/LoginPresenter.swift; sourceTree = "<group>"; };
 		654F01161F010D7C0002D171 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Login/LoginView.swift; sourceTree = "<group>"; };
+		654F01191F010EC20002D171 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		654F011B1F010EE60002D171 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		65E66C351F00EA8D002F87A5 /* InUniPn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InUniPn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E66C3D1F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E66C401F00EA8D002F87A5 /* InUniPn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InUniPn.xcdatamodel; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 		558C9AD31F00FA5B00930655 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				654F01191F010EC20002D171 /* RegistrationPresenter.swift */,
+				654F011B1F010EE60002D171 /* RegistrationView.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -437,7 +443,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
+				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
+				654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */,
 				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
 				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
 				558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */,

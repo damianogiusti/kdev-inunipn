@@ -18,7 +18,7 @@ class LoginPresenter: BasePresenter {
     
     //MARK: - overrided methods
     
-    func create(view: LoginView) {
+    func create(withView view: LoginView) {
         loginView = view
     }
     
@@ -31,7 +31,6 @@ class LoginPresenter: BasePresenter {
         }
         else{
             authManager.loginUser(
-                usingSocial: false,
                 withName: name, 
                 andPassword: password, 
                 onSuccess: onLoginSuccess, 
@@ -40,14 +39,8 @@ class LoginPresenter: BasePresenter {
         }
     }
     
-    func loginUserWithFacebook(withName name: String, andPassword password: String) {
-        authManager.loginUser(
-            usingSocial: true,
-            withName: name, 
-            andPassword: password, 
-            onSuccess: onLoginSuccess, 
-            onError: onLoginError
-        )    
+    func loginUserWithFacebook(withToken token: String) {
+        // authManager.socialLogin(withToken: token, onSuccess: onLoginSuccess, onError: onLoginError)
     }
     
     func registerUser() {
@@ -55,16 +48,18 @@ class LoginPresenter: BasePresenter {
     }
     
     
-    func onLoginSuccess(_ : Any){
+    //MARK: - private methods
+    
+    private func onLoginSuccess(_ : Any){
         loginView?.navigateToHome()
     }
     
-    func onLoginError(_ : Any){
+    private func onLoginError(_ : Any){
         loginView?.showError(withError: "Errore nel login, riprovare tra qualche moemnto")
     }
     
-    func onCredentialsAreInvalid(){
-        loginView?.showError(withError: "Completare tutti i campi")
+    private func onCredentialsAreInvalid(){
+        loginView?.showError(withError: "Compilare tutti i campi")
     }
     
 }
