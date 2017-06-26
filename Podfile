@@ -6,5 +6,6 @@ target 'InUniPn' do
   use_frameworks!
 
   # Pods for InUniPn
-
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 end

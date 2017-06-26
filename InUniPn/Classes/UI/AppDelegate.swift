@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+typealias SuccessBlock<T> = (T) -> Void
+typealias ErrorBlock = (Error) -> Void
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
