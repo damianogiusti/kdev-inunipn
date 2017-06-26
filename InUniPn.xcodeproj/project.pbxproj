@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */; };
+		4990274E1F01125200D941A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990274D1F01125200D941A7 /* Extensions.swift */; };
+		499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990274F1F0113F000D941A7 /* RegistrationViewController.swift */; };
+		499027521F01140700D941A7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499027511F01140700D941A7 /* Registration.storyboard */; };
 		49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */; };
 		49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EC6A451F00F2090071EE12 /* Login.storyboard */; };
 		49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */; };
@@ -37,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderTextField.swift; path = Designables/RoundedBorderTextField.swift; sourceTree = "<group>"; };
+		4990274D1F01125200D941A7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4990274F1F0113F000D941A7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		499027511F01140700D941A7 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
 		49EC6A451F00F2090071EE12 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Login/Login.storyboard; sourceTree = "<group>"; };
 		49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderButton.swift; path = Designables/RoundedBorderButton.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 				558C9AB31F00ECF400930655 /* Data */,
 				558C9AB41F00ECF400930655 /* Domain */,
 				558C9AB51F00ECF400930655 /* UI */,
+				4990274D1F01125200D941A7 /* Extensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -217,6 +224,8 @@
 		558C9AD31F00FA5B00930655 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				4990274F1F0113F000D941A7 /* RegistrationViewController.swift */,
+				499027511F01140700D941A7 /* Registration.storyboard */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -375,6 +384,7 @@
 				65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */,
 				49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */,
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
+				499027521F01140700D941A7 /* Registration.storyboard in Resources */,
 				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
 				558C9AF21F01040A00930655 /* placeholder in Resources */,
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
@@ -451,8 +461,10 @@
 				654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */,
 				654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
+				4990274E1F01125200D941A7 /* Extensions.swift in Sources */,
 				558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */,
 				654F01181F010D7C0002D171 /* LoginView.swift in Sources */,
+				499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */,
 				558C9AF91F01043600930655 /* User.swift in Sources */,
 				558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */,
 			);

@@ -54,13 +54,12 @@ class LoginPresenter: BasePresenter {
         loginView?.navigateToRegistration()
     }
     
-    
     func onLoginSuccess(_ : Any){
         loginView?.navigateToHome()
     }
     
     func onLoginError(_ : Any){
-        loginView?.showError(withError: "Errore nel login, riprovare tra qualche moemnto")
+        loginView?.showError(withError: "Errore nel login, riprovare tra qualche momento")
     }
     
     func onCredentialsAreInvalid(){
