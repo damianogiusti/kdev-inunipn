@@ -15,6 +15,12 @@
 		558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC21F00F02F00930655 /* FacebookService.swift */; };
 		558C9AC51F00F22D00930655 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC41F00F22D00930655 /* BaseService.swift */; };
 		558C9ADB1F00FA5B00930655 /* placeholder in Resources */ = {isa = PBXBuildFile; fileRef = 558C9AD61F00FA5B00930655 /* placeholder */; };
+		558C9AF21F01040A00930655 /* placeholder in Resources */ = {isa = PBXBuildFile; fileRef = 558C9AEB1F01040A00930655 /* placeholder */; };
+		558C9AF41F01040A00930655 /* placeholder in Resources */ = {isa = PBXBuildFile; fileRef = 558C9AEF1F01040A00930655 /* placeholder */; };
+		558C9AF71F01041C00930655 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AF61F01041C00930655 /* UsersRepository.swift */; };
+		558C9AF91F01043600930655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AF81F01043600930655 /* User.swift */; };
+		558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFA1F0104AA00930655 /* UsersInMemoryRepo.swift */; };
+		558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFC1F01054F00930655 /* RepositoryFactory.swift */; };
 		65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C3C1F00EA8D002F87A5 /* Main.storyboard */; };
 		65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */; };
 		65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C421F00EA8D002F87A5 /* Assets.xcassets */; };
@@ -32,6 +38,12 @@
 		558C9AC21F00F02F00930655 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
 		558C9AC41F00F22D00930655 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		558C9AD61F00FA5B00930655 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
+		558C9AEB1F01040A00930655 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
+		558C9AEF1F01040A00930655 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
+		558C9AF61F01041C00930655 /* UsersRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		558C9AF81F01043600930655 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		558C9AFA1F0104AA00930655 /* UsersInMemoryRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersInMemoryRepo.swift; sourceTree = "<group>"; };
+		558C9AFC1F01054F00930655 /* RepositoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		65E66C351F00EA8D002F87A5 /* InUniPn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InUniPn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E66C3D1F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E66C401F00EA8D002F87A5 /* InUniPn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InUniPn.xcdatamodel; sourceTree = "<group>"; };
@@ -78,6 +90,11 @@
 		558C9AB31F00ECF400930655 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				558C9AEA1F01040A00930655 /* Lessons */,
+				558C9AEC1F01040A00930655 /* Model */,
+				558C9AEE1F01040A00930655 /* News */,
+				558C9AF01F01040A00930655 /* Users */,
+				558C9AFC1F01054F00930655 /* RepositoryFactory.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -183,6 +200,39 @@
 				558C9AD61F00FA5B00930655 /* placeholder */,
 			);
 			path = Transports;
+			sourceTree = "<group>";
+		};
+		558C9AEA1F01040A00930655 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+				558C9AEB1F01040A00930655 /* placeholder */,
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
+		558C9AEC1F01040A00930655 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				558C9AF81F01043600930655 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		558C9AEE1F01040A00930655 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				558C9AEF1F01040A00930655 /* placeholder */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		558C9AF01F01040A00930655 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				558C9AF61F01041C00930655 /* UsersRepository.swift */,
+				558C9AFA1F0104AA00930655 /* UsersInMemoryRepo.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		65E66C2C1F00EA8D002F87A5 = {
@@ -295,8 +345,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */,
+				558C9AF41F01040A00930655 /* placeholder in Resources */,
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
 				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
+				558C9AF21F01040A00930655 /* placeholder in Resources */,
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +416,11 @@
 				558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */,
 				558C9AC11F00EFB800930655 /* AuthService.swift in Sources */,
 				558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */,
+				558C9AF71F01041C00930655 /* UsersRepository.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
+				558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */,
+				558C9AF91F01043600930655 /* User.swift in Sources */,
+				558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
