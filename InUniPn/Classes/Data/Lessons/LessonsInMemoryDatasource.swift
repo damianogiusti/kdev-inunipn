@@ -8,7 +8,9 @@
 
 import Foundation
 
-class LessonsInMemoryDatasource: LessonsRepository {
+class LessonsInMemoryDatasource {
+
+    public static let sharedInstance = LessonsInMemoryDatasource()
 
     private var dataset: [String:Lesson] = [:]
 
@@ -16,24 +18,44 @@ class LessonsInMemoryDatasource: LessonsRepository {
 
     var expirationDate = Date()
 
+
     func lesson(byId id: String) -> Lesson? {
         return dataset[id]
     }
 
 
+    @discardableResult
     func all() -> [Lesson] {
         return dataset.values.filter({ _ in true })
     }
 
 
+    @discardableResult
     func save(lesson: Lesson) -> Bool {
         dataset[lesson.lessonId] = lesson
         return true
     }
 
 
+    @discardableResult
+    func saveAll(lessons: [Lesson]) -> Bool {
+        for lesson in lessons {
+            dataset[lesson.lessonId] = lesson
+        }
+        return true
+    }
+
+
+    @discardableResult
     func delete(byId id: String) -> Bool {
         dataset[id] = nil
+        return true
+    }
+
+
+    @discardableResult
+    func deleteAll() -> Bool {
+        dataset = [:]
         return true
     }
 

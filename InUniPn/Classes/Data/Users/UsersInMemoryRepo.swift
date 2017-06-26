@@ -10,6 +10,8 @@ import Foundation
 
 class UsersInMemoryRepo: UsersRepository {
 
+    static let sharedInstance = UsersInMemoryRepo()
+
     private var dataset: [String: User] = [:]
 
     func user(byId id: String) -> User? {
