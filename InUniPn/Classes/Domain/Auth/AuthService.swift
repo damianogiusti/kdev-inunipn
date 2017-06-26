@@ -9,35 +9,22 @@
 import Alamofire
 import SwiftyJSON
 
-enum AuthPaths: String {
-    case
-    registration = "apiunipn.parol.in/V1/user/signup",
-    login = "apiunipn.parol.in/V1/user/login"
-}
-
-class AuthService: BaseService {
+class AuthService: BaseService, RestCapable {
 
     func loginUser(withName name: String, andPassword password: String,
-                   onSuccess: @escaping (AuthResponse) -> Void, onError: @escaping (Error) -> Void) {
+                   onSuccess: @escaping (User) -> Void, onError: @escaping (Error) -> Void) {
 
-        let parameters: Alamofire.Parameters? = [
+        let parameters: Alamofire.Parameters = [
             "email": name,
             "password": password
         ]
 
-        Alamofire.request(AuthPaths.login.rawValue,
-                          method: .post,
-                          parameters: parameters,
-                          encoding: URLEncoding.default)
-            .validate()
-            .responseJSON { (response) in
-                if let error = response.error {
-                    onError(error)
-                } else if let data = response.data {
-                    onSuccess(AuthResponse(fromJson: JSON(data: data)))
-                }
-        }
-
+        postRestCall(toUrl: AuthPaths.login.rawValue, withParams: parameters, onSuccess: { (json) in
+            // create user after successful login
+            let response = AuthResponse(fromJson: json)
+            let user = UserFactory.user(withId: response.id, name: "", email: name, password: password, andToken: response.token)
+            onSuccess(user)
+        }, onError: onError)
     }
 
     func registerUser(withName name: String, andPassword password: String, onSuccess: (Any) -> Void, onError: (Error) -> Void) {
