@@ -40,7 +40,7 @@ class LoginPresenter: BasePresenter {
     }
 
     func loginUserWithFacebook(withToken token: String) {
-        // authManager.socialLogin(withToken: token, onSuccess: onSocialLoginSuccess, onError: onLoginError)
+       //  authManager.socialLogin(withToken: token, onSuccess: onSocialLoginSuccess, onError: onLoginError)
     }
 
     func registerUser() {
