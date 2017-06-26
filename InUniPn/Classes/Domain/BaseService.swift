@@ -6,10 +6,12 @@
 //  Copyright © 2017 KDev. All rights reserved.
 //
 
-import UIKit
+import Alamofire
+import SwiftyJSON
 
 class BaseService {
 
+    
     
 
 }

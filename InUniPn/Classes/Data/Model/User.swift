@@ -23,3 +23,15 @@ class User {
     }
 
 }
+
+class UserFactory {
+
+    static func user(withId id: String, name: String, email: String, password: String, andToken token: String) -> User {
+        let user = User(withId: id)
+        user.displayName = name
+        user.email = email
+        user.password = password
+        user.accessToken = token
+        return user
+    }
+}
