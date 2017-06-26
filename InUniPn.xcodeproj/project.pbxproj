@@ -27,9 +27,12 @@
 		558C9AF91F01043600930655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AF81F01043600930655 /* User.swift */; };
 		558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFA1F0104AA00930655 /* UsersInMemoryRepo.swift */; };
 		558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFC1F01054F00930655 /* RepositoryFactory.swift */; };
+		558C9B021F01329300930655 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9B011F01329300930655 /* UserService.swift */; };
 		654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F010B1F00FF1C0002D171 /* BaseView.swift */; };
 		654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01151F010D7C0002D171 /* LoginPresenter.swift */; };
 		654F01181F010D7C0002D171 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01161F010D7C0002D171 /* LoginView.swift */; };
+		654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01191F010EC20002D171 /* RegistrationPresenter.swift */; };
+		654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F011B1F010EE60002D171 /* RegistrationView.swift */; };
 		65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C3C1F00EA8D002F87A5 /* Main.storyboard */; };
 		65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */; };
 		65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C421F00EA8D002F87A5 /* Assets.xcassets */; };
@@ -60,9 +63,12 @@
 		558C9AF81F01043600930655 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		558C9AFA1F0104AA00930655 /* UsersInMemoryRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersInMemoryRepo.swift; sourceTree = "<group>"; };
 		558C9AFC1F01054F00930655 /* RepositoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
+		558C9B011F01329300930655 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		654F010B1F00FF1C0002D171 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		654F01151F010D7C0002D171 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Login/LoginPresenter.swift; sourceTree = "<group>"; };
 		654F01161F010D7C0002D171 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Login/LoginView.swift; sourceTree = "<group>"; };
+		654F01191F010EC20002D171 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		654F011B1F010EE60002D171 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		65E66C351F00EA8D002F87A5 /* InUniPn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InUniPn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E66C3D1F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E66C401F00EA8D002F87A5 /* InUniPn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InUniPn.xcdatamodel; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		558C9AB41F00ECF400930655 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				558C9B001F01328800930655 /* User */,
 				558C9AC61F00FA0C00930655 /* Lessons */,
 				558C9AC81F00FA0C00930655 /* News */,
 				558C9ABB1F00EDFA00930655 /* Auth */,
@@ -226,6 +233,8 @@
 			children = (
 				4990274F1F0113F000D941A7 /* RegistrationViewController.swift */,
 				499027511F01140700D941A7 /* Registration.storyboard */,
+				654F01191F010EC20002D171 /* RegistrationPresenter.swift */,
+				654F011B1F010EE60002D171 /* RegistrationView.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -269,6 +278,14 @@
 				558C9AFA1F0104AA00930655 /* UsersInMemoryRepo.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		558C9B001F01328800930655 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				558C9B011F01329300930655 /* UserService.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		65E66C2C1F00EA8D002F87A5 = {
@@ -406,7 +423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		98E364E588071FED916A149A /* [CP] Copy Pods Resources */ = {
@@ -447,9 +464,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
+				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
+				654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */,
 				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
 				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
+				558C9B021F01329300930655 /* UserService.swift in Sources */,
 				558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */,
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,

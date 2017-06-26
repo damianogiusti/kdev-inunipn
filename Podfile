@@ -7,6 +7,7 @@ target 'InUniPn' do
 
   # Pods for InUniPn
   pod 'Alamofire'
+  pod 'Alamofire-Synchronous'
   pod 'SwiftyJSON'
   pod 'Former'
 end
