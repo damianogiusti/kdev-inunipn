@@ -17,11 +17,11 @@ PODS:
   - Former (1.5.1)
 
 
-
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
+
 
 
   - Alamofire-Synchronous
@@ -35,6 +35,12 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
 
+
+  - Alamofire-Synchronous
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - Former
+
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -44,6 +50,7 @@ SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FBSDKCoreKit: d7829f5a69901cd7296105328e4c3c3fc7da6518
   FBSDKLoginKit: 6b92bd65f319d669d2b0730e49db495ef1660566
+
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 
@@ -51,7 +58,10 @@ SPEC CHECKSUMS:
   Former: 0b48a812c0d93b092b908d1b0574d0fd95c6b6f9
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
+  Former: 0b48a812c0d93b092b908d1b0574d0fd95c6b6f9
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 168ec2523911313a2aae6f93a9530b9944ca2fcc
+PODFILE CHECKSUM: fd0b7dec43c151f11fcc052b3892f90293898b75
+
 
 COCOAPODS: 1.2.1
