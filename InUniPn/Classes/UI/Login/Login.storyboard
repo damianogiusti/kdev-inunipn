@@ -109,7 +109,6 @@
                             <constraint firstItem="g8h-sp-ddr" firstAttribute="top" secondItem="T0a-kd-bAo" secondAttribute="bottom" constant="16" id="8OZ-B1-hBV"/>
                             <constraint firstItem="LJc-4v-OeL" firstAttribute="top" secondItem="MtZ-oH-Iio" secondAttribute="bottom" constant="24" id="Afo-lu-YBl"/>
                             <constraint firstItem="ZHJ-Yb-1qP" firstAttribute="top" secondItem="bY4-a7-srT" secondAttribute="bottom" constant="23" id="AtT-L4-RS4"/>
-                            <constraint firstItem="ZHJ-Yb-1qP" firstAttribute="centerX" secondItem="9vl-X8-cx2" secondAttribute="centerX" id="DJW-1o-zAR"/>
                             <constraint firstItem="bY4-a7-srT" firstAttribute="leading" secondItem="9vl-X8-cx2" secondAttribute="leading" constant="64" id="E5X-bJ-tUR"/>
                             <constraint firstItem="MtZ-oH-Iio" firstAttribute="top" secondItem="g8h-sp-ddr" secondAttribute="bottom" constant="16" id="IB4-OZ-ixU"/>
                             <constraint firstItem="pZR-pD-I0m" firstAttribute="centerX" secondItem="9vl-X8-cx2" secondAttribute="centerX" id="NqL-hP-7Al"/>
@@ -131,7 +130,6 @@
                             <constraint firstAttribute="trailing" secondItem="BGX-pU-fVt" secondAttribute="trailing" constant="-397" id="og0-Wl-ak9"/>
                             <constraint firstItem="pZR-pD-I0m" firstAttribute="leading" secondItem="9vl-X8-cx2" secondAttribute="leading" constant="64" id="r4K-NF-4L1"/>
                             <constraint firstItem="ZHJ-Yb-1qP" firstAttribute="leading" secondItem="9vl-X8-cx2" secondAttribute="leading" constant="64" id="sXp-lX-jfF"/>
-                            <constraint firstItem="g8h-sp-ddr" firstAttribute="centerX" secondItem="9vl-X8-cx2" secondAttribute="centerX" id="uj6-5t-iZj"/>
                             <constraint firstItem="bY4-a7-srT" firstAttribute="top" secondItem="pZR-pD-I0m" secondAttribute="bottom" constant="23" id="unc-Un-Gk7"/>
                             <constraint firstItem="Bfz-S8-yFs" firstAttribute="centerX" secondItem="9vl-X8-cx2" secondAttribute="centerX" id="wNS-z0-Bz7"/>
                             <constraint firstItem="BGX-pU-fVt" firstAttribute="top" secondItem="9vl-X8-cx2" secondAttribute="top" constant="20" id="xB4-zc-l4J"/>

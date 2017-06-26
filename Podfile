@@ -12,4 +12,7 @@ target 'InUniPn' do
 
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+
+  pod 'Former'
+
 end
