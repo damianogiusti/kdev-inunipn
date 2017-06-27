@@ -57,11 +57,11 @@ class RegistrationPresenter: BasePresenter {
     }
     
     private func onRegistrationError(_ : Any){
-        registrationView?.showError(withError: "Errore nella registrazione, riprovare tra qualche moemnto")
+        registrationView?.showError(withError: Strings.errorWhileSigninUp)
     }
     
     private func onCredentialsAreInvalid(){
-        registrationView?.showError(withError: "Compilare tutti i campi")
+        registrationView?.showError(withError: Strings.fillAllFields)
     }
     
     private func credentialsAreValid(withName name: String,

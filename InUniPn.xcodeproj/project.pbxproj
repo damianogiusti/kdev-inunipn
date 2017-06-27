@@ -35,6 +35,7 @@
 		558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFC1F01054F00930655 /* RepositoryFactory.swift */; };
 		558C9AFF1F01304E00930655 /* RestCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFE1F01304E00930655 /* RestCapable.swift */; };
 		558C9B021F01329300930655 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9B011F01329300930655 /* UserService.swift */; };
+		654EC6A31F02536300E930BC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EC6A21F02536300E930BC /* String.swift */; };
 		654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F010B1F00FF1C0002D171 /* BaseView.swift */; };
 		654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01151F010D7C0002D171 /* LoginPresenter.swift */; };
 		654F01181F010D7C0002D171 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01161F010D7C0002D171 /* LoginView.swift */; };
@@ -44,6 +45,7 @@
 		65914E0F1F013B2800FD1EB0 /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E0E1F013B2800FD1EB0 /* NewsRepository.swift */; };
 		65914E111F013B5400FD1EB0 /* NewsInMemoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E101F013B5400FD1EB0 /* NewsInMemoryRepo.swift */; };
 		65914E131F01423000FD1EB0 /* NewsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E121F01423000FD1EB0 /* NewsRepositoryImpl.swift */; };
+		65914E161F015DC400FD1EB0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65914E151F015DC400FD1EB0 /* Localizable.strings */; };
 		65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C3C1F00EA8D002F87A5 /* Main.storyboard */; };
 		65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C3F1F00EA8D002F87A5 /* InUniPn.xcdatamodeld */; };
 		65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C421F00EA8D002F87A5 /* Assets.xcassets */; };
@@ -82,6 +84,7 @@
 		558C9AFC1F01054F00930655 /* RepositoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		558C9AFE1F01304E00930655 /* RestCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCapable.swift; sourceTree = "<group>"; };
 		558C9B011F01329300930655 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		654EC6A21F02536300E930BC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		654F010B1F00FF1C0002D171 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		654F01151F010D7C0002D171 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Login/LoginPresenter.swift; sourceTree = "<group>"; };
 		654F01161F010D7C0002D171 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Login/LoginView.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		65914E0E1F013B2800FD1EB0 /* NewsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
 		65914E101F013B5400FD1EB0 /* NewsInMemoryRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInMemoryRepo.swift; sourceTree = "<group>"; };
 		65914E121F01423000FD1EB0 /* NewsRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRepositoryImpl.swift; sourceTree = "<group>"; };
+		65914E151F015DC400FD1EB0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		65E66C351F00EA8D002F87A5 /* InUniPn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InUniPn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E66C3D1F00EA8D002F87A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E66C401F00EA8D002F87A5 /* InUniPn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InUniPn.xcdatamodel; sourceTree = "<group>"; };
@@ -337,6 +341,15 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		65914E141F015D9B00FD1EB0 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				654EC6A21F02536300E930BC /* String.swift */,
+				65914E151F015DC400FD1EB0 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		65E66C2C1F00EA8D002F87A5 = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +371,7 @@
 		65E66C371F00EA8D002F87A5 /* InUniPn */ = {
 			isa = PBXGroup;
 			children = (
+				65914E141F015D9B00FD1EB0 /* Localization */,
 				558C9AB21F00ECF400930655 /* Classes */,
 				65E66C3C1F00EA8D002F87A5 /* Main.storyboard */,
 				65E66C421F00EA8D002F87A5 /* Assets.xcassets */,
@@ -398,6 +412,7 @@
 				65E66C331F00EA8D002F87A5 /* Resources */,
 				9BBA618FAED9327F9B7602EB /* [CP] Embed Pods Frameworks */,
 				98E364E588071FED916A149A /* [CP] Copy Pods Resources */,
+				654EC6A11F0252A100E930BC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -452,6 +467,7 @@
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
 				499027521F01140700D941A7 /* Registration.storyboard in Resources */,
 				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
+				65914E161F015DC400FD1EB0 /* Localizable.strings in Resources */,
 				558C9AF21F01040A00930655 /* placeholder in Resources */,
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
 			);
@@ -460,6 +476,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		654EC6A11F0252A100E930BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftGen/bin/swiftgen\" strings -t dot-syntax-swift3 \"${PROJECT_DIR}/InUniPn/Localization/Localizable.strings\" -o \"${PROJECT_DIR}/InUniPn/Localization/String.swift\"";
+		};
 		75F727C2B8A242BB9C97E162 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -516,6 +545,7 @@
 				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
 				654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */,
+				654EC6A31F02536300E930BC /* String.swift in Sources */,
 				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
 				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
 				558C9B021F01329300930655 /* UserService.swift in Sources */,
