@@ -65,7 +65,7 @@ class LoginPresenter: BasePresenter {
 
     func setUniversity(withName name : String){
         if(name.isEmpty){
-            loginView?.askUniversity(withError: "Compila il campo")
+            loginView?.askUniversity(withError: Strings.fillAllFields)
         }
         else{
            //user_addUniversity
@@ -82,12 +82,13 @@ class LoginPresenter: BasePresenter {
         loginView?.navigateToHome()
     }
 
-    func onLoginError(_ : Any){
-        loginView?.showError(withError: "Errore nel login, riprovare tra qualche momento")
+
+    private func onLoginError(_ : Any){
+        loginView?.showError(withError: Strings.errorWhileLogginIn)
     }
 
     private func onCredentialsAreInvalid(){
-        loginView?.showError(withError: "Compilare tutti i campi")
+        loginView?.showError(withError: Strings.fillAllFields)
     }
 
 }

@@ -30,6 +30,7 @@
 		558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFC1F01054F00930655 /* RepositoryFactory.swift */; };
 		558C9AFF1F01304E00930655 /* RestCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFE1F01304E00930655 /* RestCapable.swift */; };
 		558C9B021F01329300930655 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9B011F01329300930655 /* UserService.swift */; };
+		654EC6A31F02536300E930BC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EC6A21F02536300E930BC /* String.swift */; };
 		654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F010B1F00FF1C0002D171 /* BaseView.swift */; };
 		654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01151F010D7C0002D171 /* LoginPresenter.swift */; };
 		654F01181F010D7C0002D171 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01161F010D7C0002D171 /* LoginView.swift */; };
@@ -73,6 +74,7 @@
 		558C9AFC1F01054F00930655 /* RepositoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		558C9AFE1F01304E00930655 /* RestCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCapable.swift; sourceTree = "<group>"; };
 		558C9B011F01329300930655 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		654EC6A21F02536300E930BC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		654F010B1F00FF1C0002D171 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		654F01151F010D7C0002D171 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Login/LoginPresenter.swift; sourceTree = "<group>"; };
 		654F01161F010D7C0002D171 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Login/LoginView.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		65914E141F015D9B00FD1EB0 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				654EC6A21F02536300E930BC /* String.swift */,
 				65914E151F015DC400FD1EB0 /* Localizable.strings */,
 			);
 			path = Localization;
@@ -381,6 +384,7 @@
 				65E66C331F00EA8D002F87A5 /* Resources */,
 				9BBA618FAED9327F9B7602EB /* [CP] Embed Pods Frameworks */,
 				98E364E588071FED916A149A /* [CP] Copy Pods Resources */,
+				654EC6A11F0252A100E930BC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -444,6 +448,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		654EC6A11F0252A100E930BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftGen/bin/swiftgen\" strings -t dot-syntax-swift3 \"${PROJECT_DIR}/InUniPn/Localization/Localizable.strings\" -o \"${PROJECT_DIR}/InUniPn/Localization/String.swift\"";
+		};
 		75F727C2B8A242BB9C97E162 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +517,7 @@
 				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
 				654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */,
+				654EC6A31F02536300E930BC /* String.swift in Sources */,
 				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
 				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
 				558C9B021F01329300930655 /* UserService.swift in Sources */,

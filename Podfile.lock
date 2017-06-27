@@ -17,6 +17,8 @@ PODS:
   - Former (1.5.1)
 
 
+
+  - SwiftGen (4.2.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -41,6 +43,9 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - Former
 
+
+  - SwiftGen
+
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -59,9 +64,10 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
   Former: 0b48a812c0d93b092b908d1b0574d0fd95c6b6f9
+  SwiftGen: 2ba2a88fc6130b96e38e2baa0029e4bd222ffd85
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: fd0b7dec43c151f11fcc052b3892f90293898b75
+PODFILE CHECKSUM: 0df4b9473234ee1a6c692ef5028dc3edd62e803f
 
 
 COCOAPODS: 1.2.1
