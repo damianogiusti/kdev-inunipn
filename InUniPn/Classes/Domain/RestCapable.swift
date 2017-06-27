@@ -62,11 +62,12 @@ extension RestCapable {
 
     func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON> {
         let response = Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON()
-        if let _ = response.error {
-            return nil
+        if let error = response.error {
+            return DataResponse(withError: error)
         } else if let data = response.data {
-            return JSON(data: data)
+            return DataResponse(withData: JSON(data: data))
         }
+        return DataResponse(withError: RestError.apiError)
     }
 
 
@@ -90,10 +91,11 @@ extension RestCapable {
 
     func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON> {
         let response = Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON()
-        if let _ = response.error {
-            return nil
+        if let error = response.error {
+            return DataResponse(withError: error)
         } else if let data = response.data {
-            return JSON(data: data)
+            return DataResponse(withData: JSON(data: data))
         }
+        return DataResponse(withError: RestError.apiError)
     }
 }
