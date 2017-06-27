@@ -14,6 +14,11 @@
 		49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */; };
 		49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EC6A451F00F2090071EE12 /* Login.storyboard */; };
 		49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */; };
+		551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B21F01624400E44A07 /* UniversitiesRepository.swift */; };
+		551093B51F01626200E44A07 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B41F01626200E44A07 /* University.swift */; };
+		551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */; };
+		551093BC1F01793000E44A07 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093BB1F01793000E44A07 /* DataResponse.swift */; };
+		551093BF1F02967200E44A07 /* UniversitiesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093BE1F02967200E44A07 /* UniversitiesServices.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
 		558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB81F00ECF400930655 /* ViewController.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
@@ -55,6 +60,11 @@
 		49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
 		49EC6A451F00F2090071EE12 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Login/Login.storyboard; sourceTree = "<group>"; };
 		49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderButton.swift; path = Designables/RoundedBorderButton.swift; sourceTree = "<group>"; };
+		551093B21F01624400E44A07 /* UniversitiesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepository.swift; sourceTree = "<group>"; };
+		551093B41F01626200E44A07 /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
+		551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepoImpl.swift; sourceTree = "<group>"; };
+		551093BB1F01793000E44A07 /* DataResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
+		551093BE1F02967200E44A07 /* UniversitiesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesServices.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558C9AB81F00ECF400930655 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -134,6 +144,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		551093B11F01623700E44A07 /* Universities */ = {
+			isa = PBXGroup;
+			children = (
+				551093B21F01624400E44A07 /* UniversitiesRepository.swift */,
+				551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */,
+			);
+			path = Universities;
+			sourceTree = "<group>";
+		};
+		551093BD1F02966000E44A07 /* Universities */ = {
+			isa = PBXGroup;
+			children = (
+				551093BE1F02967200E44A07 /* UniversitiesServices.swift */,
+			);
+			path = Universities;
+			sourceTree = "<group>";
+		};
 		558C9AB21F00ECF400930655 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,11 +176,13 @@
 		558C9AB31F00ECF400930655 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				551093B11F01623700E44A07 /* Universities */,
 				558C9AEA1F01040A00930655 /* Lessons */,
 				558C9AEC1F01040A00930655 /* Model */,
 				558C9AEE1F01040A00930655 /* News */,
 				558C9AF01F01040A00930655 /* Users */,
 				558C9AFC1F01054F00930655 /* RepositoryFactory.swift */,
+				551093BB1F01793000E44A07 /* DataResponse.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -161,6 +190,7 @@
 		558C9AB41F00ECF400930655 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				551093BD1F02966000E44A07 /* Universities */,
 				558C9B001F01328800930655 /* User */,
 				558C9AC61F00FA0C00930655 /* Lessons */,
 				558C9AC81F00FA0C00930655 /* News */,
@@ -274,6 +304,7 @@
 			children = (
 				558C9AF81F01043600930655 /* User.swift */,
 				65914E0C1F013AF100FD1EB0 /* News.swift */,
+				551093B41F01626200E44A07 /* University.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,7 +472,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		98E364E588071FED916A149A /* [CP] Copy Pods Resources */ = {
@@ -494,10 +525,14 @@
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
 				558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */,
 				558C9ADD1F00FE7F00930655 /* AuthResponse.swift in Sources */,
+				551093B51F01626200E44A07 /* University.swift in Sources */,
+				551093BF1F02967200E44A07 /* UniversitiesServices.swift in Sources */,
 				558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */,
 				558C9AC11F00EFB800930655 /* AuthService.swift in Sources */,
+				551093BC1F01793000E44A07 /* DataResponse.swift in Sources */,
 				558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */,
 				558C9AF71F01041C00930655 /* UsersRepository.swift in Sources */,
+				551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */,
 				558C9AFF1F01304E00930655 /* RestCapable.swift in Sources */,
 				654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */,
 				65914E0F1F013B2800FD1EB0 /* NewsRepository.swift in Sources */,
@@ -506,6 +541,7 @@
 				4990274E1F01125200D941A7 /* Extensions.swift in Sources */,
 				558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */,
 				65914E111F013B5400FD1EB0 /* NewsInMemoryRepo.swift in Sources */,
+				551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */,
 				654F01181F010D7C0002D171 /* LoginView.swift in Sources */,
 				499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */,
 				558C9AF91F01043600930655 /* User.swift in Sources */,
