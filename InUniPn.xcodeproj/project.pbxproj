@@ -18,6 +18,7 @@
 		551093B51F01626200E44A07 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B41F01626200E44A07 /* University.swift */; };
 		551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */; };
 		551093BC1F01793000E44A07 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093BB1F01793000E44A07 /* DataResponse.swift */; };
+		551093BF1F02967200E44A07 /* UniversitiesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093BE1F02967200E44A07 /* UniversitiesServices.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
 		558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB81F00ECF400930655 /* ViewController.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
@@ -63,6 +64,7 @@
 		551093B41F01626200E44A07 /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepoImpl.swift; sourceTree = "<group>"; };
 		551093BB1F01793000E44A07 /* DataResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
+		551093BE1F02967200E44A07 /* UniversitiesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesServices.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558C9AB81F00ECF400930655 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 			path = Universities;
 			sourceTree = "<group>";
 		};
+		551093BD1F02966000E44A07 /* Universities */ = {
+			isa = PBXGroup;
+			children = (
+				551093BE1F02967200E44A07 /* UniversitiesServices.swift */,
+			);
+			path = Universities;
+			sourceTree = "<group>";
+		};
 		558C9AB21F00ECF400930655 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +190,7 @@
 		558C9AB41F00ECF400930655 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				551093BD1F02966000E44A07 /* Universities */,
 				558C9B001F01328800930655 /* User */,
 				558C9AC61F00FA0C00930655 /* Lessons */,
 				558C9AC81F00FA0C00930655 /* News */,
@@ -515,6 +526,7 @@
 				558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */,
 				558C9ADD1F00FE7F00930655 /* AuthResponse.swift in Sources */,
 				551093B51F01626200E44A07 /* University.swift in Sources */,
+				551093BF1F02967200E44A07 /* UniversitiesServices.swift in Sources */,
 				558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */,
 				558C9AC11F00EFB800930655 /* AuthService.swift in Sources */,
 				551093BC1F01793000E44A07 /* DataResponse.swift in Sources */,
