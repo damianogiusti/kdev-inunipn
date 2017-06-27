@@ -7,7 +7,12 @@
 //
 
 import Alamofire
+import Alamofire_Synchronous
 import SwiftyJSON
+
+enum RestError: Error {
+    case apiError
+}
 
 protocol RestCapable: class {
 
@@ -16,8 +21,12 @@ protocol RestCapable: class {
     func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?,
                      onSuccess: @escaping SuccessBlock<JSON>, onError: @escaping ErrorBlock)
 
+    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON>
+
     func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?,
                       onSuccess: @escaping SuccessBlock<JSON>, onError: @escaping ErrorBlock)
+
+    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON>
 
 }
 
@@ -51,6 +60,16 @@ extension RestCapable {
     }
 
 
+    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON> {
+        let response = Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON()
+        if let _ = response.error {
+            return nil
+        } else if let data = response.data {
+            return JSON(data: data)
+        }
+    }
+
+
     func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?,
                       onSuccess: @escaping SuccessBlock<JSON>, onError: @escaping ErrorBlock) {
 
@@ -65,6 +84,16 @@ extension RestCapable {
                 } else if let data = response.data {
                     onSuccess(JSON(data: data))
                 }
+        }
+    }
+
+
+    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON> {
+        let response = Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON()
+        if let _ = response.error {
+            return nil
+        } else if let data = response.data {
+            return JSON(data: data)
         }
     }
 }
