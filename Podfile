@@ -11,6 +11,8 @@ target 'InUniPn' do
   pod 'SwiftyJSON'
   pod 'Former'
 
+  pod 'SwiftGen'
+
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
 end
