@@ -97,6 +97,10 @@ extension RegistrationViewController : RegistrationView {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func onLoadedUniversities(withUniversities: [University]) {
+        //TODO
+    }
+    
     func showError(withError error : String) {
         displayError(withMessage: error)
     }
