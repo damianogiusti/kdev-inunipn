@@ -10,9 +10,11 @@ import UIKit
 
 class RegistrationPresenter: BasePresenter {
     
-    //MARK: - variables
+    //MARK: - services
     
     private var authManager : AuthenticationManager = AuthenticationManager()
+    
+    private let universityService : UniversitiesServices = UniversitiesServices()
     
     private var registrationView : RegistrationView? 
     
@@ -23,6 +25,10 @@ class RegistrationPresenter: BasePresenter {
     }
     
     //MARK: - user interaction methods
+    
+    func retireveUniversity() {
+        universityService.all(onSuccess: dispatchUniversities, onError: onRetrievingUniversitiesError)
+    }
     
     func registerUser(withName name: String,
                       andEmail email: String, 
@@ -71,5 +77,13 @@ class RegistrationPresenter: BasePresenter {
                                      andUniversity university: String) -> Bool{
         
         return !(name.isEmpty || password.isEmpty || confirmationPassword.isEmpty || university.isEmpty)
+    }
+    
+    private func dispatchUniversities(withUniversities universities: [University]){
+        registrationView?.onLoadedUniversities(withUniversities: universities)
+    }
+    
+    private func onRetrievingUniversitiesError(error : Any){
+        registrationView?.showError(withError: Strings.errorRetrievingUniveristies)
     }
 }
