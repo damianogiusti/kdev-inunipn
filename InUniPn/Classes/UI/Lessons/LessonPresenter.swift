@@ -12,7 +12,7 @@ class LessonPresenter: BasePresenter {
     
     //MARK: - variables
     
-    private let user : User? = nil
+    private var user : User?
     
     //MARK: - services
     
@@ -27,9 +27,14 @@ class LessonPresenter: BasePresenter {
     
     //MARK: - lifecycle methods
     
-    func create(withView view: LessonView, andToken token : String) {
+    func create(withView view: LessonView) {
         lessonView = view
-        lessonService = LessonsService(withToken : token);
+        user = userService.currentUser()
+        if let token = user?.accessToken{
+            lessonService = LessonsService(withToken : token);
+        } else {
+            lessonView?.showError(withError: Strings.unknownError)
+        }
     }
     
     //MARK: - user interaction methods
@@ -41,13 +46,13 @@ class LessonPresenter: BasePresenter {
     func joinLesson(withLesson lesson:Lesson){
         lessonService?.joinLesson(byId: lesson.lessonId)
         lessonView?.showMessage(withMessage: Strings.joinedSuccessfully)
-
+        
     }
     
     func unjoinLesson(withLesson lesson:Lesson){
         lessonService?.unjoinLesson(byId: lesson.lessonId)
         lessonView?.showMessage(withMessage: Strings.unjoinedSuccessfully)
-
+        
     }
     
     func joinAllLessonRelated(toLesson lesson:Lesson){
@@ -63,7 +68,7 @@ class LessonPresenter: BasePresenter {
         if let type = lesson.type{
             lessonService?.unjoinAllFutureLessons(ofType: type)
             lessonView?.showMessage(withMessage: Strings.unjoinedSuccessfully)
-
+            
         } else {
             lessonView?.showError(withError: Strings.errorJoiningLessons)
         }
@@ -82,7 +87,7 @@ class LessonPresenter: BasePresenter {
         if let string = queryString{
             lessonService?.searchLessons(withKeyword: string, onSuccess: displayLessons)  
         } else {
-            
+            lessonService?.all(onSuccess: displayLessons)
         }
     }
     

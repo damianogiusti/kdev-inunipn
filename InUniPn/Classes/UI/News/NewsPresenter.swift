@@ -54,20 +54,17 @@ class NewsPresenter: BasePresenter {
 
     func loadNews(withQueryString queryString: String?=nil){
 
-        let newsList : [News]
-
-        if let _ = queryString{
-            //newsList = newsService.getAllNews()
-        } else {
-            //newsList = newService.search(queryString)
-        }
-
-
-        //  newsView?.displayNews(withNewsList: newsList)
+//        if let string = queryString{
+//            newsService?.searchLessons(withKeyword: string, onSuccess: displayLessons)  
+//        } else {
+//            newsService?.all(onSuccess: displayLessons)
+//        }
     }
-
-
-
+    
     //MARK: - private methods
+    
+    func displayLessons(withLessons lessons : [Lesson]){
+//        newsView?.displayLessons(withLessonList: lessons)
+    }
 
 }

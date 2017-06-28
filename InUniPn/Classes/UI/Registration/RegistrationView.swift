@@ -13,5 +13,7 @@ protocol RegistrationView: BaseView {
     func navigateToHome()
     
     func navigateToLogin()
+    
+    func onLoadedUniversities(withUniversities : [University])
 
 }

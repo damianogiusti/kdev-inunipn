@@ -16,6 +16,10 @@ enum L10n {
   static let error = L10n.tr("Error")
   /// Impossible to join this kind of lesson
   static let errorJoiningLessons = L10n.tr("Error joining lessons")
+  /// An error occourred while retrieving lessons, try again later
+  static let errorRetrievingLessons = L10n.tr("Error retrieving lessons")
+  /// An error occourred while retrieving news, try again later
+  static let errorRetrievingNews = L10n.tr("Error retrieving news")
   /// An error occourred while retrieving universities, try again later
   static let errorRetrievingUniveristies = L10n.tr("Error retrieving univeristies")
   /// An error occourred while loggin in, try again later
@@ -28,6 +32,8 @@ enum L10n {
   static let joinedSuccessfully = L10n.tr("joined successfully")
   /// You have successfully unjoined the lesson
   static let unjoinedSuccessfully = L10n.tr("unjoined successfully")
+  /// An unknown error occourred, try again later
+  static let unknownError = L10n.tr("Unknown error")
 }
 
 extension L10n {
