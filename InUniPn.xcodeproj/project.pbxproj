@@ -69,6 +69,11 @@
 		9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */; };
 		9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F71F03A00400BF6548 /* Profile.storyboard */; };
 		9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */; };
+		B60214481F014750009E4EE5 /* ProfileSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60214471F014750009E4EE5 /* ProfileSettings.storyboard */; };
+		B64086781F011AD400799398 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64086771F011AD400799398 /* DetailViewController.swift */; };
+		B6A8E24B1F0399F10013720E /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8E24A1F0399F10013720E /* ProfilePresenter.swift */; };
+		B6A8E24D1F03A91D0013720E /* profileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8E24C1F03A91D0013720E /* profileView.swift */; };
+		B6A8E24F1F03C0A80013720E /* NewsesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8E24E1F03C0A80013720E /* NewsesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +141,12 @@
 		9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9BC3E5F71F03A00400BF6548 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = InUniPn/Classes/UI/Main/Profile.storyboard; sourceTree = SOURCE_ROOT; };
 		9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = InUniPn/Classes/UI/Main/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		B60214471F014750009E4EE5 /* ProfileSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileSettings.storyboard; path = InUniPn/Classes/UI/NewsDetail/ProfileSettings.storyboard; sourceTree = SOURCE_ROOT; };
+		B640866E1F01084500799398 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B64086771F011AD400799398 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B6A8E24A1F0399F10013720E /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = InUniPn/Classes/UI/NewsDetail/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
+		B6A8E24C1F03A91D0013720E /* profileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profileView.swift; path = InUniPn/Classes/UI/NewsDetail/profileView.swift; sourceTree = SOURCE_ROOT; };
+		B6A8E24E1F03C0A80013720E /* NewsesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsesService.swift; sourceTree = "<group>"; };
 		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -318,6 +329,11 @@
 			children = (
 				9BC3E5F71F03A00400BF6548 /* Profile.storyboard */,
 				9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */,
+				B60214471F014750009E4EE5 /* ProfileSettings.storyboard */,
+				B6A8E24A1F0399F10013720E /* ProfilePresenter.swift */,
+				9BC3E5F71F03A00400BF6548 /* Profile.storyboard */,
+				9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */,
+				B6A8E24C1F03A91D0013720E /* profileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -632,6 +648,9 @@
 				65C6E2511F038FA6002F9E7F /* NewsView.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
 				4990274E1F01125200D941A7 /* Extensions.swift in Sources */,
+				B6A8E24F1F03C0A80013720E /* NewsesService.swift in Sources */,
+				4990274E1F01125200D941A7 /* Extensions.swift in Sources */,
+				B6A8E24D1F03A91D0013720E /* profileView.swift in Sources */,
 				558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */,
 				9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */,
 				9BC3E5F41F03964700BF6548 /* NewsViewController.swift in Sources */,
