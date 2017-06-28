@@ -15,6 +15,7 @@
 		49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EC6A451F00F2090071EE12 /* Login.storyboard */; };
 		49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */; };
 		550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B31F03928C00F94A8C /* LessonsService.swift */; };
+		550EF2B61F03BB9900F94A8C /* DateFormatCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B51F03BB9900F94A8C /* DateFormatCapable.swift */; };
 		551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B21F01624400E44A07 /* UniversitiesRepository.swift */; };
 		551093B51F01626200E44A07 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B41F01626200E44A07 /* University.swift */; };
 		551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */; };
@@ -77,6 +78,7 @@
 		49EC6A451F00F2090071EE12 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Login/Login.storyboard; sourceTree = "<group>"; };
 		49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderButton.swift; path = Designables/RoundedBorderButton.swift; sourceTree = "<group>"; };
 		550EF2B31F03928C00F94A8C /* LessonsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsService.swift; sourceTree = "<group>"; };
+		550EF2B51F03BB9900F94A8C /* DateFormatCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatCapable.swift; sourceTree = "<group>"; };
 		551093B21F01624400E44A07 /* UniversitiesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepository.swift; sourceTree = "<group>"; };
 		551093B41F01626200E44A07 /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepoImpl.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				558C9ABB1F00EDFA00930655 /* Auth */,
 				558C9AC41F00F22D00930655 /* BaseService.swift */,
 				558C9AFE1F01304E00930655 /* RestCapable.swift */,
+				550EF2B51F03BB9900F94A8C /* DateFormatCapable.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */,
 				558C9ADD1F00FE7F00930655 /* AuthResponse.swift in Sources */,
 				551093B51F01626200E44A07 /* University.swift in Sources */,
+				550EF2B61F03BB9900F94A8C /* DateFormatCapable.swift in Sources */,
 				551093BF1F02967200E44A07 /* UniversitiesServices.swift in Sources */,
 				558C9B0C1F01477800930655 /* LessonsRestDatasource.swift in Sources */,
 				558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */,

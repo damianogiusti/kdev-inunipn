@@ -25,21 +25,27 @@ class NewsRepositoryImpl: NewsRepository {
             return memoryDatasource.news(byId: id)
         } else {
             memoryDatasource.deleteAll()
-            memoryDatasource.saveAll(newsList: restDatasource.all())
-            memoryDatasource.renew()
-            return memoryDatasource.news(byId: id)
+            if let news = restDatasource.all().data {
+                memoryDatasource.saveAll(newsList: news)
+                memoryDatasource.renew()
+                return memoryDatasource.news(byId: id)
+            }
+            return nil
         }
+
     }
     
     func all() -> [News] {
         if !memoryDatasource.isExpired() {
             return memoryDatasource.all()
         } else {
-            let newsList = restDatasource.all()
             memoryDatasource.deleteAll()
-            memoryDatasource.saveAll(newsList: newsList)
-            memoryDatasource.renew()
-            return newsList
+            if let news = restDatasource.all().data {
+                memoryDatasource.saveAll(newsList: news)
+                memoryDatasource.renew()
+                return news
+            }
+            return []
         }
     }
     

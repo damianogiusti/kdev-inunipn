@@ -16,18 +16,16 @@ enum Addresses: String {
     authFacebook = "/user/facebook/login",
 
     lessons = "/timetable",
+    news = "/posts",
 
     configUniversities = "/config"
 
     func url() -> String {
         switch self {
-        case .authLogin: return ApiConfig.defaultProtocol + ApiConfig.baseApiUrl + self.rawValue
-        case .authRegistration: return ApiConfig.defaultProtocol + ApiConfig.baseApiUrl + self.rawValue
-        case .authFacebook: return ApiConfig.defaultProtocol + ApiConfig.baseApiUrl + self.rawValue
-
-        case .lessons: return ApiConfig.defaultProtocol + ApiConfig.baseApiUrl + self.rawValue
-
         case .configUniversities: return ApiConfig.defaultProtocol + ApiConfig.configApiUrl + self.rawValue
+
+        default: return ApiConfig.defaultProtocol + ApiConfig.baseApiUrl + self.rawValue
+
         }
     }
 }
