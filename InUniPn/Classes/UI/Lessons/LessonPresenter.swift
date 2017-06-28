@@ -8,6 +8,30 @@
 
 import UIKit
 
+struct LessonToDisplay{
+    var id : String
+    var name : String
+    var teacher : String
+    var startTime : String
+    var endTime: String
+    var course : String
+    var classroom : String
+    
+    var joined : Bool
+    
+    
+    init(withId id: String, name:String, teacher:String, startTime:String, endTime:String, course:String, classroom:String, andJoined joined:Bool){
+        self.id =  id 
+        self.name = name 
+        self.teacher =  teacher 
+        self.startTime = startTime 
+        self.endTime = endTime 
+        self.course =  course 
+        self.classroom =  classroom 
+        self.joined =  joined 
+    }
+}
+
 
 class LessonPresenter: BasePresenter {
     
@@ -96,8 +120,37 @@ class LessonPresenter: BasePresenter {
     
     func displayLessons(withLessons lessons : [Lesson]){
         
-        let xxx: [String: [Lesson]] = lessons.categorise({ l in l.date?.description ?? "" })   
-        print(xxx)
+        var formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        //formatter.timeStyle = .medium
+        
+        
+        
+        var tempLessons: [String: [Lesson]] = lessons.categorise({ l in formatter.string(from: l.date ?? Date()) }) 
+        
+        formatter = DateFormatter()
+        formatter.timeStyle = .short
+        
+        var lessonsToDisplay : [String: [LessonToDisplay]] = [:]
+        
+        
+        for key in tempLessons.keys {
+            var v : [LessonToDisplay] =  (tempLessons[key]?.flatMap({ (l: Lesson) in LessonToDisplay(withId: l.lessonId, 
+                                                                                                     name: l.name ?? "", 
+                                                                                                     teacher: l.teacher ?? "", 
+                                                                                                     startTime: formatter.string(from: l.timeStart ?? Date()), 
+                                                                                                     endTime: formatter.string(from: l.timeEnd ?? Date()), 
+                                                                                                     course: l.course ?? "", 
+                                                                                                     classroom: l.classroom ?? "", 
+                                                                                                     andJoined: l.joined) }))!
+            
+            lessonsToDisplay[key] = v
+        }
+        
+        
+        print(lessonsToDisplay)
+        
+
         lessonView?.displayLessons(withLessonList: lessons)
     }
     
