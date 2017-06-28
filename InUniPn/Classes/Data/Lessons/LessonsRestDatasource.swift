@@ -14,7 +14,7 @@ class LessonsRestDatasource: RestCapable {
     private lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "it_IT")
-        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss.SSSZ"
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSSZ"
         return dateFormatter
     }()
 
