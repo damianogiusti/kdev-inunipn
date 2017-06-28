@@ -1,21 +1,21 @@
 //
-//  LessonsViewController.swift
+//  ProfileViewController.swift
 //  InUniPn
 //
-//  Created by Michele Bravo on 26/06/17.
+//  Created by Michele Bravo on 28/06/17.
 //  Copyright © 2017 KDev. All rights reserved.
 //
 
 import UIKit
 
-class LessonsViewController:UITableViewController {
+class ProfileViewController: UIViewController {
     
     ///associo il tab item al controller
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         // Initialize Tab Bar Item
-        tabBarItem = UITabBarItem(title: "Orari", image: UIImage(named: "ios-time-outline"), tag: 1)
+        tabBarItem = UITabBarItem(title: "Profilo", image: UIImage(named: "ios-person"), tag: 2)
     }
     
     override func viewDidLoad() {
