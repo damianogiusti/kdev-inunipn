@@ -14,6 +14,7 @@
 		49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */; };
 		49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EC6A451F00F2090071EE12 /* Login.storyboard */; };
 		49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */; };
+		550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B31F03928C00F94A8C /* LessonsService.swift */; };
 		551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B21F01624400E44A07 /* UniversitiesRepository.swift */; };
 		551093B51F01626200E44A07 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B41F01626200E44A07 /* University.swift */; };
 		551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */; };
@@ -66,6 +67,7 @@
 		49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
 		49EC6A451F00F2090071EE12 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Login/Login.storyboard; sourceTree = "<group>"; };
 		49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderButton.swift; path = Designables/RoundedBorderButton.swift; sourceTree = "<group>"; };
+		550EF2B31F03928C00F94A8C /* LessonsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsService.swift; sourceTree = "<group>"; };
 		551093B21F01624400E44A07 /* UniversitiesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepository.swift; sourceTree = "<group>"; };
 		551093B41F01626200E44A07 /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepoImpl.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		558C9AC61F00FA0C00930655 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
+				550EF2B31F03928C00F94A8C /* LessonsService.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				551093C31F0389B800E44A07 /* Addresses.swift in Sources */,
 				558C9B021F01329300930655 /* UserService.swift in Sources */,
 				65914E0D1F013AF100FD1EB0 /* News.swift in Sources */,
+				550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */,
 				558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */,
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
