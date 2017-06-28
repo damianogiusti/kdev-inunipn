@@ -22,6 +22,16 @@ class LessonsService: BaseService {
         self.lessonsRepository = RepositoryFactory.lessonsRepository(withToken: token)
     }
 
+    /// Gets all lessons
+    func all(onSuccess: @escaping SuccessBlock<[Lesson]>, onError: ErrorBlock? = nil) {
+        runInBackground {
+            let lessons = self.lessonsRepository.all()
+            runOnUiThread {
+                onSuccess(lessons)
+            }
+        }
+    }
+
     /// Joins a lesson
     func joinLesson(byId lessonId: String, onSuccess: SuccessBlock<Lesson>? = nil, onError: ErrorBlock? = nil) {
         self.markLesson(byId: lessonId, asJoined: true, onSuccess: onSuccess, onError: onError)
