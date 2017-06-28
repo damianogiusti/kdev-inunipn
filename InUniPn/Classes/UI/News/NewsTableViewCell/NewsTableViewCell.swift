@@ -10,6 +10,8 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
 
+    @IBOutlet fileprivate weak var mainView: UIView!
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -18,27 +20,14 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
 
-    var cornerRadius: CGFloat = 2
-    var shadowOffsetWidth: Int = 0
-    var shadowOffsetHeight: Int = 3
-    var shadowColor: UIColor? = .black
-    var shadowOpacity: Float = 0.5
-
-    override func layoutSubviews() {
-        self.frame.
-        layer.cornerRadius = cornerRadius
-        let shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
-
-        layer.masksToBounds = false
-        layer.shadowColor = shadowColor?.cgColor
-        layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight);
-        layer.shadowOpacity = shadowOpacity
-        layer.shadowPath = shadowPath.cgPath
-    }
+    private var cornerRadius: CGFloat = 2
+    private var shadowOffsetWidth: Int = 0
+    private var shadowOffsetHeight: Int = 3
+    private var shadowColor: UIColor? = .black
+    private var shadowOpacity: Float = 0.5
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,5 +35,4 @@ class NewsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

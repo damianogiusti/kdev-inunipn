@@ -8,18 +8,21 @@
 
 import UIKit
 
+fileprivate struct ViewControllers {
+    static let news = String(describing: NewsTableViewController.self)
+}
 
 class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         /// rimuovo i controller generati dalla storyboard
         self.viewControllers?.removeAll()
-        
+
         /// associo il controller delle news
         let newsStoryboard: UIStoryboard = UIStoryboard(name: "News", bundle: nil)
-        let newsViewController = newsStoryboard.instantiateViewController(withIdentifier: String(describing: NewsTableViewController.self)) as! NewsTableViewController
+        let newsViewController = newsStoryboard.instantiateViewController(withIdentifier: ViewControllers.news) as! NewsTableViewController
         self.viewControllers?.insert(newsViewController, at: 0)
         
         

@@ -10,6 +10,7 @@ target 'InUniPn' do
   pod 'Alamofire-Synchronous'
   pod 'SwiftyJSON'
   pod 'Former'
+  pod 'DZNEmptyDataSet'
   pod 'SDWebImage', '~>3.8'
   pod 'SwiftGen'
 

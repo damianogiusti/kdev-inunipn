@@ -14,33 +14,43 @@ class NewsPresenter: BasePresenter {
 
     //MARK: - services
 
-    //    private var newsService
-
-    private let userService : UserService = UserService()
+    private var newsService: NewsService?
+    private let userService: UserService = UserService()
 
     //MARK: - view
 
-    private var newsView : NewsView?
+    private weak var newsView : NewsView?
+
+    private(set) var newsList: [News] = []
 
     //MARK: - lifecycle methods
 
     func create(withView view: NewsView) {
         newsView = view
+
+        guard let token: String = userService.currentUser()?.accessToken else {
+            #if DEBUG
+                fatalError("Cannot create the NewsPresenter without a token")
+            #else
+                return
+            #endif
+        }
+
+        newsService = NewsService(withToken: token)
     }
 
     //MARK: - user interaction methods
 
     func showLessonsView(){
-        newsView?.navigateToLessons()
+
     }
 
     func showProfile(){
-        newsView?.navigateToProfile()
+
     }
 
-    func togglePreferredNews(withNews news: News){
-        //newsService.togglePreferredNews(withNews:news)
-        newsView?.togglePreferredNews(withNews : news, andColor: UIColor.yellow)
+    func markNewsAsFavourite(byId newsId: String) {
+        newsService?.addNewsToFavorites(byId: newsId, onSuccess: updateNewsView)
     }
 
     func showNewsDetail(withNews news: News){
@@ -49,22 +59,30 @@ class NewsPresenter: BasePresenter {
     }
 
     func shareNews(withNews news: News){
-        newsView?.shareNews(withNews: news)
+        
     }
 
-    func loadNews(withQueryString queryString: String?=nil){
+    func loadNews(withQueryString queryString: String? = nil){
 
-//        if let string = queryString{
-//            newsService?.searchLessons(withKeyword: string, onSuccess: displayLessons)  
-//        } else {
-//            newsService?.all(onSuccess: displayLessons)
-//        }
+        if let string = queryString{
+            newsService?.searchNewses(withKeyword: string, onSuccess: displayNews)
+        } else {
+            newsService?.all(onSuccess: displayNews)
+        }
     }
     
     //MARK: - private methods
     
-    func displayLessons(withLessons lessons : [Lesson]){
-//        newsView?.displayLessons(withLessonList: lessons)
+    func displayNews(withNews news : [News]) {
+        newsView?.displayNews(withNewsList: news)
+    }
+
+    func updateNewsView(news: News) {
+        if let index = newsList.index(where: { n in n.newsId == news.newsId }) {
+            newsView?.updateNewsView(news: news, atIndex: index)
+        } else {
+            newsView?.displayNews(withNewsList: newsList)
+        }
     }
 
 }

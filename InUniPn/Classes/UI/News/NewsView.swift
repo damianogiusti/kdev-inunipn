@@ -6,18 +6,13 @@
 //  Copyright © 2017 KDev. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol NewsView: BaseView {
+
     func navigateToDetailNews(withNews: News)
-
-    func navigateToProfile()
-
-    func navigateToLessons()
-
-    func shareNews(withNews : News)
 
     func displayNews(withNewsList: [News])
 
-    func togglePreferredNews(withNews : News, andColor color : UIColor)
+    func updateNewsView(news: News, atIndex index: Int)
 }
