@@ -14,7 +14,7 @@ class NewsPresenter: BasePresenter {
     
     //MARK: - services
     
-    private var newsService : NewsInMemoryRepo = NewsInMemoryRepo()
+    private var newsService : NewsInMemoryDatasource = NewsInMemoryDatasource()
     
     private let userService : UserService = UserService()
     
