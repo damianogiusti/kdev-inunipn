@@ -21,6 +21,8 @@ class Lesson {
     var type: String?
     var area: Int?
 
+    var joined: Bool = false
+
     init(withId lessonId: String) {
         self.lessonId = lessonId
     }
