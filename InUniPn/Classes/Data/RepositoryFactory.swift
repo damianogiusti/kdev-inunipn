@@ -10,7 +10,9 @@ import Foundation
 
 class RepositoryFactory {
 
-    static let usersRepository: UsersRepository = UsersInMemoryRepo()
+    static func usersRepository() -> UsersRepository {
+        return UsersRepoImpl()
+    }
 
     static func newsRepository(withToken token: String) -> NewsRepository {
         return NewsRepositoryImpl(withToken: token)

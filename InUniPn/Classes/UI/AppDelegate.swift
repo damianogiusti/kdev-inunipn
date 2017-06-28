@@ -28,12 +28,26 @@ func runOnUiThread(operations: @escaping () -> Void) {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    fileprivate let userService = UserService()
+
     var window: UIWindow?
+    var mainStoryboard: UIStoryboard?
+    var loginStoryboard: UIStoryboard?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         // Facebook init
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
+        mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+
+        if let user = userService.currentUser() {
+            print(user.accessToken ?? "")
+            window?.rootViewController = mainStoryboard?.instantiateInitialViewController()
+        } else {
+            window?.rootViewController = loginStoryboard?.instantiateInitialViewController()
+        }
 
         return true
     }
