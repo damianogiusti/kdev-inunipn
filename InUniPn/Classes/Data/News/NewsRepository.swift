@@ -21,8 +21,5 @@ protocol NewsRepository: class {
     func save(news: News) -> Bool
     
     func delete(byId id: String) -> Bool
-    
-    
-    
-    
+
 }
