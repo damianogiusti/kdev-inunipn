@@ -55,6 +55,13 @@
     <string>1366327886779287</string>
     <key>FacebookDisplayName</key>
     <string>uniPN</string>
+    
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
 
 </dict>
 </plist>
