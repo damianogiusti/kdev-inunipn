@@ -12,8 +12,6 @@ class ProfilePresenter: BasePresenter {
     
     //MARK: - variables
     
-    
-    
     private var profileView : ProfileView?
     
     func create(withView view: ProfileView) {
@@ -27,17 +25,21 @@ class ProfilePresenter: BasePresenter {
     
     }
 
-//MARK: - private methods
+    //MARK: - private methods
 
-private func onNewsList(withNewsList newses: [ News] ){
-    profileView?.myPreferedNewsList(withNewsList: newses, andColor: UIColor.yellow)
-}
+    private func onNewsList(withNewsList newses: [News]) {
+        profileView?.myPreferedNewsList(withNewsList: newses, andColor: UIColor.yellow)
+    }
 
-private func onLessonsList(withLessonsList lessons: [Lesson]){
-    profileView?.myJoinedLessonsList(withLessonsList : lessons, andColor: UIColor.yellow)
-}
+    private func onLessonsList(withLessonsList lessons: [Lesson]) {
+        profileView?.myJoinedLessonsList(withLessonsList : lessons, andColor: UIColor.yellow)
+    }
 
-private func onSettingsForm(_: Any){
-    profileView?.navigateToSettingsForm()
-}
+    private func onSettingsForm(_: Any) {
+        profileView?.navigateToSettingsForm()
+        
+    private func onNewsList(_ : Any){
+        profileView?.newsList(withError: nil)
+    }
+
 }
