@@ -6,17 +6,22 @@
 //  Copyright © 2017 KDev. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class News {
     
-    let newsId:String
+    let newsId: String
     
     var title: String?
     var content: String?
-    var date: String?
-    var image: String?
-    var star: Bool = false
+    var createdDate: Date?
+    var updatedDate: Date?
+    var imageUrl: String?
+    var link: String?
+
+    var page: Int = 0
+
+    var starred: Bool = false
     
     init(withId id: String) {
         self.newsId = id

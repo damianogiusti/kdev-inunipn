@@ -9,14 +9,7 @@
 import Alamofire
 import SwiftyJSON
 
-class LessonsRestDatasource: RestCapable {
-
-    private lazy var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "it_IT")
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSSZ"
-        return dateFormatter
-    }()
+class LessonsRestDatasource: RestCapable, DateFormatCapable {
 
     private let token: String
 
@@ -46,9 +39,9 @@ class LessonsRestDatasource: RestCapable {
                 lesson.name = c["name"].stringValue
                 lesson.teacher = c["prof"].stringValue
                 lesson.classroom = c["class"].stringValue
-                lesson.date = dateFormatter.date(from: c["date"].stringValue)
-                lesson.timeStart = dateFormatter.date(from: c["time_start"].stringValue)
-                lesson.timeEnd = dateFormatter.date(from: c["time_end"].stringValue)
+                lesson.date = dateFromString(isoTimestamp: c["date"].stringValue)
+                lesson.timeStart = dateFromString(isoTimestamp: c["time_start"].stringValue)
+                lesson.timeEnd = dateFromString(isoTimestamp: c["time_end"].stringValue)
                 lesson.course = c["course"].stringValue
                 lesson.area = c["area"].intValue
                 lessons.append(lesson)
