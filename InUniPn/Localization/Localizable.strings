@@ -10,6 +10,8 @@
 //MARK: - messages
 
 "Fill all fields" = "Please fill all the required fields";
+"University" = "University";
+"Pick university" = "Select the university you are attending";
 
 //MARK: - errors
 
@@ -18,3 +20,12 @@
 "Error while signin up" = "An error occourred while signin up, try again later";
 
 //MARK: - strings
+
+"Name" = "Name";
+"Name placeholder" = "Mario Rossi";
+"Email" = "Email address";
+"Email placeholder" = "example@unipn.it";
+"Password" = "Password";
+"Confirm password" = "Confirm password";
+"Confirm password placeholder" = "Repeat your password";
+

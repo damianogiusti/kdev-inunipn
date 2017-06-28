@@ -69,13 +69,14 @@ class LoginViewController: UIViewController, LoginView {
     func navigateToRegistration() {
         let modalViewController = UIStoryboard(name: "Registration", bundle: nil).instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
         
-        //let modalViewController = RegistrationViewController()
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)
     }
     
     func navigateToHome() {
-        debugPrint("Congrats, you are supposed to be redirected to the home")
+        let homeController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        
+        present(homeController, animated: true, completion: nil)
     }
     
     func showError(withError error: String) {
@@ -87,11 +88,17 @@ class LoginViewController: UIViewController, LoginView {
     }
     
     func askUniversity(withError: String?) {
-        debugPrint("Asking university...")
+        let unis = [University]()
         
-        let sheet = UIAlertController(title: "Università", message: "Boh messaggio", preferredStyle: .actionSheet)
+        let sheet = UIAlertController(title: Strings.university, message: Strings.pickUniversity, preferredStyle: .actionSheet)
         
-        sheet.addAction(UIAlertAction(title: "Uno", style: .default, handler: { view in
+        unis.forEach { uni in
+            sheet.addAction(UIAlertAction(title: uni.code, style: .default, handler: { view in
+                self.navigateToHome()
+            }))
+        }
+        
+        sheet.addAction(UIAlertAction(title: "placeholder", style: .default, handler: { view in
             self.navigateToHome()
         }))
         
