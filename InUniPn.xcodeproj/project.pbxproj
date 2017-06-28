@@ -46,6 +46,12 @@
 		654F01181F010D7C0002D171 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01161F010D7C0002D171 /* LoginView.swift */; };
 		654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01191F010EC20002D171 /* RegistrationPresenter.swift */; };
 		654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F011B1F010EE60002D171 /* RegistrationView.swift */; };
+
+		655AEDC71F03A21B00C1CBEE /* NewsInMemoryDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655AEDC61F03A21B00C1CBEE /* NewsInMemoryDatasource.swift */; };
+		655AEDC91F03A2E000C1CBEE /* LessonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655AEDC81F03A2E000C1CBEE /* LessonPresenter.swift */; };
+		655AEDCB1F03A2FC00C1CBEE /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655AEDCA1F03A2FC00C1CBEE /* LessonView.swift */; };
+
+
 		65914E0D1F013AF100FD1EB0 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E0C1F013AF100FD1EB0 /* News.swift */; };
 		65914E0F1F013B2800FD1EB0 /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E0E1F013B2800FD1EB0 /* NewsRepository.swift */; };
 		65914E111F013B5400FD1EB0 /* NewsInMemoryDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E101F013B5400FD1EB0 /* NewsInMemoryDatasource.swift */; };
@@ -111,6 +117,11 @@
 		654F01161F010D7C0002D171 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Login/LoginView.swift; sourceTree = "<group>"; };
 		654F01191F010EC20002D171 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		654F011B1F010EE60002D171 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+
+		655AEDC61F03A21B00C1CBEE /* NewsInMemoryDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInMemoryDatasource.swift; sourceTree = "<group>"; };
+		655AEDC81F03A2E000C1CBEE /* LessonPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonPresenter.swift; sourceTree = "<group>"; };
+		655AEDCA1F03A2FC00C1CBEE /* LessonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
+
 		65914E0C1F013AF100FD1EB0 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		65914E0E1F013B2800FD1EB0 /* NewsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
 		65914E101F013B5400FD1EB0 /* NewsInMemoryDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInMemoryDatasource.swift; sourceTree = "<group>"; };
@@ -295,6 +306,8 @@
 			children = (
 				9B0FC28E1F0149CD000815BB /* Lessons.storyboard */,
 				9B0FC2901F014B6C000815BB /* LessonsViewController.swift */,
+				655AEDC81F03A2E000C1CBEE /* LessonPresenter.swift */,
+				655AEDCA1F03A2FC00C1CBEE /* LessonView.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -601,6 +614,7 @@
 			files = (
 				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
 				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
+				655AEDC91F03A2E000C1CBEE /* LessonPresenter.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
 				558C9B061F01397000930655 /* Lesson.swift in Sources */,
 				654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */,
@@ -635,6 +649,7 @@
 				558C9AFF1F01304E00930655 /* RestCapable.swift in Sources */,
 				558C9B0A1F013CD700930655 /* LessonsRepoImpl.swift in Sources */,
 				654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */,
+				655AEDCB1F03A2FC00C1CBEE /* LessonView.swift in Sources */,
 				65914E0F1F013B2800FD1EB0 /* NewsRepository.swift in Sources */,
 				654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */,
 				65C6E2511F038FA6002F9E7F /* NewsView.swift in Sources */,
