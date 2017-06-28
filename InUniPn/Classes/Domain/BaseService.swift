@@ -6,7 +6,6 @@
 //  Copyright © 2017 KDev. All rights reserved.
 //
 
-import Alamofire
 import SwiftyJSON
 
 class BaseService {

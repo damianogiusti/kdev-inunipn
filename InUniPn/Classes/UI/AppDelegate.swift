@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import FBSDKLoginKit
 
+typealias Strings = L10n
+
 typealias SuccessBlock<T> = (T) -> Void
 typealias ErrorBlock = (Error) -> Void
 
