@@ -64,6 +64,11 @@
 		9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FC2901F014B6C000815BB /* LessonsViewController.swift */; };
 		9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F11F03961200BF6548 /* News.storyboard */; };
 		9BC3E5F41F03964700BF6548 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F31F03964700BF6548 /* NewsViewController.swift */; };
+
+		9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */; };
+		9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F71F03A00400BF6548 /* Profile.storyboard */; };
+		9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +131,11 @@
 		9B0FC2901F014B6C000815BB /* LessonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
 		9BC3E5F11F03961200BF6548 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		9BC3E5F31F03964700BF6548 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+
+		9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9BC3E5F71F03A00400BF6548 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = InUniPn/Classes/UI/Main/Profile.storyboard; sourceTree = SOURCE_ROOT; };
+		9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = InUniPn/Classes/UI/Main/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+
 		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -306,6 +316,8 @@
 		558C9AD11F00FA5B00930655 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9BC3E5F71F03A00400BF6548 /* Profile.storyboard */,
+				9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -507,6 +519,7 @@
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
 
 				499027521F01140700D941A7 /* Registration.storyboard in Resources */,
+				9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */,
 				65914E161F015DC400FD1EB0 /* Localizable.strings in Resources */,
 
 				9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */,
@@ -640,6 +653,7 @@
 
 				558C9AF91F01043600930655 /* User.swift in Sources */,
 				558C9B041F01395900930655 /* LessonsRepository.swift in Sources */,
+				9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */,
 				558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */,
 				65914E131F01423000FD1EB0 /* NewsRepositoryImpl.swift in Sources */,
 			);
