@@ -83,6 +83,13 @@
                                         <constraint firstItem="981-NH-aIR" firstAttribute="top" secondItem="o39-a0-b5z" secondAttribute="topMargin" constant="16" id="x81-oN-wTS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentTextView" destination="LbU-r1-spj" id="npZ-80-tZ3"/>
+                                    <outlet property="favoriteButton" destination="ezc-Mj-aKI" id="aiT-RD-13n"/>
+                                    <outlet property="newsImageView" destination="9Tg-k4-YcV" id="Ipk-Iz-mia"/>
+                                    <outlet property="shareButton" destination="BiX-nY-Nlq" id="Uju-BR-JV0"/>
+                                    <outlet property="titleTextView" destination="981-NH-aIR" id="pb9-u2-y6g"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -93,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KS2-jV-VPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314.39999999999998" y="115.59220389805098"/>
+            <point key="canvasLocation" x="-785" y="123"/>
         </scene>
     </scenes>
     <resources>

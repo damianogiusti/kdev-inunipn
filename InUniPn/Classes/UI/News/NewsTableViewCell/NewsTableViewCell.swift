@@ -10,6 +10,13 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var titleTextView: UILabel!
+    @IBOutlet weak var contentTextView: UILabel!
+
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
