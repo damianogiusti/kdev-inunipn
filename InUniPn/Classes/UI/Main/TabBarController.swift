@@ -19,7 +19,7 @@ class TabBarController: UITabBarController {
         
         /// associo il controller delle news
         let newsStoryboard: UIStoryboard = UIStoryboard(name: "News", bundle: nil)
-        let newsViewController = newsStoryboard.instantiateViewController(withIdentifier: "NewsViewController") as! NewsViewController
+        let newsViewController = newsStoryboard.instantiateViewController(withIdentifier: String(describing: NewsTableViewController.self)) as! NewsTableViewController
         self.viewControllers?.insert(newsViewController, at: 0)
         
         

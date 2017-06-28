@@ -13,6 +13,9 @@ PODS:
   - FBSDKLoginKit (4.23.0):
     - FBSDKCoreKit
   - Former (1.5.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SwiftGen (4.2.1)
   - SwiftyJSON (3.1.4)
 
@@ -22,6 +25,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - Former
+  - SDWebImage (~> 3.8)
   - SwiftGen
   - SwiftyJSON
 
@@ -32,9 +36,10 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: d7829f5a69901cd7296105328e4c3c3fc7da6518
   FBSDKLoginKit: 6b92bd65f319d669d2b0730e49db495ef1660566
   Former: 0b48a812c0d93b092b908d1b0574d0fd95c6b6f9
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftGen: 2ba2a88fc6130b96e38e2baa0029e4bd222ffd85
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 0df4b9473234ee1a6c692ef5028dc3edd62e803f
+PODFILE CHECKSUM: 414e816cef92c7586f261b7f1bfd407840c480b0
 
 COCOAPODS: 1.2.1
