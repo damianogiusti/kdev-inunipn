@@ -66,6 +66,7 @@
 		9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */; };
 		9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F71F03A00400BF6548 /* Profile.storyboard */; };
 		9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */; };
+		9BC3E5FC1F03B37B00BF6548 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5FB1F03B37B00BF6548 /* LessonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9BC3E5F71F03A00400BF6548 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = InUniPn/Classes/UI/Main/Profile.storyboard; sourceTree = SOURCE_ROOT; };
 		9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = InUniPn/Classes/UI/Main/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		9BC3E5FB1F03B37B00BF6548 /* LessonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,6 +291,7 @@
 			children = (
 				9B0FC28E1F0149CD000815BB /* Lessons.storyboard */,
 				9B0FC2901F014B6C000815BB /* LessonsViewController.swift */,
+				9BC3E5FB1F03B37B00BF6548 /* LessonCell.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				65914E0D1F013AF100FD1EB0 /* News.swift in Sources */,
 				550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */,
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
+				9BC3E5FC1F03B37B00BF6548 /* LessonCell.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
 				9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */,
 				558C9B081F013C7700930655 /* LessonsInMemoryDatasource.swift in Sources */,
