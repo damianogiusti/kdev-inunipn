@@ -12,7 +12,46 @@ import Former
 class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     private lazy var former: Former = Former(tableView: self.tableView)
+    
+    private var nameInput = TextFieldRowFormer<FormTextFieldCell>() {
+            $0.titleLabel.text = Strings.name
+            $0.textField.textAlignment = .right
+            }.configure {
+                $0.placeholder = Strings.namePlaceholder
+        }
+    private var emailInput = TextFieldRowFormer<FormTextFieldCell>() {
+        $0.titleLabel.text = Strings.email
+        $0.textField.textAlignment = .right
+        $0.textField.keyboardType = .emailAddress
+        
+        }.configure {
+            $0.placeholder = Strings.emailPlaceholder
+    }
+    private var passwordInput = TextFieldRowFormer<FormTextFieldCell>() {
+        $0.titleLabel.text = Strings.password
+        $0.textField.textAlignment = .right
+        $0.textField.isSecureTextEntry = true
+        }.configure {
+            $0.placeholder = Strings.password
+    }
+    private var passwordConfirmInput = TextFieldRowFormer<FormTextFieldCell>() {
+        $0.titleLabel.text = Strings.confirmPassword
+        $0.textField.textAlignment = .right
+        $0.textField.isSecureTextEntry = true
+        }.configure {
+            $0.placeholder = Strings.confirmPassword
+    }
+    private var universityPicker = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
+        $0.titleLabel.text = Strings.university
+        }.configure { row in
+            row.pickerItems = (1...5).map {
+                InlinePickerItem(title: "Option \($0)", value: Int($0))
+            }
+        }.onValueChanged { item in
+            // Do Something
+    }
     
     private let registrationPresenter = RegistrationPresenter()
     
@@ -26,47 +65,6 @@ class RegistrationViewController: UIViewController {
     }
     
     private func setupForm() {
-        
-        let nameInput = TextFieldRowFormer<FormTextFieldCell>() {
-            $0.titleLabel.text = "Nome"
-            $0.textField.textAlignment = .right
-            }.configure {
-                $0.placeholder = "Mario Rossi"
-        }
-        
-        let emailInput = TextFieldRowFormer<FormTextFieldCell>() {
-            $0.titleLabel.text = "Indirizzo email"
-            $0.textField.textAlignment = .right
-            }.configure {
-                $0.placeholder = "example@unipn.it"
-        }
-        
-        let passwordInput = TextFieldRowFormer<FormTextFieldCell>() {
-            $0.titleLabel.text = "Password"
-            $0.textField.textAlignment = .right
-            $0.textField.isSecureTextEntry = true
-            }.configure {
-                $0.placeholder = "Password"
-        }
-        
-        let passwordConfirmInput = TextFieldRowFormer<FormTextFieldCell>() {
-            $0.titleLabel.text = "Conferma password"
-            $0.textField.textAlignment = .right
-            $0.textField.isSecureTextEntry = true
-            }.configure {
-                $0.placeholder = "Ripeti la password"
-        }
-        
-        let universityPicker = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
-            $0.titleLabel.text = "Università"
-            }.configure { row in
-                row.pickerItems = (1...5).map {
-                    InlinePickerItem(title: "Option \($0)", value: Int($0))
-                }
-            }.onValueChanged { item in
-                // Do Something
-        }
-        
         let section = SectionFormer(rowFormer: nameInput, emailInput, passwordInput, passwordConfirmInput, universityPicker)
         former.append(sectionFormer: section)
     }
@@ -78,7 +76,11 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func didConfirmRegistration(_ sender: Any) {
-        registrationPresenter.registerUser(withName: "", andEmail: "", andPassword: "", andConfirmationPassword: "", andUniversity: "")
+        registrationPresenter.registerUser(withName: nameInput.text ?? "",
+                                           andEmail: emailInput.text ?? "",
+                                           andPassword: passwordInput.text ?? "",
+                                           andConfirmationPassword: passwordConfirmInput.text ?? "",
+                                           andUniversity: "")
     }
     
 }
@@ -86,11 +88,17 @@ class RegistrationViewController: UIViewController {
 extension RegistrationViewController : RegistrationView {
     
     func navigateToHome() {
-        // go to home
+        let homeController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        
+        present(homeController, animated: true, completion: nil)
     }
     
     func navigateToLogin() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func onLoadedUniversities(withUniversities: [University]) {
+        //TODO
     }
     
     func showError(withError error : String) {

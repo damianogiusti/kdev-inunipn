@@ -12,7 +12,9 @@ class RepositoryFactory {
 
     static let usersRepository: UsersRepository = UsersInMemoryRepo()
 
-//    static let newsepositoruy: NewsRepository = NewsInMemoryDatasource()
+    static func newsRepository(withToken token: String) -> NewsRepository {
+        return NewsRepositoryImpl(withToken: token)
+    }
 
     static func universitiesRepository() -> UniversitiesRepository {
         return UniversitiesRepoImpl()

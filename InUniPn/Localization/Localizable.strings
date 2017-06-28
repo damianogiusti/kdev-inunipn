@@ -10,11 +10,37 @@
 //MARK: - messages
 
 "Fill all fields" = "Please fill all the required fields";
+"University" = "University";
+"Pick university" = "Select the university you are attending";
+
+"joined successfully" = "You have successfully joined the lesson";
+
+"unjoined successfully" = "You have successfully unjoined the lesson";
+
 
 //MARK: - errors
 
 "Error" = "Error";
+
+"Error joining lessons" = "Impossible to join this kind of lesson";
+
+"Error retrieving univeristies" = "An error occourred while retrieving universities, try again later";
+"Error retrieving lessons" = "An error occourred while retrieving lessons, try again later";
+"Error retrieving news" = "An error occourred while retrieving news, try again later";
+
 "Error while loggin in" = "An error occourred while loggin in, try again later";
 "Error while signin up" = "An error occourred while signin up, try again later";
 
+"Unknown error" = "An unknown error occourred, try again later";
+
+
 //MARK: - strings
+
+"Name" = "Name";
+"Name placeholder" = "Mario Rossi";
+"Email" = "Email address";
+"Email placeholder" = "example@unipn.it";
+"Password" = "Password";
+"Confirm password" = "Confirm password";
+"Confirm password placeholder" = "Repeat your password";
+

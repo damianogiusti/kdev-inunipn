@@ -13,14 +13,13 @@ protocol NewsRepository: class {
     init(withToken token: String)
     
     func news(byId id: String) -> News?
+
+    func news(ofPage page: Int) -> [News]
     
     func all() -> [News]
     
     func save(news: News) -> Bool
     
     func delete(byId id: String) -> Bool
-    
-    
-    
-    
+
 }

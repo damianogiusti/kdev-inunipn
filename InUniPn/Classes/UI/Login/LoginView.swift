@@ -14,5 +14,5 @@ protocol LoginView: BaseView {
     
     func navigateToHome()
     
-    func askUniversity(withError : String?)
+    func askUniversity(withUniversities: [University])
 }

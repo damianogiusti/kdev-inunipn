@@ -9,7 +9,7 @@
 import Foundation
 
 enum LessonsErrors: Error {
-    case lessonNotExisting, errorJoiningMultipleLessons
+    case lessonNotExisting, errorJoiningMultipleLessons, errorDeletingLesson
 }
 
 class LessonsService: BaseService {
@@ -20,6 +20,48 @@ class LessonsService: BaseService {
     init(withToken token: String) {
         self.token = token
         self.lessonsRepository = RepositoryFactory.lessonsRepository(withToken: token)
+    }
+
+    /// Gets all lessons
+    func all(onSuccess: @escaping SuccessBlock<[Lesson]>, onError: ErrorBlock? = nil) {
+        runInBackground {
+            let lessons = self.lessonsRepository.all()
+            runOnUiThread {
+                onSuccess(lessons)
+            }
+        }
+    }
+
+    /// Gets a lesson by a given ID
+    func lesson(byId id: String, onSuccess: @escaping SuccessBlock<Lesson>, onError: @escaping ErrorBlock) {
+        runInBackground {
+
+            if let lesson = self.lessonsRepository.lesson(byId: id) {
+                runOnUiThread {
+                    onSuccess(lesson)
+                }
+            } else {
+                runOnUiThread {
+                    onError(LessonsErrors.lessonNotExisting)
+                }
+            }
+        }
+    }
+
+    /// Deletes a lesson by a given ID
+    func deleteLesson(byId id: String, onSuccess: @escaping SuccessBlock<Void>, onError: @escaping ErrorBlock) {
+        runInBackground {
+
+            if self.lessonsRepository.delete(byId: id) {
+                runOnUiThread {
+                    onSuccess()
+                }
+            } else {
+                runOnUiThread {
+                    onError(LessonsErrors.errorDeletingLesson)
+                }
+            }
+        }
     }
 
     /// Joins a lesson
