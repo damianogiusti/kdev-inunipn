@@ -18,15 +18,15 @@ protocol RestCapable: class {
 
     func buildParameters(fromDictionary dict: [String: Any]?) -> Alamofire.Parameters?
 
-    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?,
+    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?, token: String?,
                      onSuccess: @escaping SuccessBlock<JSON>, onError: @escaping ErrorBlock)
 
-    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON>
+    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?, token: String?) -> DataResponse<JSON>
 
-    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?,
+    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?, token: String?,
                       onSuccess: @escaping SuccessBlock<JSON>, onError: @escaping ErrorBlock)
 
-    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON>
+    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?, token: String?) -> DataResponse<JSON>
 
 }
 
@@ -40,14 +40,23 @@ extension RestCapable {
         return params
     }
 
+    private func buildHeaders(token: String?) -> [String: String]? {
+        if let token = token {
+            return ["Authorization": "Bearer \(token)"]
+        }
+        return nil
+    }
 
-    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?,
+    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?, token: String? = nil,
                      onSuccess: @escaping SuccessBlock<JSON>, onError: @escaping ErrorBlock) {
+
+        let headers = buildHeaders(token: token)
 
         Alamofire.request(url,
                           method: .get,
                           parameters: parameters,
-                          encoding: URLEncoding.default)
+                          encoding: URLEncoding.default,
+                          headers: headers)
             .validate()
             .responseJSON { (response) in
                 if let error = response.error {
@@ -60,8 +69,11 @@ extension RestCapable {
     }
 
 
-    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON> {
-        let response = Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON()
+    func getRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?, token: String? = nil) -> DataResponse<JSON> {
+        let headers = buildHeaders(token: token)
+        let response = Alamofire
+            .request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .responseJSON()
         if let error = response.error {
             return DataResponse(withError: error)
         } else if let data = response.data {
@@ -71,13 +83,15 @@ extension RestCapable {
     }
 
 
-    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?,
+    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?, token: String? = nil,
                       onSuccess: @escaping SuccessBlock<JSON>, onError: @escaping ErrorBlock) {
 
+        let headers = buildHeaders(token: token)
         Alamofire.request(url,
                           method: .post,
                           parameters: parameters,
-                          encoding: URLEncoding.default)
+                          encoding: URLEncoding.default,
+                          headers: headers)
             .validate()
             .responseJSON { (response) in
                 if let error = response.error {
@@ -89,8 +103,11 @@ extension RestCapable {
     }
 
 
-    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?) -> DataResponse<JSON> {
-        let response = Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON()
+    func postRestCall(toUrl url: String, withParams parameters: Alamofire.Parameters?, token: String? = nil) -> DataResponse<JSON> {
+        let headers = buildHeaders(token: token)
+        let response = Alamofire
+            .request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .responseJSON()
         if let error = response.error {
             return DataResponse(withError: error)
         } else if let data = response.data {

@@ -15,6 +15,8 @@ enum Addresses: String {
     authRegistration = "/user/signup",
     authFacebook = "/user/facebook/login",
 
+    lessons = "/timetable",
+
     configUniversities = "/config"
 
     func url() -> String {
@@ -22,6 +24,8 @@ enum Addresses: String {
         case .authLogin: return ApiConfig.defaultProtocol + ApiConfig.baseApiUrl + self.rawValue
         case .authRegistration: return ApiConfig.defaultProtocol + ApiConfig.baseApiUrl + self.rawValue
         case .authFacebook: return ApiConfig.defaultProtocol + ApiConfig.baseApiUrl + self.rawValue
+
+        case .lessons: return ApiConfig.defaultProtocol + ApiConfig.baseApiUrl + self.rawValue
 
         case .configUniversities: return ApiConfig.defaultProtocol + ApiConfig.configApiUrl + self.rawValue
         }
@@ -34,10 +38,5 @@ fileprivate struct ApiConfig {
     static let baseApiUrl = "apiunipn.parol.in/V1"
     static let transportsApiUrl = "pn-transports.herokuapp.com/api/v1"
     static let configApiUrl = "damianogiusti.altervista.org/kdev"
-
-
-    static var baseUrl: String {
-        return "\(ApiConfig.defaultProtocol) "
-    }
 
 }
