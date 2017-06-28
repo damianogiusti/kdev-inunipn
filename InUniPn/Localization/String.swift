@@ -42,6 +42,8 @@ enum L10n {
   static let name = L10n.tr("Name")
   /// Mario Rossi
   static let namePlaceholder = L10n.tr("Name placeholder")
+  /// It seems that you have no news. Let's stay tuned!
+  static let noNewsPresent = L10n.tr("no news present")
   /// Password
   static let password = L10n.tr("Password")
   /// Select the university you are attending

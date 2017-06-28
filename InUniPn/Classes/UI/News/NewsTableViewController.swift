@@ -107,7 +107,11 @@ extension NewsTableViewController: UITableViewDataSource, UITableViewDelegate {
 
         cell.newsImageView.sd_setImage(with: URL(string: news.imageUrl ?? placeholderImage))
 
-        cell.shareButton.addTarget(self, action: #selector(favoriteButtonPressed(forNewsId:)), for: .touchUpInside)
+        cell.shareButton.tag = indexPath.row
+        cell.shareButton.addTarget(self, action: #selector(shareButtonPressed(_:)), for: .touchUpInside)
+
+        cell.starButton.tag = indexPath.row
+        cell.starButton.addTarget(self, action: #selector(favoriteButtonPressed(_:)), for: .touchUpInside)
 
         return cell
     }
@@ -124,12 +128,13 @@ extension NewsTableViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension NewsTableViewController {
 
-    @objc func favoriteButtonPressed(forNewsId newsId: String) {
+    @objc func favoriteButtonPressed(_ button: UIButton) {
+        let newsId = presenter.newsList[button.tag].newsId
         presenter.markNewsAsFavourite(byId: newsId)
     }
 
-    func shareButtonPressed(cell: NewsTableViewCell, shareButton button: UIButton) {
-        // share news
+    func shareButtonPressed(_ button: UIButton) {
+        //
     }
 }
 
