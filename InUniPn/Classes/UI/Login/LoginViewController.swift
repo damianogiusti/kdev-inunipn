@@ -26,10 +26,10 @@ class LoginViewController: UIViewController, LoginView {
     
     // Colors placeholder strings with semi-transparent white
     private func setupInputs() {
-        var tempStr = NSAttributedString(string: "esempio@unipn.it", attributes: [NSForegroundColorAttributeName:UIColor.white.withAlphaComponent(0.6)])
+        var tempStr = NSAttributedString(string: Strings.emailPlaceholder, attributes: [NSForegroundColorAttributeName:UIColor.white.withAlphaComponent(0.6)])
         inputEmail.attributedPlaceholder = tempStr
         
-        tempStr = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName:UIColor.white.withAlphaComponent(0.6)])
+        tempStr = NSAttributedString(string: Strings.password, attributes: [NSForegroundColorAttributeName:UIColor.white.withAlphaComponent(0.6)])
         inputPassword.attributedPlaceholder = tempStr
     }
     
@@ -59,7 +59,6 @@ class LoginViewController: UIViewController, LoginView {
                 self.showError(withError: error!.localizedDescription)
             }
         }
-        
     }
     
     @IBAction func didPressRegistration(_ sender: Any) {
@@ -88,19 +87,14 @@ class LoginViewController: UIViewController, LoginView {
     }
     
     func askUniversity(withUniversities universities : [University]) {
-        let unis = [University]()
         
         let sheet = UIAlertController(title: Strings.university, message: Strings.pickUniversity, preferredStyle: .actionSheet)
         
-        unis.forEach { uni in
+        universities.forEach { uni in
             sheet.addAction(UIAlertAction(title: uni.code, style: .default, handler: { view in
                 self.navigateToHome()
             }))
         }
-        
-        sheet.addAction(UIAlertAction(title: "placeholder", style: .default, handler: { view in
-            self.navigateToHome()
-        }))
         
         present(sheet, animated: true, completion: nil)
     }
