@@ -51,6 +51,15 @@ class LessonsRepoImpl: LessonsRepository {
         }
     }
 
+    func saveAll(lessons: [Lesson]) -> Bool {
+        for lesson in lessons {
+            if !save(lesson: lesson) {
+                return false
+            }
+        }
+        return true
+    }
+
     func delete(byId id: String) -> Bool {
         return false
     }

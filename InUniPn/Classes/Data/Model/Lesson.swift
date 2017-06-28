@@ -12,7 +12,7 @@ class Lesson {
 
     var lessonId: String
     var name: String?
-    var prof: String?
+    var teacher: String?
     var classroom: String?
     var date: Date?
     var timeStart: Date?

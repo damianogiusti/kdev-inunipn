@@ -18,6 +18,8 @@ protocol LessonsRepository: class {
 
     func save(lesson: Lesson) -> Bool
 
+    func saveAll(lessons: [Lesson]) -> Bool
+    
     func delete(byId id: String) -> Bool
 
 }
