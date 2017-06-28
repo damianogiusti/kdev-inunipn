@@ -10,11 +10,15 @@ import UIKit
 
 protocol NewsView: BaseView {
 
-    func navigateToDetailNews(withNews: News);
+    func navigateToDetailNews(withNews: News)
     
-    func shareNews(withNews : News);  
+    func navigateToProfile()
     
-    func displayNews(withNewsList: [News]);
+    func navigateToLessons()
     
-    func togglePreferredNews(withNews : News, andColor color : UIColor);
+    func shareNews(withNews : News)  
+    
+    func displayNews(withNewsList: [News])
+    
+    func togglePreferredNews(withNews : News, andColor color : UIColor)
 }
