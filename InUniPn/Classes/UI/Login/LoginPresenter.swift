@@ -73,7 +73,7 @@ class LoginPresenter: BasePresenter {
     }
     
     private func onLoginError(_ : Any){
-        loginView?.showError(withError: "Errore nel login, riprovare tra qualche moemnto")
+        loginView?.showError(withError: "Errore nel login, riprovare tra qualche momento")
     }
     
     private func onCredentialsAreInvalid(){
