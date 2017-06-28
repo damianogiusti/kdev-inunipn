@@ -7,5 +7,12 @@ target 'InUniPn' do
 
   # Pods for InUniPn
   pod 'Alamofire'
+  pod 'Alamofire-Synchronous'
   pod 'SwiftyJSON'
+  pod 'Former'
+
+  pod 'SwiftGen'
+
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
 end

@@ -12,13 +12,19 @@ class LoginPresenter: BasePresenter {
     
     //MARK: - variables
     
+    //MARK: - services
+    
     private var authManager : AuthenticationManager = AuthenticationManager()
+    
+    private let userService : UserService = UserService()
+    
+    //MARK: - view
     
     private var loginView : LoginView? 
     
     //MARK: - overrided methods
     
-    func create(view: LoginView) {
+    func create(withView view: LoginView) {
         loginView = view
     }
     
@@ -31,7 +37,6 @@ class LoginPresenter: BasePresenter {
         }
         else{
             authManager.loginUser(
-                usingSocial: false,
                 withName: name, 
                 andPassword: password, 
                 onSuccess: onLoginSuccess, 
@@ -40,31 +45,39 @@ class LoginPresenter: BasePresenter {
         }
     }
     
-    func loginUserWithFacebook(withName name: String, andPassword password: String) {
-        authManager.loginUser(
-            usingSocial: true,
-            withName: name, 
-            andPassword: password, 
-            onSuccess: onLoginSuccess, 
-            onError: onLoginError
-        )    
+    func loginUserWithFacebook(withToken token: String) {
+         authManager.socialLogin(withToken: token, onSuccess: onSocialLoginSuccess, onError: onLoginError)
     }
     
     func registerUser() {
         loginView?.navigateToRegistration()
     }
     
+    func setUniversity(withName name : String){
+        if(name.isEmpty){
+            loginView?.askUniversity(withError: Strings.fillAllFields)
+        }
+        else{
+           //user_addUniversity 
+        }
+    }
     
-    func onLoginSuccess(_ : Any){
+    //MARK: - private methods
+    
+    private func onSocialLoginSuccess(_ : Any){
+        loginView?.askUniversity(withError: nil)
+    }
+    
+    private func onLoginSuccess(_ : Any){
         loginView?.navigateToHome()
     }
     
-    func onLoginError(_ : Any){
-        loginView?.showError(withError: "Errore nel login, riprovare tra qualche moemnto")
+    private func onLoginError(_ : Any){
+        loginView?.showError(withError: Strings.errorWhileLogginIn)
     }
     
-    func onCredentialsAreInvalid(){
-        loginView?.showError(withError: "Completare tutti i campi")
+    private func onCredentialsAreInvalid(){
+        loginView?.showError(withError: Strings.fillAllFields)
     }
     
 }

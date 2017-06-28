@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  RegistrationView.swift
 //  InUniPn
 //
 //  Created by Andrea Minato on 26/06/17.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-protocol LoginView: BaseView {
-    
-    func navigateToRegistration()
+protocol RegistrationView: BaseView {
     
     func navigateToHome()
     
-    func askUniversity(withError : String?)
+    func navigateToLogin()
+
 }

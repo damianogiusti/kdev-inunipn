@@ -6,10 +6,11 @@
 //  Copyright © 2017 KDev. All rights reserved.
 //
 
-import UIKit
+import SwiftyJSON
 
 class BaseService {
 
+    
     
 
 }
