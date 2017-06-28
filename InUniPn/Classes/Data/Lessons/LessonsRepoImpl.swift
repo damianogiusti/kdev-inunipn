@@ -25,9 +25,12 @@ class LessonsRepoImpl: LessonsRepository {
             return memoryDatasource.lesson(byId: id)
         } else {
             memoryDatasource.deleteAll()
-            memoryDatasource.saveAll(lessons: restDatasource.all())
-            memoryDatasource.renew()
-            return memoryDatasource.lesson(byId: id)
+            if let lessons = restDatasource.all().data {
+                memoryDatasource.saveAll(lessons: lessons)
+                memoryDatasource.renew()
+                return memoryDatasource.lesson(byId: id)
+            }
+            return nil
         }
     }
 
@@ -35,11 +38,13 @@ class LessonsRepoImpl: LessonsRepository {
         if !memoryDatasource.isExpired() {
             return memoryDatasource.all()
         } else {
-            let lessons = restDatasource.all()
             memoryDatasource.deleteAll()
-            memoryDatasource.saveAll(lessons: lessons)
-            memoryDatasource.renew()
-            return lessons
+            if let lessons = restDatasource.all().data {
+                memoryDatasource.saveAll(lessons: lessons)
+                memoryDatasource.renew()
+                return lessons
+            }
+            return []
         }
     }
 

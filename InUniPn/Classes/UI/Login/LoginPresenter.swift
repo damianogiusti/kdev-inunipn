@@ -10,6 +10,7 @@ import UIKit
 
 class LoginPresenter: BasePresenter {
 
+
     //MARK: - services
 
     private var authManager : AuthenticationManager = AuthenticationManager()
@@ -52,8 +53,6 @@ class LoginPresenter: BasePresenter {
     func registerUser() {
         loginView?.navigateToRegistration()
     }
-
-
 
     func setUniversity(withName name : String){
         if(name.isEmpty){

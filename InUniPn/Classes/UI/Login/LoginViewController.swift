@@ -34,15 +34,16 @@ class LoginViewController: UIViewController {
     }
     
     private func getFBUserData(){
-        if FBSDKAccessToken.current() != nil {
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"])
-                .start(completionHandler: { (connection, result, error) -> Void in
-                    if error == nil {
-                        self.loginPresenter.loginUserWithFacebook(withToken: FBSDKAccessToken.current().tokenString)
-                        //everything works print the user data
-                        //                    print(result)
-                    }
-                })
+        if let token = FBSDKAccessToken.current() {
+            self.loginPresenter.loginUserWithFacebook(withToken: token.tokenString)
+//            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"])
+//                .start(completionHandler: { (connection, result, error) -> Void in
+//                    if error == nil {
+//                        self.loginPresenter.loginUserWithFacebook(withToken: FBSDKAccessToken.current().tokenString)
+//                        //everything works print the user data
+//                        debugPrint(result!)
+//                    }
+//                })
         }
     }
     
@@ -54,17 +55,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didPressFacebook(_ sender: Any) {
-        FBSDKLoginManager()
-            .logIn(withReadPermissions: ["email"], from: self) { (result, error) -> Void in
-                if error == nil {
-                    let fbloginresult : FBSDKLoginManagerLoginResult = result!
-                    if fbloginresult.grantedPermissions.contains("email") {
-                        self.getFBUserData()
-                    }
-                } else {
-                    self.showError(withError: error!.localizedDescription)
+        let loginManager = FBSDKLoginManager()
+        loginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error == nil {
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                if fbloginresult.grantedPermissions.contains("email") {
+                    self.getFBUserData()
                 }
+            } else {
+                debugPrint(error!.localizedDescription)
+                self.showError(withError: error!.localizedDescription)
+            }
         }
+        
     }
     
     @IBAction func didPressRegistration(_ sender: Any) {

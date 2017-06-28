@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum Tabs:Int {
-    case news,lessons,profile
-}
-
-let tabsNumber = Range<Int>(0..<3)
-
 
 class TabBarController: UITabBarController {
 
