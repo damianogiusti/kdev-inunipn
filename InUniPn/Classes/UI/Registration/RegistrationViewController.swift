@@ -9,23 +9,22 @@
 import UIKit
 import Former
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, RegistrationView {
     
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var former: Former = Former(tableView: self.tableView)
     
     private var nameInput = TextFieldRowFormer<FormTextFieldCell>() {
-            $0.titleLabel.text = Strings.name
-            $0.textField.textAlignment = .right
-            }.configure {
-                $0.placeholder = Strings.namePlaceholder
-        }
+        $0.titleLabel.text = Strings.name
+        $0.textField.textAlignment = .right
+        }.configure {
+            $0.placeholder = Strings.namePlaceholder
+    }
     private var emailInput = TextFieldRowFormer<FormTextFieldCell>() {
         $0.titleLabel.text = Strings.email
         $0.textField.textAlignment = .right
         $0.textField.keyboardType = .emailAddress
-        
         }.configure {
             $0.placeholder = Strings.emailPlaceholder
     }
@@ -46,9 +45,7 @@ class RegistrationViewController: UIViewController {
     private var universityPicker = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
         $0.titleLabel.text = Strings.university
         }.configure { row in
-            row.pickerItems = (1...5).map {
-                InlinePickerItem(title: "Option \($0)", value: Int($0))
-            }
+            
         }.onValueChanged { item in
             // Do Something
     }
@@ -58,9 +55,10 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-
+        
         registrationPresenter.create(withView: self)
-        setupForm()
+        registrationPresenter.retireveUniversity()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -83,10 +81,6 @@ class RegistrationViewController: UIViewController {
                                            andUniversity: "")
     }
     
-}
-
-extension RegistrationViewController : RegistrationView {
-    
     func navigateToHome() {
         let homeController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
         
@@ -98,7 +92,13 @@ extension RegistrationViewController : RegistrationView {
     }
     
     func onLoadedUniversities(withUniversities: [University]) {
-        //TODO
+        universityPicker.configure(handler: { row in
+            row.pickerItems = withUniversities.enumerated().map { index, uni in
+                InlinePickerItem(title: uni.code ?? "", value: Int(index))
+            }
+        })
+        
+        setupForm()
     }
     
     func showError(withError error : String) {
@@ -108,5 +108,5 @@ extension RegistrationViewController : RegistrationView {
     func showMessage(withMessage message : String) {
         displayAlert(withMessage: message)
     }
-
+    
 }
