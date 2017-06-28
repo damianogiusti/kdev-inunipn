@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LessonPresenter: BasePresenter {
     
     //MARK: - variables
@@ -94,6 +95,9 @@ class LessonPresenter: BasePresenter {
     //MARK: - private methods
     
     func displayLessons(withLessons lessons : [Lesson]){
+        
+        let xxx: [String: [Lesson]] = lessons.categorise({ l in l.date?.description ?? "" })   
+        print(xxx)
         lessonView?.displayLessons(withLessonList: lessons)
     }
     
