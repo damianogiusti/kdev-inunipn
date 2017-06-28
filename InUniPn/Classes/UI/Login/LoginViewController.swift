@@ -97,7 +97,7 @@ extension LoginViewController : LoginView {
         displayAlert(withMessage: message)
     }
     
-    func askUniversity(withError: String?) {
+    func askUniversity(withUniversities universities : [University]) {
         let sheet = UIAlertController(title: "Università", message: "Boh messaggio", preferredStyle: .actionSheet)
         
         sheet.addAction(UIAlertAction(title: "Annulla", style: .cancel, handler: { view in

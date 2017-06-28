@@ -14,12 +14,20 @@ import Foundation
 enum L10n {
   /// Error
   static let error = L10n.tr("Error")
+  /// Impossible to join this kind of lesson
+  static let errorJoiningLessons = L10n.tr("Error joining lessons")
+  /// An error occourred while retrieving universities, try again later
+  static let errorRetrievingUniveristies = L10n.tr("Error retrieving univeristies")
   /// An error occourred while loggin in, try again later
   static let errorWhileLogginIn = L10n.tr("Error while loggin in")
   /// An error occourred while signin up, try again later
   static let errorWhileSigninUp = L10n.tr("Error while signin up")
   /// Please fill all the required fields
   static let fillAllFields = L10n.tr("Fill all fields")
+  /// You have successfully joined the lesson
+  static let joinedSuccessfully = L10n.tr("joined successfully")
+  /// You have successfully unjoined the lesson
+  static let unjoinedSuccessfully = L10n.tr("unjoined successfully")
 }
 
 extension L10n {
