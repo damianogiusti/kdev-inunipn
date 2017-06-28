@@ -19,9 +19,13 @@
 //MARK: - errors
 
 "Error" = "Error";
+
+"Error joining lessons" = "Impossible to join this kind of lesson";
+
+"Error retrieving univeristies" = "An error occourred while retrieving universities, try again later";
+
 "Error while loggin in" = "An error occourred while loggin in, try again later";
 "Error while signin up" = "An error occourred while signin up, try again later";
 
-"Error joining lessons" = "Impossible to join this kind of lesson";
 
 //MARK: - strings

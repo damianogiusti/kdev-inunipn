@@ -16,6 +16,8 @@ class LoginPresenter: BasePresenter {
     private var authManager : AuthenticationManager = AuthenticationManager()
 
     private let userService : UserService = UserService()
+    
+    private let universityService : UniversitiesServices = UniversitiesServices()
 
     //MARK: - view
 
@@ -56,7 +58,7 @@ class LoginPresenter: BasePresenter {
 
     func setUniversity(withName name : String){
         if(name.isEmpty){
-            loginView?.askUniversity(withError: Strings.fillAllFields)
+             universityService.all(onSuccess: askUniversity, onError: onErrorRetrievingUniversities)
         }
         else{
            //user_addUniversity
@@ -66,7 +68,8 @@ class LoginPresenter: BasePresenter {
     //MARK: - private methods
 
     private func onSocialLoginSuccess(_ : Any){
-        loginView?.askUniversity(withError: nil)
+        universityService.all(onSuccess: askUniversity, onError: onErrorRetrievingUniversities)
+        
     }
 
     func onLoginSuccess(_ : Any){
@@ -80,6 +83,14 @@ class LoginPresenter: BasePresenter {
 
     private func onCredentialsAreInvalid(){
         loginView?.showError(withError: Strings.fillAllFields)
+    }
+    
+    private func askUniversity(withUniversities universities: [University]){
+        loginView?.askUniversity(withUniversities: universities)
+    }
+    
+    private func onErrorRetrievingUniversities(error : Any){
+         loginView?.showError(withError: Strings.fillAllFields)
     }
 
 }
