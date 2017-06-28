@@ -16,7 +16,7 @@ class RegistrationPresenter: BasePresenter {
     
     private var registrationView : RegistrationView? 
     
-    //MARK: - overrided methods
+    //MARK: - lifecycle methods
     
     func create(withView view: RegistrationView) {
         registrationView = view
