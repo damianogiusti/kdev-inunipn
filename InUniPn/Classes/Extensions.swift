@@ -25,6 +25,10 @@ extension UIViewController {
         alert.addAction(cancelAction)
         present(alert, animated: true)
     }
+
+    var appDelegate: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 }
 
 extension String {

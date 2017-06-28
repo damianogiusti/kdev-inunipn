@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BaseView {
+protocol BaseView: class {
     
     func showError(withError error : String)
     
