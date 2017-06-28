@@ -22,7 +22,7 @@
 		551093BF1F02967200E44A07 /* UniversitiesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093BE1F02967200E44A07 /* UniversitiesServices.swift */; };
 		551093C31F0389B800E44A07 /* Addresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093C21F0389B800E44A07 /* Addresses.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
-		558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB81F00ECF400930655 /* ViewController.swift */; };
+		558C9ABA1F00ECF400930655 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB81F00ECF400930655 /* TabBarController.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
 		558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */; };
 		558C9AC11F00EFB800930655 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC01F00EFB800930655 /* AuthService.swift */; };
@@ -60,6 +60,10 @@
 		65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E66C441F00EA8D002F87A5 /* LaunchScreen.storyboard */; };
 		65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E66C4F1F00EF87002F87A5 /* BasePresenter.swift */; };
 		8916FFC2C9DE068B116FCFCA /* Pods_InUniPn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */; };
+		9B0FC28F1F0149CD000815BB /* Lessons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0FC28E1F0149CD000815BB /* Lessons.storyboard */; };
+		9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FC2901F014B6C000815BB /* LessonsViewController.swift */; };
+		9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F11F03961200BF6548 /* News.storyboard */; };
+		9BC3E5F41F03964700BF6548 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F31F03964700BF6548 /* NewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +82,7 @@
 		551093BE1F02967200E44A07 /* UniversitiesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesServices.swift; sourceTree = "<group>"; };
 		551093C21F0389B800E44A07 /* Addresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Addresses.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		558C9AB81F00ECF400930655 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		558C9AB81F00ECF400930655 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
 		558C9AC01F00EFB800930655 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -118,6 +122,10 @@
 		65E66C471F00EA8D002F87A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E66C4F1F00EF87002F87A5 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		91DA38B91E70341F2C6FB085 /* Pods-InUniPn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.release.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.release.xcconfig"; sourceTree = "<group>"; };
+		9B0FC28E1F0149CD000815BB /* Lessons.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lessons.storyboard; sourceTree = "<group>"; };
+		9B0FC2901F014B6C000815BB /* LessonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
+		9BC3E5F11F03961200BF6548 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		9BC3E5F31F03964700BF6548 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,7 +248,7 @@
 		558C9AB71F00ECF400930655 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				558C9AB81F00ECF400930655 /* ViewController.swift */,
+				558C9AB81F00ECF400930655 /* TabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -275,6 +283,8 @@
 		558C9ACC1F00FA5B00930655 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
+				9B0FC28E1F0149CD000815BB /* Lessons.storyboard */,
+				9B0FC2901F014B6C000815BB /* LessonsViewController.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -282,8 +292,13 @@
 		558C9ACF1F00FA5B00930655 /* News */ = {
 			isa = PBXGroup;
 			children = (
+
 				65C6E24E1F038F6B002F9E7F /* NewsPresenter.swift */,
 				65C6E2501F038FA6002F9E7F /* NewsView.swift */,
+
+				9BC3E5F11F03961200BF6548 /* News.storyboard */,
+				9BC3E5F31F03964700BF6548 /* NewsViewController.swift */,
+
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -490,8 +505,15 @@
 				65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */,
 				49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */,
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
+
 				499027521F01140700D941A7 /* Registration.storyboard in Resources */,
 				65914E161F015DC400FD1EB0 /* Localizable.strings in Resources */,
+
+				9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */,
+				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
+				558C9AF21F01040A00930655 /* placeholder in Resources */,
+				9B0FC28F1F0149CD000815BB /* Lessons.storyboard in Resources */,
+
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,7 +546,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		98E364E588071FED916A149A /* [CP] Copy Pods Resources */ = {
@@ -572,11 +594,15 @@
 				654EC6A31F02536300E930BC /* String.swift in Sources */,
 				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
 				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
+
 				551093C31F0389B800E44A07 /* Addresses.swift in Sources */,
 				558C9B021F01329300930655 /* UserService.swift in Sources */,
 				65914E0D1F013AF100FD1EB0 /* News.swift in Sources */,
 				550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */,
 				558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */,
+
+				558C9ABA1F00ECF400930655 /* TabBarController.swift in Sources */,
+
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
 				558C9B081F013C7700930655 /* LessonsInMemoryDatasource.swift in Sources */,
@@ -602,10 +628,16 @@
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
 				4990274E1F01125200D941A7 /* Extensions.swift in Sources */,
 				558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */,
+
 				65914E111F013B5400FD1EB0 /* NewsInMemoryDatasource.swift in Sources */,
 				551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */,
 				654F01181F010D7C0002D171 /* LoginView.swift in Sources */,
 				499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */,
+
+				9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */,
+				654F01181F010D7C0002D171 /* LoginView.swift in Sources */,
+				9BC3E5F41F03964700BF6548 /* NewsViewController.swift in Sources */,
+
 				558C9AF91F01043600930655 /* User.swift in Sources */,
 				558C9B041F01395900930655 /* LessonsRepository.swift in Sources */,
 				558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */,
