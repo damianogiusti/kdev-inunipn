@@ -29,6 +29,19 @@ class NewsRestDatasource: RestCapable, DateFormatCapable {
         return DataResponse(withError: RestError.apiError)
     }
 
+    func all(ofPage page: Int) -> DataResponse<[News]> {
+
+        let url = String(format: Addresses.newsForPage.url(), arguments: [page])
+        let response = getRestCall(toUrl: url, withParams: nil, token: token)
+        if let json = response.data {
+            let news = self.parseNews(from: json)
+            return DataResponse(withData: news)
+        } else if let error = response.error {
+            return DataResponse(withError: error)
+        }
+        return DataResponse(withError: RestError.apiError)
+    }
+
     private func parseNews(from json: JSON) -> [News] {
         var newsList: [News] = []
         let page = json["page"].intValue

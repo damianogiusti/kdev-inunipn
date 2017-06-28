@@ -34,7 +34,21 @@ class NewsRepositoryImpl: NewsRepository {
         }
 
     }
-    
+
+    func news(ofPage page: Int) -> [News] {
+        if !memoryDatasource.isExpired() {
+            return memoryDatasource.all().filter({ news in news.page == page })
+        } else {
+            memoryDatasource.deleteAll()
+            if let news = restDatasource.all(ofPage: page).data {
+                memoryDatasource.saveAll(newsList: news)
+                memoryDatasource.renew()
+                return memoryDatasource.all().filter({ news in news.page == page })
+            }
+            return []
+        }
+    }
+
     func all() -> [News] {
         if !memoryDatasource.isExpired() {
             return memoryDatasource.all()

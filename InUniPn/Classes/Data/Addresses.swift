@@ -17,6 +17,7 @@ enum Addresses: String {
 
     lessons = "/timetable",
     news = "/posts",
+    newsForPage = "/posts/%i",
 
     configUniversities = "/config"
 
