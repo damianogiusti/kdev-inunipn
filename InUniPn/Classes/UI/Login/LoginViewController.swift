@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, LoginView {
     
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
@@ -36,14 +36,6 @@ class LoginViewController: UIViewController {
     private func getFBUserData(){
         if let token = FBSDKAccessToken.current() {
             self.loginPresenter.loginUserWithFacebook(withToken: token.tokenString)
-//            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"])
-//                .start(completionHandler: { (connection, result, error) -> Void in
-//                    if error == nil {
-//                        self.loginPresenter.loginUserWithFacebook(withToken: FBSDKAccessToken.current().tokenString)
-//                        //everything works print the user data
-//                        debugPrint(result!)
-//                    }
-//                })
         }
     }
     
@@ -73,9 +65,6 @@ class LoginViewController: UIViewController {
     @IBAction func didPressRegistration(_ sender: Any) {
         loginPresenter.registerUser()
     }
-}
-
-extension LoginViewController : LoginView {
     
     func navigateToRegistration() {
         let modalViewController = UIStoryboard(name: "Registration", bundle: nil).instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
@@ -98,13 +87,13 @@ extension LoginViewController : LoginView {
     }
     
     func askUniversity(withError: String?) {
+        debugPrint("Asking university...")
+        
         let sheet = UIAlertController(title: "Università", message: "Boh messaggio", preferredStyle: .actionSheet)
         
-        sheet.addAction(UIAlertAction(title: "Annulla", style: .cancel, handler: { view in
-            sheet.dismiss(animated: true, completion: nil)
+        sheet.addAction(UIAlertAction(title: "Uno", style: .default, handler: { view in
+            self.navigateToHome()
         }))
-        
-        sheet.addAction(UIAlertAction(title: "Uno", style: .default, handler: nil))
         
         present(sheet, animated: true, completion: nil)
     }

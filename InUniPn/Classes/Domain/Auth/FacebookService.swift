@@ -36,7 +36,15 @@ class FacebookService: BaseService, RestCapable {
     private func onUserLoggedIn(json: JSON, onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock) {
         FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"])
             .start { (connection, result, error) in
-                print(result!)
+                
+                debugPrint(result ?? "")
+                if let error = error {
+                    debugPrint(error.localizedDescription)
+                } else if let result = result {
+                    let user = UserFactory.user(fromJson: JSON.init(object: result), withToken: "")
+                    debugPrint(user)
+                    onSuccess(user)
+                }
                 // create user
         }
     }

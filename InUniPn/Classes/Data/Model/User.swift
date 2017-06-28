@@ -7,8 +7,17 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class User {
+    
+    static let k_json_id = "id"
+    static let k_json_email = "email"
+    static let k_json_fullname = "name"
+    
+    static let k_json_picture = "picture"
+    static let k_json_picture_data = "data"
+    static let k_json_picture_url = "url"
 
     let userId: String
 
@@ -32,6 +41,15 @@ class UserFactory {
         user.email = email
         user.password = password
         user.accessToken = token
+        return user
+    }
+    
+    static func user(fromJson json: JSON, withToken token: String) -> User {
+        let user = User(withId: json[User.k_json_id].string ?? "")
+        user.displayName = json[User.k_json_fullname].string ?? ""
+        user.email = json[User.k_json_email].string ?? ""
+        user.accessToken = token
+        user.imageUrl = json[User.k_json_picture][User.k_json_picture_data][User.k_json_picture_url].string ?? ""
         return user
     }
 }
