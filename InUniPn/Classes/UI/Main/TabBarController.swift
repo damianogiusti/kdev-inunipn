@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+        
         /// rimuovo i controller generati dalla storyboard
         self.viewControllers?.removeAll()
         
@@ -28,6 +28,10 @@ class TabBarController: UITabBarController {
         let lessonsViewController = lessonsStoryboard.instantiateViewController(withIdentifier: "LessonsViewController") as! LessonsViewController
         self.viewControllers?.insert(lessonsViewController, at: 1)
 
+        /// associo il controller del profilo
+        let profileStoryboard: UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let profileViewController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.viewControllers?.insert(profileViewController, at: 2)
     }
 
     override func didReceiveMemoryWarning() {
