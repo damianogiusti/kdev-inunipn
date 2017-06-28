@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */; };
-		4990274E1F01125200D941A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990274D1F01125200D941A7 /* Extensions.swift */; };
 		499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990274F1F0113F000D941A7 /* RegistrationViewController.swift */; };
 		499027521F01140700D941A7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499027511F01140700D941A7 /* Registration.storyboard */; };
 		49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */; };
@@ -16,6 +15,7 @@
 		49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */; };
 		550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B31F03928C00F94A8C /* LessonsService.swift */; };
 		550EF2B61F03BB9900F94A8C /* DateFormatCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B51F03BB9900F94A8C /* DateFormatCapable.swift */; };
+		550EF2B81F03DDF800F94A8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B71F03DDF800F94A8C /* Extensions.swift */; };
 		551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B21F01624400E44A07 /* UniversitiesRepository.swift */; };
 		551093B51F01626200E44A07 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B41F01626200E44A07 /* University.swift */; };
 		551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */; };
@@ -69,11 +69,11 @@
 		9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */; };
 		9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F71F03A00400BF6548 /* Profile.storyboard */; };
 		9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */; };
+		B6A8E24D1F03A91D0013720E /* profileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8E24C1F03A91D0013720E /* profileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderTextField.swift; path = Designables/RoundedBorderTextField.swift; sourceTree = "<group>"; };
-		4990274D1F01125200D941A7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4990274F1F0113F000D941A7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		499027511F01140700D941A7 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +81,7 @@
 		49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderButton.swift; path = Designables/RoundedBorderButton.swift; sourceTree = "<group>"; };
 		550EF2B31F03928C00F94A8C /* LessonsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsService.swift; sourceTree = "<group>"; };
 		550EF2B51F03BB9900F94A8C /* DateFormatCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatCapable.swift; sourceTree = "<group>"; };
+		550EF2B71F03DDF800F94A8C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Classes/Extensions.swift; sourceTree = "<group>"; };
 		551093B21F01624400E44A07 /* UniversitiesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepository.swift; sourceTree = "<group>"; };
 		551093B41F01626200E44A07 /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepoImpl.swift; sourceTree = "<group>"; };
@@ -136,6 +137,9 @@
 		9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9BC3E5F71F03A00400BF6548 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = InUniPn/Classes/UI/Main/Profile.storyboard; sourceTree = SOURCE_ROOT; };
 		9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = InUniPn/Classes/UI/Main/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		B60214471F014750009E4EE5 /* ProfileSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileSettings.storyboard; path = InUniPn/Classes/UI/NewsDetail/ProfileSettings.storyboard; sourceTree = SOURCE_ROOT; };
+		B6A8E24A1F0399F10013720E /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = InUniPn/Classes/UI/NewsDetail/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
+		B6A8E24C1F03A91D0013720E /* profileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profileView.swift; path = InUniPn/Classes/UI/NewsDetail/profileView.swift; sourceTree = SOURCE_ROOT; };
 		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,7 +209,6 @@
 				558C9AB31F00ECF400930655 /* Data */,
 				558C9AB41F00ECF400930655 /* Domain */,
 				558C9AB51F00ECF400930655 /* UI */,
-				4990274D1F01125200D941A7 /* Extensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -316,8 +319,11 @@
 		558C9AD11F00FA5B00930655 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B60214471F014750009E4EE5 /* ProfileSettings.storyboard */,
+				B6A8E24A1F0399F10013720E /* ProfilePresenter.swift */,
 				9BC3E5F71F03A00400BF6548 /* Profile.storyboard */,
 				9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */,
+				B6A8E24C1F03A91D0013720E /* profileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			children = (
 				65914E141F015D9B00FD1EB0 /* Localization */,
 				558C9AB21F00ECF400930655 /* Classes */,
+				550EF2B71F03DDF800F94A8C /* Extensions.swift */,
 				65E66C3C1F00EA8D002F87A5 /* Main.storyboard */,
 				65E66C421F00EA8D002F87A5 /* Assets.xcassets */,
 				65E66C441F00EA8D002F87A5 /* LaunchScreen.storyboard */,
@@ -592,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
+				550EF2B81F03DDF800F94A8C /* Extensions.swift in Sources */,
 				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
 				651507421F03B8AC00C631D5 /* LessonPresenter.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
@@ -631,7 +639,7 @@
 				654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */,
 				65C6E2511F038FA6002F9E7F /* NewsView.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
-				4990274E1F01125200D941A7 /* Extensions.swift in Sources */,
+				B6A8E24D1F03A91D0013720E /* profileView.swift in Sources */,
 				558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */,
 				9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */,
 				9BC3E5F41F03964700BF6548 /* NewsViewController.swift in Sources */,

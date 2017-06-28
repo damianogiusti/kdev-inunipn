@@ -90,7 +90,7 @@ class LoginPresenter: BasePresenter {
     }
     
     private func onErrorRetrievingUniversities(error : Any){
-         loginView?.showError(withError: Strings.fillAllFields)
+         loginView?.showError(withError: Strings.errorRetrievingUniveristies)
     }
 
 }
