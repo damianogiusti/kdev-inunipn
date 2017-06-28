@@ -24,6 +24,10 @@ extension DateFormatCapable {
     }
 
     func dateFromString(isoTimestamp timestamp: String) -> Date? {
+        // normalize date required due to a bad API
+        if !timestamp.contains(".") {
+            return dateFormatter.date(from: timestamp.appending(".000Z"))
+        }
         return dateFormatter.date(from: timestamp)
     }
 }
