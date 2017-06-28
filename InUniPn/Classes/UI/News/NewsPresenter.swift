@@ -30,6 +30,14 @@ class NewsPresenter: BasePresenter {
     
     //MARK: - user interaction methods
     
+    func showLessonsView(){
+        newsView?.navigateToLessons()
+    }
+    
+    func showProfile(){
+        newsView?.navigateToProfile()
+    }
+    
     func togglePreferredNews(withNews news: News){
         //newsService.togglePreferredNews(withNews:news)
         newsView?.togglePreferredNews(withNews : news, andColor: UIColor.yellow)
