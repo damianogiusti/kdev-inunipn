@@ -22,7 +22,7 @@ class FacebookService: BaseService, RestCapable {
         ])
 
         postRestCall(toUrl: Addresses.authFacebook.url(), withParams: parameters, onSuccess: { [weak self] json in
-            self?.onUserLoggedIn(json: json, onSuccess: onSuccess, onError: onError)
+            self?.onUserLoggedIn(json: json, token: token, onSuccess: onSuccess, onError: onError)
         }, onError: onError)
 
     }
@@ -33,7 +33,7 @@ class FacebookService: BaseService, RestCapable {
         
     }
 
-    private func onUserLoggedIn(json: JSON, onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock) {
+    private func onUserLoggedIn(json: JSON, token: String, onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock) {
         FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"])
             .start { (connection, result, error) in
                 
@@ -41,8 +41,15 @@ class FacebookService: BaseService, RestCapable {
                 if let error = error {
                     debugPrint(error.localizedDescription)
                 } else if let result = result {
-                    let user = UserFactory.user(fromJson: JSON.init(object: result), withToken: "")
+                    let fbJson = JSON.init(object: result)
+                    let user = UserFactory.user(withId: json["id"].stringValue,
+                                                name: fbJson[User.k_json_id].stringValue,
+                                                email: fbJson[User.k_json_email].stringValue,
+                                                imageUrl: fbJson[User.k_json_picture][User.k_json_picture_data][User.k_json_picture_url].stringValue,
+                                                andToken: json["access_token"].stringValue)
+                    //let user = UserFactory.user(fromJson: JSON.init(object: result), withToken: json[""].stringValue)
                     debugPrint(user)
+                    
                     onSuccess(user)
                 }
                 // create user

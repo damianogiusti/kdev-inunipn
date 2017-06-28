@@ -22,7 +22,7 @@ class AuthService: BaseService, RestCapable {
         postRestCall(toUrl: Addresses.authLogin.url(), withParams: parameters, onSuccess: { (json) in
             // create user after successful login
             let response = AuthResponse(fromJson: json)
-            let user = UserFactory.user(withId: response.id, name: "", email: name, password: password, andToken: response.token)
+            let user = UserFactory.user(withId: response.id, name: "", email: name, imageUrl: "", andToken: response.token)
             onSuccess(user)
         }, onError: onError)
     }

@@ -24,7 +24,6 @@ class User {
     var accessToken: String?
     var displayName: String?
     var email: String?
-    var password: String?
     var imageUrl: String?
 
     init(withId id: String) {
@@ -35,11 +34,11 @@ class User {
 
 class UserFactory {
 
-    static func user(withId id: String, name: String, email: String, password: String, andToken token: String) -> User {
+    static func user(withId id: String, name: String, email: String, imageUrl: String, andToken token: String) -> User {
         let user = User(withId: id)
         user.displayName = name
         user.email = email
-        user.password = password
+        user.imageUrl = imageUrl
         user.accessToken = token
         return user
     }

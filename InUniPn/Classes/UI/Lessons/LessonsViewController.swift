@@ -8,28 +8,15 @@
 
 import UIKit
 
-class fakeLesson {
-    var start: String
-    var end: String
-    var lesson: String
-    var teacher: String
-    var classroom: String
-    
-    init (start: String, end: String, lesson: String, teacher: String, classroom: String) {
-        self.start = start
-        self.end = end
-        self.lesson = lesson
-        self.teacher = teacher
-        self.classroom = classroom
-    }
-}
 
-class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, LessonView{
     
     @IBOutlet var lessonsTableView: UITableView!
     let lessonCellIdentifier = "lessonCell"
     
-    var fakeData = [fakeLesson]()
+    private let lessonPresenter = LessonPresenter()
+    
+    var lessonList = [Lesson]()
     
     
     ///associo il tab item al controller
@@ -43,8 +30,8 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fakeData.append(fakeLesson(start: "10:00", end: "11:00", lesson: "Soft Skills", teacher: "Claudia Cilione", classroom: "Laboratorio L3"))
-        fakeData.append(fakeLesson(start: "09:00", end: "12:00", lesson: "Sviluppo in Android", teacher: "Giuseppe Merlino", classroom: "Laboratorio L3"))
+        lessonPresenter.create(withView: self)
+        lessonPresenter.loadLessons()
         
         lessonsTableView.delegate = self
         lessonsTableView.dataSource = self
@@ -66,21 +53,47 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fakeData.count
+        return lessonList.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:LessonCell = tableView.dequeueReusableCell(withIdentifier: lessonCellIdentifier, for: indexPath as IndexPath) as! LessonCell
         
-        let rowData = fakeData[indexPath.row]
-        cell.startTimeLabel?.text = rowData.start
-        cell.endTimeLabel?.text = rowData.end
-        cell.lessonLabel?.text = rowData.lesson
-        cell.teacherLabel?.text = rowData.teacher
-        cell.classroomLabel?.text = rowData.classroom
+        let lesson = lessonList[indexPath.row]
+        cell.startTimeLabel?.text = lesson.timeStart?.description
+        cell.endTimeLabel?.text = lesson.timeEnd?.description
+        cell.lessonLabel?.text = lesson.course
+        cell.teacherLabel?.text = lesson.teacher
+        cell.classroomLabel?.text = lesson.classroom
         
         return cell
     }
+    
+    func navigateToProfile() {
+        
+    }
+    
+    func navigateToNews() {
+        
+    }
+    
+    func displayLessons(withLessonList list: [Lesson]) {
+        lessonList = list
+        lessonsTableView.reloadData()
+    }
+    
+    func displayJoiningChoice(isAlreadyJoined : Bool) {
+        
+    }
+    
+    func showError(withError error : String) {
+        displayError(withMessage: error)
+    }
+    
+    func showMessage(withMessage message : String) {
+        displayAlert(withMessage: message)
+    }
+
     
 }

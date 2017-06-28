@@ -57,6 +57,7 @@ final class AuthenticationManager: AuthenticationProtocol {
         runInBackground { [weak self] in
             
             self?.facebookService.loginUser(withToken: token, onSuccess: { (user) in
+                _ = self?.usersRepository.save(user: user)
                 runOnUiThread {
                     onSuccess(user)
                 }
