@@ -9,7 +9,13 @@
 import UIKit
 
 protocol LessonView: BaseView {
-
     
+    func navigateToProfile()
+    
+    func navigateToNews()
+    
+    func displayLessons(withLessonList: [Lesson])
+    
+    func displayJoiningChoice(isAlreadyJoined : Bool)
     
 }
