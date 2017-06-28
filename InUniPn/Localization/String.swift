@@ -12,6 +12,14 @@ import Foundation
 // swiftlint:disable type_name
 
 enum L10n {
+  /// Confirm password
+  static let confirmPassword = L10n.tr("Confirm password")
+  /// Repeat your password
+  static let confirmPasswordPlaceholder = L10n.tr("Confirm password placeholder")
+  /// Email address
+  static let email = L10n.tr("Email")
+  /// example@unipn.it
+  static let emailPlaceholder = L10n.tr("Email placeholder")
   /// Error
   static let error = L10n.tr("Error")
   /// Impossible to join this kind of lesson
@@ -28,6 +36,16 @@ enum L10n {
   static let joinedSuccessfully = L10n.tr("joined successfully")
   /// You have successfully unjoined the lesson
   static let unjoinedSuccessfully = L10n.tr("unjoined successfully")
+  /// Name
+  static let name = L10n.tr("Name")
+  /// Mario Rossi
+  static let namePlaceholder = L10n.tr("Name placeholder")
+  /// Password
+  static let password = L10n.tr("Password")
+  /// Select the university you are attending
+  static let pickUniversity = L10n.tr("Pick university")
+  /// University
+  static let university = L10n.tr("University")
 }
 
 extension L10n {
