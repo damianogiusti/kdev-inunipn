@@ -37,10 +37,7 @@ private func onLessonsList(withLessonsList lessons: [Lesson]){
     profileView?.myJoinedLessonsList(withLessonsList : lessons, andColor: UIColor.yellow)
 }
 
-
-
 private func onSettingsForm(_: Any){
     profileView?.navigateToSettingsForm()
-    
 }
 }
