@@ -12,7 +12,7 @@ class RepositoryFactory {
 
     static let usersRepository: UsersRepository = UsersInMemoryRepo()
 
-    static let newsepositoruy: NewsRepository = NewsInMemoryRepo()
+//    static let newsepositoruy: NewsRepository = NewsInMemoryDatasource()
 
     static func universitiesRepository() -> UniversitiesRepository {
         return UniversitiesRepoImpl()

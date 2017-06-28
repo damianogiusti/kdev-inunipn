@@ -22,7 +22,7 @@ class LoginPresenter: BasePresenter {
     
     private var loginView : LoginView? 
     
-    //MARK: - overrided methods
+    //MARK: - lifecycle methods
     
     func create(withView view: LoginView) {
         loginView = view
