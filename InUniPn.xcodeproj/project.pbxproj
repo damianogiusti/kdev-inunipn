@@ -39,6 +39,8 @@
 		558C9B081F013C7700930655 /* LessonsInMemoryDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9B071F013C7700930655 /* LessonsInMemoryDatasource.swift */; };
 		558C9B0A1F013CD700930655 /* LessonsRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9B091F013CD700930655 /* LessonsRepoImpl.swift */; };
 		558C9B0C1F01477800930655 /* LessonsRestDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9B0B1F01477800930655 /* LessonsRestDatasource.swift */; };
+		651507421F03B8AC00C631D5 /* LessonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651507401F03B8AC00C631D5 /* LessonPresenter.swift */; };
+		651507431F03B8AC00C631D5 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651507411F03B8AC00C631D5 /* LessonView.swift */; };
 		654EC6A31F02536300E930BC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EC6A21F02536300E930BC /* String.swift */; };
 		654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F010B1F00FF1C0002D171 /* BaseView.swift */; };
 		654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01151F010D7C0002D171 /* LoginPresenter.swift */; };
@@ -101,6 +103,8 @@
 		558C9B071F013C7700930655 /* LessonsInMemoryDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsInMemoryDatasource.swift; sourceTree = "<group>"; };
 		558C9B091F013CD700930655 /* LessonsRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsRepoImpl.swift; sourceTree = "<group>"; };
 		558C9B0B1F01477800930655 /* LessonsRestDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsRestDatasource.swift; sourceTree = "<group>"; };
+		651507401F03B8AC00C631D5 /* LessonPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonPresenter.swift; sourceTree = "<group>"; };
+		651507411F03B8AC00C631D5 /* LessonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 		654EC6A21F02536300E930BC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		654F010B1F00FF1C0002D171 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		654F01151F010D7C0002D171 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Login/LoginPresenter.swift; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 		558C9ACC1F00FA5B00930655 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
+				651507401F03B8AC00C631D5 /* LessonPresenter.swift */,
+				651507411F03B8AC00C631D5 /* LessonView.swift */,
 				9B0FC28E1F0149CD000815BB /* Lessons.storyboard */,
 				9B0FC2901F014B6C000815BB /* LessonsViewController.swift */,
 			);
@@ -584,6 +590,7 @@
 			files = (
 				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
 				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
+				651507421F03B8AC00C631D5 /* LessonPresenter.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
 				558C9B061F01397000930655 /* Lesson.swift in Sources */,
 				654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */,
@@ -615,6 +622,7 @@
 				558C9B0A1F013CD700930655 /* LessonsRepoImpl.swift in Sources */,
 				655AEDC71F03A21B00C1CBEE /* NewsInMemoryDatasource.swift in Sources */,
 				654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */,
+				651507431F03B8AC00C631D5 /* LessonView.swift in Sources */,
 				65914E0F1F013B2800FD1EB0 /* NewsRepository.swift in Sources */,
 				654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */,
 				65C6E2511F038FA6002F9E7F /* NewsView.swift in Sources */,

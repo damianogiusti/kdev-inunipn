@@ -34,6 +34,41 @@ class LessonPresenter: BasePresenter {
     
     //MARK: - user interaction methods
     
+    func showJoiningChoice(withLesson lesson:Lesson){
+        lessonView?.displayJoiningChoice(isAlreadyJoined: lesson.joined)
+    }
+    
+    func joinLesson(withLesson lesson:Lesson){
+        lessonService?.joinLesson(byId: lesson.lessonId)
+        lessonView?.showMessage(withMessage: Strings.joinedSuccessfully)
+
+    }
+    
+    func unjoinLesson(withLesson lesson:Lesson){
+        lessonService?.unjoinLesson(byId: lesson.lessonId)
+        lessonView?.showMessage(withMessage: Strings.unjoinedSuccessfully)
+
+    }
+    
+    func joinAllLessonRelated(toLesson lesson:Lesson){
+        if let type = lesson.type{
+            lessonService?.joinAllFutureLessons(ofType: type)
+            lessonView?.showMessage(withMessage: Strings.joinedSuccessfully)
+        } else {
+            lessonView?.showError(withError: Strings.errorJoiningLessons)
+        }
+    }
+    
+    func unjoinAllLessonRelated(toLesson lesson:Lesson){
+        if let type = lesson.type{
+            lessonService?.unjoinAllFutureLessons(ofType: type)
+            lessonView?.showMessage(withMessage: Strings.unjoinedSuccessfully)
+
+        } else {
+            lessonView?.showError(withError: Strings.errorJoiningLessons)
+        }
+    }
+    
     func showNewsView(){
         lessonView?.navigateToNews()
     }
