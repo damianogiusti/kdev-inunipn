@@ -8,13 +8,6 @@
 
 import Foundation
 
-enum AuthPaths: String {
-    case
-    registration = "apiunipn.parol.in/V1/user/signup",
-    login = "apiunipn.parol.in/V1/user/login",
-    socialLogin = "apiunipn.parol.in/V1/user/facebook/login"
-}
-
 enum AuthErrors: Error {
     case badCredentials, socialLoginError, errorSavingUser
 }

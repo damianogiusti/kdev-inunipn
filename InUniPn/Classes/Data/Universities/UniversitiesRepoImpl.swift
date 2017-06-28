@@ -9,10 +9,6 @@
 import Foundation
 import SwiftyJSON
 
-enum UniversitiesPaths: String {
-    case all = "http://damianogiusti.altervista.org/kdev/config/"
-}
-
 enum UniversitiesError: Error {
     case invalidResponse
 }
@@ -21,7 +17,7 @@ class UniversitiesRepoImpl: UniversitiesRepository, RestCapable {
 
     func all() -> DataResponse<[University]> {
 
-        let response = getRestCall(toUrl: UniversitiesPaths.all.rawValue, withParams: nil)
+        let response = getRestCall(toUrl: Addresses.configUniversities.url(), withParams: nil)
         if let json = response.data {
             return DataResponse(withData: mapToUniversity(json: json))
         } else if let error = response.error {

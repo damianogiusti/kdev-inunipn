@@ -21,7 +21,7 @@ class FacebookService: BaseService, RestCapable {
             "access_token": token
         ])
 
-        postRestCall(toUrl: AuthPaths.socialLogin.rawValue, withParams: parameters, onSuccess: { [weak self] json in
+        postRestCall(toUrl: Addresses.authFacebook.url(), withParams: parameters, onSuccess: { [weak self] json in
             self?.onUserLoggedIn(json: json, onSuccess: onSuccess, onError: onError)
         }, onError: onError)
 

@@ -19,6 +19,7 @@
 		551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */; };
 		551093BC1F01793000E44A07 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093BB1F01793000E44A07 /* DataResponse.swift */; };
 		551093BF1F02967200E44A07 /* UniversitiesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093BE1F02967200E44A07 /* UniversitiesServices.swift */; };
+		551093C31F0389B800E44A07 /* Addresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093C21F0389B800E44A07 /* Addresses.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
 		558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB81F00ECF400930655 /* ViewController.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
@@ -67,6 +68,7 @@
 		551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepoImpl.swift; sourceTree = "<group>"; };
 		551093BB1F01793000E44A07 /* DataResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
 		551093BE1F02967200E44A07 /* UniversitiesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesServices.swift; sourceTree = "<group>"; };
+		551093C21F0389B800E44A07 /* Addresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Addresses.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558C9AB81F00ECF400930655 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				558C9AF01F01040A00930655 /* Users */,
 				558C9AFC1F01054F00930655 /* RepositoryFactory.swift */,
 				551093BB1F01793000E44A07 /* DataResponse.swift */,
+				551093C21F0389B800E44A07 /* Addresses.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				654EC6A31F02536300E930BC /* String.swift in Sources */,
 				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
 				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
+				551093C31F0389B800E44A07 /* Addresses.swift in Sources */,
 				558C9B021F01329300930655 /* UserService.swift in Sources */,
 				65914E0D1F013AF100FD1EB0 /* News.swift in Sources */,
 				558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */,
