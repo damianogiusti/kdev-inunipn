@@ -34,8 +34,6 @@ enum L10n {
   static let fillAllFields = L10n.tr("Fill all fields")
   /// You have successfully joined the lesson
   static let joinedSuccessfully = L10n.tr("joined successfully")
-  /// You have successfully unjoined the lesson
-  static let unjoinedSuccessfully = L10n.tr("unjoined successfully")
   /// Name
   static let name = L10n.tr("Name")
   /// Mario Rossi
@@ -46,6 +44,8 @@ enum L10n {
   static let pickUniversity = L10n.tr("Pick university")
   /// University
   static let university = L10n.tr("University")
+  /// You have successfully unjoined the lesson
+  static let unjoinedSuccessfully = L10n.tr("unjoined successfully")
 }
 
 extension L10n {
