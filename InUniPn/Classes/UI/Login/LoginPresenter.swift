@@ -10,15 +10,6 @@ import UIKit
 
 class LoginPresenter: BasePresenter {
 
-    //MARK: - variables
-
-
-    private var authManager : AuthenticationManager = AuthenticationManager()
-
-    private var loginView : LoginView?
-
-
-
     //MARK: - services
 
     private var authManager : AuthenticationManager = AuthenticationManager()

@@ -22,7 +22,6 @@
 		551093BF1F02967200E44A07 /* UniversitiesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093BE1F02967200E44A07 /* UniversitiesServices.swift */; };
 		551093C31F0389B800E44A07 /* Addresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093C21F0389B800E44A07 /* Addresses.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
-		558C9ABA1F00ECF400930655 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB81F00ECF400930655 /* TabBarController.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
 		558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */; };
 		558C9AC11F00EFB800930655 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AC01F00EFB800930655 /* AuthService.swift */; };
@@ -43,15 +42,12 @@
 		654EC6A31F02536300E930BC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EC6A21F02536300E930BC /* String.swift */; };
 		654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F010B1F00FF1C0002D171 /* BaseView.swift */; };
 		654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01151F010D7C0002D171 /* LoginPresenter.swift */; };
-		654F01181F010D7C0002D171 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01161F010D7C0002D171 /* LoginView.swift */; };
 		654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F01191F010EC20002D171 /* RegistrationPresenter.swift */; };
 		654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F011B1F010EE60002D171 /* RegistrationView.swift */; };
-
-		655AEDC71F03A21B00C1CBEE /* NewsInMemoryDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655AEDC61F03A21B00C1CBEE /* NewsInMemoryDatasource.swift */; };
 		655AEDC91F03A2E000C1CBEE /* LessonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655AEDC81F03A2E000C1CBEE /* LessonPresenter.swift */; };
 		655AEDCB1F03A2FC00C1CBEE /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655AEDCA1F03A2FC00C1CBEE /* LessonView.swift */; };
-
-
+		655AEDCD1F03A94E00C1CBEE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655AEDCC1F03A94E00C1CBEE /* LoginView.swift */; };
+		655AEDCF1F03A98B00C1CBEE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655AEDCE1F03A98B00C1CBEE /* TabBarController.swift */; };
 		65914E0D1F013AF100FD1EB0 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E0C1F013AF100FD1EB0 /* News.swift */; };
 		65914E0F1F013B2800FD1EB0 /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E0E1F013B2800FD1EB0 /* NewsRepository.swift */; };
 		65914E111F013B5400FD1EB0 /* NewsInMemoryDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65914E101F013B5400FD1EB0 /* NewsInMemoryDatasource.swift */; };
@@ -70,11 +66,8 @@
 		9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FC2901F014B6C000815BB /* LessonsViewController.swift */; };
 		9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F11F03961200BF6548 /* News.storyboard */; };
 		9BC3E5F41F03964700BF6548 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F31F03964700BF6548 /* NewsViewController.swift */; };
-
-		9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */; };
 		9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F71F03A00400BF6548 /* Profile.storyboard */; };
 		9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,7 +86,6 @@
 		551093BE1F02967200E44A07 /* UniversitiesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesServices.swift; sourceTree = "<group>"; };
 		551093C21F0389B800E44A07 /* Addresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Addresses.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		558C9AB81F00ECF400930655 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
 		558C9AC01F00EFB800930655 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -114,14 +106,12 @@
 		654EC6A21F02536300E930BC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		654F010B1F00FF1C0002D171 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		654F01151F010D7C0002D171 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Login/LoginPresenter.swift; sourceTree = "<group>"; };
-		654F01161F010D7C0002D171 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Login/LoginView.swift; sourceTree = "<group>"; };
 		654F01191F010EC20002D171 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		654F011B1F010EE60002D171 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
-
-		655AEDC61F03A21B00C1CBEE /* NewsInMemoryDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInMemoryDatasource.swift; sourceTree = "<group>"; };
 		655AEDC81F03A2E000C1CBEE /* LessonPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonPresenter.swift; sourceTree = "<group>"; };
 		655AEDCA1F03A2FC00C1CBEE /* LessonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
-
+		655AEDCC1F03A94E00C1CBEE /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Login/LoginView.swift; sourceTree = "<group>"; };
+		655AEDCE1F03A98B00C1CBEE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		65914E0C1F013AF100FD1EB0 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		65914E0E1F013B2800FD1EB0 /* NewsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
 		65914E101F013B5400FD1EB0 /* NewsInMemoryDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInMemoryDatasource.swift; sourceTree = "<group>"; };
@@ -142,11 +132,8 @@
 		9B0FC2901F014B6C000815BB /* LessonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
 		9BC3E5F11F03961200BF6548 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		9BC3E5F31F03964700BF6548 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-
-		9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9BC3E5F71F03A00400BF6548 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = InUniPn/Classes/UI/Main/Profile.storyboard; sourceTree = SOURCE_ROOT; };
 		9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = InUniPn/Classes/UI/Main/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
-
 		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,8 +153,8 @@
 		49EC6A401F00EF1D0071EE12 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				655AEDCC1F03A94E00C1CBEE /* LoginView.swift */,
 				654F01151F010D7C0002D171 /* LoginPresenter.swift */,
-				654F01161F010D7C0002D171 /* LoginView.swift */,
 				49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */,
 				49EC6A451F00F2090071EE12 /* Login.storyboard */,
 			);
@@ -269,7 +256,7 @@
 		558C9AB71F00ECF400930655 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				558C9AB81F00ECF400930655 /* TabBarController.swift */,
+				655AEDCE1F03A98B00C1CBEE /* TabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -315,13 +302,10 @@
 		558C9ACF1F00FA5B00930655 /* News */ = {
 			isa = PBXGroup;
 			children = (
-
 				65C6E24E1F038F6B002F9E7F /* NewsPresenter.swift */,
 				65C6E2501F038FA6002F9E7F /* NewsView.swift */,
-
 				9BC3E5F11F03961200BF6548 /* News.storyboard */,
 				9BC3E5F31F03964700BF6548 /* NewsViewController.swift */,
-
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -338,13 +322,10 @@
 		558C9AD31F00FA5B00930655 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-
 				654F01191F010EC20002D171 /* RegistrationPresenter.swift */,
 				654F011B1F010EE60002D171 /* RegistrationView.swift */,
-
 				4990274F1F0113F000D941A7 /* RegistrationViewController.swift */,
 				499027511F01140700D941A7 /* Registration.storyboard */,
-
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -530,16 +511,11 @@
 				65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */,
 				49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */,
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
-
 				499027521F01140700D941A7 /* Registration.storyboard in Resources */,
 				9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */,
 				65914E161F015DC400FD1EB0 /* Localizable.strings in Resources */,
-
 				9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */,
-				558C9ADB1F00FA5B00930655 /* placeholder in Resources */,
-				558C9AF21F01040A00930655 /* placeholder in Resources */,
 				9B0FC28F1F0149CD000815BB /* Lessons.storyboard in Resources */,
-
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,7 +548,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		98E364E588071FED916A149A /* [CP] Copy Pods Resources */ = {
@@ -618,18 +594,15 @@
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
 				558C9B061F01397000930655 /* Lesson.swift in Sources */,
 				654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */,
+				655AEDCF1F03A98B00C1CBEE /* TabBarController.swift in Sources */,
 				654EC6A31F02536300E930BC /* String.swift in Sources */,
 				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
 				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
-
 				551093C31F0389B800E44A07 /* Addresses.swift in Sources */,
+				655AEDCD1F03A94E00C1CBEE /* LoginView.swift in Sources */,
 				558C9B021F01329300930655 /* UserService.swift in Sources */,
 				65914E0D1F013AF100FD1EB0 /* News.swift in Sources */,
 				550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */,
-				558C9ABA1F00ECF400930655 /* ViewController.swift in Sources */,
-
-				558C9ABA1F00ECF400930655 /* TabBarController.swift in Sources */,
-
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
 				558C9B081F013C7700930655 /* LessonsInMemoryDatasource.swift in Sources */,
@@ -656,16 +629,11 @@
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
 				4990274E1F01125200D941A7 /* Extensions.swift in Sources */,
 				558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */,
-
 				65914E111F013B5400FD1EB0 /* NewsInMemoryDatasource.swift in Sources */,
 				551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */,
-				654F01181F010D7C0002D171 /* LoginView.swift in Sources */,
 				499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */,
-
 				9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */,
-				654F01181F010D7C0002D171 /* LoginView.swift in Sources */,
 				9BC3E5F41F03964700BF6548 /* NewsViewController.swift in Sources */,
-
 				558C9AF91F01043600930655 /* User.swift in Sources */,
 				558C9B041F01395900930655 /* LessonsRepository.swift in Sources */,
 				9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */,
