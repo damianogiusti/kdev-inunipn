@@ -8,19 +8,23 @@
 
 import UIKit
 
+fileprivate struct ViewControllers {
+    static let news = String(describing: NewsTableViewController.self)
+}
 
 class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         /// rimuovo i controller generati dalla storyboard
         self.viewControllers?.removeAll()
-        
+
         /// associo il controller delle news
         let newsStoryboard: UIStoryboard = UIStoryboard(name: "News", bundle: nil)
-        let newsViewController = newsStoryboard.instantiateViewController(withIdentifier: "NewsViewController") as! NewsViewController
+        let newsViewController = newsStoryboard.instantiateViewController(withIdentifier: ViewControllers.news)
         self.viewControllers?.insert(newsViewController, at: 0)
+        self.tabBar.items?[0].image = #imageLiteral(resourceName: "ios-book-outline")
         
         
         /// associo il controller degli orari

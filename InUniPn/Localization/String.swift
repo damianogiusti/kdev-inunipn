@@ -16,6 +16,8 @@ enum L10n {
   static let confirmPassword = L10n.tr("Confirm password")
   /// Repeat your password
   static let confirmPasswordPlaceholder = L10n.tr("Confirm password placeholder")
+  /// Contacting Facebook, please wait...
+  static let contactingFacebook = L10n.tr("contacting facebook")
   /// Email address
   static let email = L10n.tr("Email")
   /// example@unipn.it
@@ -38,10 +40,14 @@ enum L10n {
   static let fillAllFields = L10n.tr("Fill all fields")
   /// You have successfully joined the lesson
   static let joinedSuccessfully = L10n.tr("joined successfully")
+  /// Loading, please wait...
+  static let loading = L10n.tr("loading")
   /// Name
   static let name = L10n.tr("Name")
   /// Mario Rossi
   static let namePlaceholder = L10n.tr("Name placeholder")
+  /// It seems that you have no news. Let's stay tuned!
+  static let noNewsPresent = L10n.tr("no news present")
   /// Password
   static let password = L10n.tr("Password")
   /// Select the university you are attending

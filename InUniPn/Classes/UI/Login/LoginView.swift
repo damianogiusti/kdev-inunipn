@@ -15,4 +15,6 @@ protocol LoginView: BaseView {
     func navigateToHome()
     
     func askUniversity(withUniversities: [University])
+
+    func showProgressForSocialLogin()
 }

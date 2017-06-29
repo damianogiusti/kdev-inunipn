@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import FBSDKLoginKit
+import KVSpinnerView
 
 typealias Strings = L10n
 
@@ -28,16 +29,39 @@ func runOnUiThread(operations: @escaping () -> Void) {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    fileprivate let userService = UserService()
+
     var window: UIWindow?
+    var mainStoryboard: UIStoryboard?
+    var loginStoryboard: UIStoryboard?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        initSpinner()
 
         // Facebook init
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
+        mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+
+        if let user = userService.currentUser() {
+            print(user.accessToken ?? "")
+            window?.rootViewController = mainStoryboard?.instantiateInitialViewController()
+        } else {
+            window?.rootViewController = loginStoryboard?.instantiateInitialViewController()
+        }
+
         return true
     }
-    
+
+    private func initSpinner() {
+        KVSpinnerView.settings.backgroundRectColor = .fireBrickRed
+        KVSpinnerView.settings.fadeInDuration = 0.2
+        KVSpinnerView.settings.fadeOutDuration = 0.2
+        KVSpinnerView.settings.tintColor = .white
+        KVSpinnerView.settings.minimumDismissDelay = 1
+    }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)

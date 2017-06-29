@@ -14,7 +14,7 @@ enum AuthErrors: Error {
 
 final class AuthenticationManager: AuthenticationProtocol {
     
-    private let usersRepository: UsersRepository = RepositoryFactory.usersRepository
+    private let usersRepository: UsersRepository = RepositoryFactory.usersRepository()
     
     private lazy var authService: AuthService = {
         return AuthService()

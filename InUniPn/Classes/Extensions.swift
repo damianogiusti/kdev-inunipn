@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import KVSpinnerView
 
 extension UIViewController {
+
     func displayError(withMessage message: String) {
         let alert = UIAlertController(title: "Errore", message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -24,6 +26,18 @@ extension UIViewController {
         
         alert.addAction(cancelAction)
         present(alert, animated: true)
+    }
+
+    func showProgressDialog(onView view: UIView, withMessage message: String) {
+        KVSpinnerView.show(on: view, saying: message)
+    }
+
+    func hideProgressDialog() {
+        KVSpinnerView.dismiss()
+    }
+
+    var appDelegate: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
     }
 }
 

@@ -8,9 +8,9 @@
 
 import Foundation
 
-class UsersInMemoryRepo: UsersRepository {
+class UsersInMemoryDatasource {
 
-    static let sharedInstance = UsersInMemoryRepo()
+    static let sharedInstance = UsersInMemoryDatasource()
 
     private var dataset: [String: User] = [:]
 

@@ -8,10 +8,25 @@
 
 import UIKit
 
-protocol BaseView {
+protocol BaseView: class {
     
     func showError(withError error : String)
     
     func showMessage(withMessage message : String)
 
+    func showProgress()
+
+    func hideProgress()
+
+}
+
+extension BaseView {
+
+    func showProgress() {
+
+    }
+
+    func hideProgress() {
+
+    }
 }

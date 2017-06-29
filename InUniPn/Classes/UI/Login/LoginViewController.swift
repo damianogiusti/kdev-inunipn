@@ -73,9 +73,21 @@ class LoginViewController: UIViewController, LoginView {
     }
     
     func navigateToHome() {
-        let homeController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-        
-        present(homeController, animated: true, completion: nil)
+        if let homeController = appDelegate.mainStoryboard?.instantiateInitialViewController() {
+            present(homeController, animated: true, completion: nil)
+        }
+    }
+
+    func showProgress() {
+        showProgressDialog(onView: self.view, withMessage: Strings.loading)
+    }
+
+    func showProgressForSocialLogin() {
+        showProgressDialog(onView: self.view, withMessage: Strings.contactingFacebook)
+    }
+
+    func hideProgress() {
+        hideProgressDialog()
     }
     
     func showError(withError error: String) {
@@ -91,8 +103,8 @@ class LoginViewController: UIViewController, LoginView {
         let sheet = UIAlertController(title: Strings.university, message: Strings.pickUniversity, preferredStyle: .actionSheet)
         
         universities.forEach { uni in
-            sheet.addAction(UIAlertAction(title: uni.code, style: .default, handler: { view in
-                self.navigateToHome()
+            sheet.addAction(UIAlertAction(title: uni.code, style: .default, handler: { (view: UIAlertAction) in
+                self.loginPresenter.setUniversity(withName: view.title ?? "")
             }))
         }
         

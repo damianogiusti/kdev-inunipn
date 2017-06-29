@@ -16,6 +16,14 @@
 		550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B31F03928C00F94A8C /* LessonsService.swift */; };
 		550EF2B61F03BB9900F94A8C /* DateFormatCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B51F03BB9900F94A8C /* DateFormatCapable.swift */; };
 		550EF2B81F03DDF800F94A8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B71F03DDF800F94A8C /* Extensions.swift */; };
+		550EF2BA1F03F15900F94A8C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2B91F03F15900F94A8C /* CardView.swift */; };
+		550EF2BD1F03FB2100F94A8C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2BC1F03FB2100F94A8C /* NewsTableViewCell.swift */; };
+		550EF2BF1F0408A400F94A8C /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550EF2BE1F0408A300F94A8C /* NewsTableViewCell.xib */; };
+		550EF2C11F0412C300F94A8C /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C01F0412C300F94A8C /* NewsTableViewController.swift */; };
+		550EF2C51F04547900F94A8C /* CoreData+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C41F04547900F94A8C /* CoreData+Utils.swift */; };
+		550EF2C71F0454B300F94A8C /* UsersSQLDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C61F0454B300F94A8C /* UsersSQLDatasource.swift */; };
+		550EF2C91F0457D900F94A8C /* UsersRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C81F0457D900F94A8C /* UsersRepoImpl.swift */; };
+		550EF2CB1F04F10A00F94A8C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2CA1F04F10A00F94A8C /* UIColor.swift */; };
 		551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B21F01624400E44A07 /* UniversitiesRepository.swift */; };
 		551093B51F01626200E44A07 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B41F01626200E44A07 /* University.swift */; };
 		551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */; };
@@ -31,7 +39,7 @@
 		558C9ADD1F00FE7F00930655 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ADC1F00FE7F00930655 /* AuthResponse.swift */; };
 		558C9AF71F01041C00930655 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AF61F01041C00930655 /* UsersRepository.swift */; };
 		558C9AF91F01043600930655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AF81F01043600930655 /* User.swift */; };
-		558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFA1F0104AA00930655 /* UsersInMemoryRepo.swift */; };
+		558C9AFB1F0104AA00930655 /* UsersInMemoryDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFA1F0104AA00930655 /* UsersInMemoryDatasource.swift */; };
 		558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFC1F01054F00930655 /* RepositoryFactory.swift */; };
 		558C9AFF1F01304E00930655 /* RestCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AFE1F01304E00930655 /* RestCapable.swift */; };
 		558C9B021F01329300930655 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9B011F01329300930655 /* UserService.swift */; };
@@ -65,7 +73,6 @@
 		9B0FC28F1F0149CD000815BB /* Lessons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0FC28E1F0149CD000815BB /* Lessons.storyboard */; };
 		9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FC2901F014B6C000815BB /* LessonsViewController.swift */; };
 		9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F11F03961200BF6548 /* News.storyboard */; };
-		9BC3E5F41F03964700BF6548 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F31F03964700BF6548 /* NewsViewController.swift */; };
 		9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */; };
 		9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F71F03A00400BF6548 /* Profile.storyboard */; };
 		9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */; };
@@ -87,6 +94,14 @@
 		550EF2B31F03928C00F94A8C /* LessonsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsService.swift; sourceTree = "<group>"; };
 		550EF2B51F03BB9900F94A8C /* DateFormatCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatCapable.swift; sourceTree = "<group>"; };
 		550EF2B71F03DDF800F94A8C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Classes/Extensions.swift; sourceTree = "<group>"; };
+		550EF2B91F03F15900F94A8C /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = Designables/CardView.swift; sourceTree = "<group>"; };
+		550EF2BC1F03FB2100F94A8C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		550EF2BE1F0408A300F94A8C /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		550EF2C01F0412C300F94A8C /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		550EF2C41F04547900F94A8C /* CoreData+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreData+Utils.swift"; sourceTree = "<group>"; };
+		550EF2C61F0454B300F94A8C /* UsersSQLDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersSQLDatasource.swift; sourceTree = "<group>"; };
+		550EF2C81F0457D900F94A8C /* UsersRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersRepoImpl.swift; sourceTree = "<group>"; };
+		550EF2CA1F04F10A00F94A8C /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		551093B21F01624400E44A07 /* UniversitiesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepository.swift; sourceTree = "<group>"; };
 		551093B41F01626200E44A07 /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepoImpl.swift; sourceTree = "<group>"; };
@@ -102,7 +117,7 @@
 		558C9ADC1F00FE7F00930655 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		558C9AF61F01041C00930655 /* UsersRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		558C9AF81F01043600930655 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		558C9AFA1F0104AA00930655 /* UsersInMemoryRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersInMemoryRepo.swift; sourceTree = "<group>"; };
+		558C9AFA1F0104AA00930655 /* UsersInMemoryDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersInMemoryDatasource.swift; sourceTree = "<group>"; };
 		558C9AFC1F01054F00930655 /* RepositoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		558C9AFE1F01304E00930655 /* RestCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCapable.swift; sourceTree = "<group>"; };
 		558C9B011F01329300930655 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -138,7 +153,6 @@
 		9B0FC28E1F0149CD000815BB /* Lessons.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lessons.storyboard; sourceTree = "<group>"; };
 		9B0FC2901F014B6C000815BB /* LessonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
 		9BC3E5F11F03961200BF6548 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
-		9BC3E5F31F03964700BF6548 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9BC3E5F71F03A00400BF6548 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = InUniPn/Classes/UI/Main/Profile.storyboard; sourceTree = SOURCE_ROOT; };
 		9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = InUniPn/Classes/UI/Main/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -181,6 +195,7 @@
 			children = (
 				49EC6A4A1F00F75B0071EE12 /* RoundedBorderButton.swift */,
 				493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */,
+				550EF2B91F03F15900F94A8C /* CardView.swift */,
 			);
 			name = Designables;
 			sourceTree = "<group>";
@@ -192,6 +207,15 @@
 				91DA38B91E70341F2C6FB085 /* Pods-InUniPn.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		550EF2BB1F03FB0E00F94A8C /* NewsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				550EF2BC1F03FB2100F94A8C /* NewsTableViewCell.swift */,
+				550EF2BE1F0408A300F94A8C /* NewsTableViewCell.xib */,
+			);
+			path = NewsTableViewCell;
 			sourceTree = "<group>";
 		};
 		551093B11F01623700E44A07 /* Universities */ = {
@@ -233,6 +257,7 @@
 				558C9AFC1F01054F00930655 /* RepositoryFactory.swift */,
 				551093BB1F01793000E44A07 /* DataResponse.swift */,
 				551093C21F0389B800E44A07 /* Addresses.swift */,
+				550EF2C41F04547900F94A8C /* CoreData+Utils.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -265,6 +290,7 @@
 				65E66C4E1F00EF67002F87A5 /* MVP */,
 				558C9AB71F00ECF400930655 /* Main */,
 				558C9AB61F00ECF400930655 /* AppDelegate.swift */,
+				550EF2CA1F04F10A00F94A8C /* UIColor.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -320,10 +346,11 @@
 		558C9ACF1F00FA5B00930655 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				550EF2BB1F03FB0E00F94A8C /* NewsTableViewCell */,
 				9BC3E5F11F03961200BF6548 /* News.storyboard */,
-				9BC3E5F31F03964700BF6548 /* NewsViewController.swift */,
 				65C6E24E1F038F6B002F9E7F /* NewsPresenter.swift */,
 				65C6E2501F038FA6002F9E7F /* NewsView.swift */,
+				550EF2C01F0412C300F94A8C /* NewsTableViewController.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -395,7 +422,9 @@
 			isa = PBXGroup;
 			children = (
 				558C9AF61F01041C00930655 /* UsersRepository.swift */,
-				558C9AFA1F0104AA00930655 /* UsersInMemoryRepo.swift */,
+				558C9AFA1F0104AA00930655 /* UsersInMemoryDatasource.swift */,
+				550EF2C61F0454B300F94A8C /* UsersSQLDatasource.swift */,
+				550EF2C81F0457D900F94A8C /* UsersRepoImpl.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -546,6 +575,7 @@
 				9B0FC28F1F0149CD000815BB /* Lessons.storyboard in Resources */,
 				499027521F01140700D941A7 /* Registration.storyboard in Resources */,
 				9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */,
+				550EF2BF1F0408A400F94A8C /* NewsTableViewCell.xib in Resources */,
 				65914E161F015DC400FD1EB0 /* Localizable.strings in Resources */,
 				B60214481F014750009E4EE5 /* ProfileSettings.storyboard in Resources */,
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
@@ -620,17 +650,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550EF2C71F0454B300F94A8C /* UsersSQLDatasource.swift in Sources */,
 				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
 				550EF2B81F03DDF800F94A8C /* Extensions.swift in Sources */,
 				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
 				651507421F03B8AC00C631D5 /* LessonPresenter.swift in Sources */,
+				550EF2BD1F03FB2100F94A8C /* NewsTableViewCell.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
 				558C9B061F01397000930655 /* Lesson.swift in Sources */,
 				654F011C1F010EE60002D171 /* RegistrationView.swift in Sources */,
+				550EF2BA1F03F15900F94A8C /* CardView.swift in Sources */,
 				654EC6A31F02536300E930BC /* String.swift in Sources */,
 				49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */,
 				558C9AC51F00F22D00930655 /* BaseService.swift in Sources */,
 				551093C31F0389B800E44A07 /* Addresses.swift in Sources */,
+				550EF2C91F0457D900F94A8C /* UsersRepoImpl.swift in Sources */,
 				558C9B021F01329300930655 /* UserService.swift in Sources */,
 				65914E0D1F013AF100FD1EB0 /* News.swift in Sources */,
 				550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */,
@@ -638,6 +672,7 @@
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				9BC3E5FC1F03B37B00BF6548 /* LessonCell.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
+				550EF2CB1F04F10A00F94A8C /* UIColor.swift in Sources */,
 				9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */,
 				558C9B081F013C7700930655 /* LessonsInMemoryDatasource.swift in Sources */,
 				558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */,
@@ -658,6 +693,7 @@
 				558C9AFF1F01304E00930655 /* RestCapable.swift in Sources */,
 				558C9B0A1F013CD700930655 /* LessonsRepoImpl.swift in Sources */,
 				655AEDC71F03A21B00C1CBEE /* NewsInMemoryDatasource.swift in Sources */,
+				550EF2C51F04547900F94A8C /* CoreData+Utils.swift in Sources */,
 				654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */,
 				651507431F03B8AC00C631D5 /* LessonView.swift in Sources */,
 				65914E0F1F013B2800FD1EB0 /* NewsRepository.swift in Sources */,
@@ -666,12 +702,12 @@
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
 				B6A8E24D1F03A91D0013720E /* profileView.swift in Sources */,
 				B6A8E24F1F03C0A80013720E /* NewsService.swift in Sources */,
-				558C9AFB1F0104AA00930655 /* UsersInMemoryRepo.swift in Sources */,
+				558C9AFB1F0104AA00930655 /* UsersInMemoryDatasource.swift in Sources */,
 				9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */,
-				9BC3E5F41F03964700BF6548 /* NewsViewController.swift in Sources */,
 				551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */,
 				654F01181F010D7C0002D171 /* LoginView.swift in Sources */,
 				499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */,
+				550EF2C11F0412C300F94A8C /* NewsTableViewController.swift in Sources */,
 				558C9AF91F01043600930655 /* User.swift in Sources */,
 				558C9B041F01395900930655 /* LessonsRepository.swift in Sources */,
 				9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */,
