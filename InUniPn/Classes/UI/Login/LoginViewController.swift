@@ -8,7 +8,6 @@
 
 import UIKit
 import FBSDKLoginKit
-import KVSpinnerView
 
 class LoginViewController: UIViewController, LoginView {
     
@@ -80,15 +79,15 @@ class LoginViewController: UIViewController, LoginView {
     }
 
     func showProgress() {
-        KVSpinnerView.show(on: self.view, saying: Strings.loading)
+        showProgressDialog(onView: self.view, withMessage: Strings.loading)
     }
 
     func showProgressForSocialLogin() {
-        KVSpinnerView.show(on: self.view, saying: Strings.contactingFacebook)
+        showProgressDialog(onView: self.view, withMessage: Strings.contactingFacebook)
     }
 
     func hideProgress() {
-        KVSpinnerView.dismiss()
+        hideProgressDialog()
     }
     
     func showError(withError error: String) {

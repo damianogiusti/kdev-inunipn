@@ -9,7 +9,6 @@
 import UIKit
 import SDWebImage
 import DZNEmptyDataSet
-import KVSpinnerView
 
 class NewsTableViewController: UIViewController {
 
@@ -72,11 +71,11 @@ extension NewsTableViewController: NewsView {
     }
 
     func showProgress() {
-        KVSpinnerView.show(on: tableView, saying: Strings.loading)
+        showProgressDialog(onView: tableView, withMessage: Strings.loading)
     }
 
     func hideProgress() {
-        KVSpinnerView.dismiss()
+        hideProgressDialog()
     }
 }
 
