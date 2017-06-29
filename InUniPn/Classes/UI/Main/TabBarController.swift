@@ -22,8 +22,9 @@ class TabBarController: UITabBarController {
 
         /// associo il controller delle news
         let newsStoryboard: UIStoryboard = UIStoryboard(name: "News", bundle: nil)
-        let newsViewController = newsStoryboard.instantiateViewController(withIdentifier: ViewControllers.news) as! NewsTableViewController
+        let newsViewController = newsStoryboard.instantiateViewController(withIdentifier: ViewControllers.news)
         self.viewControllers?.insert(newsViewController, at: 0)
+        self.tabBar.items?[0].image = #imageLiteral(resourceName: "ios-book-outline")
         
         
         /// associo il controller degli orari
