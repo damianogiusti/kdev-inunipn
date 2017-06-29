@@ -37,7 +37,7 @@ class NewsTableViewController: UIViewController {
 
     fileprivate func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dddd',' dd'/'MM'/'yyyy"
+        dateFormatter.dateFormat = "eeee',' dd'/'MM'/'yyyy"
         dateFormatter.locale = Calendar.current.locale
         return dateFormatter.string(from: date)
     }
@@ -51,7 +51,7 @@ extension NewsTableViewController: NewsView {
     }
 
     func updateNewsView(news: News, atIndex index: Int) {
-        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
     }
 
     func navigateToDetailNews(withNews: News) {
@@ -87,7 +87,7 @@ extension NewsTableViewController: UITableViewDataSource, UITableViewDelegate {
         cell.titleLabel.text = news.title
 
         if let content = news.content {
-            let index = content.index(content.startIndex, offsetBy: 50)
+            let index = content.index(content.startIndex, offsetBy: 100)
             cell.contentLabel.text = content.substring(to: index)
         } else {
             cell.contentLabel.text = nil
@@ -129,8 +129,8 @@ extension NewsTableViewController: UITableViewDataSource, UITableViewDelegate {
 extension NewsTableViewController {
 
     @objc func favoriteButtonPressed(_ button: UIButton) {
-        let newsId = presenter.newsList[button.tag].newsId
-        presenter.markNewsAsFavourite(byId: newsId)
+        let news = presenter.newsList[button.tag]
+        presenter.toggleNewsFavouriteState(ofNews: news)
     }
 
     func shareButtonPressed(_ button: UIButton) {

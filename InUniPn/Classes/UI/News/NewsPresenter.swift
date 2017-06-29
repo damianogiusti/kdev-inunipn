@@ -49,8 +49,12 @@ class NewsPresenter: BasePresenter {
 
     }
 
-    func markNewsAsFavourite(byId newsId: String) {
-        newsService?.addNewsToFavorites(byId: newsId, onSuccess: updateNewsView)
+    func toggleNewsFavouriteState(ofNews news: News) {
+        if news.starred {
+            newsService?.removeNewsToFavorites(byId: news.newsId, onSuccess: updateNewsView)
+        } else {
+            newsService?.addNewsToFavorites(byId: news.newsId, onSuccess: updateNewsView)
+        }
     }
 
     func showNewsDetail(withNews news: News){
@@ -64,7 +68,7 @@ class NewsPresenter: BasePresenter {
 
     func loadNews(withQueryString queryString: String? = nil){
 
-        if let string = queryString{
+        if let string = queryString {
             newsService?.searchNewses(withKeyword: string, onSuccess: displayNews)
         } else {
             newsService?.all(onSuccess: displayNews)
@@ -74,11 +78,13 @@ class NewsPresenter: BasePresenter {
     //MARK: - private methods
     
     func displayNews(withNews news : [News]) {
+        newsList = news
         newsView?.displayNews(withNewsList: news)
     }
 
     func updateNewsView(news: News) {
         if let index = newsList.index(where: { n in n.newsId == news.newsId }) {
+            newsList[index] = news
             newsView?.updateNewsView(news: news, atIndex: index)
         } else {
             newsView?.displayNews(withNewsList: newsList)
