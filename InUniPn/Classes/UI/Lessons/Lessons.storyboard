@@ -102,9 +102,26 @@
                     </view>
                     <connections>
                         <outlet property="lessonsTableView" destination="uNh-eb-Jb4" id="b6V-n5-FhV"/>
+                        <outlet property="searchDisplayController" destination="X0e-2P-JW6" id="m9Q-O5-V8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHa-rp-50V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ZLX-yo-su5">
+                    <connections>
+                        <outlet property="delegate" destination="V2g-4b-ErA" id="g7a-C8-1Fj"/>
+                        <outlet property="searchContentsController" destination="V2g-4b-ErA" id="4dO-X2-dmx"/>
+                        <outlet property="searchResultsDataSource" destination="V2g-4b-ErA" id="VbQ-SG-VB8"/>
+                        <outlet property="searchResultsDelegate" destination="V2g-4b-ErA" id="u5O-10-eXw"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="X0e-2P-JW6">
+                    <connections>
+                        <outlet property="delegate" destination="V2g-4b-ErA" id="Ihl-TS-4om"/>
+                        <outlet property="searchContentsController" destination="V2g-4b-ErA" id="Ik2-W2-jwo"/>
+                        <outlet property="searchResultsDataSource" destination="V2g-4b-ErA" id="y5u-Id-Fl0"/>
+                        <outlet property="searchResultsDelegate" destination="V2g-4b-ErA" id="xdD-7O-UIf"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="365" y="137"/>
         </scene>

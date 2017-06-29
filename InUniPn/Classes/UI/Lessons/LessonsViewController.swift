@@ -17,6 +17,8 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     private let lessonPresenter = LessonPresenter()
     
     var lessonList = [Lesson]()
+    var filteredLessons = [Lesson]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     
     ///associo il tab item al controller
@@ -39,6 +41,11 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
         lessonsTableView.estimatedRowHeight = 100.0
         lessonsTableView.tableFooterView = UIView()
         
+        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        lessonsTableView.tableHeaderView = searchController.searchBar
+        
     }
     
     
@@ -53,6 +60,9 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredLessons.count
+        }
         return lessonList.count
     }
 
@@ -60,10 +70,16 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:LessonCell = tableView.dequeueReusableCell(withIdentifier: lessonCellIdentifier, for: indexPath as IndexPath) as! LessonCell
         
-        let lesson = lessonList[indexPath.row]
+        let lesson: Lesson
+        if searchController.isActive && searchController.searchBar.text != "" {
+            lesson = filteredLessons[indexPath.row]
+
+        } else {
+            lesson = lessonList[indexPath.row]
+        }
         cell.startTimeLabel?.text = lesson.timeStart?.description
         cell.endTimeLabel?.text = lesson.timeEnd?.description
-        cell.lessonLabel?.text = lesson.course
+        cell.lessonLabel?.text = lesson.name
         cell.teacherLabel?.text = lesson.teacher
         cell.classroomLabel?.text = lesson.classroom
         
@@ -80,6 +96,8 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     
     func displayLessons(withLessonList list: [Lesson]) {
         lessonList = list
+        filteredLessons = []
+        filteredLessons.append(contentsOf: lessonList)
         lessonsTableView.reloadData()
     }
     
@@ -94,6 +112,21 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     func showMessage(withMessage message : String) {
         displayAlert(withMessage: message)
     }
-
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredLessons = lessonList.filter { lesson in
+            return (lesson.name?.lowercased().contains(searchText.lowercased()))!
+            
+        }
+        
+        lessonsTableView.reloadData()
+    }
     
 }
+
+extension LessonsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
+}
+
