@@ -15,7 +15,7 @@ enum UserErrors: Error {
 
 class UserService {
 
-    private let userRepository = RepositoryFactory.usersRepository
+    private let userRepository = RepositoryFactory.usersRepository()
 
     /// Gets the current user of the application.
     /// If a success handler is specified, the operation will be asynchronous and return nil.
