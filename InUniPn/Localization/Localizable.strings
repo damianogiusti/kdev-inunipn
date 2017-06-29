@@ -9,12 +9,14 @@
 
 //MARK: - messages
 
+"loading" = "Loading, please wait...";
+"contacting facebook" = "Contacting Facebook, please wait...";
+
 "Fill all fields" = "Please fill all the required fields";
 "University" = "University";
 "Pick university" = "Select the university you are attending";
 
 "joined successfully" = "You have successfully joined the lesson";
-
 "unjoined successfully" = "You have successfully unjoined the lesson";
 
 "no news present" = "It seems that you have no news. Let's stay tuned!";

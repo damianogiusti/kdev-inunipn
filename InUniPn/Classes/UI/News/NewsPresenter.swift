@@ -73,11 +73,13 @@ class NewsPresenter: BasePresenter {
         } else {
             newsService?.all(onSuccess: displayNews)
         }
+        newsView?.showProgress()
     }
     
     //MARK: - private methods
     
     func displayNews(withNews news : [News]) {
+        newsView?.hideProgress()
         newsList = news
         newsView?.displayNews(withNewsList: news)
     }

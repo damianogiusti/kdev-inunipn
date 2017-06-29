@@ -31,6 +31,10 @@ class NewsTableViewController: UIViewController {
         tableView.emptyDataSetDelegate = self
         tableView.register(UINib(nibName: cellNibName, bundle: nil),
                            forCellReuseIdentifier: cellReuseIdentifier)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
         presenter.loadNews()
     }
@@ -64,6 +68,14 @@ extension NewsTableViewController: NewsView {
 
     func showError(withError error: String) {
 
+    }
+
+    func showProgress() {
+        showProgressDialog(onView: tableView, withMessage: Strings.loading)
+    }
+
+    func hideProgress() {
+        hideProgressDialog()
     }
 }
 

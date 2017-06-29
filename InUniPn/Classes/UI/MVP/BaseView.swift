@@ -14,4 +14,19 @@ protocol BaseView: class {
     
     func showMessage(withMessage message : String)
 
+    func showProgress()
+
+    func hideProgress()
+
+}
+
+extension BaseView {
+
+    func showProgress() {
+
+    }
+
+    func hideProgress() {
+
+    }
 }
