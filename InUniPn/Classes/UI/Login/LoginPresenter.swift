@@ -22,7 +22,7 @@ class LoginPresenter: BasePresenter {
     //MARK: - view
 
 
-    private var loginView : LoginView?
+    private weak var loginView : LoginView?
 
     //MARK: - lifecycle methods
 

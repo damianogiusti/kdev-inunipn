@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import DZNEmptyDataSet
+import KVSpinnerView
 
 class NewsTableViewController: UIViewController {
 
@@ -31,6 +32,10 @@ class NewsTableViewController: UIViewController {
         tableView.emptyDataSetDelegate = self
         tableView.register(UINib(nibName: cellNibName, bundle: nil),
                            forCellReuseIdentifier: cellReuseIdentifier)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
         presenter.loadNews()
     }
@@ -64,6 +69,14 @@ extension NewsTableViewController: NewsView {
 
     func showError(withError error: String) {
 
+    }
+
+    func showProgress() {
+        KVSpinnerView.show(on: tableView, saying: Strings.loading)
+    }
+
+    func hideProgress() {
+        KVSpinnerView.dismiss()
     }
 }
 

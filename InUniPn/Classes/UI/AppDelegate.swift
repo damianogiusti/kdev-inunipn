@@ -60,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KVSpinnerView.settings.fadeInDuration = 0.2
         KVSpinnerView.settings.fadeOutDuration = 0.2
         KVSpinnerView.settings.tintColor = .white
+        KVSpinnerView.settings.minimumDismissDelay = 1
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
