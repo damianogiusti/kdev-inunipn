@@ -73,9 +73,9 @@ class LoginViewController: UIViewController, LoginView {
     }
     
     func navigateToHome() {
-        let homeController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-        
-        present(homeController, animated: true, completion: nil)
+        if let homeController = appDelegate.mainStoryboard?.instantiateInitialViewController() {
+            present(homeController, animated: true, completion: nil)
+        }
     }
     
     func showError(withError error: String) {
