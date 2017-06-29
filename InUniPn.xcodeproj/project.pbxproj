@@ -23,6 +23,7 @@
 		550EF2C51F04547900F94A8C /* CoreData+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C41F04547900F94A8C /* CoreData+Utils.swift */; };
 		550EF2C71F0454B300F94A8C /* UsersSQLDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C61F0454B300F94A8C /* UsersSQLDatasource.swift */; };
 		550EF2C91F0457D900F94A8C /* UsersRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C81F0457D900F94A8C /* UsersRepoImpl.swift */; };
+		550EF2CB1F04F10A00F94A8C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2CA1F04F10A00F94A8C /* UIColor.swift */; };
 		551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B21F01624400E44A07 /* UniversitiesRepository.swift */; };
 		551093B51F01626200E44A07 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B41F01626200E44A07 /* University.swift */; };
 		551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */; };
@@ -100,6 +101,7 @@
 		550EF2C41F04547900F94A8C /* CoreData+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreData+Utils.swift"; sourceTree = "<group>"; };
 		550EF2C61F0454B300F94A8C /* UsersSQLDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersSQLDatasource.swift; sourceTree = "<group>"; };
 		550EF2C81F0457D900F94A8C /* UsersRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersRepoImpl.swift; sourceTree = "<group>"; };
+		550EF2CA1F04F10A00F94A8C /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		551093B21F01624400E44A07 /* UniversitiesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepository.swift; sourceTree = "<group>"; };
 		551093B41F01626200E44A07 /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		551093B91F0162B400E44A07 /* UniversitiesRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepoImpl.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				65E66C4E1F00EF67002F87A5 /* MVP */,
 				558C9AB71F00ECF400930655 /* Main */,
 				558C9AB61F00ECF400930655 /* AppDelegate.swift */,
+				550EF2CA1F04F10A00F94A8C /* UIColor.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				9BC3E5FC1F03B37B00BF6548 /* LessonCell.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
+				550EF2CB1F04F10A00F94A8C /* UIColor.swift in Sources */,
 				9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */,
 				558C9B081F013C7700930655 /* LessonsInMemoryDatasource.swift in Sources */,
 				558C9AC31F00F02F00930655 /* FacebookService.swift in Sources */,
