@@ -12,6 +12,7 @@ target 'InUniPn' do
   pod 'Former'
   pod 'DZNEmptyDataSet'
   pod 'SDWebImage', '~>3.8'
+  pod 'KVSpinnerView'
   pod 'SwiftGen'
 
   pod 'FBSDKCoreKit'

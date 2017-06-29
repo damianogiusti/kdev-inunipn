@@ -35,57 +35,59 @@ class LoginPresenter: BasePresenter {
 
     func loginUser(withName name: String, andPassword password: String) {
 
-        if(name.isEmpty || password.isEmpty){
+        if (name.isEmpty || password.isEmpty) {
             onCredentialsAreInvalid()
-        }
-        else{
+        } else {
             authManager.loginUser(
                 withName: name,
                 andPassword: password,
                 onSuccess: onLoginSuccess,
                 onError: onLoginError
             )
+            loginView?.showProgress()
         }
     }
 
     func loginUserWithFacebook(withToken token: String) {
          authManager.socialLogin(withToken: token, onSuccess: onSocialLoginSuccess, onError: onLoginError)
+        loginView?.showProgressForSocialLogin()
     }
 
     func registerUser() {
         loginView?.navigateToRegistration()
     }
 
-    func setUniversity(withName name : String){
-        if(name.isEmpty){
+    func setUniversity(withName name : String) {
+        if (name.isEmpty) {
              universityService.all(onSuccess: askUniversity, onError: onErrorRetrievingUniversities)
-        }
-        else{
+        } else {
            //user_addUniversity
+            loginView?.navigateToHome()
         }
     }
 
     //MARK: - private methods
 
-    private func onSocialLoginSuccess(_ : Any){
+    private func onSocialLoginSuccess(_ : Any) {
         universityService.all(onSuccess: askUniversity, onError: onErrorRetrievingUniversities)
-        
     }
 
-    func onLoginSuccess(_ : Any){
-        loginView?.navigateToHome()
+    func onLoginSuccess(user : User) {
+        universityService.all(onSuccess: askUniversity, onError: onErrorRetrievingUniversities)
     }
 
 
-    private func onLoginError(_ : Any){
+    private func onLoginError(_ : Any) {
+        loginView?.hideProgress()
         loginView?.showError(withError: Strings.errorWhileLogginIn)
     }
 
-    private func onCredentialsAreInvalid(){
+    private func onCredentialsAreInvalid() {
         loginView?.showError(withError: Strings.fillAllFields)
     }
     
-    private func askUniversity(withUniversities universities: [University]){
+    private func askUniversity(withUniversities universities: [University]) {
+        loginView?.hideProgress()
         loginView?.askUniversity(withUniversities: universities)
     }
     

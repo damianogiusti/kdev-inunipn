@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import KVSpinnerView
 
 class LoginViewController: UIViewController, LoginView {
     
@@ -77,6 +78,18 @@ class LoginViewController: UIViewController, LoginView {
             present(homeController, animated: true, completion: nil)
         }
     }
+
+    func showProgress() {
+        KVSpinnerView.show(on: self.view, saying: Strings.loading)
+    }
+
+    func showProgressForSocialLogin() {
+        KVSpinnerView.show(on: self.view, saying: Strings.contactingFacebook)
+    }
+
+    func hideProgress() {
+        KVSpinnerView.dismiss()
+    }
     
     func showError(withError error: String) {
         displayError(withMessage: error)
@@ -91,8 +104,8 @@ class LoginViewController: UIViewController, LoginView {
         let sheet = UIAlertController(title: Strings.university, message: Strings.pickUniversity, preferredStyle: .actionSheet)
         
         universities.forEach { uni in
-            sheet.addAction(UIAlertAction(title: uni.code, style: .default, handler: { view in
-                self.navigateToHome()
+            sheet.addAction(UIAlertAction(title: uni.code, style: .default, handler: { (view: UIAlertAction) in
+                self.loginPresenter.setUniversity(withName: view.title ?? "")
             }))
         }
         
