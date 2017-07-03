@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4919619D1F03F6F500E030C5 /* LessonNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919619C1F03F6F500E030C5 /* LessonNotificationManager.swift */; };
 		493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */; };
 		499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990274F1F0113F000D941A7 /* RegistrationViewController.swift */; };
 		499027521F01140700D941A7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499027511F01140700D941A7 /* Registration.storyboard */; };
@@ -78,6 +79,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4919619C1F03F6F500E030C5 /* LessonNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonNotificationManager.swift; sourceTree = "<group>"; };
 		493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderTextField.swift; path = Designables/RoundedBorderTextField.swift; sourceTree = "<group>"; };
 		4990274F1F0113F000D941A7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		499027511F01140700D941A7 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				558C9AC41F00F22D00930655 /* BaseService.swift */,
 				558C9AFE1F01304E00930655 /* RestCapable.swift */,
 				550EF2B51F03BB9900F94A8C /* DateFormatCapable.swift */,
+				4919619C1F03F6F500E030C5 /* LessonNotificationManager.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				65C6E2531F03966D002F9E7F /* NewsRestDatasource.swift in Sources */,
 				558C9AF71F01041C00930655 /* UsersRepository.swift in Sources */,
 				551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */,
+				4919619D1F03F6F500E030C5 /* LessonNotificationManager.swift in Sources */,
 				558C9AFF1F01304E00930655 /* RestCapable.swift in Sources */,
 				558C9B0A1F013CD700930655 /* LessonsRepoImpl.swift in Sources */,
 				655AEDC71F03A21B00C1CBEE /* NewsInMemoryDatasource.swift in Sources */,
