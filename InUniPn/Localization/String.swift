@@ -50,6 +50,8 @@ enum L10n {
   static let namePlaceholder = L10n.tr("Name placeholder")
   /// News
   static let news = L10n.tr("News")
+  /// There are no planned lessons. A good opportunity to go sunbathing!
+  static let noLessonsPresent = L10n.tr("no lessons present")
   /// It seems that you have no news. Let's stay tuned!
   static let noNewsPresent = L10n.tr("no news present")
   /// Password
