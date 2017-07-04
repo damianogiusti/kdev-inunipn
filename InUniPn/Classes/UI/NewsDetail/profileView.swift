@@ -15,4 +15,6 @@ protocol ProfileView: BaseView {
     func myJoinedLessonsList(withLessonsList : [Lesson], andColor color : UIColor)
     
     func navigateToSettingsForm()
+
+    func showUser(userInfo: UserInfo)
 }
