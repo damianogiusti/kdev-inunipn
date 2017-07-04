@@ -14,7 +14,7 @@ target 'InUniPn' do
   pod 'SDWebImage', '~>3.8'
   pod 'KVSpinnerView'
   pod 'SwiftGen'
-
+  pod 'CryptoSwift'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
 end
