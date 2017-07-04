@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import DZNEmptyDataSet
 
-class NewsTableViewController: UIViewController {
+class NewsTableViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -19,7 +19,9 @@ class NewsTableViewController: UIViewController {
     fileprivate let placeholderImage = "https://bytesizemoments.com/wp-content/uploads/2014/04/placeholder.png"
 
     fileprivate let presenter = NewsPresenter()
-
+    
+    private var query = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,7 +43,7 @@ class NewsTableViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        presenter.loadNews()
+        presenter.loadNews(withQueryString: query)
     }
 
     fileprivate func formatDate(date: Date) -> String {
@@ -49,6 +51,11 @@ class NewsTableViewController: UIViewController {
         dateFormatter.dateFormat = "eeee',' dd'/'MM'/'yyyy"
         dateFormatter.locale = Calendar.current.locale
         return dateFormatter.string(from: date)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        query = searchText
+        presenter.loadNews(withQueryString: query)
     }
 }
 
