@@ -9,88 +9,73 @@
 import UIKit
 
 class NewsPresenter: BasePresenter {
-
+    
     //MARK: - variables
-
+    
+    private var user : User?
+    
     //MARK: - services
-
-    private var newsService: NewsService?
-    private let userService: UserService = UserService()
-
+    
+    private var newsService : NewsService?
+    
+    private let userService : UserService = UserService()
+    
     //MARK: - view
-
-    private weak var newsView : NewsView?
-
-    private(set) var newsList: [News] = []
-
+    
+    private var newsView : NewsView?
+    
     //MARK: - lifecycle methods
-
+    
     func create(withView view: NewsView) {
         newsView = view
-
-        guard let token: String = userService.currentUser()?.accessToken else {
-            #if DEBUG
-                fatalError("Cannot create the NewsPresenter without a token")
-            #else
-                return
-            #endif
-        }
-
-        newsService = NewsService(withToken: token)
-    }
-
-    //MARK: - user interaction methods
-
-    func showLessonsView(){
-
-    }
-
-    func showProfile(){
-
-    }
-
-    func toggleNewsFavouriteState(ofNews news: News) {
-        if news.starred {
-            newsService?.removeNewsToFavorites(byId: news.newsId, onSuccess: updateNewsView)
+        
+        user = userService.currentUser()
+        if let token = user?.accessToken{
+            newsService = NewsService(withToken : token);
         } else {
-            newsService?.addNewsToFavorites(byId: news.newsId, onSuccess: updateNewsView)
+            newsView?.showError(withError: Strings.unknownError)
         }
-    }
-
-    func showNewsDetail(withNews news: News){
-        newsView?.navigateToDetailNews(withNews: news)
-
-    }
-
-    func shareNews(withNews news: News){
+        
         
     }
-
-    func loadNews(withQueryString queryString: String? = nil){
-
-        if let string = queryString {
-            newsService?.searchNewses(withKeyword: string, onSuccess: displayNews)
+    
+    //MARK: - user interaction methods
+    
+    func showLessonsView(){
+        newsView?.navigateToLessons()
+    }
+    
+    func showProfile(){
+        newsView?.navigateToProfile()
+    }
+    
+    func togglePreferredNews(withNews news: News){
+        //newsService.togglePreferredNews(withNews:news)
+        newsView?.togglePreferredNews(withNews : news, andColor: UIColor.yellow)
+    }
+    
+    func showNewsDetail(withNews news: News){
+        newsView?.navigateToDetailNews(withNews: news)
+        
+    }
+    
+    func shareNews(withNews news: News){
+        newsView?.shareNews(withNews: news)
+    }
+    
+    func loadNews(withQueryString queryString: String?=nil){
+        
+        if let string = queryString{
+            newsService?.searchNewses(withKeyword: string, onSuccess: displayNewsList)  
         } else {
-            newsService?.all(onSuccess: displayNews)
+            newsService?.all(onSuccess: displayNewsList)
         }
-        newsView?.showProgress()
     }
     
     //MARK: - private methods
     
-    func displayNews(withNews news : [News]) {
-        newsView?.hideProgress()
-        newsList = news
-        newsView?.displayNews(withNewsList: news)
+    func displayNewsList(withNewsList newsList : [News]){
+                newsView?.displayNews(withNewsList: newsList)
     }
-
-    func updateNewsView(news: News) {
-        if let index = newsList.index(where: { n in n.newsId == news.newsId }) {
-            newsList[index] = news
-            newsView?.updateNewsView(news: news, atIndex: index)
-        } else {
-            newsView?.displayNews(withNewsList: newsList)
-        }
-    }
-
+    
 }

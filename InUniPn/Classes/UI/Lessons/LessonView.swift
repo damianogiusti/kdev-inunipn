@@ -14,7 +14,7 @@ protocol LessonView: BaseView {
     
     func navigateToNews()
     
-    func displayLessons(withLessonList: [Lesson])
+    func displayLessons(withLessonList: [String: [LessonToDisplay]])
     
     func displayJoiningChoice(isAlreadyJoined : Bool)
     
