@@ -32,6 +32,11 @@ struct LessonToDisplay{
     }
 }
 
+struct Day{
+    var date : String
+    var lessons : [LessonToDisplay]
+}
+
 
 class LessonPresenter: BasePresenter {
     
@@ -122,7 +127,6 @@ class LessonPresenter: BasePresenter {
         
         var formatter = DateFormatter()
         formatter.dateStyle = .medium
-        //formatter.timeStyle = .medium
         
         
         
@@ -130,12 +134,14 @@ class LessonPresenter: BasePresenter {
         
         formatter = DateFormatter()
         formatter.timeStyle = .short
+        formatter.timeZone = TimeZone.init(secondsFromGMT: 0)
+        formatter.locale = Locale.init(identifier: "it_IT")
         
         var lessonsToDisplay : [String: [LessonToDisplay]] = [:]
         
         
         for key in tempLessons.keys {
-            var v : [LessonToDisplay] =  (tempLessons[key]?.flatMap({ (l: Lesson) in LessonToDisplay(withId: l.lessonId, 
+            let v : [LessonToDisplay] =  (tempLessons[key]?.flatMap({ (l: Lesson) in LessonToDisplay(withId: l.lessonId, 
                                                                                                      name: l.name ?? "", 
                                                                                                      teacher: l.teacher ?? "", 
                                                                                                      startTime: formatter.string(from: l.timeStart ?? Date()), 
@@ -147,8 +153,31 @@ class LessonPresenter: BasePresenter {
             lessonsToDisplay[key] = v
         } 
         
+        
+        var days : [Day] = []
+        
+        for (key, value) in lessonsToDisplay {
+            days.append(Day(date : key, lessons : value.sorted(by: sortForLesson)))
+        }
+        
+        days.sort(by: sortForDays)
+        
 
-        lessonView?.displayLessons(withLessonList: lessonsToDisplay)
+        
+        lessonView?.displayLessons(withLessonList: days)
+    }
+    
+    func sortForDays(this:Day, that:Day) -> Bool {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+
+        return formatter.date(from :this.date)! < formatter.date(from :that.date)!
+    }
+    
+    func sortForLesson(this:LessonToDisplay, that:LessonToDisplay) -> Bool {
+        
+        return this.classroom < that.classroom
     }
     
 }
