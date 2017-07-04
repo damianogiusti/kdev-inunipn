@@ -44,7 +44,7 @@ class LessonPresenter: BasePresenter {
     //MARK: - variables
     
     private var user : User?
-    private(set) var days : [Day]
+    private(set) var days : [Day] = []
     
     
     //MARK: - services
