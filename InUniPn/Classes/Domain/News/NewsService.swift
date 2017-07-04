@@ -40,6 +40,25 @@ class NewsService: BaseService {
             }
         }
     }
+    
+    /// Get the detail of a news
+    func detailNews(byId id: String, onSuccess: @escaping SuccessBlock<News>, onError: ErrorBlock? = nil) {
+        runInBackground {
+            
+            let news = self.newsRepository.news(byId: id)
+
+            if let news = news {
+                runOnUiThread {
+                    onSuccess(news)
+                }
+            } else {
+                runOnUiThread {
+                    onError?(NewsesErrors.newsNotExisting)
+                }
+            }
+
+        }
+    }
 
     /// Delete a news
     func deleteNews(byId id: String, onSuccess: SuccessBlock<Void>? = nil, onError: ErrorBlock? = nil) {

@@ -73,6 +73,8 @@
 		8916FFC2C9DE068B116FCFCA /* Pods_InUniPn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */; };
 		9B0FC28F1F0149CD000815BB /* Lessons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0FC28E1F0149CD000815BB /* Lessons.storyboard */; };
 		9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FC2901F014B6C000815BB /* LessonsViewController.swift */; };
+		9B553D5B1F0B81F8003062C4 /* NewsDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B553D5A1F0B81F8003062C4 /* NewsDetailPresenter.swift */; };
+		9B553D5D1F0B8950003062C4 /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B553D5C1F0B8950003062C4 /* NewsDetailView.swift */; };
 		9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F11F03961200BF6548 /* News.storyboard */; };
 		9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */; };
 		9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F71F03A00400BF6548 /* Profile.storyboard */; };
@@ -154,6 +156,8 @@
 		91DA38B91E70341F2C6FB085 /* Pods-InUniPn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.release.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.release.xcconfig"; sourceTree = "<group>"; };
 		9B0FC28E1F0149CD000815BB /* Lessons.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lessons.storyboard; sourceTree = "<group>"; };
 		9B0FC2901F014B6C000815BB /* LessonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
+		9B553D5A1F0B81F8003062C4 /* NewsDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailPresenter.swift; sourceTree = "<group>"; };
+		9B553D5C1F0B8950003062C4 /* NewsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
 		9BC3E5F11F03961200BF6548 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9BC3E5F71F03A00400BF6548 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = InUniPn/Classes/UI/Main/Profile.storyboard; sourceTree = SOURCE_ROOT; };
@@ -496,6 +500,8 @@
 			children = (
 				B640866E1F01084500799398 /* Main.storyboard */,
 				B64086771F011AD400799398 /* DetailViewController.swift */,
+				9B553D5A1F0B81F8003062C4 /* NewsDetailPresenter.swift */,
+				9B553D5C1F0B8950003062C4 /* NewsDetailView.swift */,
 			);
 			path = NewsDetail;
 			sourceTree = "<group>";
@@ -705,6 +711,7 @@
 				65C6E2511F038FA6002F9E7F /* NewsView.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
 				B6A8E24D1F03A91D0013720E /* profileView.swift in Sources */,
+				9B553D5D1F0B8950003062C4 /* NewsDetailView.swift in Sources */,
 				B6A8E24F1F03C0A80013720E /* NewsService.swift in Sources */,
 				558C9AFB1F0104AA00930655 /* UsersInMemoryDatasource.swift in Sources */,
 				9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */,
@@ -717,6 +724,7 @@
 				9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */,
 				558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */,
 				65914E131F01423000FD1EB0 /* NewsRepositoryImpl.swift in Sources */,
+				9B553D5B1F0B81F8003062C4 /* NewsDetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
