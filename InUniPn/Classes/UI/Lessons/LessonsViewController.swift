@@ -92,19 +92,31 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func navigateToProfile() {
-        
-    }
+//    func navigateToProfile() {
+//        
+//    }
+//    
+//    func navigateToNews() {
+//        
+//    }
+//    
+//    func displayLessons(withLessonList list: [Lesson]) {
+//        lessonList = list
+//        filteredLessons = []
+//        filteredLessons.append(contentsOf: lessonList)
+//        lessonsTableView.reloadData()
+//    }
+//    
+//    func displayJoiningChoice(isAlreadyJoined : Bool) {
+//        
+//    }
     
-    func navigateToNews() {
-        
-    }
+    func navigateToProfile() {}
     
-    func displayLessons(withLessonList list: [Lesson]) {
-        lessonList = list
-        filteredLessons = []
-        filteredLessons.append(contentsOf: lessonList)
-        lessonsTableView.reloadData()
+    func navigateToNews() {}
+    
+    func displayLessons(withLessonList list: [String: [LessonToDisplay]]) {
+        print(list);
     }
     
     func displayJoiningChoice(isAlreadyJoined : Bool) {

@@ -50,7 +50,7 @@ class NewsPresenter: BasePresenter {
     }
     
     func togglePreferredNews(withNews news: News){
-        //newsService.togglePreferredNews(withNews:news)
+        newsService.togglePreferredNews(withNews:news)
         newsView?.togglePreferredNews(withNews : news, andColor: UIColor.yellow)
     }
     
