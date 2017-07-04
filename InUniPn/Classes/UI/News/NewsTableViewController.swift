@@ -114,20 +114,18 @@ extension NewsTableViewController {
         if let newsDetailViewController = UIStoryboard(name: "NewsDetail", bundle: nil)
             .instantiateViewController(withIdentifier: "NewsDetailViewController") as? NewsDetailViewController {
             
-            newsDetailViewController.news = presenter.newsList[indexPath.row]
+            newsDetailViewController.news = tableViewDelegate.dataset[indexPath.row]
             self.appDelegate.navigationController?.pushViewController(newsDetailViewController, animated: true)
         }
     }
     
     @objc func favoriteButtonPressed(_ button: UIButton) {
-        let news = presenter.newsList[button.tag]
+        let news = tableViewDelegate.dataset[button.tag]
         presenter.toggleNewsFavouriteState(ofNews: news)
     }
     
     func shareButtonPressed(_ button: UIButton) {
-        
-        
-        
-      //  presenter.shareNews(withNews: )
+        let news = tableViewDelegate.dataset[button.tag]
+        presenter.shareNews(withNews: news)
     }
 }
