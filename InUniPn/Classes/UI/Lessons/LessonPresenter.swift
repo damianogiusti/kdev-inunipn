@@ -166,18 +166,4 @@ class LessonPresenter: BasePresenter {
         
         lessonView?.displayLessons(withLessonList: days)
     }
-    
-    func sortForDays(this:Day, that:Day) -> Bool {
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-
-        return formatter.date(from :this.date)! < formatter.date(from :that.date)!
-    }
-    
-    func sortForLesson(this:LessonToDisplay, that:LessonToDisplay) -> Bool {
-        
-        return this.classroom < that.classroom
-    }
-    
 }

@@ -138,8 +138,8 @@ extension ProfileViewController: ProfileView  {
         tableView.reloadData()
     }
 
-    func myJoinedLessonsList(withLessonsList list: [Lesson], andColor color: UIColor) {
-        lessonsTableViewDelegate.dataset = [] //list
+    func showJoinedLessonsList(days: [Day], andColor color: UIColor) {
+        lessonsTableViewDelegate.dataset = days
         lessonsTableViewDelegate.filteredDataset = []
         tableView.reloadData()
     }

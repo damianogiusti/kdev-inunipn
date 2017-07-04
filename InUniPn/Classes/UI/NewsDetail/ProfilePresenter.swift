@@ -102,7 +102,7 @@ class ProfilePresenter: BasePresenter {
 
     private func onLessonsList(withLessonsList lessons: [Lesson]) {
         profileView?.hideProgress()
-        profileView?.myJoinedLessonsList(withLessonsList : lessons, andColor: .yellow)
+        profileView?.showJoinedLessonsList(days: self.rawLessonsToDays(withLessons: lessons), andColor: .yellow)
     }
 
     private func onSettingsForm(_: Any) {
