@@ -8,36 +8,99 @@
 
 import UIKit
 
+struct UserInfo {
+    let displayName: String
+    let imageURL: String
+    let university: String
+
+    init(withName name: String, imageURL: String, university: String) {
+        self.displayName = name
+        self.imageURL = imageURL
+        self.university = university
+    }
+}
+
 class ProfilePresenter: BasePresenter {
+
+    private var userService: UserService?
+    private var newsService: NewsService?
+    private var lessonsService: LessonsService?
     
     //MARK: - variables
     
-    
-    
-    private var profileView : ProfileView?
+    private weak var profileView : ProfileView?
     
     func create(withView view: ProfileView) {
         profileView = view
+        userService = UserService()
+
+        guard let token = userService?.currentUser()?.accessToken else {
+            #if DEBUG
+                fatalError("Cannot launch Profile View without a valid user")
+            #else
+                return
+            #endif
+        }
+
+        newsService = NewsService(withToken: token)
+        lessonsService = LessonsService(withToken: token)
+
     }
-    
-    //MARK: - user interaction methods
-    
-    func userProfile(withName name: String, image: UIImageView, university: String) {
-        
-    
+
+    // MARK: - view interaction methods
+
+    func loadUser() {
+        userService?.currentUser(onSuccess: showUser, onError: onError)
     }
 
-//MARK: - private methods
+    func loadNews() {
+        profileView?.showProgress()
+        newsService?.allFavoriteNews(onSuccess: onNewsList, onError: onError)
+    }
 
-private func onNewsList(withNewsList newses: [ News] ){
-    profileView?.myPreferedNewsList(withNewsList: newses, andColor: UIColor.yellow)
-}
+    func loadLessons() {
+        profileView?.showProgress()
+        lessonsService?.allJoinedLessons(fromDate: Date(), onSuccess: onLessonsList, onError: onError)
+    }
 
-private func onLessonsList(withLessonsList lessons: [Lesson]){
-    profileView?.myJoinedLessonsList(withLessonsList : lessons, andColor: UIColor.yellow)
-}
+    func unjoinLesson(byId lessonId: String) {
+        lessonsService?.unjoinLesson(byId: lessonId, onSuccess: { [weak self] _ in
+            self?.loadLessons()
+        }, onError: onError)
+    }
 
-private func onSettingsForm(_: Any){
-    profileView?.navigateToSettingsForm()
-}
+    func removeNewsFromFavorites(byId newsId: String) {
+        newsService?.removeNewsToFavorites(byId: newsId, onSuccess: { [weak self] _ in
+            self?.loadNews()
+        }, onError: onError)
+    }
+
+    // MARK: - private methods
+
+    private func onError(error: Error) {
+        profileView?.showError(withError: error.localizedDescription)
+    }
+
+    private func showUser(user: User) {
+        let name = user.displayName ?? user.email ?? ""
+        let imageURL = user.imageUrl ?? gravatarUrl(forEmail: user.email ?? "")
+        profileView?.showUser(userInfo: UserInfo(withName: name,
+                                                 imageURL: imageURL,
+                                                 university: user.university ?? ""))
+    }
+
+    private func onNewsList(withNewsList newses: [News]) {
+        profileView?.hideProgress()
+        profileView?.myPreferedNewsList(withNewsList: newses, andColor: .yellow)
+    }
+
+    private func onLessonsList(withLessonsList lessons: [Lesson]) {
+        profileView?.hideProgress()
+        profileView?.myJoinedLessonsList(withLessonsList : lessons, andColor: .yellow)
+    }
+
+    private func onSettingsForm(_: Any) {
+        profileView?.navigateToSettingsForm()
+    }
+
 }

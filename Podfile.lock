@@ -8,6 +8,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - CryptoSwift (0.6.9)
   - DZNEmptyDataSet (1.8.1)
   - FBSDKCoreKit (4.23.0):
     - Bolts (~> 1.7)
@@ -24,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Alamofire-Synchronous
+  - CryptoSwift
   - DZNEmptyDataSet
   - FBSDKCoreKit
   - FBSDKLoginKit
@@ -37,6 +39,7 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Alamofire-Synchronous: eedf1e6e961c3795a63c74990b3f7d9fbfac7e50
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  CryptoSwift: a22f6ba238e9ce4d26ee7bf45b9ed82e7122d4a0
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBSDKCoreKit: d7829f5a69901cd7296105328e4c3c3fc7da6518
   FBSDKLoginKit: 6b92bd65f319d669d2b0730e49db495ef1660566
@@ -46,6 +49,6 @@ SPEC CHECKSUMS:
   SwiftGen: 2ba2a88fc6130b96e38e2baa0029e4bd222ffd85
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 5eea3d7fdb950a7fa8b5cec59a0c8b6d580f6e90
+PODFILE CHECKSUM: 37a51c9accc9216d120269b5f8a99b77db470a71
 
 COCOAPODS: 1.2.1
