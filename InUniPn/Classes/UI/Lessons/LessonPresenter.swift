@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 struct LessonToDisplay{
     var id : String
@@ -68,6 +69,33 @@ class LessonPresenter: BasePresenter {
     }
     
     //MARK: - user interaction methods
+    
+    
+    func addEventToCalendar(title: String, description: String?, classroom: String?, date day: String, startTime: String, endTime: String) {
+        let eventStore = EKEventStore()
+        
+        
+        eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if (granted) && (error == nil) {
+                let event = EKEvent(eventStore: eventStore)
+                event.title = title
+                event.startDate = self.calculateDateTime(withDate: day, andTime: startTime)
+                event.endDate = self.calculateDateTime(withDate: day, andTime: endTime)
+                event.notes = description
+                event.location = classroom
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let e as NSError {
+                    self.lessonView?.showError(withError: "Errore nel salvataggio \(e)")                                   
+                }
+                self.lessonView?.showMessage(withMessage: "Evento Aggiunto da \(event.startDate) a \(event.endDate)")
+            } else {
+                self.lessonView?.showError(withError: "Non mi hai dato i permessi")                                   
+            }
+        })
+    }
+    
     
     func showJoiningChoice(withLesson lesson:Lesson){
         lessonView?.displayJoiningChoice(isAlreadyJoined: lesson.joined)
@@ -134,8 +162,8 @@ class LessonPresenter: BasePresenter {
         
         formatter = DateFormatter()
         formatter.timeStyle = .short
-        formatter.timeZone = TimeZone.init(secondsFromGMT: 0)
-        formatter.locale = Locale.init(identifier: "it_IT")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale.current
         
         var lessonsToDisplay : [String: [LessonToDisplay]] = [:]
         
@@ -162,7 +190,7 @@ class LessonPresenter: BasePresenter {
         
         days.sort(by: sortForDays)
         
-
+        
         
         lessonView?.displayLessons(withLessonList: days)
     }
@@ -171,13 +199,40 @@ class LessonPresenter: BasePresenter {
         
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
-
+        
         return formatter.date(from :this.date)! < formatter.date(from :that.date)!
     }
     
     func sortForLesson(this:LessonToDisplay, that:LessonToDisplay) -> Bool {
         
         return this.classroom < that.classroom
+    }
+    
+    
+    func calculateDateTime(withDate date: String, andTime time: String) -> Date{
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        
+        let date : Date = formatter.date(from: date)!
+        
+        formatter.dateFormat = "HH:mm"
+        
+        let timeOfTheDay = formatter.date(from: time)
+        
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let dateComponents = calendar.dateComponents([Calendar.Component.hour, Calendar.Component.minute], from: timeOfTheDay!)
+        
+        let hours = dateComponents.hour
+        let minutes = dateComponents.minute
+        
+        var dateTime = calendar.date(byAdding: .minute, value: minutes!, to: date)
+        dateTime = calendar.date(byAdding: .hour, value: hours!, to: dateTime!)
+        
+        return dateTime!
     }
     
 }
