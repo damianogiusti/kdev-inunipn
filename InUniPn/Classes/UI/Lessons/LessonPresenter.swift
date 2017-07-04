@@ -177,7 +177,7 @@ class LessonPresenter: BasePresenter {
     
     func sortForLesson(this:LessonToDisplay, that:LessonToDisplay) -> Bool {
         
-        return this.startTime < that.startTime
+        return this.classroom < that.classroom
     }
     
 }
