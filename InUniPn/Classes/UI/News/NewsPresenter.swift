@@ -66,12 +66,11 @@ class NewsPresenter: BasePresenter {
 
     }
 
-    func loadNews(withQueryString queryString: String? = nil){
-
-        if let string = queryString {
-            newsService?.searchNewses(withKeyword: string, onSuccess: displayNews)
-        } else {
+    func loadNews(withQueryString queryString: String = ""){
+        if queryString.isEmpty {
             newsService?.all(onSuccess: displayNews)
+        } else {
+            newsService?.searchNewses(withKeyword: queryString, onSuccess: displayNews)
         }
     }
 
