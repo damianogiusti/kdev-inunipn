@@ -73,9 +73,10 @@ class LoginViewController: UIViewController, LoginView {
     }
     
     func navigateToHome() {
-        if let homeController = appDelegate.mainStoryboard?.instantiateInitialViewController() {
-            present(homeController, animated: true, completion: nil)
-        }
+//        if let homeController = appDelegate.mainStoryboard?.instantiateInitialViewController() {
+//            present(homeController, animated: true, completion: nil)
+//        }
+        appDelegate.navigateToHome()
     }
 
     func showProgress() {

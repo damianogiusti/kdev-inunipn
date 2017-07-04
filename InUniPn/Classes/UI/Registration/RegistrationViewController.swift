@@ -82,9 +82,10 @@ class RegistrationViewController: UIViewController, RegistrationView {
     }
     
     func navigateToHome() {
-        let homeController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-        
-        present(homeController, animated: true, completion: nil)
+//        let homeController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+//        
+//        present(homeController, animated: true, completion: nil)
+        appDelegate.navigateToHome()
     }
     
     func navigateToLogin() {
