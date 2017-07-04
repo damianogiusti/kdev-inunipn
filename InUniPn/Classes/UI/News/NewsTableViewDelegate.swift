@@ -36,6 +36,7 @@ class NewsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSourc
 
         let news: News = dataset[indexPath.row]
 
+        cell.selectionStyle = .none
         cell.titleLabel.text = news.title
 
         if let content = news.content {
