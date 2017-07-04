@@ -44,6 +44,8 @@ class LessonPresenter: BasePresenter {
     //MARK: - variables
     
     private var user : User?
+    private(set) var days : [Day]
+    
     
     //MARK: - services
     
@@ -87,11 +89,11 @@ class LessonPresenter: BasePresenter {
                 do {
                     try eventStore.save(event, span: .thisEvent)
                 } catch let e as NSError {
-                    self.lessonView?.showError(withError: "Errore nel salvataggio \(e)")                                   
+                    self.lessonView?.showError(withError: "\(Strings.errorSaving) \(e)")                                   
                 }
-                self.lessonView?.showMessage(withMessage: "Evento Aggiunto da \(event.startDate) a \(event.endDate)")
+                self.lessonView?.showMessage(withMessage: Strings.eventAdded)
             } else {
-                self.lessonView?.showError(withError: "Non mi hai dato i permessi")                                   
+                self.lessonView?.showError(withError:Strings.noPermissionGiven)                                   
             }
         })
     }
@@ -152,61 +154,13 @@ class LessonPresenter: BasePresenter {
     //MARK: - private methods
     
     func displayLessons(withLessons lessons : [Lesson]){
-        
-        var formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        
-        
-        
-        var tempLessons: [String: [Lesson]] = lessons.categorise({ l in formatter.string(from: l.date ?? Date()) }) 
-        
-        formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        formatter.locale = Locale.current
-        
-        var lessonsToDisplay : [String: [LessonToDisplay]] = [:]
-        
-        
-        for key in tempLessons.keys {
-            let v : [LessonToDisplay] =  (tempLessons[key]?.flatMap({ (l: Lesson) in LessonToDisplay(withId: l.lessonId, 
-                                                                                                     name: l.name ?? "", 
-                                                                                                     teacher: l.teacher ?? "", 
-                                                                                                     startTime: formatter.string(from: l.timeStart ?? Date()), 
-                                                                                                     endTime: formatter.string(from: l.timeEnd ?? Date()), 
-                                                                                                     course: l.course ?? "", 
-                                                                                                     classroom: l.classroom ?? "", 
-                                                                                                     andJoined: l.joined) }))!
-            
-            lessonsToDisplay[key] = v
-        } 
-        
-        
-        var days : [Day] = []
-        
-        for (key, value) in lessonsToDisplay {
-            days.append(Day(date : key, lessons : value.sorted(by: sortForLesson)))
-        }
-        
-        days.sort(by: sortForDays)
-        
-        
+              
+        days = rawLessonsToDays(withLessons: lessons)
         
         lessonView?.displayLessons(withLessonList: days)
     }
     
-    func sortForDays(this:Day, that:Day) -> Bool {
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        
-        return formatter.date(from :this.date)! < formatter.date(from :that.date)!
-    }
     
-    func sortForLesson(this:LessonToDisplay, that:LessonToDisplay) -> Bool {
-        
-        return this.classroom < that.classroom
-    }
     
     
     func calculateDateTime(withDate date: String, andTime time: String) -> Date{
@@ -214,7 +168,6 @@ class LessonPresenter: BasePresenter {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        
         
         let date : Date = formatter.date(from: date)!
         

@@ -32,10 +32,14 @@ enum L10n {
   static let errorRetrievingNews = L10n.tr("Error retrieving news")
   /// An error occourred while retrieving universities, try again later
   static let errorRetrievingUniveristies = L10n.tr("Error retrieving univeristies")
+  /// An error occourred while saving
+  static let errorSaving = L10n.tr("Error saving")
   /// An error occourred while loggin in, try again later
   static let errorWhileLogginIn = L10n.tr("Error while loggin in")
   /// An error occourred while signin up, try again later
   static let errorWhileSigninUp = L10n.tr("Error while signin up")
+  /// Your event was added successfully
+  static let eventAdded = L10n.tr("event added")
   /// Please fill all the required fields
   static let fillAllFields = L10n.tr("Fill all fields")
   /// You have successfully joined the lesson
@@ -52,6 +56,8 @@ enum L10n {
   static let news = L10n.tr("News")
   /// It seems that you have no news. Let's stay tuned!
   static let noNewsPresent = L10n.tr("no news present")
+  /// I cannot perform this operation without your permission
+  static let noPermissionGiven = L10n.tr("No permission given")
   /// Password
   static let password = L10n.tr("Password")
   /// Select the university you are attending
