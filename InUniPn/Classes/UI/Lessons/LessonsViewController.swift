@@ -53,6 +53,12 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
         UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes as? [String : AnyObject], for: UIControlState.normal)
         
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        appDelegate.tabBarController?.title = Strings.lessons
+    }
     
     
     override func didReceiveMemoryWarning() {

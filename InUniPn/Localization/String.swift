@@ -40,18 +40,24 @@ enum L10n {
   static let fillAllFields = L10n.tr("Fill all fields")
   /// You have successfully joined the lesson
   static let joinedSuccessfully = L10n.tr("joined successfully")
+  /// Lessons
+  static let lessons = L10n.tr("Lessons")
   /// Loading, please wait...
   static let loading = L10n.tr("loading")
   /// Name
   static let name = L10n.tr("Name")
   /// Mario Rossi
   static let namePlaceholder = L10n.tr("Name placeholder")
+  /// News
+  static let news = L10n.tr("News")
   /// It seems that you have no news. Let's stay tuned!
   static let noNewsPresent = L10n.tr("no news present")
   /// Password
   static let password = L10n.tr("Password")
   /// Select the university you are attending
   static let pickUniversity = L10n.tr("Pick university")
+  /// Profile
+  static let profile = L10n.tr("Profile")
   /// University
   static let university = L10n.tr("University")
   /// You have successfully unjoined the lesson

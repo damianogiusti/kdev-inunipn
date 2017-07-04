@@ -22,6 +22,11 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        appDelegate.tabBarController?.title = Strings.profile
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
