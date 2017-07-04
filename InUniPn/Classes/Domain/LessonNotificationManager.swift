@@ -40,7 +40,7 @@ class LessonNotificationManager {
                 
                 let cal = Calendar.current
                 
-                let notificationDate = cal.date(byAdding: .minute, value: -30, to: lessonDate) ?? Date()
+                let notificationDate = cal.date(byAdding: .minute, value: -(NotificationPreferences.getNotificationBeforeMinutes()), to: lessonDate) ?? Date()
                 
                 let dateInfo = cal.dateComponents([.year, .month, .day, .hour, .minute], from: notificationDate)
                 
