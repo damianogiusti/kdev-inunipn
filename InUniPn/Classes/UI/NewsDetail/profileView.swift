@@ -12,7 +12,7 @@ protocol ProfileView: BaseView {
 
     func myPreferedNewsList(withNewsList: [News], andColor color : UIColor)
     
-    func myJoinedLessonsList(withLessonsList : [Lesson], andColor color : UIColor)
+    func showJoinedLessonsList(days: [Day], andColor color : UIColor)
     
     func navigateToSettingsForm()
 

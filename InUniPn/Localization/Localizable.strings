@@ -24,6 +24,7 @@
 "unjoined successfully" = "You have successfully unjoined the lesson";
 
 "no news present" = "It seems that you have no news. Let's stay tuned!";
+"no lessons present" = "There are no planned lessons. A good opportunity to go sunbathing!";
 
 
 //MARK: - errors

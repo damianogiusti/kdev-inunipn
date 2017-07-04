@@ -9,7 +9,7 @@
 import UIKit
 import EventKit
 
-struct LessonToDisplay{
+struct LessonToDisplay {
     var id : String
     var name : String
     var teacher : String
@@ -159,10 +159,7 @@ class LessonPresenter: BasePresenter {
         
         lessonView?.displayLessons(withLessonList: days)
     }
-    
-    
-    
-    
+
     func calculateDateTime(withDate date: String, andTime time: String) -> Date{
         
         let formatter = DateFormatter()
@@ -178,7 +175,7 @@ class LessonPresenter: BasePresenter {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(secondsFromGMT: 0)!
         let dateComponents = calendar.dateComponents([Calendar.Component.hour, Calendar.Component.minute], from: timeOfTheDay!)
-        
+
         let hours = dateComponents.hour
         let minutes = dateComponents.minute
         
@@ -187,5 +184,5 @@ class LessonPresenter: BasePresenter {
         
         return dateTime!
     }
-    
+
 }

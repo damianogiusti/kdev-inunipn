@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonCell: UITableViewCell {
+class LessonTableViewCell: UITableViewCell {
     
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
