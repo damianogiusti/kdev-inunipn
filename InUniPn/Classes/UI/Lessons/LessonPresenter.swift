@@ -145,13 +145,10 @@ class LessonPresenter: BasePresenter {
                                                                                                      andJoined: l.joined) }))!
             
             lessonsToDisplay[key] = v
-        }
-        
-        
-        print(lessonsToDisplay)
+        } 
         
 
-        lessonView?.displayLessons(withLessonList: lessons)
+        lessonView?.displayLessons(withLessonList: lessonsToDisplay)
     }
     
 }
