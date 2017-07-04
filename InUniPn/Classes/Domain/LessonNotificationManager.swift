@@ -47,11 +47,11 @@ class LessonNotificationManager {
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
                 
                 // Create the request object.
-                let request = UNNotificationRequest(identifier: "MorningAlarm", content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: "notification_alarm", content: content, trigger: trigger)
                 
                 // Schedule the request.
                 let center = UNUserNotificationCenter.current()
-                center.add(request) { (error : Error?) in
+                center.add(request) { error in
                     if let theError = error {
                         print(theError.localizedDescription)
                     }
