@@ -167,6 +167,7 @@
 		B6A8E24A1F0399F10013720E /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = InUniPn/Classes/UI/NewsDetail/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
 		B6A8E24C1F03A91D0013720E /* profileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profileView.swift; path = InUniPn/Classes/UI/NewsDetail/profileView.swift; sourceTree = SOURCE_ROOT; };
 		B6A8E24E1F03C0A80013720E /* NewsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		B66E51BE1F0B8D1E008728C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = ../../../../../Downloads/06_CreateATableView/FoodTracker/FoodTracker/Base.lproj/SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -369,6 +370,7 @@
 				9BC3E5F71F03A00400BF6548 /* Profile.storyboard */,
 				9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */,
 				B6A8E24C1F03A91D0013720E /* profileView.swift */,
+				B66E51BD1F0B8D1E008728C9 /* SettingsTableViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -743,6 +745,14 @@
 				65E66C451F00EA8D002F87A5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B66E51BD1F0B8D1E008728C9 /* SettingsTableViewController.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66E51BE1F0B8D1E008728C9 /* Base */,
+			);
+			name = SettingsTableViewController.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
