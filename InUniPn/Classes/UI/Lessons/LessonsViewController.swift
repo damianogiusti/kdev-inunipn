@@ -45,6 +45,12 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         lessonsTableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.barTintColor = UIColor.lilyWhite
+        searchController.searchBar.placeholder = "Cerca le lezioni"
+        searchController.searchBar.searchBarStyle = UISearchBarStyle.minimal
+        searchController.searchBar.setValue("Chiudi", forKey:"_cancelButtonText")
+        let cancelButtonAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.fireBrickRed]
+        UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes as? [String : AnyObject], for: UIControlState.normal)
         
     }
     
