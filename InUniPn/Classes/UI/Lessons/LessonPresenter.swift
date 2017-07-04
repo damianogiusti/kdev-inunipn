@@ -32,6 +32,11 @@ struct LessonToDisplay{
     }
 }
 
+struct Day{
+    var date : String
+    var lessons : [LessonToDisplay]
+}
+
 
 class LessonPresenter: BasePresenter {
     
@@ -148,7 +153,15 @@ class LessonPresenter: BasePresenter {
         } 
         
 
-        lessonView?.displayLessons(withLessonList: lessonsToDisplay)
+        var days : [Day] = []
+        
+        for (key, value) in lessonsToDisplay {
+            days.append(Day(date : key, lessons : value))
+        }
+        
+        print(days)
+        
+        lessonView?.displayLessons(withLessonList: days)
     }
     
 }

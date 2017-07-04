@@ -11,12 +11,24 @@ import UIKit
 
 class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, LessonView{
     
+    func displayLessons(withLessonList list: [Day]) {
+        days = list
+        filteredDays = []
+        filteredDays.append(contentsOf: days)
+        lessonsTableView.reloadData()
+    }
+
+    
     @IBOutlet var lessonsTableView: UITableView!
     let lessonCellIdentifier = "lessonCell"
     
     private let lessonPresenter = LessonPresenter()
     
     var lessonList = [Lesson]()
+    
+    var days = [Day]()
+    var filteredDays = [Day]()
+    
     var filteredLessons = [Lesson]()
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -61,35 +73,48 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredDays.count
+        }
+        return days.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive && searchController.searchBar.text != "" {
-            return filteredLessons.count
+            return filteredDays[section].lessons.count
         }
-        return lessonList.count
+        if days.count > 0{
+        return days[section].lessons.count
+        }
+        return 0
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:LessonCell = tableView.dequeueReusableCell(withIdentifier: lessonCellIdentifier, for: indexPath as IndexPath) as! LessonCell
         
-        let lesson: Lesson
+        let lesson: LessonToDisplay
         if searchController.isActive && searchController.searchBar.text != "" {
-            lesson = filteredLessons[indexPath.row]
+            lesson = filteredDays[indexPath.section].lessons[indexPath.row]
 
         } else {
-            lesson = lessonList[indexPath.row]
+            lesson = days[indexPath.section].lessons[indexPath.row]
         }
-        cell.startTimeLabel?.text = lesson.timeStart?.description
-        cell.endTimeLabel?.text = lesson.timeEnd?.description
+        cell.startTimeLabel?.text = lesson.startTime
+        cell.endTimeLabel?.text = lesson.endTime
         cell.lessonLabel?.text = lesson.name
         cell.teacherLabel?.text = lesson.teacher
         cell.classroomLabel?.text = lesson.classroom
         
         return cell
+    }
+    
+     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if days.count > 0{
+        return days[section].date
+        }
+        return ""
     }
     
     func navigateToProfile() {
