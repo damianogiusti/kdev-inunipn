@@ -113,16 +113,15 @@ class LessonsService: BaseService {
 
     /// Search all lessons for name, classroom and teacher
     func searchLessons(withKeyword keyword: String, onSuccess: @escaping SuccessBlock<[Lesson]>) {
-
+        let lowercasedQuery = keyword.lowercased()
         runInBackground {
 
             let currentDate = Date()
             let lessons = self.lessonsRepository.all().filter({ lesson in
-                if  let startDate = lesson.timeStart,
-                    let containsName = lesson.name?.contains(keyword),
-                    let containsClass = lesson.classroom?.trim().contains(keyword),
-                    let containsTeacher = lesson.teacher?.trim().contains(keyword),
-                    (containsName || containsClass || containsTeacher) && startDate >= currentDate {
+                if let startDate = lesson.timeEnd, startDate >= currentDate &&
+                    (lesson.name?.lowercased().range(of: lowercasedQuery) != nil ||
+                    lesson.classroom?.trim().lowercased().range(of: lowercasedQuery) != nil ||
+                    lesson.teacher?.trim().lowercased().range(of: lowercasedQuery) != nil) {
                     return true
                 }
                 return false

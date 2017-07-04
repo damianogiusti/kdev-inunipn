@@ -142,12 +142,11 @@ class LessonPresenter: BasePresenter {
         lessonView?.navigateToProfile()
     }
     
-    func loadLessons(withQueryString queryString: String?=nil){
-        
-        if let string = queryString{
-            lessonService?.searchLessons(withKeyword: string, onSuccess: displayLessons)  
-        } else {
+    func loadLessons(withQueryString queryString: String = ""){
+        if queryString.isEmpty {
             lessonService?.all(onSuccess: displayLessons)
+        } else {
+            lessonService?.searchLessons(withKeyword: queryString, onSuccess: displayLessons)
         }
     }
     

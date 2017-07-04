@@ -9,7 +9,12 @@
 import UIKit
 
 
-class LessonsViewController: UIViewController {
+class LessonsViewController: UIViewController, UISearchBarDelegate {
+
+    func displayLessons(withLessonList list: [Day]) {
+        tableViewDelegate.dataset = list
+        lessonsTableView.reloadData()
+    }
 
     @IBOutlet var lessonsTableView: UITableView!
     let lessonCellIdentifier = "lessonCell"
@@ -19,7 +24,6 @@ class LessonsViewController: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
 
     fileprivate let tableViewDelegate = LessonsTableViewDelegate()
-
 
     ///associo il tab item al controller
     required init?(coder aDecoder: NSCoder) {
@@ -43,14 +47,6 @@ class LessonsViewController: UIViewController {
         lessonsTableView.estimatedRowHeight = 100.0
         lessonsTableView.tableFooterView = UIView()
 
-        searchController.searchResultsUpdater = self as UISearchResultsUpdating
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        lessonsTableView.tableHeaderView = searchController.searchBar
-        searchController.searchBar.barTintColor = UIColor.lilyWhite
-        searchController.searchBar.placeholder = "Cerca le lezioni"
-        searchController.searchBar.searchBarStyle = UISearchBarStyle.minimal
-        searchController.searchBar.setValue("Chiudi", forKey:"_cancelButtonText")
         let cancelButtonAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.fireBrickRed]
         UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes as? [String : AnyObject], for: UIControlState.normal)
 
@@ -61,35 +57,13 @@ class LessonsViewController: UIViewController {
 
         appDelegate.tabBarController?.title = Strings.lessons
     }
-
-
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
-
-        tableViewDelegate.filteredDataset = []
-        for day in tableViewDelegate.dataset {
-
-            tableViewDelegate.filteredDataset.append(Day(date: day.date ,lessons: day.lessons.filter { lesson in
-                return (lesson.name.lowercased().contains(searchText.lowercased())) ||
-                        (lesson.teacher.lowercased().contains(searchText.lowercased())) ||
-                        (lesson.classroom.lowercased().contains(searchText.lowercased()))
-            }))
-        }
-
-        tableViewDelegate.filteredDataset = tableViewDelegate.filteredDataset.filter{day in day.lessons.count>0}
-
-        lessonsTableView.reloadData()
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        lessonPresenter.loadLessons(withQueryString: searchText)
     }
-
 }
 
 extension LessonsViewController: LessonView {
-
-    func displayLessons(withLessonList list: [Day]) {
-        tableViewDelegate.dataset = list
-        tableViewDelegate.filteredDataset = []
-        tableViewDelegate.filteredDataset.append(contentsOf: list)
-        lessonsTableView.reloadData()
-    }
 
     func navigateToProfile() {
 
@@ -110,11 +84,6 @@ extension LessonsViewController: LessonView {
     func showMessage(withMessage message : String) {
         displayAlert(withMessage: message)
     }
-}
-
-extension LessonsViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchText: searchController.searchBar.text!)
-    }
+    
 }
 
