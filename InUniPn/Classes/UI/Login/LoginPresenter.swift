@@ -61,7 +61,10 @@ class LoginPresenter: BasePresenter {
         if (name.isEmpty) {
              universityService.all(onSuccess: askUniversity, onError: onErrorRetrievingUniversities)
         } else {
-           //user_addUniversity
+            if let user = userService.currentUser() {
+                user.university = name
+                userService.save(user: user)
+            }
             loginView?.navigateToHome()
         }
     }

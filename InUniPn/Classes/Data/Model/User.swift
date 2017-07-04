@@ -25,6 +25,7 @@ class User {
     var displayName: String?
     var email: String?
     var imageUrl: String?
+    var university: String?
 
     init(withId id: String) {
         self.userId = id
