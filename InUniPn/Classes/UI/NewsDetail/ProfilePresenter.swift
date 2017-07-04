@@ -37,9 +37,10 @@ class ProfilePresenter: BasePresenter {
 
     private func onSettingsForm(_: Any) {
         profileView?.navigateToSettingsForm()
-        
-    private func onNewsList(_ : Any){
-        profileView?.newsList(withError: nil)
+    }
+
+    private func onNewsList(_ : Any) {
+
     }
 
 }
