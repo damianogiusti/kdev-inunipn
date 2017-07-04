@@ -24,12 +24,9 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     
     private let lessonPresenter = LessonPresenter()
     
-    var lessonList = [Lesson]()
-    
     var days = [Day]()
     var filteredDays = [Day]()
     
-    var filteredLessons = [Lesson]()
     let searchController = UISearchController(searchResultsController: nil)
     
     
@@ -53,7 +50,7 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
         lessonsTableView.estimatedRowHeight = 100.0
         lessonsTableView.tableFooterView = UIView()
         
-        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
+        searchController.searchResultsUpdater = self as UISearchResultsUpdating
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         lessonsTableView.tableHeaderView = searchController.searchBar
@@ -125,13 +122,6 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    func displayLessons(withLessonList list: [Lesson]) {
-        lessonList = list
-        filteredLessons = []
-        filteredLessons.append(contentsOf: lessonList)
-        lessonsTableView.reloadData()
-    }
-    
     func displayJoiningChoice(isAlreadyJoined : Bool) {
         
     }
@@ -145,10 +135,18 @@ class LessonsViewController:UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filteredLessons = lessonList.filter { lesson in
-            return (lesson.name?.lowercased().contains(searchText.lowercased()))!
+        
+        filteredDays = []
+        for day in days {
             
+            filteredDays.append(Day(date: day.date ,lessons: day.lessons.filter { lesson in
+                return (lesson.name.lowercased().contains(searchText.lowercased())) ||
+                        (lesson.teacher.lowercased().contains(searchText.lowercased())) ||
+                        (lesson.classroom.lowercased().contains(searchText.lowercased())) 
+            }))
         }
+        
+        filteredDays = filteredDays.filter{day in day.lessons.count>0}
         
         lessonsTableView.reloadData()
     }
