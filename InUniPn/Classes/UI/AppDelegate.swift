@@ -32,8 +32,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate let userService = UserService()
 
     var window: UIWindow?
-    var mainStoryboard: UIStoryboard?
-    var loginStoryboard: UIStoryboard?
+    private(set) var mainStoryboard: UIStoryboard?
+    private(set) var loginStoryboard: UIStoryboard?
+
+    private(set) lazy var navigationController: UINavigationController? = {
+        let vc: UINavigationController = UINavigationController()
+        vc.navigationBar.barTintColor = .fireBrickRed
+        vc.navigationBar.barStyle = .black
+        return vc
+    }()
+
+    private(set) var tabBarController: UIViewController?
+
+    func navigateToHome() {
+        if let tabBarController = mainStoryboard?.instantiateInitialViewController() {
+            self.tabBarController = tabBarController
+            navigationController?.setViewControllers([tabBarController], animated: true)
+            window?.rootViewController = navigationController
+        }
+    }
+
+    func navigateToLogin() {
+        window?.rootViewController = loginStoryboard?.instantiateInitialViewController()
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -45,11 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
 
-        if let user = userService.currentUser() {
-            print(user.accessToken ?? "")
-            window?.rootViewController = mainStoryboard?.instantiateInitialViewController()
+        if let _ = userService.currentUser() {
+            navigateToHome()
         } else {
-            window?.rootViewController = loginStoryboard?.instantiateInitialViewController()
+            navigateToLogin()
         }
 
         return true

@@ -33,6 +33,11 @@ class NewsTableViewController: UIViewController {
                            forCellReuseIdentifier: cellReuseIdentifier)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        appDelegate.tabBarController?.title = Strings.news
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
