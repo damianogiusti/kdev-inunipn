@@ -54,6 +54,8 @@ class ProfileViewController: UIViewController {
         // setup table view
         tableView.register(UINib(nibName: newsCellNibName, bundle: nil), forCellReuseIdentifier: newsCellReuseIdentifier)
         tableView.register(UINib(nibName: lessonsCellNibName, bundle: nil), forCellReuseIdentifier: lessonsCellReuseIdentifier)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100.0
 
         // setup news delegate
         newsTableViewDelegate.cellNibName = newsCellNibName
@@ -113,6 +115,7 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = newsTableViewDelegate
         tableView.emptyDataSetDelegate = newsTableViewDelegate
         tableView.emptyDataSetSource = newsTableViewDelegate
+        tableView.separatorStyle = .none
         presenter.loadNews()
     }
 
@@ -121,6 +124,7 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = lessonsTableViewDelegate
         tableView.emptyDataSetDelegate = lessonsTableViewDelegate
         tableView.emptyDataSetSource = lessonsTableViewDelegate
+        tableView.separatorStyle = .none // TODO .singleLine
         presenter.loadLessons()
     }
 }

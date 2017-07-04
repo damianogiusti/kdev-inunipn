@@ -53,6 +53,7 @@ class LessonsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSo
         } else {
             lesson = dataset[indexPath.section].lessons[indexPath.row]
         }
+        
         cell.startTimeLabel?.text = lesson.startTime
         cell.endTimeLabel?.text = lesson.endTime
         cell.lessonLabel?.text = lesson.name
