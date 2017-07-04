@@ -51,7 +51,7 @@ class LoginViewController: UIViewController, LoginView {
         loginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error == nil {
                 let fbloginresult : FBSDKLoginManagerLoginResult = result!
-                if fbloginresult.grantedPermissions.contains("email") {
+                if fbloginresult.grantedPermissions?.contains("email") ?? false {
                     self.getFBUserData()
                 }
             } else {
