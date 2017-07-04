@@ -40,18 +40,18 @@ class LessonNotificationManager {
                 
                 let cal = Calendar.current
                 
-                let notificationDate = cal.date(byAdding: .minute, value: -30, to: lessonDate) ?? Date()
+                let notificationDate = cal.date(byAdding: .minute, value: -(NotificationPreferences.getNotificationBeforeMinutes()), to: lessonDate) ?? Date()
                 
                 let dateInfo = cal.dateComponents([.year, .month, .day, .hour, .minute], from: notificationDate)
                 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
                 
                 // Create the request object.
-                let request = UNNotificationRequest(identifier: "MorningAlarm", content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: "notification_alarm", content: content, trigger: trigger)
                 
                 // Schedule the request.
                 let center = UNUserNotificationCenter.current()
-                center.add(request) { (error : Error?) in
+                center.add(request) { error in
                     if let theError = error {
                         print(theError.localizedDescription)
                     }

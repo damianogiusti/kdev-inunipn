@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4919619D1F03F6F500E030C5 /* LessonNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919619C1F03F6F500E030C5 /* LessonNotificationManager.swift */; };
 		493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */; };
+		49458AB91F0B8E6F005A7358 /* NotificationPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49458AB81F0B8E6F005A7358 /* NotificationPreferences.swift */; };
 		499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990274F1F0113F000D941A7 /* RegistrationViewController.swift */; };
 		499027521F01140700D941A7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499027511F01140700D941A7 /* Registration.storyboard */; };
 		49EC6A421F00EF5A0071EE12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		4919619C1F03F6F500E030C5 /* LessonNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonNotificationManager.swift; sourceTree = "<group>"; };
 		493A5EA41F00FAF6007D5CA9 /* RoundedBorderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedBorderTextField.swift; path = Designables/RoundedBorderTextField.swift; sourceTree = "<group>"; };
+		49458AB81F0B8E6F005A7358 /* NotificationPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPreferences.swift; sourceTree = "<group>"; };
 		4990274F1F0113F000D941A7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		499027511F01140700D941A7 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		49EC6A411F00EF5A0071EE12 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				551093BB1F01793000E44A07 /* DataResponse.swift */,
 				551093C21F0389B800E44A07 /* Addresses.swift */,
 				550EF2C41F04547900F94A8C /* CoreData+Utils.swift */,
+				49458AB81F0B8E6F005A7358 /* NotificationPreferences.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49458AB91F0B8E6F005A7358 /* NotificationPreferences.swift in Sources */,
 				550EF2C71F0454B300F94A8C /* UsersSQLDatasource.swift in Sources */,
 				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
 				550EF2B81F03DDF800F94A8C /* Extensions.swift in Sources */,
