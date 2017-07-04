@@ -9,12 +9,16 @@
 
 //MARK: - messages
 
+"event added" = "Your event was added successfully";
+
 "loading" = "Loading, please wait...";
 "contacting facebook" = "Contacting Facebook, please wait...";
 
 "Fill all fields" = "Please fill all the required fields";
 "University" = "University";
 "Pick university" = "Select the university you are attending";
+
+"No permission given" = "I cannot perform this operation without your permission";
 
 "joined successfully" = "You have successfully joined the lesson";
 "unjoined successfully" = "You have successfully unjoined the lesson";
@@ -31,6 +35,8 @@
 "Error retrieving univeristies" = "An error occourred while retrieving universities, try again later";
 "Error retrieving lessons" = "An error occourred while retrieving lessons, try again later";
 "Error retrieving news" = "An error occourred while retrieving news, try again later";
+
+"Error saving" = "An error occourred while saving";
 
 "Error while loggin in" = "An error occourred while loggin in, try again later";
 "Error while signin up" = "An error occourred while signin up, try again later";
