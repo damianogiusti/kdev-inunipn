@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dKp-4L-uKa">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--News Detail View Controller-->
+        <scene sceneID="lMl-iJ-zvD">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dKp-4L-uKa" customClass="NewsDetailViewController" customModule="InUniPn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="laz-AO-br9"/>
+                        <viewControllerLayoutGuide type="bottom" id="gvz-2z-e8r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GUS-HI-rHi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXK-c6-EDu">
+                                <rect key="frame" x="0.0" y="220" width="375" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="8KT-vW-dtS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.67843137254901964" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h6B-Ru-fOf">
+                                <rect key="frame" x="0.0" y="262" width="375" height="405"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gch-lf-wpk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gch-lf-wpk" firstAttribute="top" secondItem="laz-AO-br9" secondAttribute="bottom" id="864-vU-XGG"/>
+                            <constraint firstItem="Gch-lf-wpk" firstAttribute="height" secondItem="GUS-HI-rHi" secondAttribute="height" multiplier="0.3" id="8Ia-WO-9JR"/>
+                            <constraint firstItem="Gch-lf-wpk" firstAttribute="leading" secondItem="GUS-HI-rHi" secondAttribute="leading" id="9yC-jL-vFW"/>
+                            <constraint firstAttribute="trailing" secondItem="Gch-lf-wpk" secondAttribute="trailing" id="E9g-AL-RxA"/>
+                            <constraint firstItem="h6B-Ru-fOf" firstAttribute="top" secondItem="AXK-c6-EDu" secondAttribute="bottom" constant="18" id="S9c-dx-I5m"/>
+                            <constraint firstItem="Gch-lf-wpk" firstAttribute="leading" secondItem="h6B-Ru-fOf" secondAttribute="leading" id="SQ5-9z-4VK"/>
+                            <constraint firstItem="AXK-c6-EDu" firstAttribute="top" secondItem="Gch-lf-wpk" secondAttribute="bottom" id="Wfc-zm-Epq"/>
+                            <constraint firstItem="Gch-lf-wpk" firstAttribute="leading" secondItem="AXK-c6-EDu" secondAttribute="leading" id="cGZ-NI-w7J"/>
+                            <constraint firstAttribute="trailing" secondItem="h6B-Ru-fOf" secondAttribute="trailing" id="e2F-Jz-gPN"/>
+                            <constraint firstItem="AXK-c6-EDu" firstAttribute="width" secondItem="Gch-lf-wpk" secondAttribute="width" id="eFm-kg-oLn"/>
+                            <constraint firstItem="Gch-lf-wpk" firstAttribute="trailing" secondItem="h6B-Ru-fOf" secondAttribute="trailing" id="jyc-mw-N72"/>
+                            <constraint firstItem="h6B-Ru-fOf" firstAttribute="leading" secondItem="GUS-HI-rHi" secondAttribute="leading" id="oyT-SC-Pwj"/>
+                            <constraint firstAttribute="bottom" secondItem="h6B-Ru-fOf" secondAttribute="bottom" id="yfP-lw-e2I"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="imageDetail" destination="Gch-lf-wpk" id="YxX-L3-m1Q"/>
+                        <outlet property="textContent" destination="h6B-Ru-fOf" id="TCO-Va-heA"/>
+                        <outlet property="titleLabel" destination="AXK-c6-EDu" id="qaH-7j-0pc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ozd-yC-b8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="-205"/>
+        </scene>
+    </scenes>
+</document>

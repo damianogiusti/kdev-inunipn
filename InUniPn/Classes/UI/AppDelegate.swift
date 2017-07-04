@@ -37,8 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private(set) lazy var navigationController: UINavigationController? = {
         let vc: UINavigationController = UINavigationController()
-        vc.navigationBar.barTintColor = .fireBrickRed
-        vc.navigationBar.barStyle = .black
+        vc.navigationBar.barTintColor = UIColor.lilyWhite
+        vc.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.fireBrickRed]
+        //vc.navigationBar.barStyle = .black
         return vc
     }()
 

@@ -8,20 +8,21 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, NewsDetailView {
+class NewsDetailViewController: UIViewController, NewsDetailView {
 
-    @IBOutlet weak var shareItem: UIBarButtonItem!
-    @IBOutlet weak var saveItem: UIBarButtonItem!
     @IBOutlet weak var textContent: UITextView!
-    @IBOutlet var titleLabel: UIView!
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var imageDetail: UIImageView!
     
     private let newsDetailPresenter = NewsDetailPresenter()
     
+    public var news : News?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
-       
+        newsDetailPresenter.create(withView: self)
+        newsDetailPresenter.displayNews(withNews: news!)
         //titleLabel.tintColor = UIColor(red: 173, green: 34, blue: 34, alpha: 1)
         
         //saveItem.image= #imageLiteral(resourceName: "star_blank")

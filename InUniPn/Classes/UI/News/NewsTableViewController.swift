@@ -137,6 +137,15 @@ extension NewsTableViewController: UITableViewDataSource, UITableViewDelegate {
         return 200
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let newsDetailViewController = UIStoryboard(name: "NewsDetail", bundle: nil).instantiateViewController(withIdentifier: "NewsDetailViewController") as? NewsDetailViewController {
+            
+            newsDetailViewController.news = presenter.newsList[indexPath.row]
+            self.appDelegate.navigationController?.pushViewController(newsDetailViewController, animated: true)
+        }
+    
+    }
+    
 }
 
 
@@ -164,4 +173,5 @@ extension NewsTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegat
         return NSAttributedString(string: Strings.noNewsPresent)
     }
 }
+
 
