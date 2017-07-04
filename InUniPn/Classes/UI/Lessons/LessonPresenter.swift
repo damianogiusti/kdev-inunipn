@@ -157,10 +157,12 @@ class LessonPresenter: BasePresenter {
         var days : [Day] = []
         
         for (key, value) in lessonsToDisplay {
-            days.append(Day(date : key, lessons : value))
+            days.append(Day(date : key, lessons : value.sorted(by: sortForLesson)))
         }
         
         days.sort(by: sortForDays)
+        
+
         
         lessonView?.displayLessons(withLessonList: days)
     }
@@ -171,6 +173,11 @@ class LessonPresenter: BasePresenter {
         formatter.dateStyle = .medium
 
         return formatter.date(from :this.date)! < formatter.date(from :that.date)!
+    }
+    
+    func sortForLesson(this:LessonToDisplay, that:LessonToDisplay) -> Bool {
+        
+        return this.startTime < that.startTime
     }
     
 }
