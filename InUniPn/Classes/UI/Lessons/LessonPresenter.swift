@@ -44,6 +44,8 @@ class LessonPresenter: BasePresenter {
     //MARK: - variables
     
     private var user : User?
+    private(set) var days : [Day]
+    
     
     //MARK: - services
     
@@ -153,7 +155,7 @@ class LessonPresenter: BasePresenter {
     
     func displayLessons(withLessons lessons : [Lesson]){
               
-        let days : [Day] = rawLessonsToDays(withLessons: lessons)
+        days = rawLessonsToDays(withLessons: lessons)
         
         lessonView?.displayLessons(withLessonList: days)
     }
@@ -166,7 +168,6 @@ class LessonPresenter: BasePresenter {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        
         
         let date : Date = formatter.date(from: date)!
         
