@@ -63,7 +63,18 @@ class NewsPresenter: BasePresenter {
     }
 
     func shareNews(withNews news: News){
-
+        //Set the default sharing message.
+        let message = "Message goes here."
+        //Set the link to share.
+        if let link = NSURL(string: "http://www.google.com")
+        {
+            let objectsToShare :[Any] = [message, link]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            //(activityItems: objectsToShare, applicationActivities: nil)
+            activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+            
+            newsView?.shareNews(activity: activityVC)
+        }
     }
 
     func loadNews(withQueryString queryString: String = ""){
