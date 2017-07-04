@@ -84,7 +84,9 @@ class ProfilePresenter: BasePresenter {
     private func showUser(user: User) {
         let name = user.displayName ?? user.email ?? ""
         let imageURL = user.imageUrl ?? gravatarUrl(forEmail: user.email ?? "")
-        profileView?.showUser(userInfo: UserInfo(withName: name, imageURL: imageURL, university: ""))
+        profileView?.showUser(userInfo: UserInfo(withName: name,
+                                                 imageURL: imageURL,
+                                                 university: user.university ?? ""))
     }
 
     private func onNewsList(withNewsList newses: [News]) {
