@@ -14,13 +14,13 @@ protocol BaseRealmDatasource: class {
     associatedtype DM: Object
     associatedtype M
 
-    func news(byId id: String) -> M?
+    func obj(byId id: String) -> M?
 
     @discardableResult
-    func save(news: M) -> Bool
+    func save(obj: M) -> Bool
 
     @discardableResult
-    func saveAll(newsList: [M]) -> Bool
+    func saveAll(objects: [M]) -> Bool
 
     @discardableResult
     func delete(byId id: String) -> Bool
@@ -42,7 +42,7 @@ extension BaseRealmDatasource {
         return try? Realm()
     }
 
-    func news(byId id: String) -> M? {
+    func obj(byId id: String) -> M? {
         if let realm = realm() {
             return mapToModel(dataModel: realm.object(ofType: DM.self, forPrimaryKey: id))
         }
@@ -50,10 +50,10 @@ extension BaseRealmDatasource {
     }
 
     @discardableResult
-    func save(news: M) -> Bool {
-        if let realm = realm(), let news = mapToDataModel(model: news) {
+    func save(obj: M) -> Bool {
+        if let realm = realm(), let obj = mapToDataModel(model: obj) {
             realm.beginWrite()
-            realm.add(news, update: true)
+            realm.add(obj, update: true)
             do {
                 try realm.commitWrite()
             } catch {
@@ -65,9 +65,9 @@ extension BaseRealmDatasource {
     }
 
     @discardableResult
-    func saveAll(newsList: [M]) -> Bool {
+    func saveAll(objects: [M]) -> Bool {
         if let realm = realm() {
-            let array = newsList.flatMap(mapToDataModel)
+            let array = objects.flatMap(mapToDataModel)
             realm.beginWrite()
             realm.add(array, update: true)
             do {

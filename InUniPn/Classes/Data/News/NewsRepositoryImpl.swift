@@ -22,7 +22,7 @@ class NewsRepositoryImpl: NewsRepository {
     }
     
     func news(byId id: String) -> News? {
-        return storageDatasource.news(byId: id)
+        return storageDatasource.obj(byId: id)
     }
 
     func news(ofPage page: Int) -> [News] {
@@ -31,7 +31,7 @@ class NewsRepositoryImpl: NewsRepository {
             return storageDatasource.all().filter({ news in news.page == page })
         } else {
             if let news = restDatasource.all(ofPage: page).data {
-                storageDatasource.saveAll(newsList: news)
+                storageDatasource.saveAll(objects: news)
                 return storageDatasource.all().filter({ news in news.page == page })
             }
             return []
@@ -55,7 +55,7 @@ class NewsRepositoryImpl: NewsRepository {
                 }
 
                 // update the persisted data with the REST one
-                storageDatasource.saveAll(newsList: news)
+                storageDatasource.saveAll(objects: news)
                 return news
             } else {
                 return []
@@ -69,7 +69,7 @@ class NewsRepositoryImpl: NewsRepository {
                 return newss
             } else {
                 if let news = restDatasource.all().data {
-                    storageDatasource.saveAll(newsList: news)
+                    storageDatasource.saveAll(objects: news)
                     return news
                 }
                 return []
@@ -78,7 +78,7 @@ class NewsRepositoryImpl: NewsRepository {
     }
     
     func save(news: News) -> Bool {
-        if storageDatasource.save(news: news) /* && others */ {
+        if storageDatasource.save(obj: news) /* && others */ {
             return true
         } else {
             return false

@@ -85,7 +85,7 @@ class ProfilePresenter: BasePresenter {
     private func showUser(user: User) {
         var name = user.displayName ?? ""
         if name.trim().isEmpty {
-            name = user.email ?? ""
+            name = usernameFromEmail(email: user.email ?? "")
         }
         var imageURL = user.imageUrl ?? ""
         if imageURL.trim().isEmpty {
@@ -104,6 +104,14 @@ class ProfilePresenter: BasePresenter {
             print(error)
         })
 
+    }
+
+    private func usernameFromEmail(email: String) -> String {
+        if email.isEmpty || !email.contains("@") {
+            return email
+        }
+
+        return usernameFromEmail(email: email.substring(to: email.index(before: email.endIndex)))
     }
 
     private func onNewsList(withNewsList newses: [News]) {

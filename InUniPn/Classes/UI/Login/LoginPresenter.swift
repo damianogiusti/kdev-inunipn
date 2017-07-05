@@ -86,6 +86,7 @@ class LoginPresenter: BasePresenter {
     }
 
     private func onCredentialsAreInvalid() {
+        loginView?.hideProgress()
         loginView?.showError(withError: Strings.fillAllFields)
     }
     
@@ -95,7 +96,8 @@ class LoginPresenter: BasePresenter {
     }
     
     private func onErrorRetrievingUniversities(error : Any){
-         loginView?.showError(withError: Strings.errorRetrievingUniveristies)
+        loginView?.hideProgress()
+        loginView?.showError(withError: Strings.errorRetrievingUniveristies)
     }
 
 }
