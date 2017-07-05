@@ -11,24 +11,38 @@ import SwiftyJSON
 
 class AuthService: BaseService, RestCapable {
 
-    func loginUser(withName name: String, andPassword password: String,
+    func loginUser(withEmail email: String, password: String,
                    onSuccess: @escaping (User) -> Void, onError: @escaping (Error) -> Void) {
 
         let parameters: Alamofire.Parameters = [
-            "email": name,
+            "email": email,
             "password": password
         ]
 
         postRestCall(toUrl: Addresses.authLogin.url(), withParams: parameters, onSuccess: { (json) in
             // create user after successful login
             let response = AuthResponse(fromJson: json)
-            let user = UserFactory.user(withId: response.id, name: "", email: name, imageUrl: "", andToken: response.token)
+            let user = UserFactory.user(withId: response.id, name: "", email: email, imageUrl: "",
+                                        andToken: response.token)
             onSuccess(user)
         }, onError: onError)
     }
 
-    func registerUser(withName name: String, andPassword password: String, onSuccess: (Any) -> Void, onError: (Error) -> Void) {
+    func registerUser(withName name: String, email: String, password: String, andUniversityCode uni: String,
+                      onSuccess: @escaping (User) -> Void, onError: @escaping (Error) -> Void) {
+        
+        let parameters: Alamofire.Parameters = [
+            "email": email,
+            "password": password
+        ]
 
+        postRestCall(toUrl: Addresses.authRegistration.url(), withParams: parameters, onSuccess: { (json) in
+            // create user after successful registration
+            let response = AuthResponse(fromJson: json)
+            let user = UserFactory.user(withId: response.id, name: name, email: email, imageUrl: "", universityCode: uni,
+                                        andToken: response.token)
+            onSuccess(user)
+        }, onError: onError)
     }
 
 }

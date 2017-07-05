@@ -35,12 +35,13 @@ class User {
 
 class UserFactory {
 
-    static func user(withId id: String, name: String, email: String, imageUrl: String, andToken token: String) -> User {
+    static func user(withId id: String, name: String, email: String, imageUrl: String, universityCode: String? = nil, andToken token: String) -> User {
         let user = User(withId: id)
         user.displayName = name
         user.email = email
         user.imageUrl = imageUrl
         user.accessToken = token
+        user.university = universityCode
         return user
     }
     

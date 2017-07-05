@@ -73,6 +73,7 @@ extension NewsTableViewController: NewsView {
     }
 
     func updateNewsView(news: News, atIndex index: Int) {
+        tableViewDelegate.dataset[index] = news
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
     }
 
@@ -108,13 +109,13 @@ extension NewsTableViewController {
         if let newsDetailViewController = UIStoryboard(name: "NewsDetail", bundle: nil)
             .instantiateViewController(withIdentifier: "NewsDetailViewController") as? NewsDetailViewController {
 
-            newsDetailViewController.news = presenter.newsList[indexPath.row]
+            newsDetailViewController.news = tableViewDelegate.dataset[indexPath.row]
             self.appDelegate.navigationController?.pushViewController(newsDetailViewController, animated: true)
         }
     }
 
     @objc func favoriteButtonPressed(_ button: UIButton) {
-        let news = presenter.newsList[button.tag]
+        let news = tableViewDelegate.dataset[button.tag]
         presenter.toggleNewsFavouriteState(ofNews: news)
     }
 

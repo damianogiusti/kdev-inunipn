@@ -43,7 +43,7 @@ class LoginViewController: UIViewController, LoginView {
         let email = inputEmail.text ?? ""
         let password = inputPassword.text ?? ""
         
-        loginPresenter.loginUser(withName: email, andPassword: password)
+        loginPresenter.loginUser(withEmail: email, andPassword: password)
     }
     
     @IBAction func didPressFacebook(_ sender: Any) {

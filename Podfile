@@ -17,4 +17,6 @@ target 'InUniPn' do
   pod 'CryptoSwift'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'Realm', '~> 2.8'
+  pod 'RealmSwift', '~> 2.8'
 end

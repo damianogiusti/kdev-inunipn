@@ -34,6 +34,7 @@
 		551093C31F0389B800E44A07 /* Addresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093C21F0389B800E44A07 /* Addresses.swift */; };
 		554613C71F0BD32000079953 /* LessonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 554613C61F0BD32000079953 /* LessonTableViewCell.xib */; };
 		554613C91F0BE2BF00079953 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554613C81F0BE2BF00079953 /* NewsDetailViewController.swift */; };
+		554613CB1F0BE70A00079953 /* NewsRealmDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554613CA1F0BE70A00079953 /* NewsRealmDatasource.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
 		558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */; };
@@ -54,6 +55,8 @@
 		558C9B0C1F01477800930655 /* LessonsRestDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9B0B1F01477800930655 /* LessonsRestDatasource.swift */; };
 		558D17211F0BBF5A0057BD36 /* NewsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D17201F0BBF5A0057BD36 /* NewsTableViewDelegate.swift */; };
 		558D17231F0BCD250057BD36 /* LessonsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D17221F0BCD250057BD36 /* LessonsTableViewDelegate.swift */; };
+		55B329041F0BEE49000E2825 /* DMNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B329031F0BEE49000E2825 /* DMNews.swift */; };
+		55B329061F0CCBE5000E2825 /* BaseRealmDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B329051F0CCBE5000E2825 /* BaseRealmDatasource.swift */; };
 		651507421F03B8AC00C631D5 /* LessonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651507401F03B8AC00C631D5 /* LessonPresenter.swift */; };
 		651507431F03B8AC00C631D5 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651507411F03B8AC00C631D5 /* LessonView.swift */; };
 		654EC6A31F02536300E930BC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EC6A21F02536300E930BC /* String.swift */; };
@@ -120,6 +123,7 @@
 		551093C21F0389B800E44A07 /* Addresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Addresses.swift; sourceTree = "<group>"; };
 		554613C61F0BD32000079953 /* LessonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LessonTableViewCell.xib; sourceTree = "<group>"; };
 		554613C81F0BE2BF00079953 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		554613CA1F0BE70A00079953 /* NewsRealmDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRealmDatasource.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		558C9B0B1F01477800930655 /* LessonsRestDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsRestDatasource.swift; sourceTree = "<group>"; };
 		558D17201F0BBF5A0057BD36 /* NewsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewDelegate.swift; sourceTree = "<group>"; };
 		558D17221F0BCD250057BD36 /* LessonsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsTableViewDelegate.swift; sourceTree = "<group>"; };
+		55B329031F0BEE49000E2825 /* DMNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMNews.swift; sourceTree = "<group>"; };
+		55B329051F0CCBE5000E2825 /* BaseRealmDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRealmDatasource.swift; sourceTree = "<group>"; };
 		651507401F03B8AC00C631D5 /* LessonPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonPresenter.swift; sourceTree = "<group>"; };
 		651507411F03B8AC00C631D5 /* LessonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 		654EC6A21F02536300E930BC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -284,6 +290,7 @@
 				551093C21F0389B800E44A07 /* Addresses.swift */,
 				550EF2C41F04547900F94A8C /* CoreData+Utils.swift */,
 				49458AB81F0B8E6F005A7358 /* NotificationPreferences.swift */,
+				55B329051F0CCBE5000E2825 /* BaseRealmDatasource.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -429,6 +436,7 @@
 		558C9AEC1F01040A00930655 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55B329021F0BEE17000E2825 /* RealmModel */,
 				558C9AF81F01043600930655 /* User.swift */,
 				65914E0C1F013AF100FD1EB0 /* News.swift */,
 				551093B41F01626200E44A07 /* University.swift */,
@@ -444,6 +452,7 @@
 				65914E0E1F013B2800FD1EB0 /* NewsRepository.swift */,
 				65914E121F01423000FD1EB0 /* NewsRepositoryImpl.swift */,
 				65C6E2521F03966D002F9E7F /* NewsRestDatasource.swift */,
+				554613CA1F0BE70A00079953 /* NewsRealmDatasource.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -465,6 +474,14 @@
 				558C9B011F01329300930655 /* UserService.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		55B329021F0BEE17000E2825 /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+				55B329031F0BEE49000E2825 /* DMNews.swift */,
+			);
+			path = RealmModel;
 			sourceTree = "<group>";
 		};
 		65914E141F015D9B00FD1EB0 /* Localization */ = {
@@ -720,6 +737,7 @@
 				558C9B0C1F01477800930655 /* LessonsRestDatasource.swift in Sources */,
 				558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */,
 				558C9AC11F00EFB800930655 /* AuthService.swift in Sources */,
+				55B329061F0CCBE5000E2825 /* BaseRealmDatasource.swift in Sources */,
 				65C6E24F1F038F6B002F9E7F /* NewsPresenter.swift in Sources */,
 				551093BC1F01793000E44A07 /* DataResponse.swift in Sources */,
 				558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */,
@@ -731,6 +749,7 @@
 				558C9B0A1F013CD700930655 /* LessonsRepoImpl.swift in Sources */,
 				655AEDC71F03A21B00C1CBEE /* NewsInMemoryDatasource.swift in Sources */,
 				550EF2C51F04547900F94A8C /* CoreData+Utils.swift in Sources */,
+				55B329041F0BEE49000E2825 /* DMNews.swift in Sources */,
 				654F01171F010D7C0002D171 /* LoginPresenter.swift in Sources */,
 				651507431F03B8AC00C631D5 /* LessonView.swift in Sources */,
 				65914E0F1F013B2800FD1EB0 /* NewsRepository.swift in Sources */,
@@ -750,6 +769,7 @@
 				550EF2C11F0412C300F94A8C /* NewsTableViewController.swift in Sources */,
 				558C9AF91F01043600930655 /* User.swift in Sources */,
 				558C9B041F01395900930655 /* LessonsRepository.swift in Sources */,
+				554613CB1F0BE70A00079953 /* NewsRealmDatasource.swift in Sources */,
 				9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */,
 				558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */,
 				65914E131F01423000FD1EB0 /* NewsRepositoryImpl.swift in Sources */,

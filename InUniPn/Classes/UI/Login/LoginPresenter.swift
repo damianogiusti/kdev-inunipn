@@ -33,13 +33,13 @@ class LoginPresenter: BasePresenter {
 
     //MARK: - user interaction methods
 
-    func loginUser(withName name: String, andPassword password: String) {
+    func loginUser(withEmail email: String, andPassword password: String) {
 
-        if (name.isEmpty || password.isEmpty) {
+        if (email.isEmpty || password.isEmpty) {
             onCredentialsAreInvalid()
         } else {
             authManager.loginUser(
-                withName: name,
+                withEmail: email,
                 andPassword: password,
                 onSuccess: onLoginSuccess,
                 onError: onLoginError
