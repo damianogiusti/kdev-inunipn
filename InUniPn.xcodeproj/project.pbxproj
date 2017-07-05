@@ -57,6 +57,8 @@
 		558D17231F0BCD250057BD36 /* LessonsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D17221F0BCD250057BD36 /* LessonsTableViewDelegate.swift */; };
 		55B329041F0BEE49000E2825 /* DMNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B329031F0BEE49000E2825 /* DMNews.swift */; };
 		55B329061F0CCBE5000E2825 /* BaseRealmDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B329051F0CCBE5000E2825 /* BaseRealmDatasource.swift */; };
+		55B329081F0CF139000E2825 /* UsersRealmDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B329071F0CF139000E2825 /* UsersRealmDatasource.swift */; };
+		55B3290A1F0CF16B000E2825 /* DMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B329091F0CF16B000E2825 /* DMUser.swift */; };
 		651507421F03B8AC00C631D5 /* LessonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651507401F03B8AC00C631D5 /* LessonPresenter.swift */; };
 		651507431F03B8AC00C631D5 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651507411F03B8AC00C631D5 /* LessonView.swift */; };
 		654EC6A31F02536300E930BC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EC6A21F02536300E930BC /* String.swift */; };
@@ -146,6 +148,8 @@
 		558D17221F0BCD250057BD36 /* LessonsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsTableViewDelegate.swift; sourceTree = "<group>"; };
 		55B329031F0BEE49000E2825 /* DMNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMNews.swift; sourceTree = "<group>"; };
 		55B329051F0CCBE5000E2825 /* BaseRealmDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRealmDatasource.swift; sourceTree = "<group>"; };
+		55B329071F0CF139000E2825 /* UsersRealmDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersRealmDatasource.swift; sourceTree = "<group>"; };
+		55B329091F0CF16B000E2825 /* DMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMUser.swift; sourceTree = "<group>"; };
 		651507401F03B8AC00C631D5 /* LessonPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonPresenter.swift; sourceTree = "<group>"; };
 		651507411F03B8AC00C631D5 /* LessonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 		654EC6A21F02536300E930BC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -464,6 +468,7 @@
 				558C9AFA1F0104AA00930655 /* UsersInMemoryDatasource.swift */,
 				550EF2C61F0454B300F94A8C /* UsersSQLDatasource.swift */,
 				550EF2C81F0457D900F94A8C /* UsersRepoImpl.swift */,
+				55B329071F0CF139000E2825 /* UsersRealmDatasource.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				55B329031F0BEE49000E2825 /* DMNews.swift */,
+				55B329091F0CF16B000E2825 /* DMUser.swift */,
 			);
 			path = RealmModel;
 			sourceTree = "<group>";
@@ -722,6 +728,7 @@
 				65914E0D1F013AF100FD1EB0 /* News.swift in Sources */,
 				B6A8E24B1F0399F10013720E /* ProfilePresenter.swift in Sources */,
 				550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */,
+				55B329081F0CF139000E2825 /* UsersRealmDatasource.swift in Sources */,
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				9BC3E5FC1F03B37B00BF6548 /* LessonTableViewCell.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
@@ -746,6 +753,7 @@
 				551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */,
 				4919619D1F03F6F500E030C5 /* LessonNotificationManager.swift in Sources */,
 				558C9AFF1F01304E00930655 /* RestCapable.swift in Sources */,
+				55B3290A1F0CF16B000E2825 /* DMUser.swift in Sources */,
 				558C9B0A1F013CD700930655 /* LessonsRepoImpl.swift in Sources */,
 				655AEDC71F03A21B00C1CBEE /* NewsInMemoryDatasource.swift in Sources */,
 				550EF2C51F04547900F94A8C /* CoreData+Utils.swift in Sources */,
