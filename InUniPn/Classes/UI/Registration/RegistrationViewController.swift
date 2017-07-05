@@ -78,7 +78,7 @@ class RegistrationViewController: UIViewController, RegistrationView {
                                            andEmail: emailInput.text ?? "",
                                            andPassword: passwordInput.text ?? "",
                                            andConfirmationPassword: passwordConfirmInput.text ?? "",
-                                           andUniversity: "")
+                                           andUniversity: universityPicker.pickerItems[universityPicker.selectedRow].title)
     }
     
     func navigateToHome() {

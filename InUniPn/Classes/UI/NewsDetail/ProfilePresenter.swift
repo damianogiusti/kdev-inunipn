@@ -25,6 +25,7 @@ class ProfilePresenter: BasePresenter {
     private var userService: UserService?
     private var newsService: NewsService?
     private var lessonsService: LessonsService?
+    private var universitiesService: UniversitiesServices?
     
     //MARK: - variables
     
@@ -44,7 +45,7 @@ class ProfilePresenter: BasePresenter {
 
         newsService = NewsService(withToken: token)
         lessonsService = LessonsService(withToken: token)
-
+        universitiesService = UniversitiesServices()
     }
 
     // MARK: - view interaction methods
@@ -90,9 +91,19 @@ class ProfilePresenter: BasePresenter {
         if imageURL.trim().isEmpty {
              imageURL = gravatarUrl(forEmail: user.email ?? "")
         }
-        profileView?.showUser(userInfo: UserInfo(withName: name,
-                                                 imageURL: imageURL,
-                                                 university: user.university ?? ""))
+        self.profileView?.showUser(userInfo: UserInfo(withName: name,
+                                                      imageURL: imageURL,
+                                                      university: ""))
+
+        universitiesService?.all(onSuccess: { (unis) in
+            let uni = unis.filter({ uni in uni.code == user.university }).first?.description
+            self.profileView?.showUser(userInfo: UserInfo(withName: name,
+                                                     imageURL: imageURL,
+                                                     university: uni ?? ""))
+        }, onError: { (error) in
+            print(error)
+        })
+
     }
 
     private func onNewsList(withNewsList newses: [News]) {

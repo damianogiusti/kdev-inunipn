@@ -16,6 +16,11 @@ PODS:
     - FBSDKCoreKit
   - Former (1.5.1)
   - KVSpinnerView (1.0.1)
+  - Realm (2.8.3):
+    - Realm/Headers (= 2.8.3)
+  - Realm/Headers (2.8.3)
+  - RealmSwift (2.8.3):
+    - Realm (= 2.8.3)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -31,6 +36,8 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - Former
   - KVSpinnerView
+  - Realm (~> 2.8)
+  - RealmSwift (~> 2.8)
   - SDWebImage (~> 3.8)
   - SwiftGen
   - SwiftyJSON
@@ -45,10 +52,12 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 6b92bd65f319d669d2b0730e49db495ef1660566
   Former: 0b48a812c0d93b092b908d1b0574d0fd95c6b6f9
   KVSpinnerView: ce89cec80a5776ba4639c312770f01c8a091e80a
+  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
+  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftGen: 2ba2a88fc6130b96e38e2baa0029e4bd222ffd85
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 37a51c9accc9216d120269b5f8a99b77db470a71
+PODFILE CHECKSUM: fccf02cdb2446fcf5abac09ac631971447c41b3a
 
 COCOAPODS: 1.2.1

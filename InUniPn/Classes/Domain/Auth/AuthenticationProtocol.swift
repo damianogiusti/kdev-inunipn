@@ -10,11 +10,12 @@ import UIKit
 
 protocol AuthenticationProtocol: class {
 
-    func loginUser(withName name: String, andPassword password: String,
+    func loginUser(withEmail name: String, andPassword: String,
                    onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock)
 
-    func socialLogin(withToken token: String, onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock)
+    func socialLogin(withToken token: String,
+                     onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock)
 
-    func registerUser(withName name: String, andPassword password: String,
-                   onSuccess: @escaping SuccessBlock<Any>, onError: @escaping ErrorBlock)
+    func registerUser(withName name: String, email: String, password: String, andUniversityCode uni: String,
+                      onSuccess: @escaping (User) -> Void, onError: @escaping (Error) -> Void)
 }

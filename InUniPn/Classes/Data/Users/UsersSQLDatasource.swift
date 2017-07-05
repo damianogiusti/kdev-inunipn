@@ -57,6 +57,7 @@ class UsersSQLDatasource {
                                     name: cdUser.displayName ?? "",
                                     email: cdUser.email ?? "",
                                     imageUrl: cdUser.imageUrl ?? "",
+                                    universityCode: cdUser.university,
                                     andToken: cdUser.accessToken ?? "")
         }
         return nil
@@ -70,6 +71,7 @@ class UsersSQLDatasource {
             cdUser.email = user.email
             cdUser.accessToken = user.accessToken
             cdUser.imageUrl = user.imageUrl
+            cdUser.university = user.university
             return cdUser
         }
         return nil
