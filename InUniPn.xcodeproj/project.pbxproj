@@ -35,6 +35,8 @@
 		554613C71F0BD32000079953 /* LessonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 554613C61F0BD32000079953 /* LessonTableViewCell.xib */; };
 		554613C91F0BE2BF00079953 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554613C81F0BE2BF00079953 /* NewsDetailViewController.swift */; };
 		554613CB1F0BE70A00079953 /* NewsRealmDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554613CA1F0BE70A00079953 /* NewsRealmDatasource.swift */; };
+		558869091F1363E300F80F80 /* LessonsRealmDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558869081F1363E300F80F80 /* LessonsRealmDatasource.swift */; };
+		5588690B1F13642800F80F80 /* DMLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588690A1F13642800F80F80 /* DMLesson.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
 		558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */; };
@@ -126,6 +128,8 @@
 		554613C61F0BD32000079953 /* LessonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LessonTableViewCell.xib; sourceTree = "<group>"; };
 		554613C81F0BE2BF00079953 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		554613CA1F0BE70A00079953 /* NewsRealmDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRealmDatasource.swift; sourceTree = "<group>"; };
+		558869081F1363E300F80F80 /* LessonsRealmDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsRealmDatasource.swift; sourceTree = "<group>"; };
+		5588690A1F13642800F80F80 /* DMLesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMLesson.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
@@ -433,6 +437,7 @@
 				558C9B071F013C7700930655 /* LessonsInMemoryDatasource.swift */,
 				558C9B091F013CD700930655 /* LessonsRepoImpl.swift */,
 				558C9B0B1F01477800930655 /* LessonsRestDatasource.swift */,
+				558869081F1363E300F80F80 /* LessonsRealmDatasource.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 			children = (
 				55B329031F0BEE49000E2825 /* DMNews.swift */,
 				55B329091F0CF16B000E2825 /* DMUser.swift */,
+				5588690A1F13642800F80F80 /* DMLesson.swift */,
 			);
 			path = RealmModel;
 			sourceTree = "<group>";
@@ -714,6 +720,7 @@
 				550EF2B81F03DDF800F94A8C /* Extensions.swift in Sources */,
 				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
 				651507421F03B8AC00C631D5 /* LessonPresenter.swift in Sources */,
+				5588690B1F13642800F80F80 /* DMLesson.swift in Sources */,
 				550EF2BD1F03FB2100F94A8C /* NewsTableViewCell.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
 				558C9B061F01397000930655 /* Lesson.swift in Sources */,
@@ -770,6 +777,7 @@
 				B6A8E24F1F03C0A80013720E /* NewsService.swift in Sources */,
 				558C9AFB1F0104AA00930655 /* UsersInMemoryDatasource.swift in Sources */,
 				9B0FC2911F014B6C000815BB /* LessonsViewController.swift in Sources */,
+				558869091F1363E300F80F80 /* LessonsRealmDatasource.swift in Sources */,
 				551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */,
 				654F01181F010D7C0002D171 /* LoginView.swift in Sources */,
 				499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */,
