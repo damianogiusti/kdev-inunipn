@@ -160,7 +160,7 @@ class LessonPresenter: BasePresenter {
     
     func loadLessons(withQueryString queryString: String = ""){
         if queryString.isEmpty {
-            lessonService?.all(onSuccess: displayLessons)
+            lessonService?.all(fromDate: Date(), onSuccess: displayLessons)
         } else {
             lessonService?.searchLessons(withKeyword: queryString, onSuccess: displayLessons)
         }

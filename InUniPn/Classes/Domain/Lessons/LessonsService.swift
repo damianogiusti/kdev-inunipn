@@ -24,9 +24,20 @@ class LessonsService: BaseService {
     }
 
     /// Gets all lessons
-    func all(onSuccess: @escaping SuccessBlock<[Lesson]>, onError: ErrorBlock? = nil) {
+    func all(fromDate date: Date? = nil, onSuccess: @escaping SuccessBlock<[Lesson]>, onError: ErrorBlock? = nil) {
         runInBackground {
-            let lessons = self.lessonsRepository.all().sorted(by: self.sortByDateDesc)
+            var lessons = self.lessonsRepository.all().sorted(by: self.sortByDateAsc)
+
+            // filter out lessons only if requested
+            if let from = date {
+                lessons = lessons.filter({ lesson in
+                    if let endTime = lesson.timeEnd {
+                        return endTime > from
+                    } else {
+                        return false
+                    }
+                })
+            }
             runOnUiThread {
                 onSuccess(lessons)
             }
@@ -200,7 +211,7 @@ class LessonsService: BaseService {
         }
     }
 
-    private func sortByDateDesc(lesson1: Lesson?, lesson2: Lesson?) -> Bool {
+    private func sortByDateAsc(lesson1: Lesson?, lesson2: Lesson?) -> Bool {
         if let d1 = lesson1?.date, let d2 = lesson2?.date {
             return d1 > d2
         } else {
