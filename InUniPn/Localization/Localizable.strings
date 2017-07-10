@@ -55,7 +55,15 @@
 "Confirm password" = "Confirm password";
 "Confirm password placeholder" = "Repeat your password";
 
+"Minute singular" = "minute";
+"Minute plural" = "minutes";
+
+"Notifications" = "Notifications";
+"Lessons Notifications" = "Notify for lessons";
+"Lessons Reminder Interval" = "Lessons reminder";
+
 "News" = "News";
 "Lessons" = "Lessons";
 "Profile" = "Profile";
+"Settings" = "Account settings";
 

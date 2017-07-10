@@ -46,8 +46,16 @@ enum L10n {
   static let joinedSuccessfully = L10n.tr("joined successfully")
   /// Lessons
   static let lessons = L10n.tr("Lessons")
+  /// Notify for lessons
+  static let lessonsNotifications = L10n.tr("Lessons Notifications")
+  /// Lessons reminder
+  static let lessonsReminderInterval = L10n.tr("Lessons Reminder Interval")
   /// Loading, please wait...
   static let loading = L10n.tr("loading")
+  /// minutes
+  static let minutePlural = L10n.tr("Minute plural")
+  /// minute
+  static let minuteSingular = L10n.tr("Minute singular")
   /// Name
   static let name = L10n.tr("Name")
   /// Mario Rossi
@@ -60,12 +68,16 @@ enum L10n {
   static let noNewsPresent = L10n.tr("no news present")
   /// I cannot perform this operation without your permission
   static let noPermissionGiven = L10n.tr("No permission given")
+  /// Notifications
+  static let notifications = L10n.tr("Notifications")
   /// Password
   static let password = L10n.tr("Password")
   /// Select the university you are attending
   static let pickUniversity = L10n.tr("Pick university")
   /// Profile
   static let profile = L10n.tr("Profile")
+  /// Account settings
+  static let settings = L10n.tr("Settings")
   /// University
   static let university = L10n.tr("University")
   /// You have successfully unjoined the lesson

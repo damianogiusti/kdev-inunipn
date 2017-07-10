@@ -39,11 +39,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc: UINavigationController = UINavigationController()
         vc.navigationBar.barTintColor = UIColor.lilyWhite
         vc.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.fireBrickRed]
+        vc.navigationBar.tintColor = .fireBrickRed
         //vc.navigationBar.barStyle = .black
         return vc
     }()
 
+    private(set) lazy var settingsBarItem: UIBarButtonItem? = {
+        let item = UIBarButtonItem(image: #imageLiteral(resourceName: "ios-settings"), style: .plain, target: self, action: #selector(settingsButtonItemClicked))
+        item.tintColor = .fireBrickRed
+        return item
+    }()
+
     private(set) var tabBarController: UIViewController?
+
+    var settingsButtonItemPressedClosure: (() -> Void)?
 
     func navigateToHome() {
         if let tabBarController = mainStoryboard?.instantiateInitialViewController() {
@@ -55,6 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func navigateToLogin() {
         window?.rootViewController = loginStoryboard?.instantiateInitialViewController()
+    }
+
+    @objc private func settingsButtonItemClicked() {
+        settingsButtonItemPressedClosure?()
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
