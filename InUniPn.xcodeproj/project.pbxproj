@@ -23,7 +23,6 @@
 		550EF2BF1F0408A400F94A8C /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550EF2BE1F0408A300F94A8C /* NewsTableViewCell.xib */; };
 		550EF2C11F0412C300F94A8C /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C01F0412C300F94A8C /* NewsTableViewController.swift */; };
 		550EF2C51F04547900F94A8C /* CoreData+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C41F04547900F94A8C /* CoreData+Utils.swift */; };
-		550EF2C71F0454B300F94A8C /* UsersSQLDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C61F0454B300F94A8C /* UsersSQLDatasource.swift */; };
 		550EF2C91F0457D900F94A8C /* UsersRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2C81F0457D900F94A8C /* UsersRepoImpl.swift */; };
 		550EF2CB1F04F10A00F94A8C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF2CA1F04F10A00F94A8C /* UIColor.swift */; };
 		551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551093B21F01624400E44A07 /* UniversitiesRepository.swift */; };
@@ -37,6 +36,12 @@
 		554613CB1F0BE70A00079953 /* NewsRealmDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554613CA1F0BE70A00079953 /* NewsRealmDatasource.swift */; };
 		558869091F1363E300F80F80 /* LessonsRealmDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558869081F1363E300F80F80 /* LessonsRealmDatasource.swift */; };
 		5588690B1F13642800F80F80 /* DMLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588690A1F13642800F80F80 /* DMLesson.swift */; };
+		558869131F136F0200F80F80 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5588690E1F136F0200F80F80 /* Profile.storyboard */; };
+		558869141F136F0200F80F80 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588690F1F136F0200F80F80 /* ProfilePresenter.swift */; };
+		558869151F136F0200F80F80 /* ProfileSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558869101F136F0200F80F80 /* ProfileSettings.storyboard */; };
+		558869161F136F0200F80F80 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558869111F136F0200F80F80 /* ProfileView.swift */; };
+		558869171F136F0200F80F80 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558869121F136F0200F80F80 /* ProfileViewController.swift */; };
+		5588691A1F136FDC00F80F80 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558869191F136FDC00F80F80 /* SettingsViewController.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
 		558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */; };
@@ -90,12 +95,7 @@
 		9B6A3A841F0BAC8900711A08 /* NewsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6A3A831F0BAC8900711A08 /* NewsDetail.storyboard */; };
 		9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F11F03961200BF6548 /* News.storyboard */; };
 		9BC3E5F61F039F6B00BF6548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */; };
-		9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F71F03A00400BF6548 /* Profile.storyboard */; };
-		9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */; };
 		9BC3E5FC1F03B37B00BF6548 /* LessonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3E5FB1F03B37B00BF6548 /* LessonTableViewCell.swift */; };
-		B60214481F014750009E4EE5 /* ProfileSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60214471F014750009E4EE5 /* ProfileSettings.storyboard */; };
-		B6A8E24B1F0399F10013720E /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8E24A1F0399F10013720E /* ProfilePresenter.swift */; };
-		B6A8E24D1F03A91D0013720E /* profileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8E24C1F03A91D0013720E /* profileView.swift */; };
 		B6A8E24F1F03C0A80013720E /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8E24E1F03C0A80013720E /* NewsService.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,7 +116,6 @@
 		550EF2BE1F0408A300F94A8C /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		550EF2C01F0412C300F94A8C /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		550EF2C41F04547900F94A8C /* CoreData+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreData+Utils.swift"; sourceTree = "<group>"; };
-		550EF2C61F0454B300F94A8C /* UsersSQLDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersSQLDatasource.swift; sourceTree = "<group>"; };
 		550EF2C81F0457D900F94A8C /* UsersRepoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersRepoImpl.swift; sourceTree = "<group>"; };
 		550EF2CA1F04F10A00F94A8C /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		551093B21F01624400E44A07 /* UniversitiesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesRepository.swift; sourceTree = "<group>"; };
@@ -130,6 +129,12 @@
 		554613CA1F0BE70A00079953 /* NewsRealmDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRealmDatasource.swift; sourceTree = "<group>"; };
 		558869081F1363E300F80F80 /* LessonsRealmDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsRealmDatasource.swift; sourceTree = "<group>"; };
 		5588690A1F13642800F80F80 /* DMLesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMLesson.swift; sourceTree = "<group>"; };
+		5588690E1F136F0200F80F80 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5588690F1F136F0200F80F80 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		558869101F136F0200F80F80 /* ProfileSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileSettings.storyboard; sourceTree = "<group>"; };
+		558869111F136F0200F80F80 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		558869121F136F0200F80F80 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		558869191F136FDC00F80F80 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
@@ -185,13 +190,7 @@
 		9B6A3A831F0BAC8900711A08 /* NewsDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsDetail.storyboard; sourceTree = "<group>"; };
 		9BC3E5F11F03961200BF6548 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		9BC3E5F51F039F6B00BF6548 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		9BC3E5F71F03A00400BF6548 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = InUniPn/Classes/UI/Main/Profile.storyboard; sourceTree = SOURCE_ROOT; };
-		9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = InUniPn/Classes/UI/Main/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		9BC3E5FB1F03B37B00BF6548 /* LessonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonTableViewCell.swift; path = InUniPn/Classes/UI/Lessons/LessonTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		B60214471F014750009E4EE5 /* ProfileSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileSettings.storyboard; path = InUniPn/Classes/UI/NewsDetail/ProfileSettings.storyboard; sourceTree = SOURCE_ROOT; };
-		B66E51BE1F0B8D1E008728C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = ../../../../../Downloads/06_CreateATableView/FoodTracker/FoodTracker/Base.lproj/SettingsTableViewController.swift; sourceTree = "<group>"; };
-		B6A8E24A1F0399F10013720E /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = InUniPn/Classes/UI/NewsDetail/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
-		B6A8E24C1F03A91D0013720E /* profileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profileView.swift; path = InUniPn/Classes/UI/NewsDetail/profileView.swift; sourceTree = SOURCE_ROOT; };
 		B6A8E24E1F03C0A80013720E /* NewsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		F4F7758E589AF4AACCB16658 /* Pods_InUniPn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InUniPn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7763DAC718CF35AD301BBF3 /* Pods-InUniPn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InUniPn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InUniPn/Pods-InUniPn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +273,14 @@
 			path = LessonTableViewCell;
 			sourceTree = "<group>";
 		};
+		558869181F136FC800F80F80 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				558869191F136FDC00F80F80 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		558C9AB21F00ECF400930655 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +329,7 @@
 		558C9AB51F00ECF400930655 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				558869181F136FC800F80F80 /* Settings */,
 				49EC6A401F00EF1D0071EE12 /* Login */,
 				B64085CA1F01022F00799398 /* NewsDetail */,
 				558C9ACC1F00FA5B00930655 /* Lessons */,
@@ -402,12 +410,11 @@
 		558C9AD11F00FA5B00930655 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				B60214471F014750009E4EE5 /* ProfileSettings.storyboard */,
-				B6A8E24A1F0399F10013720E /* ProfilePresenter.swift */,
-				9BC3E5F71F03A00400BF6548 /* Profile.storyboard */,
-				9BC3E5F91F03A02600BF6548 /* ProfileViewController.swift */,
-				B6A8E24C1F03A91D0013720E /* profileView.swift */,
-				B66E51BD1F0B8D1E008728C9 /* SettingsTableViewController.swift */,
+				5588690E1F136F0200F80F80 /* Profile.storyboard */,
+				5588690F1F136F0200F80F80 /* ProfilePresenter.swift */,
+				558869101F136F0200F80F80 /* ProfileSettings.storyboard */,
+				558869111F136F0200F80F80 /* ProfileView.swift */,
+				558869121F136F0200F80F80 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -471,7 +478,6 @@
 			children = (
 				558C9AF61F01041C00930655 /* UsersRepository.swift */,
 				558C9AFA1F0104AA00930655 /* UsersInMemoryDatasource.swift */,
-				550EF2C61F0454B300F94A8C /* UsersSQLDatasource.swift */,
 				550EF2C81F0457D900F94A8C /* UsersRepoImpl.swift */,
 				55B329071F0CF139000E2825 /* UsersRealmDatasource.swift */,
 			);
@@ -631,17 +637,16 @@
 			files = (
 				65E66C461F00EA8D002F87A5 /* LaunchScreen.storyboard in Resources */,
 				49EC6A461F00F2090071EE12 /* Login.storyboard in Resources */,
+				558869151F136F0200F80F80 /* ProfileSettings.storyboard in Resources */,
 				65E66C431F00EA8D002F87A5 /* Assets.xcassets in Resources */,
-				B60214481F014750009E4EE5 /* ProfileSettings.storyboard in Resources */,
 				9BC3E5F21F03961200BF6548 /* News.storyboard in Resources */,
 				9B6A3A841F0BAC8900711A08 /* NewsDetail.storyboard in Resources */,
 				9B0FC28F1F0149CD000815BB /* Lessons.storyboard in Resources */,
+				558869131F136F0200F80F80 /* Profile.storyboard in Resources */,
 				499027521F01140700D941A7 /* Registration.storyboard in Resources */,
-				9BC3E5F81F03A00400BF6548 /* Profile.storyboard in Resources */,
 				550EF2BF1F0408A400F94A8C /* NewsTableViewCell.xib in Resources */,
 				65914E161F015DC400FD1EB0 /* Localizable.strings in Resources */,
 				554613C71F0BD32000079953 /* LessonTableViewCell.xib in Resources */,
-				B60214481F014750009E4EE5 /* ProfileSettings.storyboard in Resources */,
 				65E66C3E1F00EA8D002F87A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,12 +720,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				49458AB91F0B8E6F005A7358 /* NotificationPreferences.swift in Sources */,
-				550EF2C71F0454B300F94A8C /* UsersSQLDatasource.swift in Sources */,
 				49EC6A4B1F00F75B0071EE12 /* RoundedBorderButton.swift in Sources */,
 				550EF2B81F03DDF800F94A8C /* Extensions.swift in Sources */,
 				654F011A1F010EC20002D171 /* RegistrationPresenter.swift in Sources */,
 				651507421F03B8AC00C631D5 /* LessonPresenter.swift in Sources */,
 				5588690B1F13642800F80F80 /* DMLesson.swift in Sources */,
+				558869161F136F0200F80F80 /* ProfileView.swift in Sources */,
 				550EF2BD1F03FB2100F94A8C /* NewsTableViewCell.swift in Sources */,
 				493A5EA51F00FAF6007D5CA9 /* RoundedBorderTextField.swift in Sources */,
 				558C9B061F01397000930655 /* Lesson.swift in Sources */,
@@ -733,7 +738,6 @@
 				550EF2C91F0457D900F94A8C /* UsersRepoImpl.swift in Sources */,
 				558C9B021F01329300930655 /* UserService.swift in Sources */,
 				65914E0D1F013AF100FD1EB0 /* News.swift in Sources */,
-				B6A8E24B1F0399F10013720E /* ProfilePresenter.swift in Sources */,
 				550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */,
 				55B329081F0CF139000E2825 /* UsersRealmDatasource.swift in Sources */,
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
@@ -758,6 +762,7 @@
 				65C6E2531F03966D002F9E7F /* NewsRestDatasource.swift in Sources */,
 				558C9AF71F01041C00930655 /* UsersRepository.swift in Sources */,
 				551093BA1F0162B400E44A07 /* UniversitiesRepoImpl.swift in Sources */,
+				5588691A1F136FDC00F80F80 /* SettingsViewController.swift in Sources */,
 				4919619D1F03F6F500E030C5 /* LessonNotificationManager.swift in Sources */,
 				558C9AFF1F01304E00930655 /* RestCapable.swift in Sources */,
 				55B3290A1F0CF16B000E2825 /* DMUser.swift in Sources */,
@@ -771,7 +776,6 @@
 				654F010C1F00FF1C0002D171 /* BaseView.swift in Sources */,
 				65C6E2511F038FA6002F9E7F /* NewsView.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
-				B6A8E24D1F03A91D0013720E /* profileView.swift in Sources */,
 				9B553D5D1F0B8950003062C4 /* NewsDetailView.swift in Sources */,
 				554613C91F0BE2BF00079953 /* NewsDetailViewController.swift in Sources */,
 				B6A8E24F1F03C0A80013720E /* NewsService.swift in Sources */,
@@ -781,12 +785,13 @@
 				551093B31F01624500E44A07 /* UniversitiesRepository.swift in Sources */,
 				654F01181F010D7C0002D171 /* LoginView.swift in Sources */,
 				499027501F0113F000D941A7 /* RegistrationViewController.swift in Sources */,
+				558869171F136F0200F80F80 /* ProfileViewController.swift in Sources */,
 				558D17231F0BCD250057BD36 /* LessonsTableViewDelegate.swift in Sources */,
 				550EF2C11F0412C300F94A8C /* NewsTableViewController.swift in Sources */,
 				558C9AF91F01043600930655 /* User.swift in Sources */,
 				558C9B041F01395900930655 /* LessonsRepository.swift in Sources */,
 				554613CB1F0BE70A00079953 /* NewsRealmDatasource.swift in Sources */,
-				9BC3E5FA1F03A02600BF6548 /* ProfileViewController.swift in Sources */,
+				558869141F136F0200F80F80 /* ProfilePresenter.swift in Sources */,
 				558C9AFD1F01054F00930655 /* RepositoryFactory.swift in Sources */,
 				65914E131F01423000FD1EB0 /* NewsRepositoryImpl.swift in Sources */,
 				9B553D5B1F0B81F8003062C4 /* NewsDetailPresenter.swift in Sources */,
@@ -810,14 +815,6 @@
 				65E66C451F00EA8D002F87A5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		B66E51BD1F0B8D1E008728C9 /* SettingsTableViewController.swift */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B66E51BE1F0B8D1E008728C9 /* Base */,
-			);
-			name = SettingsTableViewController.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
