@@ -17,7 +17,8 @@ class LessonsViewController: UIViewController, UISearchBarDelegate {
     }
 
     @IBOutlet var lessonsTableView: UITableView!
-    let lessonCellIdentifier = "lessonCell"
+    let lessonCellIdentifier = String(describing: LessonTableViewCell.self)
+    let lessonCellNibName = String(describing: LessonTableViewCell.self)
 
     private let lessonPresenter = LessonPresenter()
 
@@ -25,21 +26,16 @@ class LessonsViewController: UIViewController, UISearchBarDelegate {
 
     fileprivate let tableViewDelegate = LessonsTableViewDelegate()
 
-    ///associo il tab item al controller
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        // Initialize Tab Bar Item
-        tabBarItem = UITabBarItem(title: "Orari", image: UIImage(named: "ios-time-outline"), tag: 1)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         lessonPresenter.create(withView: self)
         lessonPresenter.loadLessons()
 
+        lessonsTableView.register(UINib(nibName: lessonCellNibName, bundle: nil), forCellReuseIdentifier: lessonCellIdentifier)
         tableViewDelegate.cellReuseIdentifier = lessonCellIdentifier
+        tableViewDelegate.cellNibName = lessonCellNibName
+        tableViewDelegate.didPressJoinButtonClosure = self.didPressJoinButton(atIndexPath:)
 
         lessonsTableView.delegate = tableViewDelegate
         lessonsTableView.dataSource = tableViewDelegate
@@ -61,6 +57,10 @@ class LessonsViewController: UIViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         lessonPresenter.loadLessons(withQueryString: searchText)
+    }
+
+    func didPressJoinButton(atIndexPath indexPath: IndexPath) {
+        lessonPresenter.joinLesson(byId: tableViewDelegate.dataset[indexPath.section].lessons[indexPath.row].id)
     }
 }
 

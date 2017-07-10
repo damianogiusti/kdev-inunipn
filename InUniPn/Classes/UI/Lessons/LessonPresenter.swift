@@ -99,18 +99,18 @@ class LessonPresenter: BasePresenter {
     }
     
     
-    func showJoiningChoice(withLesson lesson:Lesson){
+    func showJoiningChoice(withLesson lesson:Lesson) {
         lessonView?.displayJoiningChoice(isAlreadyJoined: lesson.joined)
     }
     
-    func joinLesson(withLesson lesson:Lesson){
-        lessonService?.joinLesson(byId: lesson.lessonId)
+    func joinLesson(byId id: String) {
+        lessonService?.joinLesson(byId: id)
         lessonView?.showMessage(withMessage: Strings.joinedSuccessfully)
         
     }
     
-    func unjoinLesson(withLesson lesson:Lesson){
-        lessonService?.unjoinLesson(byId: lesson.lessonId)
+    func unjoinLesson(byId id: String) {
+        lessonService?.unjoinLesson(byId: id)
         lessonView?.showMessage(withMessage: Strings.unjoinedSuccessfully)
         
     }
