@@ -16,7 +16,7 @@ class NewsTableViewController: UIViewController, UISearchBarDelegate {
     private let cellReuseIdentifier = String(describing: NewsTableViewCell.self)
 
     fileprivate let presenter = NewsPresenter()
-    
+
     private var query = ""
 
     fileprivate let tableViewDelegate = NewsTableViewDelegate()
@@ -57,7 +57,7 @@ class NewsTableViewController: UIViewController, UISearchBarDelegate {
         dateFormatter.locale = Calendar.current.locale
         return dateFormatter.string(from: date)
     }
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         query = searchText
         presenter.loadNews(withQueryString: query)
@@ -78,7 +78,13 @@ extension NewsTableViewController: NewsView {
     }
 
     func navigateToDetailNews(withNews: News) {
-        
+
+    }
+
+    func shareNews(activity: UIActivityViewController) {
+
+        self.present(activity, animated: true, completion: nil)
+
     }
 
     func showMessage(withMessage message: String) {
@@ -108,7 +114,6 @@ extension NewsTableViewController {
     func newsTableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let newsDetailViewController = UIStoryboard(name: "NewsDetail", bundle: nil)
             .instantiateViewController(withIdentifier: "NewsDetailViewController") as? NewsDetailViewController {
-
             newsDetailViewController.news = tableViewDelegate.dataset[indexPath.row]
             self.appDelegate.navigationController?.pushViewController(newsDetailViewController, animated: true)
         }
@@ -120,6 +125,7 @@ extension NewsTableViewController {
     }
 
     func shareButtonPressed(_ button: UIButton) {
-        //
+        let news = tableViewDelegate.dataset[button.tag]
+        presenter.shareNews(withNews: news)
     }
 }

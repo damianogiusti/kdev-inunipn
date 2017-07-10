@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 protocol NewsView: BaseView {
 
@@ -15,4 +17,7 @@ protocol NewsView: BaseView {
     func displayNews(withNewsList: [News])
 
     func updateNewsView(news: News, atIndex index: Int)
+    
+
+    func shareNews(activity : UIActivityViewController)
 }
