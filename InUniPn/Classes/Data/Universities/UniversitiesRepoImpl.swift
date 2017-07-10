@@ -15,16 +15,27 @@ enum UniversitiesError: Error {
 
 class UniversitiesRepoImpl: UniversitiesRepository, RestCapable {
 
+    private let kUniversities = "universities"
+    private let prefs = UserDefaults.standard
+
     func all() -> DataResponse<[University]> {
 
-        let response = getRestCall(toUrl: Addresses.configUniversities.url(), withParams: nil)
-        if let json = response.data {
+        if let jsonString = prefs.string(forKey: kUniversities) {
+            let json = JSON(parseJSON: jsonString)
             return DataResponse(withData: mapToUniversity(json: json))
-        } else if let error = response.error {
-            // error
-            return DataResponse(withError: error)
+        } else {
+            let response = getRestCall(toUrl: Addresses.configUniversities.url(), withParams: nil)
+            if let json = response.data {
+                prefs.setValue(json.rawString(), forKey: kUniversities)
+                return DataResponse(withData: mapToUniversity(json: json))
+            } else if let error = response.error {
+                // error
+                return DataResponse(withError: error)
+            }
+            return DataResponse(withError: UniversitiesError.invalidResponse)
         }
-        return DataResponse(withError: UniversitiesError.invalidResponse)
+
+
     }
 
     private func mapToUniversity(json: JSON) -> [University] {
