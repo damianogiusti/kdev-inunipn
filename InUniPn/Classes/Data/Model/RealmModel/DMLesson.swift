@@ -21,10 +21,14 @@ class DMLesson: Object {
     dynamic var type: String?
     dynamic var area: Int = 0
 
-    var joined: Bool = false
+    dynamic var joined: Bool = false
 
     convenience init(withId lessonId: String) {
         self.init()
         self.lessonId = lessonId
+    }
+
+    override class func primaryKey() -> String {
+        return "lessonId"
     }
 }
