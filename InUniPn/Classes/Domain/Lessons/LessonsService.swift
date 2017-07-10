@@ -25,7 +25,7 @@ class LessonsService: BaseService {
     /// Gets all lessons
     func all(onSuccess: @escaping SuccessBlock<[Lesson]>, onError: ErrorBlock? = nil) {
         runInBackground {
-            let lessons = self.lessonsRepository.all()
+            let lessons = self.lessonsRepository.all().sorted(by: self.sortByDateDesc)
             runOnUiThread {
                 onSuccess(lessons)
             }
@@ -183,6 +183,14 @@ class LessonsService: BaseService {
                     onError?(LessonsErrors.lessonNotExisting)
                 }
             }
+        }
+    }
+
+    private func sortByDateDesc(lesson1: Lesson?, lesson2: Lesson?) -> Bool {
+        if let d1 = lesson1?.date, let d2 = lesson2?.date {
+            return d1 > d2
+        } else {
+            return false
         }
     }
 
