@@ -43,7 +43,7 @@ class FacebookService: BaseService, RestCapable {
                 } else if let result = result {
                     let fbJson = JSON.init(object: result)
                     let user = UserFactory.user(withId: json["id"].stringValue,
-                                                name: fbJson[User.k_json_id].stringValue,
+                                                name: fbJson[User.k_json_fullname].stringValue,
                                                 email: fbJson[User.k_json_email].stringValue,
                                                 imageUrl: fbJson[User.k_json_picture][User.k_json_picture_data][User.k_json_picture_url].stringValue,
                                                 andToken: json["access_token"].stringValue)
