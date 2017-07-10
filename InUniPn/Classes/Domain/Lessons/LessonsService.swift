@@ -66,13 +66,19 @@ class LessonsService: BaseService {
 
     /// Joins a lesson
     func joinLesson(byId lessonId: String, onSuccess: SuccessBlock<Lesson>? = nil, onError: ErrorBlock? = nil) {
-        self.markLesson(byId: lessonId, asJoined: true, onSuccess: onSuccess, onError: onError)
+        self.markLesson(byId: lessonId, asJoined: true, onSuccess: { lesson in
+            LessonNotificationManager.scheduleNotification(forLesson: lesson)
+            onSuccess?(lesson)
+        }, onError: onError)
     }
 
 
     /// Unjoins a lesson
     func unjoinLesson(byId lessonId: String, onSuccess: SuccessBlock<Lesson>? = nil, onError: ErrorBlock? = nil) {
-        self.markLesson(byId: lessonId, asJoined: false, onSuccess: onSuccess, onError: onError)
+        self.markLesson(byId: lessonId, asJoined: false, onSuccess: { lesson in
+            LessonNotificationManager.removeScheduledNotification(forLessonId: lesson.lessonId)
+            onSuccess?(lesson)
+        }, onError: onError)
     }
 
     /// Joins all the future lessons of this type
