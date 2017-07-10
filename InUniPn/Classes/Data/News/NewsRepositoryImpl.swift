@@ -93,14 +93,22 @@ class NewsRepositoryImpl: NewsRepository {
         }
 
         var newss: [News] = []
-        var pageNews = news(ofPage: page)
+        var pageNews = fetchAll(ofPage: page)
+        newss.append(contentsOf: pageNews)
         while !pageNews.isEmpty {
             page += 1
-            pageNews = news(ofPage: page)
+            pageNews = fetchAll(ofPage: page)
             newss.append(contentsOf: pageNews)
         }
         prefs.setValue(page - 1, forKey: kNewsPage)
         return newss
+    }
+
+    private func fetchAll(ofPage page: Int) -> [News] {
+        if let news = restDatasource.all(ofPage: page).data {
+            return news
+        }
+        return []
     }
     
     func save(news: News) -> Bool {
