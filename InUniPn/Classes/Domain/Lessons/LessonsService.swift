@@ -147,8 +147,8 @@ class LessonsService: BaseService {
             let lessons: [Lesson] = self.lessonsRepository.all()
                 .filter({ lesson in
                     var filter = lesson.joined
-                    if let startDate = date, let lessonStartDate = lesson.timeStart {
-                        filter = filter && lessonStartDate >= startDate
+                    if let startDate = date, let lessonEndDate = lesson.timeEnd {
+                        filter = filter && lessonEndDate >= startDate
                     }
                     return filter
                 })
