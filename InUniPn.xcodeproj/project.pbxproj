@@ -42,6 +42,8 @@
 		558869161F136F0200F80F80 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558869111F136F0200F80F80 /* ProfileView.swift */; };
 		558869171F136F0200F80F80 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558869121F136F0200F80F80 /* ProfileViewController.swift */; };
 		5588691A1F136FDC00F80F80 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558869191F136FDC00F80F80 /* SettingsViewController.swift */; };
+		5588691C1F13772B00F80F80 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588691B1F13772B00F80F80 /* SettingsView.swift */; };
+		5588691E1F13774700F80F80 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588691D1F13774700F80F80 /* SettingsPresenter.swift */; };
 		558C9AB91F00ECF400930655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9AB61F00ECF400930655 /* AppDelegate.swift */; };
 		558C9ABD1F00EE0600930655 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */; };
 		558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */; };
@@ -135,6 +137,8 @@
 		558869111F136F0200F80F80 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		558869121F136F0200F80F80 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		558869191F136FDC00F80F80 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5588691B1F13772B00F80F80 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5588691D1F13774700F80F80 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		558C9AB61F00ECF400930655 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558C9ABC1F00EE0600930655 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		558C9ABE1F00EEDD00930655 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				558869191F136FDC00F80F80 /* SettingsViewController.swift */,
+				5588691B1F13772B00F80F80 /* SettingsView.swift */,
+				5588691D1F13774700F80F80 /* SettingsPresenter.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -740,6 +746,7 @@
 				65914E0D1F013AF100FD1EB0 /* News.swift in Sources */,
 				550EF2B41F03928C00F94A8C /* LessonsService.swift in Sources */,
 				55B329081F0CF139000E2825 /* UsersRealmDatasource.swift in Sources */,
+				5588691C1F13772B00F80F80 /* SettingsView.swift in Sources */,
 				65E66C501F00EF87002F87A5 /* BasePresenter.swift in Sources */,
 				9BC3E5FC1F03B37B00BF6548 /* LessonTableViewCell.swift in Sources */,
 				558C9ABF1F00EEDD00930655 /* AuthenticationProtocol.swift in Sources */,
@@ -777,6 +784,7 @@
 				65C6E2511F038FA6002F9E7F /* NewsView.swift in Sources */,
 				65E66C411F00EA8D002F87A5 /* InUniPn.xcdatamodeld in Sources */,
 				9B553D5D1F0B8950003062C4 /* NewsDetailView.swift in Sources */,
+				5588691E1F13774700F80F80 /* SettingsPresenter.swift in Sources */,
 				554613C91F0BE2BF00079953 /* NewsDetailViewController.swift in Sources */,
 				B6A8E24F1F03C0A80013720E /* NewsService.swift in Sources */,
 				558C9AFB1F0104AA00930655 /* UsersInMemoryDatasource.swift in Sources */,

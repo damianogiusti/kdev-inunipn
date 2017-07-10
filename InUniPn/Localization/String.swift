@@ -52,6 +52,10 @@ enum L10n {
   static let lessonsReminderInterval = L10n.tr("Lessons Reminder Interval")
   /// Loading, please wait...
   static let loading = L10n.tr("loading")
+  /// minutes
+  static let minutePlural = L10n.tr("Minute plural")
+  /// minute
+  static let minuteSingular = L10n.tr("Minute singular")
   /// Name
   static let name = L10n.tr("Name")
   /// Mario Rossi
