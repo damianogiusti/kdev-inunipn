@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import EventKit
 
 enum LessonsErrors: Error {
     case lessonNotExisting, errorJoiningMultipleLessons, errorDeletingLesson
@@ -68,6 +69,13 @@ class LessonsService: BaseService {
     func joinLesson(byId lessonId: String, onSuccess: SuccessBlock<Lesson>? = nil, onError: ErrorBlock? = nil) {
         self.markLesson(byId: lessonId, asJoined: true, onSuccess: { lesson in
             LessonNotificationManager.scheduleNotification(forLesson: lesson)
+            if let title = lesson.name, let startTime = lesson.timeStart, let endTime = lesson.timeEnd {
+                self.addEventToCalendar(title: title,
+                                        description: lesson.course,
+                                        classroom: lesson.classroom,
+                                        startTime: startTime,
+                                        endTime: endTime)
+            }
             onSuccess?(lesson)
         }, onError: onError)
     }
@@ -200,4 +208,58 @@ class LessonsService: BaseService {
         }
     }
 
+}
+
+
+// MARK: - calendar extension
+
+
+extension LessonsService {
+
+    func addEventToCalendar(title: String, description: String?, classroom: String?, startTime: Date, endTime: Date) {
+        let eventStore = EKEventStore()
+
+
+        eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if (granted) && (error == nil) {
+                let event = EKEvent(eventStore: eventStore)
+                event.title = title
+                event.startDate = startTime
+                event.endDate = endTime
+                event.notes = description
+                event.location = classroom
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let e as NSError {
+                    print(e)
+                }
+            }
+        })
+    }
+
+    func calculateDateTime(withDate date: String, andTime time: String) -> Date{
+
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+
+        let date : Date = formatter.date(from: date)!
+
+        formatter.dateFormat = "HH:mm"
+
+        let timeOfTheDay = formatter.date(from: time)
+
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let dateComponents = calendar.dateComponents([Calendar.Component.hour, Calendar.Component.minute], from: timeOfTheDay!)
+
+        let hours = dateComponents.hour
+        let minutes = dateComponents.minute
+
+        var dateTime = calendar.date(byAdding: .minute, value: minutes!, to: date)
+        dateTime = calendar.date(byAdding: .hour, value: hours!, to: dateTime!)
+
+        return dateTime!
+    }
 }
