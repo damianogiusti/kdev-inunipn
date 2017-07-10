@@ -25,7 +25,7 @@ class LessonsService: BaseService {
     /// Gets all lessons
     func all(onSuccess: @escaping SuccessBlock<[Lesson]>, onError: ErrorBlock? = nil) {
         runInBackground {
-            let lessons = self.lessonsRepository.all()
+            let lessons = self.lessonsRepository.all().sorted(by: self.sortByDateDesc)
             runOnUiThread {
                 onSuccess(lessons)
             }
@@ -113,16 +113,15 @@ class LessonsService: BaseService {
 
     /// Search all lessons for name, classroom and teacher
     func searchLessons(withKeyword keyword: String, onSuccess: @escaping SuccessBlock<[Lesson]>) {
-
+        let lowercasedQuery = keyword.lowercased()
         runInBackground {
 
             let currentDate = Date()
             let lessons = self.lessonsRepository.all().filter({ lesson in
-                if  let startDate = lesson.timeStart,
-                    let containsName = lesson.name?.contains(keyword),
-                    let containsClass = lesson.classroom?.trim().contains(keyword),
-                    let containsTeacher = lesson.teacher?.trim().contains(keyword),
-                    (containsName || containsClass || containsTeacher) && startDate >= currentDate {
+                if let startDate = lesson.timeEnd, startDate >= currentDate &&
+                    (lesson.name?.lowercased().range(of: lowercasedQuery) != nil ||
+                    lesson.classroom?.trim().lowercased().range(of: lowercasedQuery) != nil ||
+                    lesson.teacher?.trim().lowercased().range(of: lowercasedQuery) != nil) {
                     return true
                 }
                 return false
@@ -184,6 +183,14 @@ class LessonsService: BaseService {
                     onError?(LessonsErrors.lessonNotExisting)
                 }
             }
+        }
+    }
+
+    private func sortByDateDesc(lesson1: Lesson?, lesson2: Lesson?) -> Bool {
+        if let d1 = lesson1?.date, let d2 = lesson2?.date {
+            return d1 > d2
+        } else {
+            return false
         }
     }
 

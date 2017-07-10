@@ -9,7 +9,7 @@
 import Foundation
 
 enum AuthErrors: Error {
-    case badCredentials, socialLoginError, errorSavingUser
+    case badCredentials, socialLoginError, errorSavingUser, registrationError
 }
 
 final class AuthenticationManager: AuthenticationProtocol {
@@ -24,12 +24,12 @@ final class AuthenticationManager: AuthenticationProtocol {
         return FacebookService()
     }()
     
-    func loginUser(withName name: String, andPassword password: String,
+    func loginUser(withEmail name: String, andPassword password: String,
                    onSuccess: @escaping SuccessBlock<User>, onError: @escaping ErrorBlock) {
-        
+
         runInBackground { [weak self] in
             
-            self?.authService.loginUser(withName: name, andPassword: password, onSuccess: { [weak self] (user) in
+            self?.authService.loginUser(withEmail: name, password: password, onSuccess: { [weak self] (user) in
                 
                 // store user
                 
@@ -71,8 +71,21 @@ final class AuthenticationManager: AuthenticationProtocol {
     }
     
     
-    func registerUser(withName name: String, andPassword password: String, onSuccess: @escaping (Any) -> Void, onError: @escaping (Error) -> Void) {
-        
+    func registerUser(withName name: String, email: String, password: String, andUniversityCode uni: String, onSuccess: @escaping (User) -> Void, onError: @escaping (Error) -> Void) {
+
+        runInBackground { [weak self] in
+            self?.authService.registerUser(withName: name, email: email, password: password, andUniversityCode: uni, onSuccess: { (user) in
+                _ = self?.usersRepository.save(user: user)
+                runOnUiThread {
+                    onSuccess(user)
+                }
+            }, onError: { (error) in
+                debugPrint(error)
+                runOnUiThread {
+                    onError(AuthErrors.registrationError)
+                }
+            })
+        }
     }
     
 }

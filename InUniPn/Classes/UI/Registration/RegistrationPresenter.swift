@@ -42,8 +42,10 @@ class RegistrationPresenter: BasePresenter {
                                andConfirmationPassword: confirmationPassword,
                                andUniversity: university)){
             
-            authManager.registerUser(withName: name, 
-                                     andPassword: password, 
+            authManager.registerUser(withName: name,
+                                     email: email.lowercased(),
+                                     password: password,
+                                     andUniversityCode: university,
                                      onSuccess: onRegistrationSuccess, 
                                      onError: onRegistrationError)
         }

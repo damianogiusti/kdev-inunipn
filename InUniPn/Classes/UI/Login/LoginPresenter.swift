@@ -33,13 +33,13 @@ class LoginPresenter: BasePresenter {
 
     //MARK: - user interaction methods
 
-    func loginUser(withName name: String, andPassword password: String) {
+    func loginUser(withEmail email: String, andPassword password: String) {
 
-        if (name.isEmpty || password.isEmpty) {
+        if (email.isEmpty || password.isEmpty) {
             onCredentialsAreInvalid()
         } else {
             authManager.loginUser(
-                withName: name,
+                withEmail: email,
                 andPassword: password,
                 onSuccess: onLoginSuccess,
                 onError: onLoginError
@@ -86,6 +86,7 @@ class LoginPresenter: BasePresenter {
     }
 
     private func onCredentialsAreInvalid() {
+        loginView?.hideProgress()
         loginView?.showError(withError: Strings.fillAllFields)
     }
     
@@ -95,7 +96,8 @@ class LoginPresenter: BasePresenter {
     }
     
     private func onErrorRetrievingUniversities(error : Any){
-         loginView?.showError(withError: Strings.errorRetrievingUniveristies)
+        loginView?.hideProgress()
+        loginView?.showError(withError: Strings.errorRetrievingUniveristies)
     }
 
 }

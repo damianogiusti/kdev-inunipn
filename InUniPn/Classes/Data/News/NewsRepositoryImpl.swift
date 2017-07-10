@@ -11,8 +11,9 @@ import UIKit
 class NewsRepositoryImpl: NewsRepository {
 
     private let token: String
-    
-    private let memoryDatasource = NewsInMemoryDatasource.sharedInstance
+
+    private static var allNewsCallsCount = 0
+    private let storageDatasource = NewsRealmDatasource()
     private let restDatasource: NewsRestDatasource
     
     required init(withToken token: String) {
@@ -21,50 +22,63 @@ class NewsRepositoryImpl: NewsRepository {
     }
     
     func news(byId id: String) -> News? {
-        if !memoryDatasource.isExpired() {
-            return memoryDatasource.news(byId: id)
-        } else {
-            memoryDatasource.deleteAll()
-            if let news = restDatasource.all().data {
-                memoryDatasource.saveAll(newsList: news)
-                memoryDatasource.renew()
-                return memoryDatasource.news(byId: id)
-            }
-            return nil
-        }
-
+        return storageDatasource.obj(byId: id)
     }
 
     func news(ofPage page: Int) -> [News] {
-        if !memoryDatasource.isExpired() {
-            return memoryDatasource.all().filter({ news in news.page == page })
+        let newss = storageDatasource.all()
+        if !newss.isEmpty {
+            return storageDatasource.all().filter({ news in news.page == page })
         } else {
-            memoryDatasource.deleteAll()
             if let news = restDatasource.all(ofPage: page).data {
-                memoryDatasource.saveAll(newsList: news)
-                memoryDatasource.renew()
-                return memoryDatasource.all().filter({ news in news.page == page })
+                storageDatasource.saveAll(objects: news)
+                return storageDatasource.all().filter({ news in news.page == page })
             }
             return []
         }
     }
 
     func all() -> [News] {
-        if !memoryDatasource.isExpired() {
-            return memoryDatasource.all()
-        } else {
-            memoryDatasource.deleteAll()
-            if let news = restDatasource.all().data {
-                memoryDatasource.saveAll(newsList: news)
-                memoryDatasource.renew()
+        // the first time always call the REST API
+        if NewsRepositoryImpl.allNewsCallsCount == 0 {
+            NewsRepositoryImpl.allNewsCallsCount += 1
+
+            if let news: [News] = restDatasource.all().data {
+                let persistedNews: [News] = storageDatasource.all()
+
+                // if some data is persisted, recover the starred state 
+                // and apply it to the retrieved data
+                if !persistedNews.isEmpty {
+                    news.forEach({ n in
+                        n.starred = persistedNews.filter({ pn in pn.newsId == n.newsId }).first?.starred ?? false
+                    })
+                }
+
+                // update the persisted data with the REST one
+                storageDatasource.saveAll(objects: news)
                 return news
+            } else {
+                return []
             }
-            return []
+        }
+        // the second time check if some data is persisted, 
+        // else get the REST api call result, save it, and return it
+        else {
+            let newss = storageDatasource.all()
+            if !newss.isEmpty {
+                return newss
+            } else {
+                if let news = restDatasource.all().data {
+                    storageDatasource.saveAll(objects: news)
+                    return news
+                }
+                return []
+            }
         }
     }
     
     func save(news: News) -> Bool {
-        if memoryDatasource.save(news: news) /* && others */ {
+        if storageDatasource.save(obj: news) /* && others */ {
             return true
         } else {
             return false
@@ -72,6 +86,6 @@ class NewsRepositoryImpl: NewsRepository {
     }
     
     func delete(byId id: String) -> Bool {
-        return false
+        return storageDatasource.delete(byId: id)
     }
 }

@@ -70,6 +70,7 @@
         <scene sceneID="sO1-12-wpa">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarController" id="HKB-60-RA6" customClass="TabBarController" customModule="InUniPn" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="WFf-9N-XSY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

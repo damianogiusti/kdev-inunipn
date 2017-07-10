@@ -10,10 +10,10 @@ import Foundation
 
 class UsersRepoImpl: UsersRepository {
 
-    private let storageDatasource = UsersSQLDatasource()
+    private let storageDatasource = UsersRealmDatasource()
 
     func user(byId id: String) -> User? {
-        return storageDatasource.user(byId: id)
+        return storageDatasource.obj(byId: id)
     }
 
     func all() -> [User] {
@@ -21,11 +21,11 @@ class UsersRepoImpl: UsersRepository {
     }
 
     func save(user: User) -> Bool {
-        return storageDatasource.save(user: user)
+        return storageDatasource.save(obj: user)
     }
 
     func saveAll(users: [User]) -> Bool {
-        return storageDatasource.saveAll(users: users)
+        return storageDatasource.saveAll(objects: users)
     }
 
     func delete(byId id: String) -> Bool {

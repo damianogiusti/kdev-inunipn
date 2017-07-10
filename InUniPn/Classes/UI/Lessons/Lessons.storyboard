@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,43 +22,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" placeholder="Cerca la tua lezione" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-KX-Cle">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="h1c-by-Ym9"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.67843137249999996" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="V2g-4b-ErA" id="HUX-X0-GR2"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uNh-eb-Jb4">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lessonCell" rowHeight="104" id="QWu-GS-G9b" customClass="LessonCell" customModule="InUniPn" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lessonCell" rowHeight="104" id="QWu-GS-G9b" customClass="LessonTableViewCell" customModule="InUniPn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QWu-GS-G9b" id="j54-We-cSx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="103.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="103.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="09:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vk-6h-SW4">
-                                                    <rect key="frame" x="30" y="7.9999999999999982" width="46.333333333333329" height="20.333333333333329"/>
+                                                    <rect key="frame" x="30" y="8" width="47" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5X-rq-Vi2">
-                                                    <rect key="frame" x="31.666666666666671" y="33.333333333333336" width="43" height="20.333333333333329"/>
+                                                    <rect key="frame" x="32" y="34" width="43" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claudia Cilione" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFO-ab-tOs">
-                                                    <rect key="frame" x="106.33333333333334" y="54.999999999999993" width="299.66666666666663" height="20.333333333333321"/>
+                                                    <rect key="frame" x="106" y="53" width="300" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.33342674374580383" green="0.33341985940933228" blue="0.33342450857162476" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Laboratorio L3" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DX3-hI-805">
-                                                    <rect key="frame" x="106.33333333333334" y="75.333333333333329" width="299.66666666666663" height="20.333333333333343"/>
+                                                    <rect key="frame" x="106" y="74" width="300" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.62493264675140381" green="0.18926507234573364" blue="0.1647895872592926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" text="Soft Skills" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkc-8H-bzH">
-                                                    <rect key="frame" x="106.33333333333334" y="8" width="299.66666666666663" height="47"/>
+                                                    <rect key="frame" x="106" y="8" width="300" height="45"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -94,34 +105,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uNh-eb-Jb4" firstAttribute="top" secondItem="4jC-eo-TPm" secondAttribute="top" constant="20" id="FtB-hR-QBF"/>
                             <constraint firstAttribute="trailing" secondItem="uNh-eb-Jb4" secondAttribute="trailing" id="GOW-QZ-WlM"/>
+                            <constraint firstAttribute="trailing" secondItem="J9E-KX-Cle" secondAttribute="trailing" id="JMc-48-9dp"/>
                             <constraint firstItem="uNh-eb-Jb4" firstAttribute="leading" secondItem="4jC-eo-TPm" secondAttribute="leading" id="NQf-hq-fWX"/>
+                            <constraint firstItem="J9E-KX-Cle" firstAttribute="leading" secondItem="4jC-eo-TPm" secondAttribute="leading" id="QiH-we-Jty"/>
+                            <constraint firstItem="uNh-eb-Jb4" firstAttribute="top" secondItem="J9E-KX-Cle" secondAttribute="bottom" id="mW4-yW-Ueb"/>
                             <constraint firstItem="uNh-eb-Jb4" firstAttribute="bottom" secondItem="XVv-ik-MD0" secondAttribute="top" id="og6-Df-Hyn"/>
+                            <constraint firstItem="J9E-KX-Cle" firstAttribute="top" secondItem="pNG-AJ-MIP" secondAttribute="bottom" id="rww-SS-Mcd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lessonsTableView" destination="uNh-eb-Jb4" id="b6V-n5-FhV"/>
-                        <outlet property="searchDisplayController" destination="X0e-2P-JW6" id="m9Q-O5-V8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHa-rp-50V" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="ZLX-yo-su5">
-                    <connections>
-                        <outlet property="delegate" destination="V2g-4b-ErA" id="g7a-C8-1Fj"/>
-                        <outlet property="searchContentsController" destination="V2g-4b-ErA" id="4dO-X2-dmx"/>
-                        <outlet property="searchResultsDataSource" destination="V2g-4b-ErA" id="VbQ-SG-VB8"/>
-                        <outlet property="searchResultsDelegate" destination="V2g-4b-ErA" id="u5O-10-eXw"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="X0e-2P-JW6">
-                    <connections>
-                        <outlet property="delegate" destination="V2g-4b-ErA" id="Ihl-TS-4om"/>
-                        <outlet property="searchContentsController" destination="V2g-4b-ErA" id="Ik2-W2-jwo"/>
-                        <outlet property="searchResultsDataSource" destination="V2g-4b-ErA" id="y5u-Id-Fl0"/>
-                        <outlet property="searchResultsDelegate" destination="V2g-4b-ErA" id="xdD-7O-UIf"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="365" y="137"/>
         </scene>
