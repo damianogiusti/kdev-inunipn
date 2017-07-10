@@ -9,21 +9,29 @@
 import UIKit
 
 class NewsDetailViewController: UIViewController, NewsDetailView {
-
-    @IBOutlet weak var textContent: UITextView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet weak var imageDetail: UIImageView!
+    
+    @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet weak var newsDate: UILabel!
+    @IBOutlet var newsTitle: UILabel!
+    @IBOutlet weak var newsContent: UITextView!
+    
     
     private let newsDetailPresenter = NewsDetailPresenter()
     
     public var news : News?
+    
+    private let placeholderImage = "https://bytesizemoments.com/wp-content/uploads/2014/04/placeholder.png"
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         newsDetailPresenter.create(withView: self)
         newsDetailPresenter.displayNews(withNews: news!)
-        //titleLabel.tintColor = UIColor(red: 173, green: 34, blue: 34, alpha: 1)
+        newsTitle.text = news?.title
+        newsContent.text = news?.content
+        newsImage.sd_setImage(with: URL(string: news?.imageUrl ?? placeholderImage))
+        newsDate.text = news?.createdDate?.description
+
         
         //saveItem.image= #imageLiteral(resourceName: "star_blank")
         //saveItem.image = #imageLiteral(resourceName: "star_yellow")
@@ -32,6 +40,28 @@ class NewsDetailViewController: UIViewController, NewsDetailView {
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { (_) in
+            let orient = UIApplication.shared.statusBarOrientation
+            switch orient {
+            case .portrait:
+            // Do something
+                break
+            default:
+            // Do something else
+                break
+            }
+        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            self.newsContent.setContentOffset(CGPoint.zero, animated: true)
+        })
+        
+        super.willTransition(to: newCollection, with: coordinator)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        newsContent.setContentOffset(CGPoint.zero, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

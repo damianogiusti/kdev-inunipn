@@ -46,6 +46,24 @@ extension String {
     func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
+    
+    init?(htmlEncodedString: String) {
+        
+        guard let data = htmlEncodedString.data(using: .utf8) else {
+            return nil
+        }
+        
+        let options: [String: Any] = [
+            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+            NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue
+        ]
+        
+        guard let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) else {
+            return nil
+        }
+        
+        self.init(attributedString.string)
+    }
 }
 
 public extension Sequence {
@@ -58,3 +76,6 @@ public extension Sequence {
         return dict
     }
 }
+
+
+

@@ -62,12 +62,16 @@ class NewsDetailPresenter: BasePresenter {
     
     func displayNews(withNews newsDetail : News) {
         news = newsDetail
+        news?.title = String(htmlEncodedString: (news?.title)!)
+        news?.content = String(htmlEncodedString: (news?.content)!)
         newsDetailView?.displayNews(withNews: newsDetail)
     }
     
     func updateNewsView(withNews updatedNews: News) {
         
         news = updatedNews
+        news?.title = String(htmlEncodedString: (news?.title)!)
+        news?.content = String(htmlEncodedString: (news?.content)!)
         newsDetailView?.updateNewsDetailView(withNews: updatedNews)
         
     }
