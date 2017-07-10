@@ -74,32 +74,6 @@ class LessonPresenter: BasePresenter {
     //MARK: - user interaction methods
     
     
-    func addEventToCalendar(title: String, description: String?, classroom: String?, date day: String, startTime: String, endTime: String) {
-        let eventStore = EKEventStore()
-        
-        
-        eventStore.requestAccess(to: .event, completion: { (granted, error) in
-            if (granted) && (error == nil) {
-                let event = EKEvent(eventStore: eventStore)
-                event.title = title
-                event.startDate = self.calculateDateTime(withDate: day, andTime: startTime)
-                event.endDate = self.calculateDateTime(withDate: day, andTime: endTime)
-                event.notes = description
-                event.location = classroom
-                event.calendar = eventStore.defaultCalendarForNewEvents
-                do {
-                    try eventStore.save(event, span: .thisEvent)
-                } catch let e as NSError {
-                    self.lessonView?.showError(withError: "\(Strings.errorSaving) \(e)")                                   
-                }
-                self.lessonView?.showMessage(withMessage: Strings.eventAdded)
-            } else {
-                self.lessonView?.showError(withError:Strings.noPermissionGiven)                                   
-            }
-        })
-    }
-    
-    
     func showJoiningChoice(withLesson lesson:Lesson) {
         lessonView?.displayJoiningChoice(isAlreadyJoined: lesson.joined)
     }
@@ -201,30 +175,4 @@ class LessonPresenter: BasePresenter {
         
         lessonView?.displayLessons(withLessonList: days)
     }
-
-    func calculateDateTime(withDate date: String, andTime time: String) -> Date{
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        
-        let date : Date = formatter.date(from: date)!
-        
-        formatter.dateFormat = "HH:mm"
-        
-        let timeOfTheDay = formatter.date(from: time)
-        
-        var calendar = Calendar.current
-        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
-        let dateComponents = calendar.dateComponents([Calendar.Component.hour, Calendar.Component.minute], from: timeOfTheDay!)
-
-        let hours = dateComponents.hour
-        let minutes = dateComponents.minute
-        
-        var dateTime = calendar.date(byAdding: .minute, value: minutes!, to: date)
-        dateTime = calendar.date(byAdding: .hour, value: hours!, to: dateTime!)
-        
-        return dateTime!
-    }
-
 }
