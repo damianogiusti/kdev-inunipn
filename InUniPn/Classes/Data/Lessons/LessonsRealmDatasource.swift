@@ -21,6 +21,8 @@ class LessonsRealmDatasource: BaseRealmDatasource {
             realmLesson.classroom = lesson.classroom
             realmLesson.course = lesson.course
             realmLesson.date = lesson.date
+            realmLesson.timeStart = lesson.timeStart
+            realmLesson.timeEnd = lesson.timeEnd
             realmLesson.joined = lesson.joined
             realmLesson.area = lesson.area ?? 0
             return realmLesson
@@ -38,6 +40,8 @@ class LessonsRealmDatasource: BaseRealmDatasource {
             lesson.classroom = realmLesson.classroom
             lesson.course = realmLesson.course
             lesson.date = realmLesson.date
+            lesson.timeStart = realmLesson.timeStart
+            lesson.timeEnd = realmLesson.timeEnd
             lesson.joined = realmLesson.joined
             lesson.area = realmLesson.area
             return lesson

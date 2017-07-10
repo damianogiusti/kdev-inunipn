@@ -106,48 +106,6 @@ extension NewsTableViewController: NewsView {
 }
 
 
-<<<<<<< HEAD
-// MARK: - UITableViewDelegate
-
-
-extension NewsTableViewController: UITableViewDataSource, UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.newsList.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? NewsTableViewCell else {
-            fatalError("Cannot display a news without a NewsTableViewCell")
-        }
-
-        let news: News = presenter.newsList[indexPath.row]
-
-        cell.titleLabel.text = news.title
-
-        if let content = news.content {
-            let index = content.index(content.startIndex, offsetBy: 100)
-            cell.contentLabel.text = content.substring(to: index)
-        } else {
-            cell.contentLabel.text = nil
-        }
-
-        if let date = news.createdDate {
-            cell.dateLabel.text = formatDate(date: date)
-        } else {
-            cell.dateLabel.text = nil
-        }
-
-        if news.starred {
-            cell.starButton.setImage(#imageLiteral(resourceName: "ios-star"), for: .normal)
-        } else {
-            cell.starButton.setImage(#imageLiteral(resourceName: "ios-star-outline"), for: .normal)
-        }
-
-        cell.newsImageView.sd_setImage(with: URL(string: news.imageUrl ?? placeholderImage))
-=======
->>>>>>> ecba3e57c64fa44c300def8f848951cf191075b3
-
 // MARK: - NewsTableViewCellDelegate
 
 

@@ -53,6 +53,7 @@ class LessonPresenter: BasePresenter {
     
     private let userService : UserService = UserService()
     private var lessonService : LessonsService?
+    private var lessonList: [Lesson] = []
     
     //MARK: - view
     
@@ -64,7 +65,7 @@ class LessonPresenter: BasePresenter {
         lessonView = view
         user = userService.currentUser()
         if let token = user?.accessToken{
-            lessonService = LessonsService(withToken : token);
+            lessonService = LessonsService(withToken: token)
         } else {
             lessonView?.showError(withError: Strings.unknownError)
         }
@@ -99,22 +100,63 @@ class LessonPresenter: BasePresenter {
     }
     
     
-    func showJoiningChoice(withLesson lesson:Lesson){
+    func showJoiningChoice(withLesson lesson:Lesson) {
         lessonView?.displayJoiningChoice(isAlreadyJoined: lesson.joined)
     }
-    
-    func joinLesson(withLesson lesson:Lesson){
-        lessonService?.joinLesson(byId: lesson.lessonId)
-        lessonView?.showMessage(withMessage: Strings.joinedSuccessfully)
-        
+
+    func toggleJoinedStateOfLesson(byId id: String) {
+        if let lesson = lessonList.first(where: { lesson in lesson.lessonId == id }) {
+            if lesson.joined {
+                unjoinLesson(byId: id)
+            } else {
+                joinLesson(byId: id)
+            }
+        }
     }
     
-    func unjoinLesson(withLesson lesson:Lesson){
-        lessonService?.unjoinLesson(byId: lesson.lessonId)
-        lessonView?.showMessage(withMessage: Strings.unjoinedSuccessfully)
-        
+    private func joinLesson(byId id: String) {
+        lessonService?.joinLesson(byId: id, onSuccess: onSuccessfulJoinToggle, onError: onErrorJoining)
     }
     
+    private func unjoinLesson(byId id: String) {
+        lessonService?.unjoinLesson(byId: id, onSuccess: onSuccessfulJoinToggle, onError: onErrorJoining)
+    }
+
+    private func onSuccessfulJoinToggle(lesson: Lesson) {
+        updateLessonView(lesson: lesson)
+    }
+
+    private func onErrorJoining(error: Error) {
+
+    }
+
+    private func updateLessonView(lesson: Lesson) {
+        if let index = lessonList.index(where: { l in l.lessonId == lesson.lessonId }) {
+            lessonList[index] = lesson
+            days = rawLessonsToDays(withLessons: lessonList)
+            
+            if let indexPath = lessonInDays(lesson: lesson, days: days) {
+                lessonView?.updateLessonView(days: days, atIndexPath: indexPath)
+            } else {
+                lessonView?.displayLessons(withLessonList: days)
+            }
+
+        }
+    }
+
+    private func lessonInDays(lesson: Lesson, days: [Day]) -> IndexPath? {
+        for section in 0..<days.count {
+            let lessons = days[section].lessons
+            for row in 0..<lessons.count {
+                let l = lessons[row]
+                if l.id == lesson.lessonId {
+                    return IndexPath(row: row, section: section)
+                }
+            }
+        }
+        return nil
+    }
+
     func joinAllLessonRelated(toLesson lesson:Lesson){
         if let type = lesson.type{
             lessonService?.joinAllFutureLessons(ofType: type)
@@ -152,8 +194,9 @@ class LessonPresenter: BasePresenter {
     
     //MARK: - private methods
     
-    func displayLessons(withLessons lessons : [Lesson]){
-              
+    func displayLessons(withLessons lessons : [Lesson]) {
+        self.lessonList = lessons
+
         days = rawLessonsToDays(withLessons: lessons)
         
         lessonView?.displayLessons(withLessonList: days)
