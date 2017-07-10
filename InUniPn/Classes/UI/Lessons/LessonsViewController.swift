@@ -11,11 +11,6 @@ import UIKit
 
 class LessonsViewController: UIViewController, UISearchBarDelegate {
 
-    func displayLessons(withLessonList list: [Day]) {
-        tableViewDelegate.dataset = list
-        lessonsTableView.reloadData()
-    }
-
     @IBOutlet var lessonsTableView: UITableView!
     let lessonCellIdentifier = String(describing: LessonTableViewCell.self)
     let lessonCellNibName = String(describing: LessonTableViewCell.self)
@@ -60,7 +55,7 @@ class LessonsViewController: UIViewController, UISearchBarDelegate {
     }
 
     func didPressJoinButton(atIndexPath indexPath: IndexPath) {
-        lessonPresenter.joinLesson(byId: tableViewDelegate.dataset[indexPath.section].lessons[indexPath.row].id)
+        lessonPresenter.toggleJoinedStateOfLesson(byId: tableViewDelegate.dataset[indexPath.section].lessons[indexPath.row].id)
     }
 }
 
@@ -72,6 +67,16 @@ extension LessonsViewController: LessonView {
 
     func navigateToNews() {
 
+    }
+
+    func displayLessons(withLessonList list: [Day]) {
+        tableViewDelegate.dataset = list
+        lessonsTableView.reloadData()
+    }
+
+    func updateLessonView(days: [Day], atIndexPath indexPath: IndexPath) {
+        tableViewDelegate.dataset = days
+        lessonsTableView.reloadRows(at: [indexPath], with: .none)
     }
 
     func displayJoiningChoice(isAlreadyJoined : Bool) {
