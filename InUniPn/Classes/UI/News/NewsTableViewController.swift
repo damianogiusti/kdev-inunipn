@@ -43,6 +43,7 @@ class NewsTableViewController: UIViewController, UISearchBarDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         appDelegate.tabBarController?.title = Strings.news
+        appDelegate.tabBarController?.navigationItem.rightBarButtonItem = nil
     }
 
     override func viewDidAppear(_ animated: Bool) {

@@ -69,11 +69,15 @@ class ProfileViewController: UIViewController {
         lessonsTableViewDelegate.cellNibName = lessonsCellNibName
         lessonsTableViewDelegate.cellReuseIdentifier = lessonsCellReuseIdentifier
         lessonsTableViewDelegate.didSelectRowAtIndexPathClosure = lessonsTableView(_:didSelectRowAt:)
+
+        // setup button bar item click
+        appDelegate.settingsButtonItemPressedClosure = self.didPressSettingsButton
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         appDelegate.tabBarController?.title = Strings.profile
+        appDelegate.tabBarController?.navigationItem.rightBarButtonItem = appDelegate.settingsBarItem
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -108,6 +112,10 @@ class ProfileViewController: UIViewController {
 
     fileprivate func didPressLessonsSegment() {
         setupForLessons()
+    }
+
+    fileprivate func didPressSettingsButton() {
+
     }
 
     fileprivate func setupForNews() {

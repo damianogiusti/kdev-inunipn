@@ -56,6 +56,7 @@ class LessonsViewController: UIViewController, UISearchBarDelegate {
         super.viewWillAppear(animated)
 
         appDelegate.tabBarController?.title = Strings.lessons
+        appDelegate.tabBarController?.navigationItem.rightBarButtonItem = nil
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
