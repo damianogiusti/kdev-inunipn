@@ -15,6 +15,9 @@ class NewsRepositoryImpl: NewsRepository {
     private static var allNewsCallsCount = 0
     private let storageDatasource = NewsRealmDatasource()
     private let restDatasource: NewsRestDatasource
+
+    private let kNewsPage = "news_last_page"
+    private let prefs = UserDefaults.standard
     
     required init(withToken token: String) {
         self.token = token
@@ -26,9 +29,9 @@ class NewsRepositoryImpl: NewsRepository {
     }
 
     func news(ofPage page: Int) -> [News] {
-        let newss = storageDatasource.all()
+        let newss = storageDatasource.all().filter({ news in news.page == page })
         if !newss.isEmpty {
-            return storageDatasource.all().filter({ news in news.page == page })
+            return storageDatasource.all()
         } else {
             if let news = restDatasource.all(ofPage: page).data {
                 storageDatasource.saveAll(objects: news)
@@ -39,29 +42,35 @@ class NewsRepositoryImpl: NewsRepository {
     }
 
     func all() -> [News] {
+
         // the first time always call the REST API
         if NewsRepositoryImpl.allNewsCallsCount == 0 {
             NewsRepositoryImpl.allNewsCallsCount += 1
 
-            if let news: [News] = restDatasource.all().data {
-                let persistedNews: [News] = storageDatasource.all()
+            var news: [News] = fetchAll()
+            let persistedNews: [News] = storageDatasource.all()
 
-                // if some data is persisted, recover the starred state 
-                // and apply it to the retrieved data
-                if !persistedNews.isEmpty {
-                    news.forEach({ n in
-                        n.starred = persistedNews.filter({ pn in pn.newsId == n.newsId }).first?.starred ?? false
-                    })
-                }
+            // if some data is persisted, recover the starred state
+            // and apply it to the retrieved data
+            if !persistedNews.isEmpty {
 
-                // update the persisted data with the REST one
-                storageDatasource.saveAll(objects: news)
-                return news
-            } else {
-                return []
+                persistedNews.forEach({ pn in
+                    if !news.contains(where: { n in n.newsId == pn.newsId }) {
+                        news.append(pn)
+                    }
+                })
+
+                news.forEach({ n in
+                    n.starred = persistedNews.filter({ pn in pn.newsId == n.newsId }).first?.starred ?? false
+                })
             }
+
+            // update the persisted data with the REST one
+            storageDatasource.saveAll(objects: news)
+            return news
+
         }
-        // the second time check if some data is persisted, 
+        // the second time check if some data is persisted,
         // else get the REST api call result, save it, and return it
         else {
             let newss = storageDatasource.all()
@@ -75,6 +84,23 @@ class NewsRepositoryImpl: NewsRepository {
                 return []
             }
         }
+    }
+
+    private func fetchAll() -> [News] {
+        var page = prefs.integer(forKey: kNewsPage)
+        if page < 0 {
+            page = 0
+        }
+
+        var newss: [News] = []
+        var pageNews = news(ofPage: page)
+        while !pageNews.isEmpty {
+            page += 1
+            pageNews = news(ofPage: page)
+            newss.append(contentsOf: pageNews)
+        }
+        prefs.setValue(page - 1, forKey: kNewsPage)
+        return newss
     }
     
     func save(news: News) -> Bool {

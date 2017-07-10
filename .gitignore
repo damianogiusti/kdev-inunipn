@@ -23,7 +23,7 @@ DerivedData
 *.xcworkspace
 !default.xcworkspace
 xcuserdata
-profile
+#profile
 
 ## Various settings
 *.pbxuser
