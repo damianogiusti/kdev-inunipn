@@ -26,6 +26,10 @@ class LessonNotificationManager {
     }
     
     private static func setNotification(forLesson lesson: Lesson) {
+        if !NotificationPreferences.areNotificationsEnabled() {
+            return
+        }
+
         if let subject = lesson.name {
             if let lessonDate = lesson.timeStart {
                 

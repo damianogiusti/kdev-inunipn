@@ -43,12 +43,37 @@ class SettingsPresenter: BasePresenter {
 
         let interval = NotificationPreferences.getNotificationBeforeMinutes()
         view.showLessonsReminderInterval(string: timeIntervals[interval], rawValue: interval)
+        view.showNotifyForLessons(enabled: NotificationPreferences.areNotificationsEnabled())
     }
 
     //MARK: - user interaction methods
 
     func retrieveUniversities() {
         universitiesService.all(onSuccess: dispatchUniversities, onError: onRetrievingUniversitiesError)
+    }
+
+    func changeNotificationStatus(status: Bool) {
+        NotificationPreferences.setNotificationsEnabled(status: status)
+    }
+
+    func changeNotificationInterval(newValueMinutes value: Int?) {
+        if let value = value {
+            NotificationPreferences.setNotificationBefore(minutes: value)
+        }
+    }
+
+    func changeUserName(name: String?) {
+        if let user = user, user.displayName != name {
+            user.displayName = name
+            userService.save(user: user)
+        }
+    }
+
+    func changeUniversity(uni: String) {
+        if let user = user, user.university != uni {
+            user.university = uni
+            userService.save(user: user)
+        }
     }
 
     private func dispatchUniversities(unis: [University]) {

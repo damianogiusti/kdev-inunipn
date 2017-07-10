@@ -9,7 +9,8 @@
 import Foundation
 
 class NotificationPreferences {
-    
+
+    private static let k_notifications_enabled = "notifications_enabled"
     private static let k_minutes = "minutes"
     
     static func setNotificationBefore(minutes: Int) {
@@ -23,6 +24,14 @@ class NotificationPreferences {
             setNotificationBefore(minutes: minutes)
         }
         return minutes
+    }
+
+    static func areNotificationsEnabled() -> Bool {
+        return UserDefaults.standard.bool(forKey: k_notifications_enabled)
+    }
+
+    static func setNotificationsEnabled(status: Bool) {
+        UserDefaults.standard.setValue(status, forKey: k_notifications_enabled)
     }
     
 }

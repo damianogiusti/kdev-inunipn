@@ -13,40 +13,45 @@ class SettingsViewController: FormViewController {
 
     var user: User?
 
-    fileprivate var notificationsSwitch = SwitchRowFormer<FormSwitchCell>() {
-        $0.titleLabel.text = Strings.lessonsNotifications
-    }.configure { (row) in
-        row.switchWhenSelected = true
-        row.switched = true
-    }
-
-    fileprivate var reminderIntervalPicker = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
-        $0.titleLabel.text = Strings.lessonsReminderInterval
-        }.configure { row in
-
-        }.onValueChanged { item in
-            // Do Something
-    }
-
-    fileprivate var nameInput = TextFieldRowFormer<FormTextFieldCell>() {
-        $0.titleLabel.text = Strings.name
-        $0.textField.textAlignment = .right
-        }.configure {
-            $0.placeholder = Strings.namePlaceholder
-    }
-
-    fileprivate var universityPicker = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
-        $0.titleLabel.text = Strings.university
-        }.configure { row in
-
-        }.onValueChanged { item in
-            // Do Something
-    }
+    fileprivate var notificationsSwitch: SwitchRowFormer<FormSwitchCell>?
+    fileprivate var reminderIntervalPicker: InlinePickerRowFormer<FormInlinePickerCell, Int>?
+    fileprivate var nameInput: TextFieldRowFormer<FormTextFieldCell>?
+    fileprivate var universityPicker: InlinePickerRowFormer<FormInlinePickerCell, Int>?
 
     private let presenter = SettingsPresenter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.notificationsSwitch = SwitchRowFormer<FormSwitchCell>() {
+            $0.titleLabel.text = Strings.lessonsNotifications
+            }.configure { (row) in
+                row.switchWhenSelected = true
+                row.switched = true
+        }.onSwitchChanged(self.presenter.changeNotificationStatus)
+
+        self.reminderIntervalPicker = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
+            $0.titleLabel.text = Strings.lessonsReminderInterval
+            }.configure { row in
+
+            }.onValueChanged { item in
+                self.presenter.changeNotificationInterval(newValueMinutes: item.value)
+        }
+
+        self.nameInput = TextFieldRowFormer<FormTextFieldCell>() {
+            $0.titleLabel.text = Strings.name
+            $0.textField.textAlignment = .right
+            }.configure {
+                $0.placeholder = Strings.namePlaceholder
+        }
+
+        self.universityPicker = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
+            $0.titleLabel.text = Strings.university
+            }.configure { row in
+
+            }.onValueChanged { item in
+                self.presenter.changeUniversity(uni: item.title)
+        }
 
         presenter.create(withView: self)
         presenter.retrieveUniversities()
@@ -55,7 +60,7 @@ class SettingsViewController: FormViewController {
             $0.textLabel?.text = Strings.notifications
         }
 
-        let notificationSection = SectionFormer(rowFormer: notificationsSwitch, reminderIntervalPicker)
+        let notificationSection = SectionFormer(rowFormer: notificationsSwitch!, reminderIntervalPicker!)
             .set(headerViewFormer: notificationsHeaderView)
 
 
@@ -64,7 +69,7 @@ class SettingsViewController: FormViewController {
             }.configure { view in
         }
 
-        let accountSection = SectionFormer(rowFormer: nameInput, universityPicker)
+        let accountSection = SectionFormer(rowFormer: nameInput!, universityPicker!)
             .set(headerViewFormer: accountHeaderView)
 
         former.append(sectionFormer: notificationSection, accountSection)
@@ -73,6 +78,11 @@ class SettingsViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         appDelegate.navigationController?.title = Strings.settings
+    }
+
+
+    override func viewWillDisappear(_ animated: Bool) {
+        presenter.changeUserName(name: nameInput?.text)
     }
 
 }
@@ -88,36 +98,40 @@ extension SettingsViewController: SettingsView {
     }
 
     func showUserName(name: String?) {
-        nameInput.text = name
-        nameInput.update()
+        nameInput?.text = name
+        nameInput?.update()
     }
 
     func showUniversities(unis: [University], withSelection selection: String?, atIndex index: Int?) {
-        universityPicker.configure(handler: { row in
+        universityPicker?.configure(handler: { row in
             row.pickerItems = unis.enumerated().map { index, uni in
                 InlinePickerItem(title: uni.code ?? "", value: Int(index))
             }
         })
         if let index = index {
-            universityPicker.selectedRow = index
+            universityPicker?.selectedRow = index
         }
 
-        universityPicker.update()
+        universityPicker?.update()
     }
 
     func showNotifyForLessons(enabled: Bool) {
-        notificationsSwitch.switched = enabled
-        notificationsSwitch.update()
+        notificationsSwitch?.switched = enabled
+        notificationsSwitch?.update()
     }
 
     func showReminderIntervals(intervals: [String]) {
-        reminderIntervalPicker.pickerItems.append(contentsOf:
-            intervals.map({ title in InlinePickerItem(title: title) }))
-        reminderIntervalPicker.update()
+        var index = 0
+        reminderIntervalPicker?.pickerItems.append(contentsOf:
+            intervals.map({ title in
+                index = index + 1
+                return InlinePickerItem(title: title, value: index)
+            }))
+        reminderIntervalPicker?.update()
     }
 
     func showLessonsReminderInterval(string: String, rawValue: Int) {
-        reminderIntervalPicker.selectedRow = rawValue - 1
-        reminderIntervalPicker.update()
+        reminderIntervalPicker?.selectedRow = rawValue - 1
+        reminderIntervalPicker?.update()
     }
 }
