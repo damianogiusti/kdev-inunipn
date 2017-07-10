@@ -62,6 +62,13 @@ class LessonsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSo
         cell.teacherLabel?.text = lesson.teacher
         cell.classroomLabel?.text = lesson.classroom
 
+        cell.joinButton.tintColor = .fireBrickRed
+        if lesson.joined {
+            cell.joinButton.setImage(#imageLiteral(resourceName: "ios-checkmark"), for: .normal)
+        } else {
+            cell.joinButton.setImage(#imageLiteral(resourceName: "ios-checkmark-outline"), for: .normal)
+        }
+
         cell.joinButton.superview?.tag = indexPath.section
         cell.joinButton.tag = indexPath.row
         cell.joinButton.addTarget(self, action: #selector(self.joinButtonPressed(button:)), for: .touchUpInside)

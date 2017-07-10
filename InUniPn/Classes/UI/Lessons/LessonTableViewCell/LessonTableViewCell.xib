@@ -51,7 +51,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5e-c0-8ps" userLabel="Join Button">
                         <rect key="frame" x="368" y="81.5" width="30" height="30"/>
-                        <state key="normal" title="Join">
+                        <state key="normal">
                             <color key="titleColor" red="0.67843137249999996" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
