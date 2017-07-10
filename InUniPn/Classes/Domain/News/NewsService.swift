@@ -1,4 +1,4 @@
-//
+    //
 //  NewsesService.swift
 //  InUniPn
 //
@@ -30,9 +30,9 @@ class NewsService: BaseService {
 
             var news: [News]
             if let page = page {
-                news = self.newsRepository.news(ofPage: page)
+                news = self.newsRepository.news(ofPage: page).sorted(by: self.sortByDateDesc)
             } else {
-                news = self.newsRepository.all()
+                news = self.newsRepository.all().sorted(by: self.sortByDateDesc)
             }
 
             runOnUiThread {
@@ -100,7 +100,7 @@ class NewsService: BaseService {
                     return true
                 }
                 return false
-            })
+            }).sorted(by: self.sortByDateDesc)
             
             runOnUiThread {
                 onSuccess(newses)
@@ -113,7 +113,7 @@ class NewsService: BaseService {
         
         runInBackground {
             
-            let lessons: [News] = self.newsRepository.all().filter({ news in news.starred })
+            let lessons: [News] = self.newsRepository.all().filter({ news in news.starred }).sorted(by: self.sortByDateDesc)
             
             runOnUiThread {
                 onSuccess(lessons)
@@ -138,6 +138,14 @@ class NewsService: BaseService {
                     onError?(NewsesErrors.newsNotExisting)
                 }
             }
+        }
+    }
+
+    private func sortByDateDesc(news1: News, news2: News) -> Bool {
+        if let d1 = news1.createdDate, let d2 = news2.createdDate {
+            return d1 > d2
+        } else {
+            return false
         }
     }
     

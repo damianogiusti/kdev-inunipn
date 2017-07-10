@@ -35,7 +35,7 @@ class BasePresenter {
         var rawDays : [String: [LessonToDisplay]] = [:]
         
         for key in categorizedLessons.keys {
-            let lessonsForDay : [LessonToDisplay] =  (categorizedLessons[key]?.flatMap({ (l: Lesson) in LessonToDisplay(withId: l.lessonId, 
+            let lessonsForDay : [LessonToDisplay] =  (categorizedLessons[key]?.flatMap({ (l: Lesson) in LessonToDisplay(withId: l.lessonId,
                                                                                                      name: l.name ?? "", 
                                                                                                      teacher: l.teacher ?? "", 
                                                                                                      startTime: formatter.string(from: l.timeStart ?? Date()), 
