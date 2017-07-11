@@ -21,6 +21,7 @@ class NewsTableViewController: UIViewController, UISearchBarDelegate {
     private var query = ""
 
     fileprivate let tableViewDelegate = NewsTableViewDelegate()
+    private var tapRecognizer: UITapGestureRecognizer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,20 @@ class NewsTableViewController: UIViewController, UISearchBarDelegate {
 
         searchBar.barTintColor = .primaryColor
         searchBar.searchBarStyle = .minimal
+        searchBar.delegate = self
+
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTouchTableView))
+        self.tapRecognizer = tapRecognizer
+        tableView.addGestureRecognizer(tapRecognizer)
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tapRecognizer?.isEnabled = true
+    }
+
+    @objc func didTouchTableView() {
+        view.endEditing(true)
+        tapRecognizer?.isEnabled = false
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -20,7 +20,7 @@ class LessonsViewController: UIViewController, UISearchBarDelegate {
 
     private let lessonPresenter = LessonPresenter()
 
-    let searchController = UISearchController(searchResultsController: nil)
+    private var tapRecognizer: UITapGestureRecognizer?
 
     fileprivate let tableViewDelegate = LessonsTableViewDelegate()
 
@@ -48,6 +48,20 @@ class LessonsViewController: UIViewController, UISearchBarDelegate {
 
         searchBar.barTintColor = .primaryColor
         searchBar.searchBarStyle = .minimal
+        searchBar.delegate = self
+
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTouchTableView))
+        self.tapRecognizer = tapRecognizer
+        lessonsTableView.addGestureRecognizer(tapRecognizer)
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tapRecognizer?.isEnabled = true
+    }
+
+    @objc func didTouchTableView() {
+        view.endEditing(true)
+        tapRecognizer?.isEnabled = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
