@@ -128,6 +128,14 @@ extension LessonsViewController: LessonView {
     func showMessage(withMessage message : String) {
         displayAlert(withMessage: message)
     }
+
+    func showProgress() {
+        showProgressDialog(onView: lessonsTableView, withMessage: Strings.loading)
+    }
+
+    func hideProgress() {
+        hideProgressDialog()
+    }
     
 }
 

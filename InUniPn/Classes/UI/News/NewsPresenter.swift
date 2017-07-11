@@ -13,7 +13,8 @@ class NewsPresenter: BasePresenter {
     //MARK: - variables
     
     //MARK: - services
-    
+
+    private var showLoading = true
     private var newsService: NewsService?
     private let userService: UserService = UserService()
     
@@ -67,7 +68,7 @@ class NewsPresenter: BasePresenter {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         
-        if let title = news.title, let link = news.link, let content = news.content, let date =  news.updatedDate
+        if let title = news.title, let link = news.link, let content = news.content, let date =  news.createdDate
         {
             let objectsToShare : [Any] = [title, NSURL(string:link), content, formatter.string(from:date)]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -80,6 +81,10 @@ class NewsPresenter: BasePresenter {
     }
     
     func loadNews(withQueryString queryString: String = ""){
+        if showLoading {
+            showLoading = false
+            newsView?.showProgress()
+        }
         if queryString.isEmpty {
             newsService?.all(onSuccess: displayNews)
         } else {
@@ -91,6 +96,7 @@ class NewsPresenter: BasePresenter {
     
     func displayNews(withNews news : [News]) {
         newsList = news
+        newsView?.hideProgress()
         newsView?.displayNews(withNewsList: news)
     }
     

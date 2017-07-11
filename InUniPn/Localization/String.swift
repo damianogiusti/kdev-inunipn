@@ -12,6 +12,10 @@ import Foundation
 // swiftlint:disable type_name
 
 enum L10n {
+  /// Cancel
+  static let cancel = L10n.tr("Cancel")
+  /// Are you shure that you want to logout?
+  static let confirmLogoutMessage = L10n.tr("confirm logout message")
   /// Confirm password
   static let confirmPassword = L10n.tr("Confirm password")
   /// Repeat your password
@@ -54,6 +58,8 @@ enum L10n {
   static let lessonsReminderInterval = L10n.tr("Lessons Reminder Interval")
   /// Loading, please wait...
   static let loading = L10n.tr("loading")
+  /// Logout
+  static let logout = L10n.tr("Logout")
   /// minutes
   static let minutePlural = L10n.tr("Minute plural")
   /// minute

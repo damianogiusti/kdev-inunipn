@@ -81,4 +81,9 @@ class LessonsRepoImpl: LessonsRepository {
     func delete(byId id: String) -> Bool {
         return storageDatasource.delete(byId: id)
     }
+
+    func deleteAll() -> Bool {
+        LessonsRepoImpl.allLessonCallsCount = 0
+        return storageDatasource.deleteAll()
+    }
 }

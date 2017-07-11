@@ -26,6 +26,8 @@
 "no news present" = "It seems that you have no news. Let's stay tuned!";
 "no lessons present" = "There are no planned lessons. A good opportunity to go sunbathing!";
 
+"confirm logout message" = "Are you shure that you want to logout?";
+
 
 //MARK: - errors
 
@@ -67,4 +69,6 @@
 "Lessons" = "Lessons";
 "Profile" = "Profile";
 "Settings" = "Account settings";
+"Logout" = "Logout";
 
+"Cancel" = "Cancel";

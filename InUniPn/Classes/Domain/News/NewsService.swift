@@ -76,6 +76,23 @@ class NewsService: BaseService {
             }
         }
     }
+
+    /// Delete a news
+    func deleteNews(onSuccess: SuccessBlock<Void>? = nil, onError: ErrorBlock? = nil) {
+
+        runInBackground {
+
+            if self.newsRepository.deleteAll() {
+                runOnUiThread {
+                    onSuccess?()
+                }
+            } else {
+                runOnUiThread {
+                    onError?(NewsesErrors.errorDeletingNews)
+                }
+            }
+        }
+    }
     
     /// Adds a news to the favorites
     func addNewsToFavorites(byId newsId: String, onSuccess: SuccessBlock<News>? = nil, onError: ErrorBlock? = nil) {

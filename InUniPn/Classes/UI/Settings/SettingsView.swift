@@ -19,4 +19,6 @@ protocol SettingsView: BaseView {
     func showReminderIntervals(intervals: [String])
 
     func showLessonsReminderInterval(string: String, rawValue: Int)
+
+    func navigateToLogin()
 }
