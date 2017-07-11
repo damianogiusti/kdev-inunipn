@@ -61,8 +61,9 @@ class LessonsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSo
         cell.lessonLabel?.text = lesson.name
         cell.teacherLabel?.text = lesson.teacher
         cell.classroomLabel?.text = lesson.classroom
+        cell.classroomLabel.textColor = .accentColor
 
-        cell.joinButton.tintColor = .fireBrickRed
+        cell.joinButton.tintColor = .accentColor
         if lesson.joined {
             cell.joinButton.setImage(#imageLiteral(resourceName: "ios-checkmark"), for: .normal)
         } else {

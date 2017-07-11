@@ -11,6 +11,7 @@ import UIKit
 class NewsTableViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     private let cellNibName = String(describing: NewsTableViewCell.self)
     private let cellReuseIdentifier = String(describing: NewsTableViewCell.self)
@@ -38,6 +39,9 @@ class NewsTableViewController: UIViewController, UISearchBarDelegate {
         tableView.emptyDataSetDelegate = tableViewDelegate
         tableView.register(UINib(nibName: cellNibName, bundle: nil),
                            forCellReuseIdentifier: cellReuseIdentifier)
+
+        searchBar.barTintColor = .primaryColor
+        searchBar.searchBarStyle = .minimal
     }
 
     override func viewWillAppear(_ animated: Bool) {

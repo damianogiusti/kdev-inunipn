@@ -19,5 +19,9 @@ protocol LessonView: BaseView {
     func updateLessonView(days: [Day], atIndexPath indexPath: IndexPath)
     
     func displayJoiningChoice(isAlreadyJoined : Bool)
+
+    func showUniversitiesForFilter(titles: [String])
+
+    func showDefaultUniversity(atIndex: Int)
     
 }

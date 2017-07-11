@@ -24,7 +24,7 @@ enum L10n {
   static let emailPlaceholder = L10n.tr("Email placeholder")
   /// Error
   static let error = L10n.tr("Error")
-  /// Impossible to join this kind of lesson
+  /// Unable to join this kind of lesson
   static let errorJoiningLessons = L10n.tr("Error joining lessons")
   /// An error occourred while retrieving lessons, try again later
   static let errorRetrievingLessons = L10n.tr("Error retrieving lessons")
@@ -82,7 +82,7 @@ enum L10n {
   static let university = L10n.tr("University")
   /// You have successfully unjoined the lesson
   static let unjoinedSuccessfully = L10n.tr("unjoined successfully")
-  /// An unknown error occourred, try again later
+  /// Something went wrong, try again later
   static let unknownError = L10n.tr("Unknown error")
 }
 

@@ -53,7 +53,10 @@ class LessonPresenter: BasePresenter {
     
     private let userService : UserService = UserService()
     private var lessonService : LessonsService?
+    private var universitiesService: UniversitiesServices?
     private var lessonList: [Lesson] = []
+    private var universities: [University] = []
+    private var currentUniversity: University?
     
     //MARK: - view
     
@@ -69,6 +72,26 @@ class LessonPresenter: BasePresenter {
         } else {
             lessonView?.showError(withError: Strings.unknownError)
         }
+
+        universitiesService = UniversitiesServices()
+    }
+
+    func start() {
+        universitiesService?.all(onSuccess: onUniversities, onError: onUniversitiesError)
+    }
+
+    private func onUniversities(unis: [University]) {
+        universities = unis
+        if let index = universities.index(where: { u in u.code == user?.university }) {
+            currentUniversity = universities[index]
+            lessonView?.showUniversitiesForFilter(titles: unis.flatMap({ u in u.code }))
+            lessonView?.showDefaultUniversity(atIndex: index)
+            loadLessons()
+        }
+    }
+
+    private func onUniversitiesError(error: Error) {
+        lessonView?.showError(withError: Strings.unknownError)
     }
     
     //MARK: - user interaction methods
@@ -86,6 +109,11 @@ class LessonPresenter: BasePresenter {
                 joinLesson(byId: id)
             }
         }
+    }
+
+    func selectedUniversityAtIndex(index: Int) {
+        currentUniversity = universities[index]
+        loadLessons()
     }
     
     private func joinLesson(byId id: String) {
@@ -158,9 +186,18 @@ class LessonPresenter: BasePresenter {
         lessonView?.navigateToProfile()
     }
     
-    func loadLessons(withQueryString queryString: String = ""){
+    func loadLessons(withQueryString queryString: String = "") {
         if queryString.isEmpty {
-            lessonService?.all(fromDate: Date(), onSuccess: displayLessons)
+            lessonService?.all(fromDate: Date(), onSuccess: { (lessons) in
+                let filteredLessons = lessons.filter({ l in
+                    if let uni = l.course, let code = self.currentUniversity?.code {
+                        return uni == code
+                    } else {
+                        return false
+                    }
+                })
+                self.displayLessons(withLessons: filteredLessons)
+            })
         } else {
             lessonService?.searchLessons(withKeyword: queryString, onSuccess: displayLessons)
         }
@@ -172,7 +209,7 @@ class LessonPresenter: BasePresenter {
         self.lessonList = lessons
 
         days = rawLessonsToDays(withLessons: lessons)
-        
+
         lessonView?.displayLessons(withLessonList: days)
     }
 }

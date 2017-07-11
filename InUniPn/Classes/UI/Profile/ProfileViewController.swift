@@ -50,6 +50,7 @@ class ProfileViewController: UIViewController {
         segment.apportionsSegmentWidthsByContent = false
         segment.setTitle(Strings.news, forSegmentAt: SegmentItems.news.rawValue)
         segment.setTitle(Strings.lessons, forSegmentAt: SegmentItems.lessons.rawValue)
+        segment.tintColor = .darkPrimaryColor
 
         // setup table view
         tableView.register(UINib(nibName: newsCellNibName, bundle: nil), forCellReuseIdentifier: newsCellReuseIdentifier)

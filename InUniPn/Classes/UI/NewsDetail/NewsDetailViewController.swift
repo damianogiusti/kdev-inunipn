@@ -28,6 +28,7 @@ class NewsDetailViewController: UIViewController, NewsDetailView {
         newsDetailPresenter.create(withView: self)
         newsDetailPresenter.displayNews(withNews: news!)
         newsTitle.text = news?.title
+        newsTitle.textColor = .accentColor
         newsContent.text = news?.content
         newsImage.sd_setImage(with: URL(string: news?.imageUrl ?? placeholderImage))
         newsDate.text = news?.createdDate?.description
