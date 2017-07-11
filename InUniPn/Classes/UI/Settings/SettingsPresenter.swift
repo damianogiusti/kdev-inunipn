@@ -12,6 +12,8 @@ class SettingsPresenter: BasePresenter {
 
     private let universitiesService = UniversitiesServices()
     private let userService = UserService()
+    private var lessonsService: LessonsService?
+    private var newsService: NewsService?
     private let notificationsManager = NotificationPreferences()
 
     private weak var view: SettingsView?
@@ -33,11 +35,15 @@ class SettingsPresenter: BasePresenter {
 
     func create(withView view: SettingsView) {
         self.view = view
-        guard let user = userService.currentUser() else {
+        guard let user = userService.currentUser(), let token = user.accessToken else {
             fatalError("Cannot launch settings without a user :(")
         }
 
         self.user = user
+
+        lessonsService = LessonsService(withToken: token)
+        newsService = NewsService(withToken: token)
+
         view.showUserName(name: user.displayName)
         view.showReminderIntervals(intervals: timeIntervals)
 
@@ -73,6 +79,18 @@ class SettingsPresenter: BasePresenter {
         if let user = user, user.university != uni {
             user.university = uni
             userService.save(user: user)
+        }
+    }
+
+    func logout() {
+        if let user = user {
+            userService.delete(user: user)
+            newsService?.deleteNews(onSuccess: {
+                self.lessonsService?.deleteLessons(onSuccess: {
+                    self.view?.navigateToLogin()
+                })
+            })
+
         }
     }
 

@@ -17,6 +17,7 @@ class SettingsViewController: FormViewController {
     fileprivate var reminderIntervalPicker: InlinePickerRowFormer<FormInlinePickerCell, Int>?
     fileprivate var nameInput: TextFieldRowFormer<FormTextFieldCell>?
     fileprivate var universityPicker: InlinePickerRowFormer<FormInlinePickerCell, Int>?
+    fileprivate var logoutItem: LabelRowFormer<FormLabelCell>?
 
     private let presenter = SettingsPresenter()
 
@@ -53,6 +54,14 @@ class SettingsViewController: FormViewController {
                 self.presenter.changeUniversity(uni: item.title)
         }
 
+        self.logoutItem = LabelRowFormer<FormLabelCell>() {
+            $0.titleLabel.textColor = .red
+        }.configure(handler: { row in
+            row.text = Strings.logout
+        }).onSelected({ item in
+            self.presenter.logout()
+        })
+
         presenter.create(withView: self)
         presenter.retrieveUniversities()
 
@@ -69,7 +78,7 @@ class SettingsViewController: FormViewController {
             }.configure { view in
         }
 
-        let accountSection = SectionFormer(rowFormer: nameInput!, universityPicker!)
+        let accountSection = SectionFormer(rowFormer: nameInput!, universityPicker!, logoutItem!)
             .set(headerViewFormer: accountHeaderView)
 
         former.append(sectionFormer: notificationSection, accountSection)
@@ -133,5 +142,18 @@ extension SettingsViewController: SettingsView {
     func showLessonsReminderInterval(string: String, rawValue: Int) {
         reminderIntervalPicker?.selectedRow = rawValue - 1
         reminderIntervalPicker?.update()
+    }
+
+    func navigateToLogin() {
+        let dialog = UIAlertController(title: Strings.logout, message: Strings.confirmLogoutMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+            self.appDelegate.logout()
+        }
+        let cancelAction = UIAlertAction(title: Strings.cancel , style: .cancel, handler: { action in
+            self.logoutItem?.cell.setSelected(false, animated: true)
+        })
+        dialog.addAction(okAction)
+        dialog.addAction(cancelAction)
+        present(dialog, animated: true, completion: nil)
     }
 }

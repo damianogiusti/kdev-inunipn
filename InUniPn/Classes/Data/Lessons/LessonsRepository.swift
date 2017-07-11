@@ -22,4 +22,6 @@ protocol LessonsRepository: class {
     
     func delete(byId id: String) -> Bool
 
+    func deleteAll() -> Bool
+
 }

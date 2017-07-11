@@ -49,8 +49,8 @@ class LessonPresenter: BasePresenter {
     
     //MARK: - services
     
-    //    private var newsService
-    
+    private var showProgress = true
+
     private let userService : UserService = UserService()
     private var lessonService : LessonsService?
     private var universitiesService: UniversitiesServices?
@@ -77,6 +77,10 @@ class LessonPresenter: BasePresenter {
     }
 
     func start() {
+        if showProgress {
+            showProgress = false
+            lessonView?.showProgress()
+        }
         user = userService.currentUser()
         universitiesService?.all(onSuccess: onUniversities, onError: onUniversitiesError)
     }
@@ -92,6 +96,7 @@ class LessonPresenter: BasePresenter {
     }
 
     private func onUniversitiesError(error: Error) {
+        lessonView?.hideProgress()
         lessonView?.showError(withError: Strings.unknownError)
     }
     
@@ -211,6 +216,7 @@ class LessonPresenter: BasePresenter {
 
         days = rawLessonsToDays(withLessons: lessons)
 
+        lessonView?.hideProgress()
         lessonView?.displayLessons(withLessonList: days)
     }
 }
