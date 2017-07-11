@@ -77,6 +77,7 @@ class LessonPresenter: BasePresenter {
     }
 
     func start() {
+        user = userService.currentUser()
         universitiesService?.all(onSuccess: onUniversities, onError: onUniversitiesError)
     }
 
