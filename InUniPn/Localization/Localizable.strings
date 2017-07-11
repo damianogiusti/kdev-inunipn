@@ -9,66 +9,66 @@
 
 //MARK: - messages
 
-"event added" = "Your event was added successfully";
+"event added" = "Evento salvato con successo!";
 
-"loading" = "Loading, please wait...";
-"contacting facebook" = "Contacting Facebook, please wait...";
+"loading" = "Caricamento, attendi...";
+"contacting facebook" = "Mi sto collegando a Facebook, attendi...";
 
 "Fill all fields" = "Please fill all the required fields";
-"University" = "University";
-"Pick university" = "Select the university you are attending";
+"University" = "Università";
+"Pick university" = "Seleziona la tua università";
 
-"No permission given" = "I cannot perform this operation without your permission";
+"No permission given" = "Non è possibile usufruire di questa funzionalità senza i permessi";
 
-"joined successfully" = "You have successfully joined the lesson";
-"unjoined successfully" = "You have successfully unjoined the lesson";
+"joined successfully" = "Lezione salvata con successo";
+"unjoined successfully" = "Lezione dimenticata con successo";
 
-"no news present" = "It seems that you have no news. Let's stay tuned!";
-"no lessons present" = "There are no planned lessons. A good opportunity to go sunbathing!";
+"no news present" = "Non hai salvato alcuna news. Rimani aggiornato!";
+"no lessons present" = "Non ci sono lezioni salvate. Un'ottima occasione per andare al mare!";
 
-"confirm logout message" = "Are you shure that you want to logout?";
+"confirm logout message" = "Sei sicuro di voler effettuare il logout?";
 
 
 //MARK: - errors
 
-"Error" = "Error";
+"Error" = "Errore";
 
-"Error joining lessons" = "Unable to join this kind of lesson";
+"Error joining lessons" = "Errore durante il salvataggio della lezione";
 
-"Error retrieving univeristies" = "An error occourred while retrieving universities, try again later";
-"Error retrieving lessons" = "An error occourred while retrieving lessons, try again later";
-"Error retrieving news" = "An error occourred while retrieving news, try again later";
+"Error retrieving univeristies" = "Si è verificato un errore durante la selezione delle università, riprova più tardi";
+"Error retrieving lessons" = "Si è verificato un errore durante il download delle lezioni, riprova più tardi";
+"Error retrieving news" = "Si è verificato un errore durante il download delle news, riprova più tardi";
 
-"Error saving" = "An error occourred while saving";
+"Error saving" = "Si è verificato un errore durante il salvataggio delle informazioni";
 
-"Error while loggin in" = "An error occourred while loggin in, try again later";
-"Error while signin up" = "An error occourred while signin up, try again later";
+"Error while loggin in" = "Si è verificato un errore durante il login, riprova più tardi";
+"Error while signin up" = "Si è verificato un errore durante la registrazione, riprova più tardi";
 
-"Unknown error" = "Something went wrong, try again later";
+"Unknown error" = "Si è verificato un errore, riprova più tardi";
 
 
 //MARK: - strings
 
-"Name" = "Name";
+"Name" = "Nome";
 "Name placeholder" = "Mario Rossi";
-"Email" = "Email address";
-"Email placeholder" = "example@unipn.it";
+"Email" = "Indirizzo email";
+"Email placeholder" = "esempio@unipn.it";
 "Password" = "Password";
-"Confirm password" = "Confirm password";
-"Confirm password placeholder" = "Repeat your password";
+"Confirm password" = "Conferma password";
+"Confirm password placeholder" = "Ripeti la password";
 
-"Minute singular" = "minute";
-"Minute plural" = "minutes";
+"Minute singular" = "minuto";
+"Minute plural" = "minuti";
 
-"Notifications" = "Notifications";
-"Lessons Notifications" = "Notify for lessons";
-"Lessons Reminder Interval" = "Lessons reminder";
+"Notifications" = "Notifiche";
+"Lessons Notifications" = "Notifica lezioni";
+"Lessons Reminder Interval" = "Tempo notifica lezioni";
 
 "News" = "News";
-"Detail" = "Detail";
-"Lessons" = "Lessons";
-"Profile" = "Profile";
-"Settings" = "Account settings";
+"Detail" = "Dettaglio";
+"Lessons" = "Lezioni";
+"Profile" = "Profilo";
+"Settings" = "Impostazioni";
 "Logout" = "Logout";
 
-"Cancel" = "Cancel";
+"Cancel" = "Annulla";
