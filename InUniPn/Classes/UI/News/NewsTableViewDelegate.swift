@@ -53,9 +53,9 @@ class NewsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSourc
         }
 
         if news.starred {
-            cell.starButton.setImage(#imageLiteral(resourceName: "star_yellow"), for: .normal)
+            cell.starButton.setImage(#imageLiteral(resourceName: "ios-star"), for: .normal)
         } else {
-            cell.starButton.setImage(#imageLiteral(resourceName: "star_blank"), for: .normal)
+            cell.starButton.setImage(#imageLiteral(resourceName: "ios-star-outline"), for: .normal)
         }
 
         cell.newsImageView.sd_setImage(with: URL(string: news.imageUrl ?? placeholderImage))
