@@ -48,8 +48,8 @@ class NewsRestDatasource: RestCapable, DateFormatCapable {
         let posts = json["data"].arrayValue
         for p in posts {
             let news = News(withId: p["_id"].stringValue)
-            news.title = p["title"].stringValue
-            news.content = p["content"].stringValue
+            news.title = String(htmlEncodedString: p["title"].stringValue)?.trim()
+            news.content = String(htmlEncodedString: p["content"].stringValue)?.trim()
             news.createdDate = dateFromString(isoTimestamp: p["pub_date"].stringValue)
             news.updatedDate = dateFromString(isoTimestamp: p["createdAt"].stringValue)
             news.page = page

@@ -14,13 +14,15 @@ class NewsDetailViewController: UIViewController, NewsDetailView {
     @IBOutlet weak var newsDate: UILabel!
     @IBOutlet var newsTitle: UILabel!
     @IBOutlet weak var newsContent: UITextView!
-    
+    @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     
     private let newsDetailPresenter = NewsDetailPresenter()
     
     public var news : News?
     
     private let placeholderImage = "https://bytesizemoments.com/wp-content/uploads/2014/04/placeholder.png"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +33,15 @@ class NewsDetailViewController: UIViewController, NewsDetailView {
         newsTitle.textColor = .accentColor
         newsContent.text = news?.content
         newsImage.sd_setImage(with: URL(string: news?.imageUrl ?? placeholderImage))
-        newsDate.text = news?.createdDate?.description
-
-        
-        //saveItem.image= #imageLiteral(resourceName: "star_blank")
-        //saveItem.image = #imageLiteral(resourceName: "star_yellow")
-        //shareItem.image=#imageLiteral(resourceName: "share")
-       
-        
-        
-        // Do any additional setup after loading the view.
+        newsDate.text = formatDate(date: (news?.createdDate)!)
+    }
+    
+    
+    fileprivate func formatDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "eeee',' dd'/'MM'/'yyyy"
+        dateFormatter.locale = Calendar.current.locale
+        return dateFormatter.string(from: date)
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
