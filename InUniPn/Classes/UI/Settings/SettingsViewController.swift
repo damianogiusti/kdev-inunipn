@@ -59,7 +59,16 @@ class SettingsViewController: FormViewController {
         }.configure(handler: { row in
             row.text = Strings.logout
         }).onSelected({ item in
-            self.presenter.logout()
+            let dialog = UIAlertController(title: Strings.logout, message: Strings.confirmLogoutMessage, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+                self.presenter.logout()
+            }
+            let cancelAction = UIAlertAction(title: Strings.cancel , style: .cancel, handler: { action in
+                item.cell.setSelected(false, animated: true)
+            })
+            dialog.addAction(okAction)
+            dialog.addAction(cancelAction)
+            self.present(dialog, animated: true, completion: nil)
         })
 
         presenter.create(withView: self)
@@ -145,15 +154,6 @@ extension SettingsViewController: SettingsView {
     }
 
     func navigateToLogin() {
-        let dialog = UIAlertController(title: Strings.logout, message: Strings.confirmLogoutMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
-            self.appDelegate.logout()
-        }
-        let cancelAction = UIAlertAction(title: Strings.cancel , style: .cancel, handler: { action in
-            self.logoutItem?.cell.setSelected(false, animated: true)
-        })
-        dialog.addAction(okAction)
-        dialog.addAction(cancelAction)
-        present(dialog, animated: true, completion: nil)
+        appDelegate.logout()
     }
 }
