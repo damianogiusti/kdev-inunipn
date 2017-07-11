@@ -37,10 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private(set) lazy var navigationController: UINavigationController? = {
         let vc: UINavigationController = UINavigationController()
-        vc.navigationBar.barTintColor = .primaryColor
         vc.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         vc.navigationBar.tintColor = .white
         vc.navigationBar.barStyle = .black
+        vc.navigationBar.barTintColor = .primaryColor
         return vc
     }()
 
@@ -58,12 +58,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let tabBarController = mainStoryboard?.instantiateInitialViewController() {
             self.tabBarController = tabBarController
             navigationController?.setViewControllers([tabBarController], animated: true)
+            navigationController?.navigationBar.barTintColor = .primaryColor
             window?.rootViewController = navigationController
         }
     }
 
     func navigateToLogin() {
-        window?.rootViewController = loginStoryboard?.instantiateInitialViewController()
+        if let window = self.window, let storyboard = self.loginStoryboard {
+            UIView.transition(with: window, duration: 1, options: .transitionFlipFromLeft, animations: {
+                window.rootViewController = storyboard.instantiateInitialViewController()
+            }, completion: nil)
+        }
+    }
+
+    func logout() {
+        if let bundle = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundle)
+        }
+        navigateToLogin()
     }
 
     @objc private func settingsButtonItemClicked() {

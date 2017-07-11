@@ -76,6 +76,22 @@ class LessonsService: BaseService {
         }
     }
 
+    /// Deletes a lesson by a given ID
+    func deleteLessons(onSuccess: @escaping SuccessBlock<Void>, onError: ErrorBlock? = nil) {
+        runInBackground {
+            
+            if self.lessonsRepository.deleteAll() {
+                runOnUiThread {
+                    onSuccess()
+                }
+            } else {
+                runOnUiThread {
+                    onError?(LessonsErrors.errorDeletingLesson)
+                }
+            }
+        }
+    }
+
     /// Joins a lesson
     func joinLesson(byId lessonId: String, onSuccess: SuccessBlock<Lesson>? = nil, onError: ErrorBlock? = nil) {
         self.markLesson(byId: lessonId, asJoined: true, onSuccess: { lesson in

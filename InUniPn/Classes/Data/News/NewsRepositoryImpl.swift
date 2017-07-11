@@ -122,4 +122,9 @@ class NewsRepositoryImpl: NewsRepository {
     func delete(byId id: String) -> Bool {
         return storageDatasource.delete(byId: id)
     }
+
+    func deleteAll() -> Bool {
+        NewsRepositoryImpl.allNewsCallsCount = 0
+        return storageDatasource.deleteAll()
+    }
 }

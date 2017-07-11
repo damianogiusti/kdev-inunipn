@@ -13,7 +13,8 @@ class NewsPresenter: BasePresenter {
     //MARK: - variables
     
     //MARK: - services
-    
+
+    private var showLoading = true
     private var newsService: NewsService?
     private let userService: UserService = UserService()
     
@@ -80,6 +81,10 @@ class NewsPresenter: BasePresenter {
     }
     
     func loadNews(withQueryString queryString: String = ""){
+        if showLoading {
+            showLoading = false
+            newsView?.showProgress()
+        }
         if queryString.isEmpty {
             newsService?.all(onSuccess: displayNews)
         } else {
@@ -91,6 +96,7 @@ class NewsPresenter: BasePresenter {
     
     func displayNews(withNews news : [News]) {
         newsList = news
+        newsView?.hideProgress()
         newsView?.displayNews(withNewsList: news)
     }
     
