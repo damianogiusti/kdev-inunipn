@@ -67,7 +67,7 @@ class NewsPresenter: BasePresenter {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         
-        if let title = news.title, let link = news.link, let content = news.content, let date =  news.updatedDate
+        if let title = news.title, let link = news.link, let content = news.content, let date =  news.createdDate
         {
             let objectsToShare : [Any] = [title, NSURL(string:link), content, formatter.string(from:date)]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
