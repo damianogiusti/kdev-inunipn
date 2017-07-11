@@ -8,7 +8,9 @@
 
 import UIKit
 
-class NewsTableViewController: UIViewController, UISearchBarDelegate {
+class NewsTableViewController: UIViewController, UISearchBarDelegate, NewsDetailViewControllerDelegate {
+    
+    var delegate:NewsDetailViewControllerDelegate?
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -122,6 +124,14 @@ extension NewsTableViewController: NewsView {
     func hideProgress() {
         hideProgressDialog()
     }
+    
+    func shareNewsDetail(withNews detailNews: News) {
+        presenter.shareNews(withNews: detailNews)
+        
+    }
+    func favouriteNews(withNews detailNews: News) {
+        presenter.toggleNewsFavouriteState(ofNews: detailNews)
+    }
 }
 
 
@@ -134,6 +144,7 @@ extension NewsTableViewController {
         if let newsDetailViewController = UIStoryboard(name: "NewsDetail", bundle: nil)
             .instantiateViewController(withIdentifier: "NewsDetailViewController") as? NewsDetailViewController {
             newsDetailViewController.news = tableViewDelegate.dataset[indexPath.row]
+            newsDetailViewController.delegate = self
             self.appDelegate.navigationController?.pushViewController(newsDetailViewController, animated: true)
         }
     }

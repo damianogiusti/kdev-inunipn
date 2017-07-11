@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol NewsDetailViewControllerDelegate: class {
+    func shareNewsDetail(withNews: News)
+    func favouriteNews(withNews: News)
+}
+
 class NewsDetailViewController: UIViewController, NewsDetailView {
+    
+    weak var delegate:NewsDetailViewControllerDelegate?
     
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsDate: UILabel!
@@ -34,6 +41,12 @@ class NewsDetailViewController: UIViewController, NewsDetailView {
         newsContent.text = news?.content
         newsImage.sd_setImage(with: URL(string: news?.imageUrl ?? placeholderImage))
         newsDate.text = formatDate(date: (news?.createdDate)!)
+        
+        if (news?.starred)! {
+            favouriteButton.setImage(#imageLiteral(resourceName: "ios-star"), for: .normal)
+        } else {
+            favouriteButton.setImage(#imageLiteral(resourceName: "ios-star-outline"), for: .normal)
+        }
     }
     
     
@@ -69,6 +82,19 @@ class NewsDetailViewController: UIViewController, NewsDetailView {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func onFavouriteButtonPressed(_ sender: UIButton) {
+        if (news?.starred)! {
+            favouriteButton.setImage(#imageLiteral(resourceName: "ios-star-outline"), for: .normal)
+        } else {
+            favouriteButton.setImage(#imageLiteral(resourceName: "ios-star"), for: .normal)
+        }
+        delegate?.favouriteNews(withNews: news!)
+    }
+    
+    @IBAction func onShareButtonPressed(_ sender: UIButton) {
+        delegate?.shareNewsDetail(withNews: news!)
     }
     
         /*
