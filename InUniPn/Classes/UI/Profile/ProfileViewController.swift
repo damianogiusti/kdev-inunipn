@@ -50,6 +50,7 @@ class ProfileViewController: UIViewController {
         segment.apportionsSegmentWidthsByContent = false
         segment.setTitle(Strings.news, forSegmentAt: SegmentItems.news.rawValue)
         segment.setTitle(Strings.lessons, forSegmentAt: SegmentItems.lessons.rawValue)
+        segment.tintColor = .darkPrimaryColor
 
         // setup table view
         tableView.register(UINib(nibName: newsCellNibName, bundle: nil), forCellReuseIdentifier: newsCellReuseIdentifier)
@@ -68,7 +69,7 @@ class ProfileViewController: UIViewController {
         // setup lessons delegate
         lessonsTableViewDelegate.cellNibName = lessonsCellNibName
         lessonsTableViewDelegate.cellReuseIdentifier = lessonsCellReuseIdentifier
-        lessonsTableViewDelegate.didSelectRowAtIndexPathClosure = lessonsTableView(_:didSelectRowAt:)
+        lessonsTableViewDelegate.didPressJoinButtonClosure = didPressJoinButton(atIndexPath:)
 
         // setup button bar item click
         appDelegate.settingsButtonItemPressedClosure = self.didPressSettingsButton
@@ -208,7 +209,7 @@ extension ProfileViewController {
 
 extension ProfileViewController {
 
-    func lessonsTableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+    func didPressJoinButton(atIndexPath indexPath: IndexPath) {
+        presenter.unjoinLesson(byId: lessonsTableViewDelegate.dataset[indexPath.section].lessons[indexPath.row].id)
     }
 }

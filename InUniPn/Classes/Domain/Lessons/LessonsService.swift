@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import EventKit
 
 enum LessonsErrors: Error {
     case lessonNotExisting, errorJoiningMultipleLessons, errorDeletingLesson
@@ -23,9 +24,20 @@ class LessonsService: BaseService {
     }
 
     /// Gets all lessons
-    func all(onSuccess: @escaping SuccessBlock<[Lesson]>, onError: ErrorBlock? = nil) {
+    func all(fromDate date: Date? = nil, onSuccess: @escaping SuccessBlock<[Lesson]>, onError: ErrorBlock? = nil) {
         runInBackground {
-            let lessons = self.lessonsRepository.all().sorted(by: self.sortByDateDesc)
+            var lessons = self.lessonsRepository.all().sorted(by: self.sortByDateAsc)
+
+            // filter out lessons only if requested
+            if let from = date {
+                lessons = lessons.filter({ lesson in
+                    if let endTime = lesson.timeEnd {
+                        return endTime > from
+                    } else {
+                        return false
+                    }
+                })
+            }
             runOnUiThread {
                 onSuccess(lessons)
             }
@@ -66,13 +78,26 @@ class LessonsService: BaseService {
 
     /// Joins a lesson
     func joinLesson(byId lessonId: String, onSuccess: SuccessBlock<Lesson>? = nil, onError: ErrorBlock? = nil) {
-        self.markLesson(byId: lessonId, asJoined: true, onSuccess: onSuccess, onError: onError)
+        self.markLesson(byId: lessonId, asJoined: true, onSuccess: { lesson in
+            LessonNotificationManager.scheduleNotification(forLesson: lesson)
+            if let title = lesson.name, let startTime = lesson.timeStart, let endTime = lesson.timeEnd {
+                self.addEventToCalendar(title: title,
+                                        description: lesson.course,
+                                        classroom: lesson.classroom,
+                                        startTime: startTime,
+                                        endTime: endTime)
+            }
+            onSuccess?(lesson)
+        }, onError: onError)
     }
 
 
     /// Unjoins a lesson
     func unjoinLesson(byId lessonId: String, onSuccess: SuccessBlock<Lesson>? = nil, onError: ErrorBlock? = nil) {
-        self.markLesson(byId: lessonId, asJoined: false, onSuccess: onSuccess, onError: onError)
+        self.markLesson(byId: lessonId, asJoined: false, onSuccess: { lesson in
+            LessonNotificationManager.removeScheduledNotification(forLessonId: lesson.lessonId)
+            onSuccess?(lesson)
+        }, onError: onError)
     }
 
     /// Joins all the future lessons of this type
@@ -141,8 +166,8 @@ class LessonsService: BaseService {
             let lessons: [Lesson] = self.lessonsRepository.all()
                 .filter({ lesson in
                     var filter = lesson.joined
-                    if let startDate = date, let lessonStartDate = lesson.timeStart {
-                        filter = filter && lessonStartDate >= startDate
+                    if let startDate = date, let lessonEndDate = lesson.timeEnd {
+                        filter = filter && lessonEndDate >= startDate
                     }
                     return filter
                 })
@@ -186,7 +211,7 @@ class LessonsService: BaseService {
         }
     }
 
-    private func sortByDateDesc(lesson1: Lesson?, lesson2: Lesson?) -> Bool {
+    private func sortByDateAsc(lesson1: Lesson?, lesson2: Lesson?) -> Bool {
         if let d1 = lesson1?.date, let d2 = lesson2?.date {
             return d1 > d2
         } else {
@@ -194,4 +219,58 @@ class LessonsService: BaseService {
         }
     }
 
+}
+
+
+// MARK: - calendar extension
+
+
+extension LessonsService {
+
+    func addEventToCalendar(title: String, description: String?, classroom: String?, startTime: Date, endTime: Date) {
+        let eventStore = EKEventStore()
+
+
+        eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if (granted) && (error == nil) {
+                let event = EKEvent(eventStore: eventStore)
+                event.title = title
+                event.startDate = startTime
+                event.endDate = endTime
+                event.notes = description
+                event.location = classroom
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let e as NSError {
+                    print(e)
+                }
+            }
+        })
+    }
+
+    func calculateDateTime(withDate date: String, andTime time: String) -> Date{
+
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+
+        let date : Date = formatter.date(from: date)!
+
+        formatter.dateFormat = "HH:mm"
+
+        let timeOfTheDay = formatter.date(from: time)
+
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let dateComponents = calendar.dateComponents([Calendar.Component.hour, Calendar.Component.minute], from: timeOfTheDay!)
+
+        let hours = dateComponents.hour
+        let minutes = dateComponents.minute
+
+        var dateTime = calendar.date(byAdding: .minute, value: minutes!, to: date)
+        dateTime = calendar.date(byAdding: .hour, value: hours!, to: dateTime!)
+
+        return dateTime!
+    }
 }

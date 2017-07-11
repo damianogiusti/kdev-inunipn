@@ -38,6 +38,7 @@ class NewsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSourc
 
         cell.selectionStyle = .none
         cell.titleLabel.text = news.title
+        cell.titleLabel.textColor = .accentColor
 
         if let content = news.content {
             let index = content.index(content.startIndex, offsetBy: 100)

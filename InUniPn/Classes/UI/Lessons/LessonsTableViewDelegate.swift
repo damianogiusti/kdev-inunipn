@@ -18,6 +18,7 @@ class LessonsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSo
     var filteredDataset: [Day] = []
 
     var didSelectRowAtIndexPathClosure: ((UITableView, IndexPath) -> Void)?
+    var didPressJoinButtonClosure: ((IndexPath) -> Void)?
     var scrollViewWillBeginDraggingClosure: ((UIScrollView) -> Void)?
     var scrollViewDidScrollClosure: ((UIScrollView) -> Void)?
 
@@ -60,6 +61,18 @@ class LessonsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSo
         cell.lessonLabel?.text = lesson.name
         cell.teacherLabel?.text = lesson.teacher
         cell.classroomLabel?.text = lesson.classroom
+        cell.classroomLabel.textColor = .accentColor
+
+        cell.joinButton.tintColor = .accentColor
+        if lesson.joined {
+            cell.joinButton.setImage(#imageLiteral(resourceName: "ios-checkmark"), for: .normal)
+        } else {
+            cell.joinButton.setImage(#imageLiteral(resourceName: "ios-checkmark-outline"), for: .normal)
+        }
+
+        cell.joinButton.superview?.tag = indexPath.section
+        cell.joinButton.tag = indexPath.row
+        cell.joinButton.addTarget(self, action: #selector(self.joinButtonPressed(button:)), for: .touchUpInside)
 
         return cell
     }
@@ -74,6 +87,14 @@ class LessonsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSo
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didSelectRowAtIndexPathClosure?(tableView, indexPath)
+    }
+
+}
+
+extension LessonsTableViewDelegate {
+
+    func joinButtonPressed(button: UIButton) {
+        didPressJoinButtonClosure?(IndexPath(row: button.tag, section: button.superview?.tag ?? 0))
     }
 
 }

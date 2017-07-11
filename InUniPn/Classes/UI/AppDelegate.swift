@@ -37,16 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private(set) lazy var navigationController: UINavigationController? = {
         let vc: UINavigationController = UINavigationController()
-        vc.navigationBar.barTintColor = UIColor.lilyWhite
-        vc.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.fireBrickRed]
-        vc.navigationBar.tintColor = .fireBrickRed
-        //vc.navigationBar.barStyle = .black
+        vc.navigationBar.barTintColor = .primaryColor
+        vc.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        vc.navigationBar.tintColor = .white
+        vc.navigationBar.barStyle = .black
         return vc
     }()
 
     private(set) lazy var settingsBarItem: UIBarButtonItem? = {
         let item = UIBarButtonItem(image: #imageLiteral(resourceName: "ios-settings"), style: .plain, target: self, action: #selector(settingsButtonItemClicked))
-        item.tintColor = .fireBrickRed
+        item.tintColor = .white
         return item
     }()
 
@@ -90,7 +90,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func initSpinner() {
-        KVSpinnerView.settings.backgroundRectColor = .fireBrickRed
+        KVSpinnerView.settings.statusTextColor = .white
+        KVSpinnerView.settings.backgroundRectColor = .darkPrimaryColor
         KVSpinnerView.settings.fadeInDuration = 0.2
         KVSpinnerView.settings.fadeOutDuration = 0.2
         KVSpinnerView.settings.tintColor = .white

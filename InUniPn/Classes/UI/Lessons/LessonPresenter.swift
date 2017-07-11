@@ -53,6 +53,10 @@ class LessonPresenter: BasePresenter {
     
     private let userService : UserService = UserService()
     private var lessonService : LessonsService?
+    private var universitiesService: UniversitiesServices?
+    private var lessonList: [Lesson] = []
+    private var universities: [University] = []
+    private var currentUniversity: University?
     
     //MARK: - view
     
@@ -64,57 +68,98 @@ class LessonPresenter: BasePresenter {
         lessonView = view
         user = userService.currentUser()
         if let token = user?.accessToken{
-            lessonService = LessonsService(withToken : token);
+            lessonService = LessonsService(withToken: token)
         } else {
             lessonView?.showError(withError: Strings.unknownError)
         }
+
+        universitiesService = UniversitiesServices()
+    }
+
+    func start() {
+        user = userService.currentUser()
+        universitiesService?.all(onSuccess: onUniversities, onError: onUniversitiesError)
+    }
+
+    private func onUniversities(unis: [University]) {
+        universities = unis
+        if let index = universities.index(where: { u in u.code == user?.university }) {
+            currentUniversity = universities[index]
+            lessonView?.showUniversitiesForFilter(titles: unis.flatMap({ u in u.code }))
+            lessonView?.showDefaultUniversity(atIndex: index)
+            loadLessons()
+        }
+    }
+
+    private func onUniversitiesError(error: Error) {
+        lessonView?.showError(withError: Strings.unknownError)
     }
     
     //MARK: - user interaction methods
     
     
-    func addEventToCalendar(title: String, description: String?, classroom: String?, date day: String, startTime: String, endTime: String) {
-        let eventStore = EKEventStore()
-        
-        
-        eventStore.requestAccess(to: .event, completion: { (granted, error) in
-            if (granted) && (error == nil) {
-                let event = EKEvent(eventStore: eventStore)
-                event.title = title
-                event.startDate = self.calculateDateTime(withDate: day, andTime: startTime)
-                event.endDate = self.calculateDateTime(withDate: day, andTime: endTime)
-                event.notes = description
-                event.location = classroom
-                event.calendar = eventStore.defaultCalendarForNewEvents
-                do {
-                    try eventStore.save(event, span: .thisEvent)
-                } catch let e as NSError {
-                    self.lessonView?.showError(withError: "\(Strings.errorSaving) \(e)")                                   
-                }
-                self.lessonView?.showMessage(withMessage: Strings.eventAdded)
-            } else {
-                self.lessonView?.showError(withError:Strings.noPermissionGiven)                                   
-            }
-        })
-    }
-    
-    
-    func showJoiningChoice(withLesson lesson:Lesson){
+    func showJoiningChoice(withLesson lesson:Lesson) {
         lessonView?.displayJoiningChoice(isAlreadyJoined: lesson.joined)
     }
-    
-    func joinLesson(withLesson lesson:Lesson){
-        lessonService?.joinLesson(byId: lesson.lessonId)
-        lessonView?.showMessage(withMessage: Strings.joinedSuccessfully)
-        
+
+    func toggleJoinedStateOfLesson(byId id: String) {
+        if let lesson = lessonList.first(where: { lesson in lesson.lessonId == id }) {
+            if lesson.joined {
+                unjoinLesson(byId: id)
+            } else {
+                joinLesson(byId: id)
+            }
+        }
+    }
+
+    func selectedUniversityAtIndex(index: Int) {
+        currentUniversity = universities[index]
+        loadLessons()
     }
     
-    func unjoinLesson(withLesson lesson:Lesson){
-        lessonService?.unjoinLesson(byId: lesson.lessonId)
-        lessonView?.showMessage(withMessage: Strings.unjoinedSuccessfully)
-        
+    private func joinLesson(byId id: String) {
+        lessonService?.joinLesson(byId: id, onSuccess: onSuccessfulJoinToggle, onError: onErrorJoining)
     }
     
+    private func unjoinLesson(byId id: String) {
+        lessonService?.unjoinLesson(byId: id, onSuccess: onSuccessfulJoinToggle, onError: onErrorJoining)
+    }
+
+    private func onSuccessfulJoinToggle(lesson: Lesson) {
+        updateLessonView(lesson: lesson)
+    }
+
+    private func onErrorJoining(error: Error) {
+
+    }
+
+    private func updateLessonView(lesson: Lesson) {
+        if let index = lessonList.index(where: { l in l.lessonId == lesson.lessonId }) {
+            lessonList[index] = lesson
+            days = rawLessonsToDays(withLessons: lessonList)
+            
+            if let indexPath = lessonInDays(lesson: lesson, days: days) {
+                lessonView?.updateLessonView(days: days, atIndexPath: indexPath)
+            } else {
+                lessonView?.displayLessons(withLessonList: days)
+            }
+
+        }
+    }
+
+    private func lessonInDays(lesson: Lesson, days: [Day]) -> IndexPath? {
+        for section in 0..<days.count {
+            let lessons = days[section].lessons
+            for row in 0..<lessons.count {
+                let l = lessons[row]
+                if l.id == lesson.lessonId {
+                    return IndexPath(row: row, section: section)
+                }
+            }
+        }
+        return nil
+    }
+
     func joinAllLessonRelated(toLesson lesson:Lesson){
         if let type = lesson.type{
             lessonService?.joinAllFutureLessons(ofType: type)
@@ -142,9 +187,18 @@ class LessonPresenter: BasePresenter {
         lessonView?.navigateToProfile()
     }
     
-    func loadLessons(withQueryString queryString: String = ""){
+    func loadLessons(withQueryString queryString: String = "") {
         if queryString.isEmpty {
-            lessonService?.all(onSuccess: displayLessons)
+            lessonService?.all(fromDate: Date(), onSuccess: { (lessons) in
+                let filteredLessons = lessons.filter({ l in
+                    if let uni = l.course, let code = self.currentUniversity?.code {
+                        return uni == code
+                    } else {
+                        return false
+                    }
+                })
+                self.displayLessons(withLessons: filteredLessons)
+            })
         } else {
             lessonService?.searchLessons(withKeyword: queryString, onSuccess: displayLessons)
         }
@@ -152,36 +206,11 @@ class LessonPresenter: BasePresenter {
     
     //MARK: - private methods
     
-    func displayLessons(withLessons lessons : [Lesson]){
-              
+    func displayLessons(withLessons lessons : [Lesson]) {
+        self.lessonList = lessons
+
         days = rawLessonsToDays(withLessons: lessons)
-        
+
         lessonView?.displayLessons(withLessonList: days)
     }
-
-    func calculateDateTime(withDate date: String, andTime time: String) -> Date{
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        
-        let date : Date = formatter.date(from: date)!
-        
-        formatter.dateFormat = "HH:mm"
-        
-        let timeOfTheDay = formatter.date(from: time)
-        
-        var calendar = Calendar.current
-        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
-        let dateComponents = calendar.dateComponents([Calendar.Component.hour, Calendar.Component.minute], from: timeOfTheDay!)
-
-        let hours = dateComponents.hour
-        let minutes = dateComponents.minute
-        
-        var dateTime = calendar.date(byAdding: .minute, value: minutes!, to: date)
-        dateTime = calendar.date(byAdding: .hour, value: hours!, to: dateTime!)
-        
-        return dateTime!
-    }
-
 }

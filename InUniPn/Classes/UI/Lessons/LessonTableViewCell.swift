@@ -15,6 +15,7 @@ class LessonTableViewCell: UITableViewCell {
     @IBOutlet weak var lessonLabel: UILabel!
     @IBOutlet weak var teacherLabel: UILabel!
     @IBOutlet weak var classroomLabel: UILabel!
+    @IBOutlet weak var joinButton: UIButton!
     
     
 }

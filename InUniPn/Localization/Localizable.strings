@@ -31,7 +31,7 @@
 
 "Error" = "Error";
 
-"Error joining lessons" = "Impossible to join this kind of lesson";
+"Error joining lessons" = "Unable to join this kind of lesson";
 
 "Error retrieving univeristies" = "An error occourred while retrieving universities, try again later";
 "Error retrieving lessons" = "An error occourred while retrieving lessons, try again later";
@@ -42,7 +42,7 @@
 "Error while loggin in" = "An error occourred while loggin in, try again later";
 "Error while signin up" = "An error occourred while signin up, try again later";
 
-"Unknown error" = "An unknown error occourred, try again later";
+"Unknown error" = "Something went wrong, try again later";
 
 
 //MARK: - strings

@@ -11,35 +11,28 @@ import UIKit
 
 class LessonsViewController: UIViewController, UISearchBarDelegate {
 
-    func displayLessons(withLessonList list: [Day]) {
-        tableViewDelegate.dataset = list
-        lessonsTableView.reloadData()
-    }
+    @IBOutlet weak var lessonsTableView: UITableView!
+    @IBOutlet weak var universitiesSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
 
-    @IBOutlet var lessonsTableView: UITableView!
-    let lessonCellIdentifier = "lessonCell"
+    let lessonCellIdentifier = String(describing: LessonTableViewCell.self)
+    let lessonCellNibName = String(describing: LessonTableViewCell.self)
 
     private let lessonPresenter = LessonPresenter()
 
-    let searchController = UISearchController(searchResultsController: nil)
+    private var tapRecognizer: UITapGestureRecognizer?
 
     fileprivate let tableViewDelegate = LessonsTableViewDelegate()
-
-    ///associo il tab item al controller
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        // Initialize Tab Bar Item
-        tabBarItem = UITabBarItem(title: "Orari", image: UIImage(named: "ios-time-outline"), tag: 1)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         lessonPresenter.create(withView: self)
-        lessonPresenter.loadLessons()
 
+        lessonsTableView.register(UINib(nibName: lessonCellNibName, bundle: nil), forCellReuseIdentifier: lessonCellIdentifier)
         tableViewDelegate.cellReuseIdentifier = lessonCellIdentifier
+        tableViewDelegate.cellNibName = lessonCellNibName
+        tableViewDelegate.didPressJoinButtonClosure = self.didPressJoinButton(atIndexPath:)
 
         lessonsTableView.delegate = tableViewDelegate
         lessonsTableView.dataSource = tableViewDelegate
@@ -47,9 +40,28 @@ class LessonsViewController: UIViewController, UISearchBarDelegate {
         lessonsTableView.estimatedRowHeight = 100.0
         lessonsTableView.tableFooterView = UIView()
 
-        let cancelButtonAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.fireBrickRed]
+        let cancelButtonAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
         UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes as? [String : AnyObject], for: UIControlState.normal)
 
+        universitiesSegmentedControl.tintColor = .darkPrimaryColor
+        universitiesSegmentedControl.addTarget(self, action: #selector(self.didPressSegment(_:)), for: .valueChanged)
+
+        searchBar.barTintColor = .primaryColor
+        searchBar.searchBarStyle = .minimal
+        searchBar.delegate = self
+
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTouchTableView))
+        self.tapRecognizer = tapRecognizer
+        lessonsTableView.addGestureRecognizer(tapRecognizer)
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tapRecognizer?.isEnabled = true
+    }
+
+    @objc func didTouchTableView() {
+        view.endEditing(true)
+        tapRecognizer?.isEnabled = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -57,10 +69,20 @@ class LessonsViewController: UIViewController, UISearchBarDelegate {
 
         appDelegate.tabBarController?.title = Strings.lessons
         appDelegate.tabBarController?.navigationItem.rightBarButtonItem = nil
+
+        lessonPresenter.start()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         lessonPresenter.loadLessons(withQueryString: searchText)
+    }
+
+    func didPressJoinButton(atIndexPath indexPath: IndexPath) {
+        lessonPresenter.toggleJoinedStateOfLesson(byId: tableViewDelegate.dataset[indexPath.section].lessons[indexPath.row].id)
+    }
+
+    @objc fileprivate func didPressSegment(_: Any) {
+        lessonPresenter.selectedUniversityAtIndex(index: universitiesSegmentedControl.selectedSegmentIndex)
     }
 }
 
@@ -74,8 +96,29 @@ extension LessonsViewController: LessonView {
 
     }
 
+    func displayLessons(withLessonList list: [Day]) {
+        tableViewDelegate.dataset = list
+        lessonsTableView.reloadData()
+    }
+
+    func updateLessonView(days: [Day], atIndexPath indexPath: IndexPath) {
+        tableViewDelegate.dataset = days
+        lessonsTableView.reloadRows(at: [indexPath], with: .none)
+    }
+
     func displayJoiningChoice(isAlreadyJoined : Bool) {
 
+    }
+
+    func showUniversitiesForFilter(titles: [String]) {
+        universitiesSegmentedControl.removeAllSegments()
+        for index in 0..<titles.count {
+            universitiesSegmentedControl.insertSegment(withTitle: titles[index], at: index, animated: false)
+        }
+    }
+
+    func showDefaultUniversity(atIndex index: Int) {
+        universitiesSegmentedControl.selectedSegmentIndex = index
     }
 
     func showError(withError error : String) {

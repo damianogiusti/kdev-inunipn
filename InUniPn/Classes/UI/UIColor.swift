@@ -26,6 +26,14 @@ extension UIColor {
         )
     }
 
+    static let darkPrimaryColor: UIColor = UIColor(rgb: 0x1976D2)
+
+    static let primaryColor: UIColor = UIColor(rgb: 0x2196F3)
+
+    static let accentColor: UIColor = UIColor(rgb: 0x607D8B)
+
+    static let textPrimaryColor: UIColor = UIColor(rgb: 0x212121)
+
     static let fireBrickRed: UIColor = UIColor(rgb: 0xAD2222)
 
     static let lilyWhite: UIColor = UIColor(rgb: 0xEAEAEA)

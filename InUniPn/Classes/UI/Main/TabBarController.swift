@@ -27,6 +27,8 @@ class TabBarController: UITabBarController {
         /// rimuovo i controller generati dalla storyboard
         self.viewControllers?.removeAll()
 
+        self.tabBar.tintColor = .darkPrimaryColor
+        
         /// associo il controller delle news
         let newsStoryboard: UIStoryboard = UIStoryboard(name: "News", bundle: nil)
         let newsViewController = newsStoryboard.instantiateViewController(withIdentifier: ViewControllers.news)

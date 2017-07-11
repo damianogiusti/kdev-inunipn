@@ -24,6 +24,11 @@ class LessonNotificationManager {
             }
         }
     }
+
+    static func removeScheduledNotification(forLessonId lessonId: String) {
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: [lessonId])
+    }
     
     private static func setNotification(forLesson lesson: Lesson) {
         if !NotificationPreferences.areNotificationsEnabled() {
@@ -51,7 +56,7 @@ class LessonNotificationManager {
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
                 
                 // Create the request object.
-                let request = UNNotificationRequest(identifier: "notification_alarm", content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: lesson.lessonId, content: content, trigger: trigger)
                 
                 // Schedule the request.
                 let center = UNUserNotificationCenter.current()
@@ -60,7 +65,6 @@ class LessonNotificationManager {
                         print(theError.localizedDescription)
                     }
                 }
-                
             }
         }
     }

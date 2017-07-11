@@ -11,6 +11,7 @@ import UIKit
 class NewsTableViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     private let cellNibName = String(describing: NewsTableViewCell.self)
     private let cellReuseIdentifier = String(describing: NewsTableViewCell.self)
@@ -20,6 +21,7 @@ class NewsTableViewController: UIViewController, UISearchBarDelegate {
     private var query = ""
 
     fileprivate let tableViewDelegate = NewsTableViewDelegate()
+    private var tapRecognizer: UITapGestureRecognizer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,23 @@ class NewsTableViewController: UIViewController, UISearchBarDelegate {
         tableView.emptyDataSetDelegate = tableViewDelegate
         tableView.register(UINib(nibName: cellNibName, bundle: nil),
                            forCellReuseIdentifier: cellReuseIdentifier)
+
+        searchBar.barTintColor = .primaryColor
+        searchBar.searchBarStyle = .minimal
+        searchBar.delegate = self
+
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTouchTableView))
+        self.tapRecognizer = tapRecognizer
+        tableView.addGestureRecognizer(tapRecognizer)
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tapRecognizer?.isEnabled = true
+    }
+
+    @objc func didTouchTableView() {
+        view.endEditing(true)
+        tapRecognizer?.isEnabled = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
