@@ -18,6 +18,8 @@ enum L10n {
   static let confirmPasswordPlaceholder = L10n.tr("Confirm password placeholder")
   /// Contacting Facebook, please wait...
   static let contactingFacebook = L10n.tr("contacting facebook")
+  /// Detail
+  static let detail = L10n.tr("Detail")
   /// Email address
   static let email = L10n.tr("Email")
   /// example@unipn.it
